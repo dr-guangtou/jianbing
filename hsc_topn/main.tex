@@ -1,0 +1,764 @@
+% Version 0; preprint format; Outline of paper I by Song Huang
+
+\documentclass[a4paper,fleqn,usenatbib]{mnras}
+
+% Packages
+\usepackage{deluxetable}
+\usepackage{newtxtext,newtxmath}
+\usepackage[T1]{fontenc}
+\usepackage{ae,aecompl}
+\usepackage{amssymb, amsmath}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{xcolor,colortbl}
+
+% Package Settings
+\hypersetup{colorlinks=true,
+            citecolor=MidnightBlue,
+            linkcolor=MidnightBlue,
+            filecolor=magenta,
+            urlcolor=cyan}
+\urlstyle{same}
+
+% Figure extention
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+% User definitons
+\input{define.tex}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Title and Affiliations 
+%% ------------------------------------------------------------------------------------ %% 
+
+\title[TopN Test]{
+	Central Galaxy Mass: A Simple Tracer of Halo Mass with Scatter Comparable to 
+	Richness and Reduced Projection Effects}
+				  
+\author[S. Huang et al.]{
+        Song Huang$^{1,2}$\thanks{E-mail: sh19@princeton.edu (SH)},
+        Christopher Bradshaw$^{2}$,
+        Alexie Leauthaud$^{2}$,
+        Andrew Hearin$^{3}$,
+        \newauthor
+        Peter Behroozi$^{4}$,
+        Joseph DeRose$^{2}$,
+        Johannes Lange$^{2}$,
+        Jenny Greene$^{1}$,
+        Joshua Speagle$^{5}$\\
+        $^{1}$Department of Astrophysical Sciences, Peyton Hall,
+              Princeton University, Princeton, NJ 08540, USA \\
+        $^{2}$Department of Astronomy and Astrophysics, University of California 
+              Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA\\
+        $^{3}$Argonne National Laboratory, Argonne, IL 60439, USA\\
+        $^{4}$Department of Astronomy and Steward Observatory, University of Arizona, 
+              Tucson, AZ 85721, USA\\     
+        $^{5}$Department of Astronomy, Harvard University, 60 Garden St, MS 46, 
+              Cambridge, MA 02138, USA
+        } 
+          
+%% ------------------------------------------------------------------------------------ %% 
+\date{Accepted XXX. Received YYY; in original form ZZZ}        
+\pubyear{2020}                                  
+  
+%% ------------------------------------------------------------------------------------ %% 
+%% Header and Version 
+%% ------------------------------------------------------------------------------------ %% 
+
+\begin{document}
+
+\label{firstpage}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}}
+
+\maketitle
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Abstract and Keywords 
+%% ------------------------------------------------------------------------------------ %% 
+
+\begin{abstract}
+          
+    \plan{Placeholder: Massive haloes are useful to cosmology. But they are not easy to select 
+    	  without introducing projection and mis-centering effect.
+    	  Here we use HSC deep images and unprecedented weak lensing capability to 
+    	  test the possibility of selecting the most massive dark matter halos using 
+    	  just the central galaxies.
+    	  }
+    
+\end{abstract}
+
+% TODO: Need updates!
+\begin{keywords}
+    galaxies: elliptical and lenticular, cD --
+    galaxies: formation --
+    galaxies: photometry -- 
+    galaxies: structure -- 
+    galaxies: haloes
+\end{keywords}
+
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Main Text
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Introduction 
+%% ------------------------------------------------------------------------------------ %% 
+
+\section{Introduction}
+    \label{sec:intro}
+    
+    \alexie{Let's keep this paper short, sweet, and to the point! I don't think we need 
+    to go beyond what is currently in this intro outline.}
+    
+    \begin{itemize}
+    	
+    	\item \plan{The number counts of clusters is a sensitive probe of the dark matter halo mass function and the growth of structure (Albrecht, Weinberg). For this reason, and with the advent of large optical surveys (SDSS, CFHTenS, HSC, DES), much effort has been focussed on the development of optical cluster finders. Methods that have enjoyed the most success have been based on the identification of the red sequence of cluster members (\redm{}, \camira{}).}
+    	
+    	\item \plan{\redm{} is a method that xxxx (refs). \camira{} does this xxx (refs).}
+    	
+    	\item \plan{However, as more data has been collected and the precision of our measurements has grown, a number of difficulties with red sequence cluster finding have begin to emerge. Joe can help to write this section. The issues of projection effects. And also forward modeling is hard because hard to model quenched galaxies. Cite projection effect papers and DES cluster cosmology paper in prep.}
+ 
+    	\item \plan{In this paper, we use high signal-to noise weak lensing from the HSC survey to test a number of alternative and potentially more simple tracers of halo mass. As the core of this paper is the "top N test" \citep[][]{Reyes2008} (Read this paper, is there a different name)? The premise of this test is as follows xxx..}
+   
+    	\item \plan{One of the alternative tracers of halo mass that we test is central galaxy stellar mass. Traditionally, it has always been assumed that central galaxy mass is a less desirable tracer of halo mass than richness because it has a larger scatter with respect to halo mass (numbers go here). However, some of this scatter has been due to poor measurements of the luminosities of super massive galaxies. Refs}
+  
+    	\item \plan{Using deep high quality imaging from the HSC survey, Huang et al showed that careful extractions of galaxy luminosity lead to lower scatter in the stellar-to-halo mass relation that previously estimated. Furthermore, Huang et al showed that not only galaxy total mass, but also the shape of the galaxy light profile, also contains information about halo mass. Given these recent developments, it is timely to conduct a direct comparison of the new potentially quite simple tracers of halo mass with more traditional tracers such as richness.}
+    	
+    \end{itemize}
+
+
+    %% -------------------------------------------------------------------------------- %%
+    %% Structure of the paper 
+    %% -------------------------------------------------------------------------------- %%  
+    
+    \todo{Placeholder: Need to be updated}
+
+    This paper is organized as follows. 
+    We briefly go through the sample selection and data reduction processes in 
+    \S \ref{sec:data}.  
+    Please refer to \citetalias{Huang2018b} for more technical details.
+    \S \ref{sec:dsigma} describes the weak lensing methodology, and the 
+    measurements of aperture \mstar{} and \mden{} profiles are mentioned in 
+    \S \ref{sec:measure}.
+    In \S \ref{sec:model}, we introduce an empirical model to describe the relation
+    between stellar mass distribution and dark matter halo properties at 
+    high-\mstar{} end. 
+    Main results from the best--fit model are presented in \S \ref{sec:result} and 
+    discussed in \S \ref{sec:discussion}. 
+    Our summary and conclusions are presented in \S \ref{sec:summary}.
+
+    %% -------------------------------------------------------------------------------- %%
+    %% Important assumptions and definitions
+    %% -------------------------------------------------------------------------------- %%  
+    
+    For cosmology, we assume $H_0$ = 70~km~s$^{-1}$ Mpc$^{-1}$, 
+    ${\Omega}_{\rm m}=0.3$, and ${\Omega}_{\rm \Lambda}=0.7$.
+    Stellar mass (\mstar{}) is derived using a Chabrier initial mass function 
+    (IMF; \citealt{Chabrier2003}). 
+    And we use $M_{\rm vir}$ for dark matter halo mass (\mhalo{}) as 
+    defined in \citealt{BryanNorman1998}.
+    
+%% ------------------------------------------------------------------------------------ %% 
+
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Section: Data and Sample Selection
+%% ------------------------------------------------------------------------------------ %% 
+\section{Data}
+    \label{sec:data}
+    
+%% ------------------------------------------------------------------------------------ %% 
+\subsection{ Hyper Suprime-Cam Survey SSP S16A sample}
+    \label{sec:s16a}      
+    
+    %% -------------------------------------------------------------------------------- %%
+    %% S16A dataset
+    %% -------------------------------------------------------------------------------- %%
+	\todo{Placeholder: copy from Paper I}
+
+	%% General information 
+	
+	In this work, we use the \texttt{WIDE} layer of the internal data release 
+	\texttt{S16A} of the HSC SSP, an ambitious imaging survey using the new prime focus 
+	camera on the 8.2--m Subaru telescope. 
+	These data are reduced by \texttt{hscPipe 4.0.2}, a specially tailored version of 
+	the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015}; 
+	\citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}}, 
+	modified for HSC (\citealt{HSC-PIPE}).
+	The coadd images are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey; 
+	e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}), with pixel scale of 0\asec{}$.168$
+	and mean $i$-band seeing has FWHM of 0\asec{}$.58$.
+	Please refer to \citet{HSC-SSP, HSC-DR1} for more details about the survey design
+	and the data products.
+	The general performance of \texttt{hscPipe} can be found in \citet{SynPipe}.
+	In addition to the full--color and full--depth constrain, the effective survey 
+	area also takes into account masks for bright stars described in
+	\citet{HSC-STAR}.
+	
+	\begin{itemize}
+		
+		\item \plan{Briefly explain spec-z and phot-z along with SED fitting approach.}
+		
+		\item \plan{Other issues with the data}
+		
+	\end{itemize}
+    
+
+% ------------------------------------------------------------------------------------ %% 
+%% Section: Measurements of SMF and DeltaSigma profiles for the model
+%% ------------------------------------------------------------------------------------ %%
+\subsection{Stellar Masses Measurements}
+    \label{sec:mstar}
+
+    \todo{Placeholder}
+
+\subsubsection{Stellar mass based on 1-D \mden{} profiles}
+	\label{sec:m1d}
+
+\subsubsection{Stellar mass based on \ser{} fitting}
+	\label{sec:mser}
+
+\section{Methodology}
+
+\subsection{Proxies for Halo Mass}
+
+\textbf{Note to ourselves: we deceided not to do Cen$+$N here,t ath goes in Chris Paper.}
+
+These are the various things we rank order by
+
+\begin{itemize}
+    \item M100
+    \item $lambda$
+    \item CAMIRA richness
+    \item ASAP tracer
+    \item Outer mass
+\end{itemize}
+
+\subsection{Number densities}
+
+Add a table here. Say hat the number densities are. And say, in HSC, for our sample, how many objects this correspondsw too.
+    
+%% ------------------------------------------------------------------------------------ %% 
+\subsection{\dsigma{} Profiles}
+    \label{sec:dsigma}   
+    
+    \todo{Placeholder}
+    
+    %% -------------------------------------------------------------------------------- %%
+    %% Weak lensing measurements
+    %% -------------------------------------------------------------------------------- %%   
+
+	\begin{itemize}
+		
+		\item \plan{Copy something from the \asap{} paper.}
+		
+		\item \plan{Copy something from Speagle et al. 2019 here.}
+		
+	\end{itemize}    
+	   
+%
+
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Section: Simulation and Model
+%% ------------------------------------------------------------------------------------ %% 
+\section{Theoretical Models}
+    \label{sec:model}
+
+\subsection{Multi Dark Planck Simulation}
+
+\subsection{Simple Scaling Relation Model}
+
+We can model the effect on the DS profile of various amounts of scatter between a generic observable, \obsSym{}, and halo mass.
+We assume that the relationship between halo mass and \obsSym{} is modeled by a power law for the mean relation with lognormal scatter. This has been used for various observables, {\it e.g.,\/} X-ray temperature \citet{Lieu2016}, K-band luminosity \citet{Ziparo2016}, and the details of the statistics of this relation are described in \citet{Evrard2014}.
+
+We can then populate our simulation's halos with this generic observable,
+
+\begin{equation}
+    \log(\obsSym) = \mathcal{N}(\beta \log(\Mhalo{}),\ \scatterObsSymMhalo)
+\end{equation}
+
+However, while \scatterObsSymMhalo{} is physically meaningful and the number most often quoted ({\it e.g.,\/} it is well known that $\scatterMstarx{cen} \sim 0.2$ dex) when comparing observables used to select halos, it is the scatter in \Mhalo{} at a fixed value for the observable \scatterMhaloObsSym{} that is important. This is affected both by the \scatterObsSymMhalo{} but also the slope $\beta$. A good observable has {\em both} low scatter at fixed halo mass, and a steep slope as a function of halo mass.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.5\textwidth]{fig/scatter_slope_degen.png}
+  \caption{I'm not sure exactly why this works anymore.}
+      \label{fig:scatter_slope_degen}
+\end{figure}
+
+Figure \ref{fig:scatter_slope_degen} shows that the effect of scatter and slope are degenerate. We therefore fix the slope at $\beta = 1$. We then find the $\scatterObsSymMhalo$ that gives the desired $\scatterMhaloObsSym$ in the narrow mass bin. To do this, we select $\scatterObsSymMhalo$ that maximizes the likelihood of of the data given a linear model and the desired $\scatterMhaloObsSym$.
+
+This allows us to predict $\Delta\Sigma$ as a function of $\scatterMhaloObsSym$ for each bin in number density.
+
+
+Describe this methodology here here. Figure \ref{fig:mdpl2}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and 
+%%         halo mass distribution
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/png/mdpl2_dsigma_bin1_2}
+      \caption{\alexie{This is a methodology figure. I moved it forward.}Impact of scatter in the mass-observable relation on $\Delta\Sigma$. Left: the $\Delta\Sigma$ profiles for $0<\sigma_{Mvir|obs}<2$. Middle: ratio of $\Delta\Sigma$ with non zero scatter to $\Delta\Sigma$ when $0<\sigma_{Mvir|obs}=0$. Right: halo mass histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$). \alexie{What is N here on the right hand side? instead of N. quote the number density usually noted $\overline{n}$}}
+      \label{fig:mdpl2}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+       
+       
+       
+       
+\subsection{Model Calibrated to Match HSC}
+
+While the simple scaling relation model presented above is useful to predict the effects of scatter between an observable and halo mass on the lensing signal, a more detailed model of the galaxy halo connection is needed to compare with specific model of M100. To make comparisons the HSC observations and theory, we need to populate the simulation with realistic galaxies. This process will be described in more detail in (Bradshaw et. al. 2020 (in prep.)) but we summarize it here.
+
+To do this, we use the 1Gpc MultiDark-Planck simulation. We populate galaxies using an abundance matching model based on the \citet{Lehmann2017} $\alpha$ model. This model marginalizes over the choice of the halo property to abundance match on. In this analysis, we use the mock that best fits the HSC high mass clustering, the auto- and cross-correlation of $\omega_p$ in bins of stellar mass [$11.5$, $11.55$, $11.7$, inf], and the combination of the SMF from HSC and PRIMUS. We use the HSC SMF in the mass regime that is complete ($> 11.5$) and PRIMUS for lower masses ($10.5 - 11.5$).
+
+The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as shown in \ref{fig:best_mock}.
+
+\begin{figure*}
+  \centering
+  \includegraphics[width=\textwidth]{fig/mdpl_vmaxAtMpeak_mpeak_alpha_ext.png}
+  \caption{The bestfit mock matches both the SMF from HSC and PRIMUS (left) as well as the clustering from HSC. The mass bins for the clustering are [$11.5$, $11.55$, $11.7$, inf] and so e.g. "11" denotes the autocorrelation in the lowest mass bin and "13" the cross correlation between objects in the lowest and highest mass bins.}
+  \label{fig:best_mock}
+\end{figure*}
+
+\textcolor{blue}{CHris to write this up and compute}
+
+
+% Alexie: I am not sure we learned anything here, not clear these figures are necessary.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Distribution of light-of-sight velocities near the massive halos (R=0.5Mpc)
+%% ------------------------------------------------------------------------------------ %% 
+ %\begin{figure*}
+ %     \centering 
+ %     \includegraphics[width=\textwidth]{fig/png/vlos_plane_1mpc}
+ %     \caption{
+ %         \todo{Relation between richness (or stellar mass) and the %line-of-sight velocities
+ %         	    of nearby galaxies within 1 Mpc.}
+ %         }
+ %     \label{fig:vlos1}
+ % \end{figure*}
+% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Line-of-sight velocity dispersion around the clusters
+%% ------------------------------------------------------------------------------------ %% 
+%  \begin{figure*}
+%      \centering 
+%      \includegraphics[width=\textwidth]{fig/small/vlos_pdf_mdpl2}
+%      \caption{
+%          \todo{Line-of-sight velocity dispersion around the clusters.}
+%          }
+%      \label{fig:vlos3}
+%  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+
+
+%% ------------------------------------------------------------------------------------ %% 
+\section{Results}
+
+Main Results:
+\begin{itemize}
+    \item Cmodel performs the worst
+    \item Galaxy Mass seems to perform as well as richness
+    \item Richness has a bump feature
+\end{itemize}
+    \label{sec:result}
+ 
+    \todo{Placeholder}
+
+\subsection{Impact of Satellites}
+
+Figure \ref{fig:satellite} show the impact of satellites. Describe here.
+
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Impact of satellites on the M100kpc selected DSigma profiles
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/dsigma_sat_ratio}
+      \caption{
+          \todo{Impact of satellites on the M100kpc selected \dsigma{} profiles}
+          }
+      \label{fig:satellite}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+\subsection{Top N test}
+
+We now perform the top N test. This consists of rank order various quantities and comparing $\Delta\Sigma$ at fixed number density. Figure \ref{fig:density_bins} shows the number density bins. Is Figure \ref{fig:fitting} necessary here? Maybe we can consolidate figures here.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Definition of richness and number density bins.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/density_bins_sum}
+      \caption{The four bins used for our "top-N" tests. The left panel displays bins in $\lambda$, the middle panel displays bins in \mmax{}, and the right panel displays bins in 
+          $M_{\rm vir,\ ASAP}$. Bins are defined at fixed number density. \alexie{Add a table for each of the quantities with the edges of the bin and the mean bin. This can be two panels. The phi one on the left and the two parameter cut on the right to highlight why samples can be different}}
+      \label{fig:density_bins}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+Figure \ref{fig:hsc} shows the results of the Top N test. Describe here.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Summary of HSC DSigma profiles and the distributions over the aperture stellar 
+%%         mass plane.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=15.5cm]{fig/small/topn_dsigma_summary}
+      \caption{
+          \todo{Summary of the \dsigma{} profiles from HSC using different tracers.
+          		Also highlight their distributions over the \mmax{}-\minn{} plane. \alexie{replace the left hand side with histograms of halo mass. }}
+          }
+      \label{fig:hsc}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+       
+       
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Demonstrate the scatter matching process.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/topn_mout6_mdpl2}
+      \caption{
+          \todo{Demonstrate the scatter matching process. \alexie{bottom panel is un-necessary here.}}
+          }
+      \label{fig:fitting}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+    
+    
+
+\subsection{Scatter in Halo Mass at Fixed Observable}
+
+Figure \ref{fig:scatter1} and \ref{fig:scatter2} show the scatter in halo mass at fixed observable.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Comparisons of scatters: different tracers and aperture masses
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/density_sigma_mvir_a}
+      \caption{
+          \todo{Comparisons of scatters: different tracers and aperture masses. \alexie{Can you make the colors more bold here? These colors are kinnda pale. We want something bold and flashy.}}
+          }
+      \label{fig:scatter1}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Comparisons of scatters: different outer envelope masses and sizes
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/density_sigma_mvir_b}
+      \caption{
+          \todo{Comparisons of scatters: different outer envelope masses and sizes.}
+          }
+      \label{fig:scatter2}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+
+
+
+\subsection{Analysis of the Shape of $\Delta\Sigma$}
+
+Here we consider specifically the shape of $\Delta\Sigma$. The main figures are \ref{fig:m100} and \ref{fig:mout}. Discuss the best fits and the presence of the bump.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Compare M100kpc and redMaPPer selected ones
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{fig/small/dsigma_compare_m150_1}
+      \caption{
+          \todo{Compare M150kpc and redMaPPer selected ones.}
+          }
+      \label{fig:m100}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Compare 50-100 kpc mass and CAMIRA selected ones
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{fig/small/dsigma_compare_mstars}
+      \caption{
+          \todo{Compare 50-100 kpc mass and CAMIRA selected ones.}
+          }
+      \label{fig:mout}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+
+%% ------------------------------------------------------------------------------------ %% 
+
+    
+%% ------------------------------------------------------------------------------------ %% 
+%% Discussion 
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+\section{Discussion}
+    \label{sec:discussion}
+
+\begin{itemize}
+    \item How does this change how we think about optical cluster finding?
+    \item Importance of measuring total luminosity. Crappiness of Cmodel. What are the current limitations.
+    \item Chris paper: but selection by $M*$ could be more subject to assembly bias
+    \item Baryonic effects can be discussed here
+\end{itemize}
+
+
+\subsection{Outer Galaxy Mass}
+
+Discuss here why we think the outer mass may work the best. Is this because of the \textbf{slope} of the $Mexsitu$ verus Mhalo plane being steeper than for insitu mass (see plot in Chris paper). Can discuss how UM and TNG predictions are different in this regard.
+
+Figure: show a figure of the ASAP model but using the outer mass. Is the boundary more clear? Is this what ASAP was telling us all along?
+
+%% ------------------------------------------------------------------------------------ %% 
+\subsection{Comparison with \redm{} and other cluster finders}
+    \label{sec:redmapper}
+
+    \todo{Placeholder}
+    
+%% ------------------------------------------------------------------------------------ %% 
+\subsection{Comparison with X--ray observation}
+    \label{sec:xray}
+
+\textbf{We are going to think about whether to add this here or not. Deceide later.}
+
+    \todo{Placeholder}
+    \song{Need to read more recent works on this}
+\alexie{Let's discuss, what goes here?}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Summary 
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+\section{Summary and Conclusions}
+    \label{sec:summary}
+    
+    % Main conclusion    
+    \todo{Placeholder}    
+
+    % Future direction   
+    \todo{Briefly mention a few future directions. Also name as many as I can think of, 
+          need to pick a few.}
+
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Acknowledgements 
+%% ------------------------------------------------------------------------------------ %% 
+\section*{Acknowledgements}
+
+  % Personal 
+  \todo{The authors would like to thank XXX
+  for useful discussions and suggestions.}
+
+  % NSF funding
+  This material is based upon work supported by the National Science Foundation under 
+  Grant No. 1714610. 
+  
+  % KITP
+  The authors acknowledge support from the Kavli Institute for Theoretical Physics.
+  This research was also supported in part by National Science Foundation under Grant 
+  No. NSF PHY11-25915 and Grant No. NSF PHY17-48958
+  
+  % AL's funding 
+  AL acknowledges support from the David and Lucille Packard foundation, and from the 
+  Alfred .P Sloan foundation.
+
+  % HSC part
+  The Hyper Suprime-Cam (HSC) collaboration includes the astronomical communities of 
+  Japan and Taiwan, and Princeton University.  The HSC instrumentation and software were
+  developed by National Astronomical Observatory of Japan (NAOJ), Kavli Institute
+  for the Physics and Mathematics of the Universe (Kavli IPMU), University of Tokyo,
+  High Energy Accelerator Research Organization (KEK), Academia Sinica Institute
+  for Astronomy and Astrophysics in Taiwan (ASIAA), and Princeton University.  
+  Funding was contributed by the FIRST program from Japanese Cabinet Office,  Ministry 
+  of Education, Culture, Sports, Science and Technology (MEXT), Japan Society for 
+  the Promotion of Science (JSPS), Japan Science and Technology Agency (JST), Toray 
+  Science Foundation, NAOJ, Kavli IPMU, KEK, ASIAA, and Princeton University.
+   
+  % SDSS part
+  Funding for SDSS-III has been provided by Alfred P. Sloan Foundation, the 
+  Participating Institutions, National Science Foundation, and U.S. Department of
+  Energy. The SDSS-III website is http://www.sdss3.org.  SDSS-III is managed by the
+  Astrophysical Research Consortium for the Participating Institutions of the SDSS-III
+  Collaboration, including University of Arizona, the Brazilian Participation Group,
+  Brookhaven National Laboratory, University of Cambridge, University of Florida, the
+  French Participation Group, the German Participation Group, Instituto de Astrofisica
+  de Canarias, the Michigan State/Notre Dame/JINA Participation Group, Johns Hopkins
+  University, Lawrence Berkeley National Laboratory, Max Planck Institute for
+  Astrophysics, New Mexico State University, New York University, Ohio State University,
+  Pennsylvania State University, University of Portsmouth, Princeton University, the
+  Spanish Participation Group, University of Tokyo, University of Utah, Vanderbilt
+  University, University of Virginia, University of Washington, and Yale University.
+  
+  % Pan-STARRS1 part
+  The Pan-STARRS1 surveys (PS1) have been made possible through contributions of  
+  Institute for Astronomy; University of Hawaii; the Pan-STARRS Project Office; 
+  the Max-Planck Society and its participating institutes: the Max Planck Institute 
+  for Astronomy, Heidelberg, and the Max Planck Institute for Extraterrestrial Physics, 
+  Garching; Johns Hopkins University; Durham University; University of Edinburgh; 
+  Queen's University Belfast; Harvard-Smithsonian Center for Astrophysics; Las 
+  Cumbres Observatory Global Telescope Network Incorporated; National Central 
+  University of Taiwan; Space Telescope Science Institute; National Aeronautics 
+  and Space Administration under Grant No. NNX08AR22G issued through the Planetary 
+  Science Division of the NASA Science Mission Directorate; National Science 
+  Foundation under Grant No. AST-1238877; University of Maryland, and Eotvos 
+  Lorand University. 
+  
+  % LSST software
+  This research makes use of software developed for the Large Synoptic Survey 
+  Telescope. We thank the LSST project for making their code available as free 
+  software at http://dm.lsstcorp.org.
+  
+  % SMDPL simulation
+  The CosmoSim database used in this research is a service by the Leibniz-Institute for 
+  Astrophysics Potsdam (AIP).
+  The MultiDark database was developed in cooperation with the Spanish MultiDark 
+  Consolider Project CSD2009-00064.
+  
+  % Software
+  This research made use of:
+  \href{http://www.stsci.edu/institute/software_hardware/pyraf/stsci\_python}{\texttt{STSCI\_PYTHON}},
+      a general astronomical data analysis infrastructure in Python. 
+      \texttt{STSCI\_PYTHON} is a product of the Space Telescope Science Institute, 
+      which is operated by Association of Universities for Research 
+      in Astronomy (AURA) for NASA;
+  \href{http://www.scipy.org/}{\texttt{SciPy}},
+      an open source scientific tool for Python (\citealt{SciPy});
+  \href{http://www.numpy.org/}{\texttt{NumPy}}, 
+      a fundamental package for scientific computing with Python (\citealt{NumPy});
+  \href{http://matplotlib.org/}{\texttt{Matplotlib}}, 
+      a 2-D plotting library for Python (\citealt{Matplotlib});
+  \href{http://www.astropy.org/}{\texttt{Astropy}}, a community-developed 
+      core Python package for astronomy (\citealt{AstroPy}); 
+  \href{http://scikit-learn.org/stable/index.html}{\texttt{scikit-learn}},
+      a machine-learning library in Python (\citealt{scikit-learn}); 
+  \href{https://ipython.org}{\texttt{IPython}}, 
+      an interactive computing system for Python (\citealt{IPython});
+  \href{https://github.com/kbarbary/sep}{\texttt{sep}} 
+      Source Extraction and Photometry in Python (\citealt{PythonSEP});
+  \href{https://jiffyclub.github.io/palettable/}{\texttt{palettable}},
+      colour palettes for Python;
+  \href{http://dan.iel.fm/emcee/current/}{\texttt{emcee}}, 
+      Seriously Kick-Ass MCMC in Python;
+  \href{http://bdiemer.bitbucket.org/}{\texttt{Colossus}}, 
+      COsmology, haLO and large-Scale StrUcture toolS (\citealt{Colossus}).
+
+%% ------------------------------------------------------------------------------------ %% 
+%% References  
+%% ------------------------------------------------------------------------------------ %% 
+\bibliographystyle{mnras}
+\bibliography{topn}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Table.1 
+%% ------------------------------------------------------------------------------------ %% 
+%\clearpage
+%\include{table1}
+%\clearpage
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Table 2: Model parameters 
+%% ------------------------------------------------------------------------------------ %%    
+%\renewcommand{\arraystretch}{1.75}
+%\begin{table*}
+%    \normalsize 
+%    \begin{tabular}{c | c | c | c }
+%    
+%    \hline
+%    \rowcolor{LightGray}
+%    Symbol & Explanation & Prior & Best--fit value \\
+%    \hline
+%    
+%    \rowcolor{Tab7}
+%    $a$   &  Slope of the \mhalo{}--\mall{} relation  & $[0.30, 0.90]$ & $0.616^{+0.003}_{-0.003}$ \\ 
+%    \rowcolor{Tab7}
+%    $b$   &  Intercept of the \mhalo{}--\mall{} relation  & $[1.0, 6.00]$ & $3.508^{+0.044}_{-0.040}$ \\     
+%    \hline 
+%
+%    \rowcolor{Tab4}
+%    $c$   &  Slope of the \mhalo{}--$\sigma_{\log M_{\star,{\rm All}}}$ relation  & $[-0.25, 0.00]$ & $-0.001^{+0.001}_{-0.001}$ \\ 
+%    \rowcolor{Tab4}
+%    $d$   &  Intercept of the \mhalo{}--$\sigma_{\log M_{\star,{\rm All}}}$ relation & $[0.01, 0.20]$ & $0.016^{+0.03}_{-0.003}$ \\     
+%    \hline 
+%
+%    \rowcolor{Tab6}
+%    $f_{\rm ins}$   &  Fraction of \insitu{} stars in inner 10 kpc  & $[0.20, 1.00]$ & $0.666^{+0.011}_{-0.012}$ \\
+%    \rowcolor{Tab6}
+%    $A_{\rm exs}$   &  Slope of the \mhalo{}--$f_{\rm exs}$ relation  & $[-0.30, 0.30]$ & $-0.176^{+0.007}_{-0.007}$ \\ 
+%    \rowcolor{Tab6}    
+%    $B_{\rm exs}$   &  Intercept of the \mhalo{}--$f_{\rm exs}$ relation  & $[0.00, 0.30]$ & $0.077^{+0.009}_{-0.009}$ \\ \hline 
+%            
+%    \end{tabular}
+%    
+%    \caption{
+%        The definitions, priors, and best--fit values of the seven free parameters
+%        in the model. 
+%    }
+%    \label{tab:parameter}
+%    
+%\end{table*}
+% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Appendix Section
+%% ------------------------------------------------------------------------------------ %% 
+
+\appendix
+
+%% ------------------------------------------------------------------------------------ %% 
+\section{Important technical details} 
+	\label{app:smf_cov} 
+    
+    \todo{Placeholder}
+
+Figure \ref{fig:pcen} goes in the appendix.
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Impact of Pcen cuts on redMaPPer DSigma profiles.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=12cm]{fig/png/redmapper_pcen}
+      \caption{
+          \todo{PLACEHOLDER: Impact of $P_{\rm Cen\ 1}$ cuts on the \redm{} \dsigma{} profiles.
+          (For appendix)}
+          }
+      \label{fig:pcen}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+
+
+%% ------------------------------------------------------------------------------------ %%  
+
+\bsp
+\label{lastpage}
+\end{document}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% ------ End of the File ------
+%% ------------------------------------------------------------------------------------ %% 
