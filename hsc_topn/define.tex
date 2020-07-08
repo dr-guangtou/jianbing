@@ -46,12 +46,13 @@
 \newcommand{\gt}{>}
 
 % ---- Commonly used notations ---- %
-\def\m2l{{$M_{\star}/L_{\star}$}}
-\def\s2n{{$\mathrm{S}/\mathrm{N}$}}
+\def\mlratio{{$M_{\star}/L_{\star}$}}
+\def\snratio{{$\mathrm{S}/\mathrm{N}$}}
 \def\mden{{$\mu_{\star}$}}
 \def\sb{mag~arcsec$^{-2}$}
 \def\ser{{S\'{e}rsic\ }}
-\def\cmodel{\texttt{cModel}}
+\def\cmodel{\texttt{CModel}}
+\def\cmod{\texttt{CModel}}
 
 % ----- COMMON NOTATIONS ABOUT MASS ----- %
 \def\msun{$M_\odot$}
@@ -137,9 +138,13 @@
 \def\redm{\texttt{redMaPPer}}
 \def\camira{\texttt{CAMIRA}}
 \def\galfit{{\tt GALFIT}}
+\def\ised{{\tt iSEDfit}}
 \def\mblack{{\tt MassiveBlackII}}
 \def\illustris{{\tt Illustris}}
 \def\tng{{\tt Illustris--TNG}}
+\def\ellipse{\texttt{Ellipse}}
+\def\iraf{\texttt{IRAF}}
+
 
 % ---- Weak lensing related ---- %
 \def\dsigma{{$\Delta\Sigma$}}
@@ -160,9 +165,13 @@
 \newcommand{\M}[1]{\ensuremath{M_{\ast,\,\rm #1}}} % \, is a little space
 \newcommand{\scatterMstarx}[1]{\ensuremath{\sigma_{\M{#1} | \Mhalo{}}}}
 \newcommand{\Mhalo}{\ensuremath{M_{\rm vir}}} % Current halo mass
-\newcommand{\obsSym}{\ensuremath{S}}
-\newcommand{\scatterObsSymMhalo}{\ensuremath{\sigma_{\obsSym{} | \Mhalo{}}}}
-\newcommand{\scatterMhaloObsSym}{\ensuremath{\sigma_{\Mhalo{} | \obsSym{}}}}
+\newcommand{\obsSym}{\ensuremath{s}}
+\newcommand{\slope}{\ensuremath{\alpha}}
+\newcommand{\intercept}{\ensuremath{\pi}}
+\newcommand{\hmf}{\Phi(\mu)}
+\newcommand{\scatterObsSymMhalo}{\ensuremath{\sigma_{\obsSym{} | \mu{}}}}
+\newcommand{\scatterMhaloObsSym}{\ensuremath{\sigma_{\mu{} | \obsSym{}}}}
+\newcommand{\eg}{{\it e.g.,\/}}
 
 % Commenting:
 \newcommand{\xxx}[1]{\textcolor{red}{\textbf{XXX}}}
@@ -175,4 +184,3 @@
 \newcommand{\chris}[1]{\textcolor{PineGreen}{\textbf{[Chris: #1]}}}
 \newcommand{\susan}[1]{\textcolor{Bittersweet}{\textbf{[Susan: #1]}}}
 \newcommand{\update}[1]{\textcolor{PineGreen}{#1}}
-\newcommand{\GG}[1]{}
