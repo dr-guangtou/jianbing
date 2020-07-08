@@ -1,4 +1,5 @@
 keynote/
+build/
 .texpadtmp
 .DS_Store
 
