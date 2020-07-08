@@ -3,16 +3,18 @@
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
 % Packages
-\usepackage{deluxetable}
-\usepackage{newtxtext,newtxmath}
-\usepackage[T1]{fontenc}
-\usepackage{ae,aecompl}
-\usepackage{amssymb, amsmath}
-\usepackage{graphicx}
-\usepackage{natbib}
 \usepackage{url}
-\usepackage{hyperref}
 \usepackage{float}
+\usepackage{natbib}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ae,aecompl}
+\usepackage[T1]{fontenc}
+\usepackage{deluxetable}
+\usepackage{amssymb, amsmath}
+\usepackage{newtxtext,newtxmath}
 \usepackage[usenames, dvipsnames]{color}
 \usepackage{xcolor,colortbl}
 
@@ -111,22 +113,45 @@
 \section{Introduction}
     \label{sec:intro}
     
-    \alexie{Let's keep this paper short, sweet, and to the point! I don't think we need 
-    to go beyond what is currently in this intro outline.}
-    
+    \todo{Outline by Alexie: Need to be updated}
+
     \begin{itemize}
     	
-    	\item \plan{The number counts of clusters is a sensitive probe of the dark matter halo mass function and the growth of structure (Albrecht, Weinberg). For this reason, and with the advent of large optical surveys (SDSS, CFHTenS, HSC, DES), much effort has been focussed on the development of optical cluster finders. Methods that have enjoyed the most success have been based on the identification of the red sequence of cluster members (\redm{}, \camira{}).}
+        \item \plan{The number counts of clusters is a sensitive probe of the dark matter halo mass 
+            function and the growth of structure (Albrecht, Weinberg). 
+            For this reason, and with the advent of large optical surveys (SDSS, CFHTenS, HSC, DES), 
+            much effort has been focussed on the development of optical cluster finders. 
+            Methods that have enjoyed the most success have been based on the identification of 
+            the red sequence of cluster members (\redm{}, \camira{}).}
     	
     	\item \plan{\redm{} is a method that xxxx (refs). \camira{} does this xxx (refs).}
     	
-    	\item \plan{However, as more data has been collected and the precision of our measurements has grown, a number of difficulties with red sequence cluster finding have begin to emerge. Joe can help to write this section. The issues of projection effects. And also forward modeling is hard because hard to model quenched galaxies. Cite projection effect papers and DES cluster cosmology paper in prep.}
+        \item \plan{However, as more data has been collected and the precision of our measurements 
+            has grown, a number of difficulties with red sequence cluster finding have begin to emerge. 
+            Joe can help to write this section. The issues of projection effects. 
+            And also forward modeling is hard because hard to model quenched galaxies. 
+            Cite projection effect papers and DES cluster cosmology paper in prep.}
  
-    	\item \plan{In this paper, we use high signal-to noise weak lensing from the HSC survey to test a number of alternative and potentially more simple tracers of halo mass. As the core of this paper is the "top N test" \citep[][]{Reyes2008} (Read this paper, is there a different name)? The premise of this test is as follows xxx..}
+        \item \plan{In this paper, we use high signal-to noise weak lensing from the HSC survey 
+            to test a number of alternative and potentially more simple tracers of halo mass. 
+            As the core of this paper is the "top N test" \citep[][]{Reyes2008} 
+            (Read this paper, is there a different name)? 
+            The premise of this test is as follows xxx..}
    
-    	\item \plan{One of the alternative tracers of halo mass that we test is central galaxy stellar mass. Traditionally, it has always been assumed that central galaxy mass is a less desirable tracer of halo mass than richness because it has a larger scatter with respect to halo mass (numbers go here). However, some of this scatter has been due to poor measurements of the luminosities of super massive galaxies. Refs}
+        \item \plan{One of the alternative tracers of halo mass that we test is central galaxy 
+            stellar mass. Traditionally, it has always been assumed that central galaxy mass is 
+            a less desirable tracer of halo mass than richness because it has a larger scatter with 
+            respect to halo mass (numbers go here). However, some of this scatter has been due 
+            to poor measurements of the luminosities of super massive galaxies. Refs}
   
-    	\item \plan{Using deep high quality imaging from the HSC survey, Huang et al showed that careful extractions of galaxy luminosity lead to lower scatter in the stellar-to-halo mass relation that previously estimated. Furthermore, Huang et al showed that not only galaxy total mass, but also the shape of the galaxy light profile, also contains information about halo mass. Given these recent developments, it is timely to conduct a direct comparison of the new potentially quite simple tracers of halo mass with more traditional tracers such as richness.}
+        \item \plan{Using deep high quality imaging from the HSC survey, 
+            Huang et al showed that careful extractions of galaxy luminosity lead to lower 
+            scatter in the stellar-to-halo mass relation that previously estimated. 
+            Furthermore, Huang et al showed that not only galaxy total mass, but also 
+            the shape of the galaxy light profile, also contains information about halo mass. 
+            Given these recent developments, it is timely to conduct a direct comparison of 
+            the new potentially quite simple tracers of halo mass with more traditional 
+            tracers such as richness.}
     	
     \end{itemize}
 
@@ -172,15 +197,15 @@
     \label{sec:data}
     
 %% ------------------------------------------------------------------------------------ %% 
-\subsection{ Hyper Suprime-Cam Survey SSP S16A sample}
-    \label{sec:s16a}      
-    
-    %% -------------------------------------------------------------------------------- %%
-    %% S16A dataset
-    %% -------------------------------------------------------------------------------- %%
+%% S16A dataset
+%% ------------------------------------------------------------------------------------ %% 
+
+\subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
+    \label{sec:hsc}      
+
 	\todo{Placeholder: copy from Paper I}
 
-	%% General information 
+	%% General information
 	
 	In this work, we use the \texttt{WIDE} layer of the internal data release 
 	\texttt{S16A} of the HSC SSP, an ambitious imaging survey using the new prime focus 
@@ -198,61 +223,137 @@
 	In addition to the full--color and full--depth constrain, the effective survey 
 	area also takes into account masks for bright stars described in
 	\citet{HSC-STAR}.
-	
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Massive Galaxy Sample
+%% ------------------------------------------------------------------------------------ %% 
+
+\subsection{S16A Massive Galaxy Sample}
+    \label{sec:hsc}	
+
 	\begin{itemize}
+	
+		\item From \texttt{S16A} dataset, we select a large sample of massive galaxies
+			within the redshift range of $0.2 < z < 0.5$ and estimate their surface 
+			stellar mass density profiles out to $>100$ kpc individually.
+			This redshift range ensures the inner structure of a massive galaxy can be 
+			well resolved while its outer stellar halo is still visible above the $i$-band
+			surface brightness limit. 
+			The cosmic volume it contains also ensures a statistically significant sample 
+			of the most massive galaxies in nearby universe.
+			Using the high-quality data from this sample, we revealed a remarkable structural
+			diversity in the stellar halo of these massive galaxies and its connection to 
+			the underlying \mhalo{} (\addref{}).
+			Please see aforementioned papers for details about the data analysis processes.
+			Here we will provide a summary of the sample selection and data analysis 
+			process, please see aforementioned papers for more details.
+			
+		\item \plan{Initial selection}: We first select all HSC galaxies with CModel magnitude 
+			brighter than $i_{\rm CMod} \leq 21.5$ mag. Based on previous analysis of massive 
+			galaxies at similar redshift range, this generous flux cut ensures all massive
+			galaxies with \mstar{}$>11.5$ are included (\addref{}).
+			We then collect available spectroscopic redshift for this sample from a complied 
+			list of spec-$z$ catalogs matched to HSC survey. 
+			Most spec-$z$ are from SDSS/BOSS and GAMA surveys.
+			We also cross-match the sample with the SDSS \redm{} and HSC S16A \camira{} 
+			galaxy cluster catalogs. 
+			These catalogs are based on the red-sequence method and can provide very accurate
+			photometric redshift estimates for the central galaxy and other members of the
+			clusters.
+			For the rest galaxies, we adopt photometric redshifts based on the five-band
+			HSC CModel photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
+			of what is frankenz, and the precision}. Using photo-$z$ for the entire sample 
+			does not change key results.
 		
-		\item \plan{Briefly explain spec-z and phot-z along with SED fitting approach.}
-		
-		\item \plan{Other issues with the data}
-		
+		\item \plan{SED fitting}: Based on the best-available redshift and CModel photometry, 
+			we perform SED fitting using the IDL code \ised{}. 
+			\plan{A little more details}.
+			We compare the \mcmodel{} stellar mass function with the ones from similar 
+			photometry including the CS82 and PRIMUS surveys. 
+			We find good consistency at the high-mass end and confirm that the HSC 
+			sample is complete at \mcmodel{}$>11.4$.
+					
 	\end{itemize}
-    
 
-% ------------------------------------------------------------------------------------ %% 
-%% Section: Measurements of SMF and DeltaSigma profiles for the model
-%% ------------------------------------------------------------------------------------ %%
-\subsection{Stellar Masses Measurements}
-    \label{sec:mstar}
+%% ------------------------------------------------------------------------------------ %% 
+%% 1-D Surface Mass Density Profiles
+%% ------------------------------------------------------------------------------------ %% 
 
-    \todo{Placeholder}
+\subsection{1-D Surface Mass Density Profiles}
+    \label{sec:1d_prof}
 
-\subsubsection{Stellar mass based on 1-D \mden{} profiles}
-	\label{sec:m1d}
+	\begin{itemize}
+	
+		\item Although the \cmod{} photometry provides a baseline stellar mass measurement,
+			it is not an ideal stellar mass measurement to explore galaxy--halo connection.
+			\plan{briefly mention the problem with CModel}.
+			
+		\item Therefore we perform our own 1-D surface brightness analysis to provide
+			more accurate stellar mass estimates and to map the stellar mass 
+			distribution in massive galaxies. 
+			Using the \ellipse{} isophotal analysis function from \iraf{}, we carefully 
+			extract 1-D $i$-band surface brightness profiles along the major axis of the 
+			mean isophote of the galaxy. 
+			Before the extraction, we aggressively mask out all neighboring objects, 
+			empirically correct the local background when over-subtraction occurs, and 
+			also test the method against a series of systematics. 
+			On average, the 1-D surface brightness profile is robust from 5-6 kpc to 100 kpc.
+			The central region suffers from smearing effect from seeing. 
+			And the outer part often has $i$-band surface brightness level lower than 
+			$\sim 28$ \sb{}, becoming much more vulnerable to background subtraction 
+			and residual contaminations from nearby objects.
+		
+		\item Using the $i$-band \mlratio{} derived from SED fitting, we convert the 
+			1-D surface brightness profile into surface stellar mass density profile.
+			This 
+			
+	
+					
+	\end{itemize}
 
-\subsubsection{Stellar mass based on \ser{} fitting}
-	\label{sec:mser}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Key Methods used in this work
+%% ------------------------------------------------------------------------------------ %% 
 
 \section{Methodology}
+	\label{sec:method}
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Explain different halo mass proxies
+%% ------------------------------------------------------------------------------------ %% 
 
 \subsection{Proxies for Halo Mass}
+	\label{sec:proxies}
 
-\textbf{Note to ourselves: we deceided not to do Cen$+$N here,t ath goes in Chris Paper.}
+\subsubsection{\cmodel{} stellar mass}
+	\label{sec:mcmodel}
 
-These are the various things we rank order by
+\subsubsection{Aperture \mstar{} from 1-D profile}
+	\label{sec:maper}
 
-\begin{itemize}
-    \item M100
-    \item $lambda$
-    \item CAMIRA richness
-    \item ASAP tracer
-    \item Outer mass
-\end{itemize}
+\subsubsection{Outer envelope \mstar{}}
+	\label{sec:menvelope}
 
-\subsection{Number densities}
+\subsubsection{\mvir{} from \asap{} model}
+	\label{sec:masap}
 
-Add a table here. Say hat the number densities are. And say, in HSC, for our sample, how many objects this correspondsw too.
+\subsubsection{\redm{} richness}
+	\label{sec:redmapper}
+
+\subsubsection{\camira{} richness}
+	\label{sec:camira}
+
     
+%% ------------------------------------------------------------------------------------ %% 
+%% Weak lensing measurements
 %% ------------------------------------------------------------------------------------ %% 
 \subsection{\dsigma{} Profiles}
     \label{sec:dsigma}   
     
     \todo{Placeholder}
     
-    %% -------------------------------------------------------------------------------- %%
-    %% Weak lensing measurements
-    %% -------------------------------------------------------------------------------- %%   
-
-	\begin{itemize}
+    	\begin{itemize}
 		
 		\item \plan{Copy something from the \asap{} paper.}
 		
@@ -260,8 +361,13 @@ Add a table here. Say hat the number densities are. And say, in HSC, for our sam
 		
 	\end{itemize}    
 	   
-%
+%% ------------------------------------------------------------------------------------ %% 
+%% Introducing the TopN test and define the number density
+%% ------------------------------------------------------------------------------------ %% 
+\subsection{``Top N'' Test and Number Density Bins}
+    \label{sec:topn_intro}   
 
+\todo{Placeholder}
 
 %% ------------------------------------------------------------------------------------ %% 
 %% Section: Simulation and Model
@@ -271,49 +377,127 @@ Add a table here. Say hat the number densities are. And say, in HSC, for our sam
 
 \subsection{Multi Dark Planck Simulation}
 
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Theoretical exploration of the relations among scatters and its impact on 
+%%		   Delta Sigma profiles.
+%% ------------------------------------------------------------------------------------ %% 
+\begin{figure*}
+  \includegraphics[width=\textwidth]{figure/theory.png}
+  \caption{
+  	  \textbf{Left}:
+      The distribution of some observable, \obsSym{}, that is related to $\mu = \log(\Mhalo)$ by a linear relation with some scatter.
+      By construction, $P(\obsSym | \mu)$ (right panel, orange histogram) is normally distribution around $\langle \obsSym | \mu \rangle = \alpha \mu + \pi$ with a scatter of $\sigma_{\obsSym | \mu}$.
+      The halo mass function (bottom panel, red line, right axis), is constructed using the best fit of a logarithmic quadratic (as in \ref{eq:quadratic_hmf}) to MDPL2.
+      $P(\mu | \obsSym)$ (bottom panel, cyan histogram) is the distribution of $\mu$ given by a thin selection of \obsSym{} (main panel, cyan selection).
+      This distribution of $\mu$ is well described by a normal distribution (green PDF) centered at the value given by \ref{eq:mean_of_mu} (cyan dashed line) with a scatter given by \ref{eq:scatter_of_mu} that depends on $\sigma_{\obsSym | \mu}$, the slope of the \obsSym - $\mu$ relation, $\alpha$, and the curvature of the mass function, $\beta_2$.
+      The gap between $\langle \obsSym | \mu \rangle$ and $\langle \mu | \obsSym \rangle$ is smallest where the mass function is nearly flat (towards lower masses) while it becomes large at high masses where the steeper mass function leads to a large Eddington bias.
+	  \textbf{Right}:
+	  Observables with the same ratio $\alpha / \scatterObsSymMhalo$ have the same \scatterMhaloObsSym{} (see \ref{eq:ratio_is_what_matters}) and therefore the same DS profile.
+	}
+    \label{fig:theory}
+\end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Demonstration of the mock catalog
+%% ------------------------------------------------------------------------------------ %% 
+\begin{figure*}
+  \centering
+  \includegraphics[width=\textwidth]{figure/mock_placeholder}
+  \caption{\song{Placeholder} The best-fit mock matches both the SMF from HSC and PRIMUS (left) as well as the clustering from HSC. The mass bins for the clustering are [$11.5$, $11.55$, $11.7$, inf] and so e.g. "11" denotes the autocorrelation in the lowest mass bin and "13" the cross correlation between objects in the lowest and highest mass bins.}
+  \label{fig:best_mock}
+\end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+
+
+%% ------------------------------------------------------------------------------------ %% 
 \subsection{Simple Scaling Relation Model}
 
-We can model the effect on the DS profile of various amounts of scatter between a generic observable, \obsSym{}, and halo mass.
-We assume that the relationship between halo mass and \obsSym{} is modeled by a power law for the mean relation with lognormal scatter. This has been used for various observables, {\it e.g.,\/} X-ray temperature \citet{Lieu2016}, K-band luminosity \citet{Ziparo2016}, and the details of the statistics of this relation are described in \citet{Evrard2014}.
+We can model the effect on the DS profile of various amounts of scatter between a generic observable, the log of which we denote as \obsSym{}, and the log of $\Mhalo$, denoted as $\mu$.
+We assume that the relationship between halo mass and the observable is modeled by a power law for the mean relation with lognormal scatter. This has been used for various observables, {\it e.g.,\/} X-ray temperature \citet{Lieu2016}, K-band luminosity \citet{Ziparo2016}, and the details of the statistics of this relation are described in, amongst others, \citet{Evrard2014, Farahi2018}.
 
-We can then populate our simulation's halos with this generic observable,
+The relationship between \obsSym{} and $\mu$ will depend on the distribution of $\mu$ - this is the halo mass function (HMF). To express the HMF over the full mass range, a functional form that follows a power law at low masses with an exponential decline at high masses is generally used \citep[\eg{}][]{Tinker2008}. However, as we are only interested in a narrow range at the high mass end, we can approximate it as an exponential decline with some curvature.
 
 \begin{equation}
-    \log(\obsSym) = \mathcal{N}(\beta \log(\Mhalo{}),\ \scatterObsSymMhalo)
+    \hmf{} \equiv \frac{dn(\mu)}{d\mu{}}  = \exp \left(\beta_0 - \beta_1 \mu - \frac{\beta_2}{2} \mu^2 \right)
+    \label{eq:quadratic_hmf}
 \end{equation}
 
-However, while \scatterObsSymMhalo{} is physically meaningful and the number most often quoted ({\it e.g.,\/} it is well known that $\scatterMstarx{cen} \sim 0.2$ dex) when comparing observables used to select halos, it is the scatter in \Mhalo{} at a fixed value for the observable \scatterMhaloObsSym{} that is important. This is affected both by the \scatterObsSymMhalo{} but also the slope $\beta$. A good observable has {\em both} low scatter at fixed halo mass, and a steep slope as a function of halo mass.
+\noindent In practice, at the high mass end the mass function is decreasing ($\beta_1 > 0$) and steepening ($\beta_2 > 0$).
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.5\textwidth]{fig/scatter_slope_degen.png}
-  \caption{I'm not sure exactly why this works anymore.}
-      \label{fig:scatter_slope_degen}
-\end{figure}
+We populate our simulation's halos with this generic observable,
 
-Figure \ref{fig:scatter_slope_degen} shows that the effect of scatter and slope are degenerate. We therefore fix the slope at $\beta = 1$. We then find the $\scatterObsSymMhalo$ that gives the desired $\scatterMhaloObsSym$ in the narrow mass bin. To do this, we select $\scatterObsSymMhalo$ that maximizes the likelihood of of the data given a linear model and the desired $\scatterMhaloObsSym$.
+\begin{equation}
+    \obsSym = \mathcal{N}(\slope \mu + \intercept,\ \scatterObsSymMhalo)
+    \label{eq:lognormal_obs_given_mhalo}
+\end{equation}
 
-This allows us to predict $\Delta\Sigma$ as a function of $\scatterMhaloObsSym$ for each bin in number density.
+However, while \scatterObsSymMhalo{} is physically meaningful and the number most often quoted (\eg{}  it is well known that $\scatterMstarx{cen} \sim 0.2$ dex) when comparing observables used to select halos, it is the scatter in \Mhalo{} at a fixed value for the observable, \scatterMhaloObsSym{}, that is important. We can compute the moments of $\mu | \obsSym$ as follows.
+
+We first note that the number of objects in a thin range of $\obsSym \in [\obsSym_1, \obsSym_2]$ is given by,
+
+\begin{equation}
+    N(\obsSym{}_1, \obsSym{}_2) \equiv \int_{\obsSym{}_1}^{\obsSym{}_2} \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) d\mu d\obsSym{}
+\end{equation}
 
 
-Describe this methodology here here. Figure \ref{fig:mdpl2}
+At fixed \obsSym{} we can therefore compute the expected $\mu$, and the scatter around it,
 
-%% ------------------------------------------------------------------------------------ %% 
-%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and 
-%%         halo mass distribution
-%% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=\textwidth]{fig/png/mdpl2_dsigma_bin1_2}
-      \caption{\alexie{This is a methodology figure. I moved it forward.}Impact of scatter in the mass-observable relation on $\Delta\Sigma$. Left: the $\Delta\Sigma$ profiles for $0<\sigma_{Mvir|obs}<2$. Middle: ratio of $\Delta\Sigma$ with non zero scatter to $\Delta\Sigma$ when $0<\sigma_{Mvir|obs}=0$. Right: halo mass histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$). \alexie{What is N here on the right hand side? instead of N. quote the number density usually noted $\overline{n}$}}
-      \label{fig:mdpl2}
-  \end{figure*}
-%% ------------------------------------------------------------------------------------ %% 
-       
-       
-       
-       
+\begin{equation}
+\begin{aligned}
+    \langle \mu | \obsSym \rangle 
+    &= \frac{1}{N(s_1, s_2)}
+        \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) \mu d\mu \\
+    &= \frac{\left( \frac{\obsSym- \intercept}{\slope} - \beta_1 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2 \right)}{ 1 + \beta_2 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2}
+    \label{eq:mean_of_mu}
+\end{aligned}
+\end{equation}
+
+\noindent The three components of $\langle \mu | \obsSym \rangle$ are: 
+\begin{enumerate}
+	
+	\item The relation between the observable and halo mass, $(\obsSym- \intercept) / \slope$.
+	\item A shift due to the Eddington bias caused by the linear slope of the HMF, $-\beta_1 (\scatterObsSymMhalo / \slope)^2$. In the case of $\beta_1 > 0$, this shift is to lower $\mu$ as there are more low $\mu$ objects that can be up-scattered into the selection than can be down-scattered.
+	\item A second shift due to excess Eddington bias caused by the curvature of the HMF, $(1 + \beta_2 (\frac{\scatterObsSymMhalo}{\slope})^2)^{-1}$. Again, $\beta_2 > 0$ results in more low $\mu$ objects and thus a shift to lower $\mu$.
+	
+\end{enumerate}
+
+Similarly, the scatter in $\mu$ at fixed $\obsSym$,
+
+\begin{equation}
+\begin{aligned}
+    \scatterMhaloObsSym{} 
+    &= \frac{1}{N(s_1, s_2)}
+        \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) ( \mu  - \langle \mu \rangle )^2 d\mu \\
+	&= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
+    \label{eq:scatter_of_mu}
+\end{aligned}
+\end{equation}
+
+\noindent which, in the case of a power law mass function, reduces to the commonly seen $\scatterObsSymMhalo / \slope$. The positive $\beta_2$ of the HMF decreases this scatter. Finally, higher moments show that $P(\mu | s)$ is Gaussian, as there is no skew or excess kurtosis.
+
+These results are summarized in the left panel of Figure \ref{fig:theory} where we simulate the HMF and the theoretical observable \obsSym{}. We show that the resulting distributions are consistent with the results shown here.
+
+This theoretical understanding of the moments on $\mu | \obsSym$ shows us what range of slope and scatter we need to generate \dsigma{} profiles for. While naively this is a 2 dimensional problem, \ref{eq:scatter_of_mu} shows that it can be reduced to a single dimension where \scatterMhaloObsSym{} is a function of the ratio between slope and scatter. This is obvious in the case where $\beta_2 = 0$ but still true in the curved case,
+
+\begin{equation}
+    \scatterMhaloObsSym{} 
+    	= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
+        = \left(\beta_2 + (\frac{\slope}{\scatterObsSymMhalo})^2\right)^{-1/2}
+    \label{eq:ratio_is_what_matters}
+\end{equation}
+
+This is shown in the right panel of Figure \ref{fig:theory}. For a variety of observables with a range of $\alpha$ and \scatterObsSymMhalo{}, but with the same ratio $\alpha / \scatterObsSymMhalo$, and therefore the same \scatterMhaloObsSym{}, the DS is identical.
+Therefore, in order to compare the DS from a range of observables with different slope/scatter compared to have mass, we can fix one parameter ($\alpha = 1$) and vary the other ($\scatterObsSymMhalo$) to achieve the goal \scatterMhaloObsSym{} in the number density bins discussed in \ref{subsec:number_densities}.
+In practice, rather than predict the \scatterMhaloObsSym{} using \ref{eq:scatter_of_mu} (which requires fitting for $\beta_2$ at that point in the HMF), we instead binary search for the desired \scatterMhaloObsSym{} by iteratively choosing a \scatterObsSymMhalo{} to populate the halos with, and then fitting a linear $\mu | \obsSym$ to the relation in the given halo mass bin.
+The results of this process are shown in \ref{fig:mdpl2} where we predict DS profiles as a function of \scatterMhaloObsSym{} for each of the number density bins. We will compare these theoretical predicts to the observables to estimate their \scatterMhaloObsSym{}.
+
+
+%% ------------------------------------------------------------------------------------ %%       
 \subsection{Model Calibrated to Match HSC}
+
+\todo{Placeholder: Need to be updated}
+\textcolor{blue}{Chris to write this up and compute}
 
 While the simple scaling relation model presented above is useful to predict the effects of scatter between an observable and halo mass on the lensing signal, a more detailed model of the galaxy halo connection is needed to compare with specific model of M100. To make comparisons the HSC observations and theory, we need to populate the simulation with realistic galaxies. This process will be described in more detail in (Bradshaw et. al. 2020 (in prep.)) but we summarize it here.
 
@@ -321,46 +505,37 @@ To do this, we use the 1Gpc MultiDark-Planck simulation. We populate galaxies us
 
 The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as shown in \ref{fig:best_mock}.
 
-\begin{figure*}
-  \centering
-  \includegraphics[width=\textwidth]{fig/mdpl_vmaxAtMpeak_mpeak_alpha_ext.png}
-  \caption{The bestfit mock matches both the SMF from HSC and PRIMUS (left) as well as the clustering from HSC. The mass bins for the clustering are [$11.5$, $11.55$, $11.7$, inf] and so e.g. "11" denotes the autocorrelation in the lowest mass bin and "13" the cross correlation between objects in the lowest and highest mass bins.}
-  \label{fig:best_mock}
-\end{figure*}
-
-\textcolor{blue}{CHris to write this up and compute}
-
-
-% Alexie: I am not sure we learned anything here, not clear these figures are necessary.
-
 %% ------------------------------------------------------------------------------------ %% 
-%% Figure: Distribution of light-of-sight velocities near the massive halos (R=0.5Mpc)
+%% Figure: Definition of richness and number density bins.
 %% ------------------------------------------------------------------------------------ %% 
- %\begin{figure*}
- %     \centering 
- %     \includegraphics[width=\textwidth]{fig/png/vlos_plane_1mpc}
- %     \caption{
- %         \todo{Relation between richness (or stellar mass) and the %line-of-sight velocities
- %         	    of nearby galaxies within 1 Mpc.}
- %         }
- %     \label{fig:vlos1}
- % \end{figure*}
-% ------------------------------------------------------------------------------------ %% 
-
-%% ------------------------------------------------------------------------------------ %% 
-%% Figure: Line-of-sight velocity dispersion around the clusters
-%% ------------------------------------------------------------------------------------ %% 
-%  \begin{figure*}
-%      \centering 
-%      \includegraphics[width=\textwidth]{fig/small/vlos_pdf_mdpl2}
-%      \caption{
-%          \todo{Line-of-sight velocity dispersion around the clusters.}
-%          }
-%      \label{fig:vlos3}
-%  \end{figure*}
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{figure/topn_bins}
+      \caption{The four bins used for our "top-N" tests. The left panel displays bins in $\lambda$, the middle panel displays bins in \mmax{}, and the right panel displays bins in 
+          $M_{\rm vir,\ ASAP}$. Bins are defined at fixed number density. \alexie{Add a table for each of the quantities with the edges of the bin and the mean bin. This can be two panels. The phi one on the left and the two parameter cut on the right to highlight why samples can be different}}
+      \label{fig:density_bins}
+  \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
 
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and 
+%%         halo mass distribution
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{figure/topn_mdpl2_dsigma}
+      \caption{Impact of scatter in the mass-observable relation on $\Delta\Sigma$. Left: the $\Delta\Sigma$ profiles for $0<\sigma_{Mvir|obs}<2$. Middle: ratio of $\Delta\Sigma$ with non zero scatter to $\Delta\Sigma$ when $0<\sigma_{Mvir|obs}=0$. Right: halo mass histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$).}
+      \label{fig:mdpl2}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
 
+%% ------------------------------------------------------------------------------------ %% 
+%% Table.1 
+%% ------------------------------------------------------------------------------------ %% 
+%\clearpage
+\include{table1}
+%\clearpage
+%% ------------------------------------------------------------------------------------ %% 
 
 %% ------------------------------------------------------------------------------------ %% 
 \section{Results}
@@ -383,31 +558,20 @@ Figure \ref{fig:satellite} show the impact of satellites. Describe here.
 %% ------------------------------------------------------------------------------------ %% 
 %% Figure: Impact of satellites on the M100kpc selected DSigma profiles
 %% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
+  \begin{figure}
       \centering 
-      \includegraphics[width=\textwidth]{fig/small/dsigma_sat_ratio}
+      \includegraphics[width=0.5\textwidth]{figure/dsigma_sat_ratio}
       \caption{
           \todo{Impact of satellites on the M100kpc selected \dsigma{} profiles}
           }
       \label{fig:satellite}
-  \end{figure*}
+  \end{figure}
 %% ------------------------------------------------------------------------------------ %% 
 
 \subsection{Top N test}
 
 We now perform the top N test. This consists of rank order various quantities and comparing $\Delta\Sigma$ at fixed number density. Figure \ref{fig:density_bins} shows the number density bins. Is Figure \ref{fig:fitting} necessary here? Maybe we can consolidate figures here.
 
-%% ------------------------------------------------------------------------------------ %% 
-%% Figure: Definition of richness and number density bins.
-%% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=\textwidth]{fig/small/density_bins_sum}
-      \caption{The four bins used for our "top-N" tests. The left panel displays bins in $\lambda$, the middle panel displays bins in \mmax{}, and the right panel displays bins in 
-          $M_{\rm vir,\ ASAP}$. Bins are defined at fixed number density. \alexie{Add a table for each of the quantities with the edges of the bin and the mean bin. This can be two panels. The phi one on the left and the two parameter cut on the right to highlight why samples can be different}}
-      \label{fig:density_bins}
-  \end{figure*}
-%% ------------------------------------------------------------------------------------ %% 
 
 Figure \ref{fig:hsc} shows the results of the Top N test. Describe here.
 
@@ -415,31 +579,18 @@ Figure \ref{fig:hsc} shows the results of the Top N test. Describe here.
 %% Figure: Summary of HSC DSigma profiles and the distributions over the aperture stellar 
 %%         mass plane.
 %% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=15.5cm]{fig/small/topn_dsigma_summary}
-      \caption{
-          \todo{Summary of the \dsigma{} profiles from HSC using different tracers.
-          		Also highlight their distributions over the \mmax{}-\minn{} plane. \alexie{replace the left hand side with histograms of halo mass. }}
-          }
-      \label{fig:hsc}
-  \end{figure*}
+%  \begin{figure*}
+%      \centering 
+%      \includegraphics[width=15.5cm]{fig/small/topn_dsigma_summary}
+%      \caption{
+%          \todo{Summary of the \dsigma{} profiles from HSC using different tracers.
+%          		Also highlight their distributions over the \mmax{}-\minn{} plane. \alexie{replace the left hand side with histograms of halo mass. }}
+%          }
+%      \label{fig:hsc}
+%  \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
        
        
-%% ------------------------------------------------------------------------------------ %% 
-%% Figure: Demonstrate the scatter matching process.
-%% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=\textwidth]{fig/small/topn_mout6_mdpl2}
-      \caption{
-          \todo{Demonstrate the scatter matching process. \alexie{bottom panel is un-necessary here.}}
-          }
-      \label{fig:fitting}
-  \end{figure*}
-%% ------------------------------------------------------------------------------------ %% 
-    
     
 
 \subsection{Scatter in Halo Mass at Fixed Observable}
@@ -451,27 +602,13 @@ Figure \ref{fig:scatter1} and \ref{fig:scatter2} show the scatter in halo mass a
 %% ------------------------------------------------------------------------------------ %% 
   \begin{figure*}
       \centering 
-      \includegraphics[width=\textwidth]{fig/small/density_sigma_mvir_a}
+      \includegraphics[width=0.85\textwidth]{figure/topn_sigma_trend_sum}
       \caption{
           \todo{Comparisons of scatters: different tracers and aperture masses. \alexie{Can you make the colors more bold here? These colors are kinnda pale. We want something bold and flashy.}}
           }
       \label{fig:scatter1}
   \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
-
-%% ------------------------------------------------------------------------------------ %% 
-%% Figure: Comparisons of scatters: different outer envelope masses and sizes
-%% ------------------------------------------------------------------------------------ %% 
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=\textwidth]{fig/small/density_sigma_mvir_b}
-      \caption{
-          \todo{Comparisons of scatters: different outer envelope masses and sizes.}
-          }
-      \label{fig:scatter2}
-  \end{figure*}
-%% ------------------------------------------------------------------------------------ %% 
-
 
 
 
@@ -480,32 +617,57 @@ Figure \ref{fig:scatter1} and \ref{fig:scatter2} show the scatter in halo mass a
 Here we consider specifically the shape of $\Delta\Sigma$. The main figures are \ref{fig:m100} and \ref{fig:mout}. Discuss the best fits and the presence of the bump.
 
 %% ------------------------------------------------------------------------------------ %% 
-%% Figure: Compare M100kpc and redMaPPer selected ones
+%% Figure: Compare M100kpc mass and CModel mass
 %% ------------------------------------------------------------------------------------ %% 
   \begin{figure*}
       \centering 
-      \includegraphics[width=\textwidth]{fig/small/dsigma_compare_m150_1}
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_cmod_compare}
       \caption{
-          \todo{Compare M150kpc and redMaPPer selected ones.}
+          \todo{Compare M100kpc and CModel mass}
           }
-      \label{fig:m100}
+      \label{fig:m100_cmod}
   \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
 
 %% ------------------------------------------------------------------------------------ %% 
-%% Figure: Compare 50-100 kpc mass and CAMIRA selected ones
+%% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
 %% ------------------------------------------------------------------------------------ %% 
   \begin{figure*}
       \centering
-      \includegraphics[width=\textwidth]{fig/small/dsigma_compare_mstars}
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_mout_compare}
       \caption{
-          \todo{Compare 50-100 kpc mass and CAMIRA selected ones.}
+          \todo{Compare 50-100 kpc outer envelope mass and 100 kpc mass}
           }
-      \label{fig:mout}
+      \label{fig:m100_mout}
   \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
 
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_mout6_redm_compare}
+      \caption{
+          \todo{Compare 50-100 kpc outer envelope mass and richness selected clusters}
+          }
+      \label{fig:mout_richness}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
 
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Compare the DSigma profiles of richness selection clusters with their 
+%%		   best-fit model.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_redm_cam_residual}
+      \caption{
+          \todo{Compare the DSigma profiles of richness selection clusters with their 		   
+          		best-fit model.}
+          }
+      \label{fig:richness_residual}
+  \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
 
     
@@ -583,8 +745,7 @@ Figure: show a figure of the ASAP model but using the outer mass. Is the boundar
   No. NSF PHY11-25915 and Grant No. NSF PHY17-48958
   
   % AL's funding 
-  AL acknowledges support from the David and Lucille Packard foundation, and from the 
-  Alfred .P Sloan foundation.
+  We acknowledge use of the lux supercomputer at UC Santa Cruz, funded by NSF MRI grant AST 1828315. AL is supported by the U.D Department of Energy, Office of Science, Office of High Energy Physics under Award Number DE-SC0019301. AL acknowledges support from the David and Lucille Packard foundation, and from the Alfred .P Sloan foundation.
 
   % HSC part
   The Hyper Suprime-Cam (HSC) collaboration includes the astronomical communities of 
@@ -672,13 +833,7 @@ Figure: show a figure of the ASAP model but using the outer mass. Is the boundar
 \bibliographystyle{mnras}
 \bibliography{topn}
 
-%% ------------------------------------------------------------------------------------ %% 
-%% Table.1 
-%% ------------------------------------------------------------------------------------ %% 
-%\clearpage
-%\include{table1}
-%\clearpage
-%% ------------------------------------------------------------------------------------ %% 
+
 
 %% ------------------------------------------------------------------------------------ %% 
 %% Table 2: Model parameters 
@@ -730,19 +885,37 @@ Figure: show a figure of the ASAP model but using the outer mass. Is the boundar
 \appendix
 
 %% ------------------------------------------------------------------------------------ %% 
-\section{Important technical details} 
-	\label{app:smf_cov} 
+\section{Matching \dsigma{} profiles} 
+	\label{app:fitting} 
     
     \todo{Placeholder}
 
-Figure \ref{fig:pcen} goes in the appendix.
+%% ------------------------------------------------------------------------------------ %% 
+%% Figure: Demonstrate the scatter matching process.
+%% ------------------------------------------------------------------------------------ %% 
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_m150_fit}
+      \caption{
+          \todo{Demonstrate the scatter matching process.}
+          }
+      \label{fig:fitting}
+  \end{figure*}
+%% ------------------------------------------------------------------------------------ %% 
+    
+
+%% ------------------------------------------------------------------------------------ %% 
+\section{Impact of $P_{\rm cen}$ on the \dsigma{} profile of \redm{} clusters} 
+	\label{app:pcen} 
+    
+    \todo{Placeholder}
 
 %% ------------------------------------------------------------------------------------ %% 
 %% Figure: Impact of Pcen cuts on redMaPPer DSigma profiles.
 %% ------------------------------------------------------------------------------------ %% 
   \begin{figure*}
       \centering 
-      \includegraphics[width=12cm]{fig/png/redmapper_pcen}
+      \includegraphics[width=12cm]{figure/redmapper_pcen_placeholder}
       \caption{
           \todo{PLACEHOLDER: Impact of $P_{\rm Cen\ 1}$ cuts on the \redm{} \dsigma{} profiles.
           (For appendix)}
@@ -751,7 +924,11 @@ Figure \ref{fig:pcen} goes in the appendix.
   \end{figure*}
 %% ------------------------------------------------------------------------------------ %% 
 
-
+%% ------------------------------------------------------------------------------------ %% 
+\section{Galaxy Size as \mvir{} indicator} 
+	\label{app:size} 
+    
+    \todo{Placeholder}
 
 %% ------------------------------------------------------------------------------------ %%  
 
