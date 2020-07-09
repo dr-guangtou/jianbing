@@ -332,8 +332,8 @@
     possible \mvir{} ``proxies'' using high-fidelity galaxy-galaxy lensing data and via
     comparison with empirical model of \mvir{}-observable scaling relation based on cosmological 
     N-body simulation.
-    We will first introduce a series of \mstar{}- (\ref{sec:sec:proxy_mstar}) and richness-based 
-    (\ref{sec:sec:proxy_richness}) \mvir{} tracers.
+    We will first introduce a series of \mstar{}- (\ref{sec:proxy_mstar}) and richness-based 
+    (\ref{sec:proxy_richness}) \mvir{} tracers.
     Then we describe the measurement of the galaxy-galaxy lensing \dsigma{} (or excess surface 
     density, ESD) profiles using HSC \texttt{S16A} shape catalog (\ref{sec:dsigma}).
     In section \ref{sec:topn_intro}, we explain the philosophy of the ``Top N'' tests and the 
@@ -668,20 +668,18 @@ shown in \ref{fig:best_mock}.
 %% Main Results
 %% ---------------------------------------------------------------------------------------------- %%
 \section{Results}
-
-\begin{itemize}
-    \item Cmodel performs the worst
-    \item Galaxy Mass seems to perform as well as richness
-    \item Richness has a bump feature
-\end{itemize}
     \label{sec:result}
- 
-    \todo{Placeholder}
+
+  Now we summarize the key results from the ``Top N'' tests
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Impact of satellite galaxies 
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Impact of Satellites}
+    \label{sec:satellite}
+
+    Contaminations of satellite galaxies is the key systematic issue when using \mstar{} of 
+    a single galaxy as \mvir{} tracer.
 
 Figure \ref{fig:satellite} show the impact of satellites. Describe here.
 
@@ -700,13 +698,26 @@ Figure \ref{fig:satellite} show the impact of satellites. Describe here.
 
 
 %% ---------------------------------------------------------------------------------------------- %%
-%% 
+%% Poor performance of CModel stellar mass 
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Top N test}
+\subsection{Performance of \mcmodel{}}
 
-We now perform the top N test. This consists of rank order various quantities and comparing
-$\Delta\Sigma$ at fixed number density. Figure \ref{fig:density_bins} shows the number density
-bins. Is Figure \ref{fig:fitting} necessary here? Maybe we can consolidate figures here.
+\plan{CModel is terrible, not good, very bad}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Performance of outer envelope mass
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Performance of the \mstar{} of outer enevelope}
+
+\plan{We are surprised by the performance of outer envelope mass}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% General trends of scatters
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Performance of the \mstar{} of outer enevelope}
+
+\plan{Remind people that the scatter here is scatter of halo mass, is for each bin, and is 
+    only useful for relative comparison.}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Summary of HSC DSigma profiles and the distributions over the aperture stellar 
