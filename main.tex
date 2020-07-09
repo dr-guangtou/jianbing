@@ -313,7 +313,7 @@
             Massive galaxies do have intrinsic \mlratio{} gradient, hence the assumption of 
             a constant \mlratio{} tends to slightly bias the \mstar{} measurements within 
             different radial ranges.
-            In \citealt{Huang2018b}, we show that massive galaxies in our sample show
+            In \citet{Huang2018b}, we show that massive galaxies in our sample show
             color gradients that can be roughly translated into a shallow but negative 
             \mlratio{} gradient. 
             We also do not see evidence that suggests a \mstar{} or environment-depedence 
@@ -362,7 +362,7 @@
     in the halo (\addref{}), and X-ray luminosity of a group or cluster (\addref{}). 
     
     But, we want to point out that 
-    1) `\mstar{} measurement of one galaxy is a more straightforward approach and has seveal 
+    1) \mstar{} measurement of one galaxy is a more straightforward approach and has seveal 
     appealing features. Observationly, it is more ``cost effective''. And it also suffers less
     from systematic issues such as the projection effect (\addref{}).
     2) In recent years, increasingly deep imaging surveys make us aware of the importance of the 
@@ -395,7 +395,7 @@
             difficult.
         
         \item The \mcmodel{} used in this work is based on HSC \texttt{S16A} and \hscpipe{} 
-            version \color{red}{XXX}. As the pipeline keeps evolving, the exact performance of 
+            version {\color{red}{XXX}}. As the pipeline keeps evolving, the exact performance of 
             \cmodel{} will change. But it is unlikely improve the intrinsic limitation of 
             the \cmodel{} photometry \footnote{
             For instance, in {\tt S18A} data release, \hscpipe{} significantly improves the 
@@ -404,7 +404,7 @@
             In the end, we do not see improvement in the performace of \cmodel{} photometry. 
             }.
         
-        \item In \citealt{Huang2018b}, we show that the \cmodel{} photometry on average leads to 
+        \item In \citet{Huang2018b}, we show that the \cmodel{} photometry on average leads to 
             underestimation of stellar mass at the level of 0.1-0.2 dex when compared with 
             aperture stellar mass within 100 kpc, \mtot{}.
             In spite of this poor performance, we still highlight \cmodel{} here since it is the 
@@ -415,7 +415,48 @@
     \end{itemize}
 
 \subsubsection{Aperture \mstar{} from 1-D profile}
-	\label{sec:maper}
+    \label{sec:maper}
+    
+    \plan{A detailed outline}
+
+    \begin{itemize}
+
+        \item Although massive galaxies appear to be ``featureless'', they experienced complex 
+            assembly. Stellar content from different parts of a massive galaxy could have distinct 
+            physical origins and different connections with the dark matter halo. 
+            In particular, the promising two-phase formation scenario (\addref{}) proposed that
+            stars formed within the halo of the main progenitor, the \insitu{} stars, populate the 
+            central region of the massie galaxy, while the \exsitu{} stars accumulated through 
+            mergers dominate the outskirts. 
+            In Bradshaw et al. (2020, \addref{},), the authors find that the \insitu{} and \exsitu{}
+            stars in massive galaxies from the \um{} semi-empirical model (\citealt{Behroozi2018}) 
+            follow quite different SHMR as the \exsitu{} stars show a much tighter relation with 
+            \mvir{} than the \insitu{} ones. 
+            Right now, physical decomposition of \insitu{} and \exsitu{} stars in real galaxies 
+            is almost impossible, but \mstar{} within different apertures could help us 
+            qualitatively investigate this.
+        
+        \item Using the 1-D surface mass density profiles, we measure a series of aperture \mstar{}
+            within 10, 30, 50, 75, 100, and 150 kpc.
+            We also measure the maximum 1-D aperture \mstar{} (\mmax{}) by 
+            integrating the 1-D profile to the radii where the surface intensity becomes zero.
+            Surface brightness profile outside 100 kpc become less reliable due to background 
+            subtraction and unmasked flux from nearby objects, but the mass density profiles
+            of most massive galaxies in our sample clearly extend beyond 100 kpc.
+            Therefore, we attempt to get closer to the true ``total'' \mstar{} of the galaxy
+            through \mmax{} and \maper{150}.
+            On average, $\log$\mmax{} ($\log$\maper{150}) is \todo{XX (XX) dex} higher than 
+            $\log$\maper{100} at \logmaper{100}$>11.5$.
+        
+        \item We also explore the possibility of extrapolating the measured profile out to 
+            even larger radii.
+            We fit the profile between 50 and 100 kpc with a 1-D \ser{} profile and use the best-fit 
+            model to extrapolate the profiles to 200 and 300 kpc. \todo{Finish}
+            
+        \item Another way to define aperture is to use effective radii. \todo{Finish}
+
+    \end{itemize}
+
 
 \subsubsection{Outer envelope \mstar{}}
 	\label{sec:menvelope}
