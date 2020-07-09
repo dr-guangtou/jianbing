@@ -1,4 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
+% 07/08 3388 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -289,7 +290,10 @@
 			distribution in massive galaxies. 
 			Using the \ellipse{} isophotal analysis function from \iraf{}, we carefully 
 			extract 1-D $i$-band surface brightness profiles along the major axis of the 
-			mean isophote of the galaxy. 
+            mean isophote of the galaxy.
+            HSC survey uses $i$-band as the reference filter for weak lensing measurements.
+            Therefore, the $i$-band images have the best seeing condition, in favour of 
+            detailed structural analysis.
 			Before the extraction, we aggressively mask out all neighboring objects, 
 			empirically correct the local background when over-subtraction occurs, and 
 			also test the method against a series of systematics. 
@@ -373,7 +377,42 @@
 %% ---------------------------------------------------------------------------------------------- %%
 
 \subsubsection{\cmodel{} stellar mass}
-	\label{sec:mcmodel}
+    \label{sec:mcmodel}
+    
+    \plan{A detailed outline}
+
+    \begin{itemize}
+        
+        \item \cmodel{} is a flexible photometric model introduced in SDSS to measure the magnitude
+            and color of galaxies with a wide range of morphology (\addref{}).
+            It achieves a balance between flexibility and efficiency for large photometric surveys.
+        
+        \item \cmodel{} has many limitations. In particular, it is incapable of describing the 
+            extended light distributions of massive galaxies and tends to under-estimate their
+            total luminosity or stellar mass. 
+            This disadvantage becomes more problematic for deep imaging surveys such as HSC.
+            The combination of background subtraction and deblending issues will make it even more 
+            difficult.
+        
+        \item The \mcmodel{} used in this work is based on HSC \texttt{S16A} and \hscpipe{} 
+            version \color{red}{XXX}. As the pipeline keeps evolving, the exact performance of 
+            \cmodel{} will change. But it is unlikely improve the intrinsic limitation of 
+            the \cmodel{} photometry \footnote{
+            For instance, in {\tt S18A} data release, \hscpipe{} significantly improves the 
+            background subtraction around bright object. But the well preserved low surface 
+            brightness enevelopes around massive galaxies makes object deblending more challenging.
+            In the end, we do not see improvement in the performace of \cmodel{} photometry. 
+            }.
+        
+        \item In \citealt{Huang2018b}, we show that the \cmodel{} photometry on average leads to 
+            underestimation of stellar mass at the level of 0.1-0.2 dex when compared with 
+            aperture stellar mass within 100 kpc, \mtot{}.
+            In spite of this poor performance, we still highlight \cmodel{} here since it is the 
+            benchmark photometry for several major imaging surveys such as SDSS and HSC.
+            The underlying impact of \cmodel{} photometry exists in so many previous works on 
+            galaxy-halo connection, therefore it deserves a careful evaluation.
+        
+    \end{itemize}
 
 \subsubsection{Aperture \mstar{} from 1-D profile}
 	\label{sec:maper}
