@@ -326,14 +326,51 @@
 %% ---------------------------------------------------------------------------------------------- %%
 
 \section{Methodology}
-	\label{sec:method}
+    \label{sec:method}
+    
+    In this section, we will outline the methodology adopted in this work to evaluate different 
+    possible \mvir{} ``proxies'' using high-fidelity galaxy-galaxy lensing data and via
+    comparison with empirical model of \mvir{}-observable scaling relation based on cosmological 
+    N-body simulation.
+    We will first introduce a series of \mstar{}- (\ref{sec:sec:proxy_mstar}) and richness-based 
+    (\ref{sec:sec:proxy_richness}) \mvir{} tracers.
+    Then we describe the measurement of the galaxy-galaxy lensing \dsigma{} (or excess surface 
+    density, ESD) profiles using HSC \texttt{S16A} shape catalog (\ref{sec:dsigma}).
+    In section \ref{sec:topn_intro}, we explain the philosophy of the ``Top N'' tests and the 
+    choices of volume number density bins.
 
 %% ---------------------------------------------------------------------------------------------- %%
-%% Explain different halo mass proxies
+%% Halo mass proxies based on stellar mass
 %% ---------------------------------------------------------------------------------------------- %%
 
-\subsection{Proxies for Halo Mass}
-	\label{sec:proxies}
+\subsection{\mstar{}-based Halo Mass Proxies}
+    \label{sec:proxy_mstar}
+    
+    The stellar mass of the a galaxy has a well established physical relation with its halo mass.
+    And more massive galaxies tend to live in more massive dark matter halos.
+    Therefore it is natural to use \mstar{} of a galaxy as a first-order proxy of \mvir{}.
+    In fact, the calibration of SHMR remains one of the focues in the study of galaxy-halo connection.
+    However, the slope and scatter of SHMR at the high-\mstar{} still show discrepencies among 
+    different constraints (\addref{}). 
+    And the \mstar{} of a single galaxy is often considered a less accurate \mvir{} tracer 
+    than many others, including the number of sub-halos (optical richness, \addref{}), 
+    total luminosity or stellar mass within the halo (\addref{}), velocity dispersion of galaxies
+    in the halo (\addref{}), and X-ray luminosity of a group or cluster (\addref{}). 
+    
+    But, we want to point out that 
+    1) `\mstar{} measurement of one galaxy is a more straightforward approach and has seveal 
+    appealing features. Observationly, it is more ``cost effective''. And it also suffers less
+    from systematic issues such as the projection effect (\addref{}).
+    2) In recent years, increasingly deep imaging surveys make us aware of the importance of the 
+    faint stellar outskirt of massive galaxies (\addref{}). 
+    After accounting for the \mstar{} in these diffuse stellar component closely tied to the 
+    halo assembly, we could further improve the capability of using \mstar{} as a halo mass proxy.
+    
+    Here we introduce a list of \mstar{} options that will be explored in this work.
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% CModel Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 
 \subsubsection{\cmodel{} stellar mass}
 	\label{sec:mcmodel}
@@ -346,6 +383,13 @@
 
 \subsubsection{\mvir{} from \asap{} model}
 	\label{sec:masap}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Halo mass proxies based on optical richness
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Richness-based proxies for Halo Mass}
+	\label{sec:proxy_richness}
+
 
 \subsubsection{\redm{} richness}
 	\label{sec:redmapper}
