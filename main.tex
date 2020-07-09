@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/08 3388 words
+% 07/09 3907 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -375,7 +375,6 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% CModel Stellar Mass
 %% ---------------------------------------------------------------------------------------------- %%
-
 \subsubsection{\cmodel{} stellar mass}
     \label{sec:mcmodel}
     
@@ -414,6 +413,9 @@
         
     \end{itemize}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Aperture Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Aperture \mstar{} from 1-D profile}
     \label{sec:maper}
     
@@ -451,18 +453,75 @@
         \item We also explore the possibility of extrapolating the measured profile out to 
             even larger radii.
             We fit the profile between 50 and 100 kpc with a 1-D \ser{} profile and use the best-fit 
-            model to extrapolate the profiles to 200 and 300 kpc. \todo{Finish}
+            model to extrapolate the profiles to 200 and 300 kpc. \todo{To be finished}
+            Recent works using image stacking shows massive galaxies do have faint stellar halos 
+            out to very large radii.
+            And the extreme outer profile can be reasonably described by \ser{} model.
             
-        \item Another way to define aperture is to use effective radii. \todo{Finish}
+        \item Another way to define aperture is to use effective radii. \todo{To be finished}
 
     \end{itemize}
 
-
+%% ---------------------------------------------------------------------------------------------- %%
+%% Outer Envelope Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Outer envelope \mstar{}}
-	\label{sec:menvelope}
+    \label{sec:menvelope}
 
+    \plan{A detailed outline}
+
+    \begin{itemize}
+        
+        \item As mentioned earlier, if the \exsitu{} component of massive galaxies has a closer
+            relation with the halo assembly and \mvir{}, then it is possible that the \mstar{} of 
+            the outer envelope of a massive galaxy is better \mvir{} proxy.
+            In recent years, several works on galaxy clusters proposed that the \mstar{} within 
+            the ICL component (or the luminosity fraction of ICL) follows an interesting scaling
+            relation with \mvir{} (\addref{}).
+            Although the sample selection and definitions of ``outer envelope'' are different, 
+            these results are qualitatively consistent with the previous suggestion.
+
+        \item In this work, we define the \mstar{} difference between an inner and outer apertures
+            as the outer envelope \mstar{}. 
+            We explore different combinations of apertures, including \mstar{} between
+            10 to 100 kpc (\menve{10, 100}), 30 to 100 kpc (\menve{30, 100}), 
+            50 to 100 kpc (\menve{50, 100}), 50 to 150 kpc (\menve{50, 150}), 
+            and 75 to 150 kpc (\menve{75, 150}).
+            Although the ``outer envelope'' does not equal to the \exsitu{} component, and the 
+            choices of apertures are somewhat arbitrary, these definitions can already elp us 
+            evaluate the connections between different parts of a massive galaxy and its \mvir{}.
+
+    \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Halo mass based on ASAP model
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\mvir{} from \asap{} model}
-	\label{sec:masap}
+    \label{sec:masap}
+
+    \plan{Rough outline}
+
+    \begin{itemize}
+        
+        \item In stead of just using aperture or outer envelope \mstar{}, an empirical model that 
+            can take advantage of the full structural information of a massive galaxy to predict 
+            its \mvir{} is a promising and important upgrade.
+        
+        \item In Huang et al. (2020, \addref{}), we build a simple phenomelogical model (\asap{})
+            on top of the \um{} semi-empirical model that can connect the \minn{} and \mmax{} of a 
+            massive galaxy with its \mvir{}.
+            In this first step, we simply assume that \maper{10} represents the \insitu{} \mstar{}
+            and \mmax{}$-$\maper{10} accounts for the \mstar{} of the \exsitu{} component.
+            The model is capable of reproducing the SMF of both \mmax{} and \maper{10} along with 
+            the \dsigma{} profiles for galaxies in a series of \mmax{}-\maper{10} 2-D bins.
+        
+        \item \plan{Key results from ASAP model.}
+
+        \item \plan{To finish} Using the best-fit model, we summarize a 2-D scaling relation that 
+            can help us predict \mvir{} of a massive galaxies using just two aperture \mstar{}
+            measurements.
+        
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Halo mass proxies based on optical richness
@@ -470,10 +529,15 @@
 \subsection{Richness-based proxies for Halo Mass}
 	\label{sec:proxy_richness}
 
-
+%% ---------------------------------------------------------------------------------------------- %%
+%% redMaPPer
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\redm{} richness}
 	\label{sec:redmapper}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% CAMIRA
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\camira{} richness}
 	\label{sec:camira}
 
@@ -499,7 +563,13 @@
 \subsection{``Top N'' Test and Number Density Bins}
     \label{sec:topn_intro}   
 
-\todo{Placeholder}
+    \plan{Rough outline}
+
+    \begin{itemize}
+        
+        \item
+        
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Section: Simulation and Model
