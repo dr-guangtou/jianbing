@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/09 3907 words
+% 07/09 4257 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -567,8 +567,8 @@
 
     \begin{itemize}
         
-        \item
-        
+        \item 
+
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -828,10 +828,76 @@ shown in \ref{fig:best_mock}.
 \subsection{Impact of Satellites}
     \label{sec:satellite}
 
-    Contaminations of satellite galaxies is the key systematic issue when using \mstar{} of 
-    a single galaxy as \mvir{} tracer.
+    \plan{A detailed outline}
 
-Figure \ref{fig:satellite} show the impact of satellites. Describe here.
+    \begin{itemize}
+        
+        \item To fully realize the potential of using \mstar{} of a massive galaxy as \mhalo{}
+            proxy, we must first deal with one crucial systematic issue which is the impact
+            from satellite galaxies.
+            Many previous works suggest a low satellite fraction at \logms{}$>$11.5, but 
+            massive satellite galaxies still make up $\sim 5$-10\% of our sample.
+            Moreover, satellite fraction significantly increases with decreasing \mstar{},
+            presenting further challenges to apply \mstar{} as halo mass proxy.
+        
+        \item \plan{Briefly explain the impact of satellite galaxies on the \dsigma{} profile.}
+            Their \dsigma{} profiles will show significant contribution from the host halo 
+            in the second-halo term regime (e.g. \addref{}, Li et a. 2014).
+        
+        \item Here, we qualitatively investigate the impact of satellite galaxies. 
+            On the simulation side, we directly compare the \dsigma{} profiles of just central 
+            mock galaxies with the ones using all galaxies in each bin.
+            We perform this comparison for model with \sigmh{}$=0.0$ and 0.4.
+        
+        \item For our HSC sample, we adopt a very simple strategy to identify potential 
+            satellite galaxiess. 
+            Starting from the most massive galaxies defined by \mmax{} in our sample, 
+            we iteratively find nearby massive galaxies in a cylinder-like region with 
+            a 2.0 physical Mpc radius in projection and a 30 comoving Mpc length in the 
+            line-of-sight (LOS) direction. 
+            To calculate the LOS distance, we use the best available redshift and ignore 
+            its uncertainty.
+            \plan{The satellite fraction in each bin is [XX, XX, XX, XX]}.
+            
+        \item Such approach is certainly over-simplified as 1) the more massive galaxy 
+            measured in our analysis is not necessarily the true central galaxy.
+            2) The choice of cylinder size and the photo-$z$ uncertainty could mistakenly 
+            remove central galaxy from the sample or leave satellites in.
+            But it is sufficient to demonstrate the effect of satellite galaxies.
+            We also explore several different choices of the cylinder size to make sure
+            our result is robust.
+            Replacing \mmax{} with other larger aperture \mstar{} when identifying satellites 
+            will also not change the result.
+        
+        \item Figure \ref{fig:satellite} summarizes the result of the test using the ratio
+            of \dsigma{} profiles between the all galaxies sample and the central-only one.
+            Firstly, the impact of massive satellite galaxies on \dsigma{} profiles is very limited.
+            In the first 2 bins, due to the very low satellite fraction, there is virtually no 
+            effect from including massive satellites. 
+            The \dsigma{} profiles from the model also confirm that.
+            In Bin 3, we begin to see that the inclusion of massive satellite galaxies
+            lead to a small enhancement of \dsigma{} profile outside 500 kpc at maximum level 
+            of \plan{15\%}. The ratios from HSC sample and the \mdpl2{} model one are consistent 
+            within 1-$\sigma$ uncertainty inside 10 Mpc
+            In Bin 4, \mdpl2{} model predicts a more significant enhancement peaking at 
+            20\% level around 2--3 Mpc.
+            The ratio from HSC sample in this bin is still reasonably consistent with the model,
+            albeit with a slightly different shape and higher enhancement at $>3$ Mpc.
+
+        \item This result confirms that the effect of massive satellite galaxies is insignificant 
+            at \logmmax{}$>11.8$, but starts to become visible at lower \mmax{}.
+            Despite the naive satellite-removing method, we find good agreement between HSC and 
+            model. 
+            For other results shown in this work, we will remain to use the samples including 
+            massive satellites.
+        
+        \item We want to emphais that satellite fraction at high-mass end and their lensing 
+            signals contain ample informatino about galaxy formatin process and galax-halo 
+            connection. 
+            \plan{We aim to constrian satellite fraction better with more complete spec-$z$ and
+            the help from X-ray data. We want to include these information in our models.}
+        
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Impact of satellites on the M100kpc selected DSigma profiles
