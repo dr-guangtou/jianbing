@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/10 4792words
+% 07/13 5058words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -940,10 +940,12 @@ shown in \ref{fig:best_mock}.
 %% ---------------------------------------------------------------------------------------------- %%
 %% Trends with scatter
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Results from the ``Top N'' Tests}
+\subsection{\sighalo{} from the ``Top N'' Tests}
     \label{sec:topn_results}
 
     \plan{A detailed outline}
+
+    Using the scheme of the ``Top N'' tests, we 
 
     \begin{itemize}
         
@@ -970,10 +972,78 @@ shown in \ref{fig:best_mock}.
 \subsubsection{Performance of \mcmodel{}}
     \label{sec:cmodel}
 
+    \todo{Fix the fitting results and the figure. In Bin 3 and 4, the \mvir{} distributions are 
+        cut-off due to the \mdpl2{} limitation.}
+
     In the first section, we evaluate the performance of the \cmodel{} stellar mass as a 
     potential \mvir{} tracer.
     We compare the results for \mcmodel{} in the four number density bins with the ones for 
     the benchmark large aperture stellar mass \maper{100} in Figure \ref{fig:m100_cmod}.
+
+    \plan{A detailed outline}
+
+    \begin{itemize}
+        
+        \item In the left panels of Figure \ref{fig:m100_cmod}, we compare the \rdsigma{} profiles
+            of the \mcmodel{}- and \maper{100}-selected samples. 
+            Using the best-fit profils as reference (grey shaded region), we can see that the 
+            \dsigma{} profile of the \maper{100} samples are well-described by our simple model 
+            within 1-$\sigma$ uncertainty. 
+            The reduced \chisq{} values for the \maper{} samples are \todo{[XX, XX, XX, XX]}.
+            This is an important point. It suggests that \emph{only} a Gaussian scatter around 
+            the \mvir{}-observable relation can already explain the lensing signals at  
+            the current \snratio{}.
+            Such property makes it much easier to model and apply an observable as a \mvir{} proxy.
+            In our tests, we see that most aperture-based \mstar{} fits this description. 
+            In fact, \cmodel{}-selected galaxies also have \dsigma{} profiles well-fit by the model.
+            Although it is hard to visualize in the figure, the reduced \chisq{} values for the 
+            \mcmodel{} samples are \todo{[XX, XX, XX, XX]}.
+        
+        \item Meanwhile, in the same number density bin, the \mcmodel{}-based samples clearly have 
+            much lower amplitudes in their \dsigma{} profiles compared to the \maper{100} ones.
+            We highlight this using the middle panel of \ref{fig:m100_cmod}. 
+            In all the four bins and at almost all radius, the \dsigma{} value of a \mcmodel{}-sample
+            is $\sim$20-50\% lower than the \maper{100} one.
+            Based on our model, this reflects the underlying difference of the \mvir{} distributions,
+            where the \mcmodel{}-selected samples lower mean \mvir{} values and higher \sighalo{}
+            than the \maper{100}-selected ones. 
+            We visualize this in the right panels of \ref{fig:m100_cmod}.
+        
+        \item Limited by the sample size and the much lower \snratio{} of the \dsigma{} profiles 
+            for the \mcmodel{} samples, we do not see any clear number density dependence or radial 
+            trend of the difference.
+            The \cmodel{} photometry based \mstar{} is a much worse \mvir{} tracer for nearby 
+            massive galaxies in our test.
+        
+        \item The \sighalo{} values here apply only to the \cmodel{} photometry of HSC SSP 
+            \texttt{S16A}. With a different imaging dataset, or a different treatment of background
+            subtraction and deblending, we could get different \sighalo{} values in a similar test.
+            Moreover, the credibility of \mcmodel{} as \mvir{} proxy should depend on the \mstar{}, 
+            morphology, and redshift of the sample. For instance, it is potentially appropriate 
+            to use \cmodel{} photometry for lower-\mstar{} or higher redshift samples.
+            However, we do think the result here is consistent with the \emph{intrinsic} 
+            limitation of \cmodel{} when fitting massive galaxies (e.g., \addref{}).
+            It is well known that \cmodel{} photometry under-estimates the luminosity of a low-$z$
+            massive galaxies (e.g., \addref{}).
+            We hope to draw more attention to its impact in many aspects of galaxy-halo connection
+            studies. We often see models calibrate their low-$z$ SHMR using \cmodel{} SMF of SDSS 
+            galaxies, or a cluster-finder relies on \cmodel{} magnitude to assign central galaxy.
+            These choices could have unintended consequence. 
+             
+    \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_mout_compare}
+      \caption{
+          \todo{Compare 50-100 kpc outer envelope mass and 100 kpc mass}
+          }
+      \label{fig:m100_mout}
+  \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Performance of outer envelope mass
@@ -981,7 +1051,14 @@ shown in \ref{fig:best_mock}.
 \subsubsection{Performance of the \mstar{} of outer enevelope}
     \label{sec:moutskirt}
 
-\plan{We are surprised by the performance of outer envelope mass}
+    \plan{A detailed outline}
+
+    \begin{itemize}
+
+        \item 
+
+    \end{itemize}
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% General trends of scatters
@@ -1031,19 +1108,6 @@ shown in \ref{fig:best_mock}.
 Here we consider specifically the shape of $\Delta\Sigma$. 
 
 %The main figures are \ref{fig:m100} and \ref{fig:mout}. Discuss the best fits and the presence of the bump.
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure*}
-      \centering
-      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_mout_compare}
-      \caption{
-          \todo{Compare 50-100 kpc outer envelope mass and 100 kpc mass}
-          }
-      \label{fig:m100_mout}
-  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
