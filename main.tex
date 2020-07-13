@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/09 4257 words
+% 07/10 4792words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -484,9 +484,9 @@
         \item In this work, we define the \mstar{} difference between an inner and outer apertures
             as the outer envelope \mstar{}. 
             We explore different combinations of apertures, including \mstar{} between
-            10 to 100 kpc (\menve{10, 100}), 30 to 100 kpc (\menve{30, 100}), 
-            50 to 100 kpc (\menve{50, 100}), 50 to 150 kpc (\menve{50, 150}), 
-            and 75 to 150 kpc (\menve{75, 150}).
+            10 to 100 kpc (\menve{10}{100}), 30 to 100 kpc (\menve{30}{100}), 
+            50 to 100 kpc (\menve{50}{100}), 50 to 150 kpc (\menve{50}{150}), 
+            and 75 to 150 kpc (\menve{75}{150}).
             Although the ``outer envelope'' does not equal to the \exsitu{} component, and the 
             choices of apertures are somewhat arbitrary, these definitions can already elp us 
             evaluate the connections between different parts of a massive galaxy and its \mvir{}.
@@ -520,6 +520,7 @@
         \item \plan{To finish} Using the best-fit model, we summarize a 2-D scaling relation that 
             can help us predict \mvir{} of a massive galaxies using just two aperture \mstar{}
             measurements.
+            \plan{Show the scaling relation}
         
     \end{itemize}
 
@@ -820,7 +821,31 @@ shown in \ref{fig:best_mock}.
 \section{Results}
     \label{sec:result}
 
-  Now we summarize the key results from the ``Top N'' tests
+    Now we summarize the main results of this work. 
+    We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
+    galaxies as promising \mvir{} proxy (Sec \ref{sec:satellite}).
+    Then we show the key findings from the from the ``Top N'' tests and compare the performance
+    of different \mvir{} tracers (Sec \ref{sec:topn_results}).
+    We will highlight the behaviors of \mcmodel{} (Sec \ref{sec:cmodel}) and \mstar{} 
+    of the outskirt of massive galaxies such as \menve{50}{100} (Sec \ref{sec:moutskirt}) 
+    before we summarize the overall trends of \sighalo{} with volume number density for different
+    \mvir{} proxies (Sec \ref{sec:trend}).
+    Finally, we will compare the \dsigma{} profiles of the \mstar{}- and richness-selected 
+    massive halos and explore their differences at the same number density bins
+    (Sec \ref{sec:mstar_vs_richness}).
+
+    Before we dive in, we want to remind the readers that
+    1) All the \sighalo{} values mentioned in this work are the scatter of \mvir{} \emph{within each
+    number density bin}. We do not attempt to calibrate or forward-model the \mvir{}-observable 
+    relation, therefore we can not predict the scatter of \mvir{} \emph{at any given value of 
+    the observable}.
+    2) All the \sighalo{} values should be treated in a relative sense. We adopt strong
+    assumptions when we ``model'' the \dsigma{} profile such as $\log$-linear relation with 
+    constant and symmetric scatter, no consideration of mis-centering effect or projection effect.
+    It is possible that the \sighalo{} value deviates from the ``true'' answer. 
+    However, the \sighalo{} values for different observables in the same bin should provide 
+    insights about the underlying \mvir{} distributions, and help us evaluate their pros and cons 
+    when using them as \mvir{} proxy.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Impact of satellite galaxies 
@@ -912,25 +937,57 @@ shown in \ref{fig:best_mock}.
   \end{figure}
 %% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Trends with scatter
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Results from the ``Top N'' Tests}
+    \label{sec:topn_results}
+
+    \plan{A detailed outline}
+
+    \begin{itemize}
+        
+        \item 
+
+    \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare M100kpc mass and CModel mass
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_cmod_compare}
+      \caption{
+          \todo{Compare M100kpc and CModel mass}
+          }
+      \label{fig:m100_cmod}
+  \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Poor performance of CModel stellar mass 
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Performance of \mcmodel{}}
+\subsubsection{Performance of \mcmodel{}}
+    \label{sec:cmodel}
 
-\plan{CModel is terrible, not good, very bad}
+    In the first section, we evaluate the performance of the \cmodel{} stellar mass as a 
+    potential \mvir{} tracer.
+    We compare the results for \mcmodel{} in the four number density bins with the ones for 
+    the benchmark large aperture stellar mass \maper{100} in Figure \ref{fig:m100_cmod}.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Performance of outer envelope mass
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Performance of the \mstar{} of outer enevelope}
+\subsubsection{Performance of the \mstar{} of outer enevelope}
+    \label{sec:moutskirt}
 
 \plan{We are surprised by the performance of outer envelope mass}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% General trends of scatters
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Performance of the \mstar{} of outer enevelope}
+\subsection{Scatter of \mvir{} at Fixed Observables}
+    \label{sec:trend}
 
 \plan{Remind people that the scatter here is scatter of halo mass, is for each bin, and is 
     only useful for relative comparison.}
@@ -950,11 +1007,6 @@ shown in \ref{fig:best_mock}.
 %  \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
        
-%% ---------------------------------------------------------------------------------------------- %%
-%% Trends with scatter
-%% ---------------------------------------------------------------------------------------------- %%
-\subsection{Scatter in Halo Mass at Fixed Observable}
-
 %Figure \ref{fig:scatter1} and \ref{fig:scatter2} show the scatter in halo mass at fixed observable.
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -974,23 +1026,11 @@ shown in \ref{fig:best_mock}.
 %% Comparison with richness selected galaxies
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Analysis of the Shape of $\Delta\Sigma$}
+    \label{sec:mstar_vs_richness}
 
 Here we consider specifically the shape of $\Delta\Sigma$. 
 
 %The main figures are \ref{fig:m100} and \ref{fig:mout}. Discuss the best fits and the presence of the bump.
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Compare M100kpc mass and CModel mass
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=\textwidth]{figure/topn_dsigma_m100_cmod_compare}
-      \caption{
-          \todo{Compare M100kpc and CModel mass}
-          }
-      \label{fig:m100_cmod}
-  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
