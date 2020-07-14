@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/13 6055 words
+% 07/13 6302 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -84,21 +84,32 @@
 
 \begin{abstract}
           
-    \plan{Placeholder: Massive haloes are useful to cosmology. But they are not easy to select 
-    	  without introducing projection and mis-centering effect.
-    	  Here we use HSC deep images and unprecedented weak lensing capability to 
-    	  test the possibility of selecting the most massive dark matter halos using 
-    	  just the central galaxies.
-    	  }
-    
+    \plan{Placeholder:
+        The abundance and the galaxy-galaxy lensing signal of massive dark matter halos contain 
+        crucial cosmological information.
+        We compare the stacked galaxy-galaxy lensing signals around massive halos traced by 
+        various \mstar{} and red-sequence richness measurements in the same number density bins 
+        using \logms{}$>11.5$ galaxies at $0.2 < z < 0.5$ in the Hyper Suprime-Cam 
+        Subaru Strategic Program (HSC survey).
+        We find the \mstar{} in the outskirt of massive galaxies (e.g., \menve{50}{100}, 
+        the \mstar{} within 50-100 kpc apertures) is a competitive and complementary \mvir{} proxy 
+        to the richness.
+        Using a simple galaxy-halo connection model calibrated with stellar mass function and 
+        clustering of massive galaxies, we show that a $\log$-linear \mvir{}-observable 
+        relation can fully explain the \dsigma{} profiles of \menve{50}{100}-selected massive 
+        halos with a \sighalo{} level comparable to the red-sequence cluster finders.
+        Meanwhile, the \dsigma{} profiles of richness-selected clusters show systematic 
+        deviations from the scatter-only model due to systematics such as the projection effect.
+        }
+
 \end{abstract}
 
 % TODO: Need updates!
 \begin{keywords}
-    galaxies: elliptical and lenticular, cD --
-    galaxies: formation --
-    galaxies: photometry -- 
+    cosmology: observations --
+    gravitational lensing: weak -- 
     galaxies: structure -- 
+    galaxies: cluster: general --
     galaxies: haloes
 \end{keywords}
 
@@ -550,27 +561,19 @@
     
     \todo{Placeholder}
     
-    	\begin{itemize}
+    \begin{itemize}
+        
+        \item \plan{Motivation, why we want to use g-g lensing:
+            Lensing is the most direct detection of total mass distribution (hence DM)
+            around galaxy. Explain what's a \dsigma{} profile. What information can be extracted
+            from \dsigma{} profiles: \mvir{}, halo assembly history, accretion rate, or even 
+            cosmology (lensing is low).}
 		
 		\item \plan{Copy something from the \asap{} paper.}
 		
 		\item \plan{Copy something from Speagle et al. 2019 here.}
 		
 	\end{itemize}    
-       
-%% ---------------------------------------------------------------------------------------------- %%
-%% Introducing the TopN test and define the number density
-%% ---------------------------------------------------------------------------------------------- %%
-\subsection{``Top N'' Test and Number Density Bins}
-    \label{sec:topn_intro}   
-
-    \plan{Rough outline}
-
-    \begin{itemize}
-        
-        \item 
-
-    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Section: Simulation and Model
@@ -794,6 +797,20 @@ shown in \ref{fig:best_mock}.
 %% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
+%% Introducing the TopN test and define the number density
+%% ---------------------------------------------------------------------------------------------- %%
+\section{``Top N'' Tests}
+    \label{sec:topn_intro}   
+
+    \plan{Rough outline}
+
+    \begin{itemize}
+        
+        \item 
+
+    \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
 %% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and 
 %%         halo mass distribution
 %% ---------------------------------------------------------------------------------------------- %%
@@ -940,20 +957,18 @@ shown in \ref{fig:best_mock}.
 %% ---------------------------------------------------------------------------------------------- %%
 %% Trends with scatter
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{\sighalo{} from the ``Top N'' Tests}
+\subsection{Results from the ``Top N'' Tests}
     \label{sec:topn_results}
 
-    \plan{A detailed outline}
-
-    Here 
-
-    Using the scheme of the ``Top N'' tests, we 
-
-    \begin{itemize}
-        
-        \item 
-
-    \end{itemize}
+    Here we summarize the key results from the ``Top N'' tests regarding the \sighalo{} of 
+    each \mvir{} tracer in four different number density bins.
+    We describe the scheme of the ``Top N'' tests in Section \ref{sec:topn_intro}. 
+    In the following sections, we review the performance of different observables as \mvir{}
+    tracers via both direct comparisons of their \dsigma{} profiles and the \sighalo{}
+    estimates using the model described in Section \ref{sec:model}.
+    The best-fit \dsigma{} profile from our simple model can also qualitatively exam whether 
+    a $\log$-linear \mvir{}-observable relation with Gaussian scatter alone can explain the 
+    \mvir{} distribution of the selected sample.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare M100kpc mass and CModel mass
@@ -1225,7 +1240,6 @@ shown in \ref{fig:best_mock}.
       \label{fig:richness_residual}
   \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
-
     
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discussion 
@@ -1265,7 +1279,7 @@ this what ASAP was telling us all along?
 \subsection{Comparison with X--ray observation}
     \label{sec:xray}
 
-\textbf{We are going to think about whether to add this here or not. Deceide later.}
+    \alexie{We are going to think about whether to add this here or not. Deceide later.}
 
     \todo{Placeholder}
     \song{Need to read more recent works on this}
@@ -1279,6 +1293,14 @@ this what ASAP was telling us all along?
     
     % Main conclusion    
     \todo{Placeholder}    
+
+    In these tests, we directly compare he \dsigma{} profiles of massive halos identified 
+    by different \mvir{} proxies in the same number density bins. 
+    The overall amplitudes of the \dsigma{} profiles reflect both the average \mvir{} and the 
+    \sighalo{} of the underlying samples, therefore can help us exam the capabilities of 
+    different observables as \mvir{} proxies.
+    We also develop a simple toy-model based on dark matter N-body simulations to predict 
+    \dsigma{} profile\todo{...|}
 
     % Future direction   
     \todo{Briefly mention a few future directions. Also name as many as I can think of, 
