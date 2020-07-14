@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/13 5058words
+% 07/13 5500 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -1051,19 +1051,93 @@ shown in \ref{fig:best_mock}.
 \subsubsection{Performance of the \mstar{} of outer enevelope}
     \label{sec:moutskirt}
 
+    \todo{Fix the fitting results and the figure. In Bin 3 and 4, the \mvir{} distributions are 
+        cut-off due to the \mdpl2{} limitation.}
+    
+    \song{Should we try a similar one but based on Re, e.g. 2-4 Re instead of fixed aperture?
+        or maybe R50 to R80?}
+
+    In addition to the \mstar{} within large elliptical apertures, we also explore the possibility 
+    of using \mstar{} within the \exsitu{}-star dominated outskirt as \mvir{} proxy.
+    Here we use \menve{50}{100}, which is the \mstar{} between 50 and 100 kpc, as an example to 
+    highlight the behaviour of outskirt \mstar{} (see Figure \ref{fig:m100_mout}).
+
     \plan{A detailed outline}
 
     \begin{itemize}
 
-        \item 
+        \item Similar to \maper{100} and other aperture-based \mstar{}, \menve{50}{100} and other 
+            outskirt \mstar{} can also select samples of massive galaxies whose \dsigma{} profiles
+            are well-fit by our simple ``scatter-onky'' model (left panels of 
+            Figure \ref{fig:m100_mout}).
+        
+        \item A little to our surprise, the overall amplitudes of the \dsigma{} profiles for the 
+            \menve{50}{100} samples are consistently higher than the \maper{100} ones in all 
+            bins. This conclusion does not change when we switch \maper{100} with \maper{150} or 
+            \mmax{}. We highlight the ratios of the \dsigma{} profiles of these two samples in 
+            the middle panels of Figure \ref{fig:m100_mout}. 
+            There seems to be a slight radial dependence in the ratios (at least for the Bin
+            1-3), where the difference is more significant in the inner 2-3 Mpc while the
+            \dsigma{} profiles of the two samples roughly agree with each other at $R>5$ Mpc. 
+            The difference in the inner region is also slightly stronger in Bin 2-4. 
+            The average ratios \dsigma{}$_{100\ \rm kpc}/$\dsigma{}$_[50,100]$ for Bin [1, 2, 3, 4]
+            are \todo{XX, XX, XX, XX}.
+        
+        \item Based on our model, this result suggests that, compared to \maper{100} and 
+            aperture \mstar{} in general, outskirt \mstar{} like \menve{50}{100} can select 
+            massive galaxies living in the halos with higher average \mvir{} and lower 
+            \sighalo{} (as shown in the right panels of Figure \ref{fig:m100_mout}). 
+        
+        \item We rely on the low-\sb{} part of the surface brightness profile to estimate 
+            the \mstar{} in the outskirt, which is more vulnerable to the relative large 
+            statistical uncertainty in the photometry and systematic issues such as imperfect 
+            background subtraction, contamination of nearby object, and the assumption of constant 
+            \mlratio{}. It is reasonable to expect the \mvir{}-\menve{50}{100}
+            relation is ``noisier'' than the one for aperture \mstar{}. 
+            Therefore, the result highlighted in Fig \ref{fig:m100_mout} really demonstrate the 
+            potential of using outskirt \mstar{} as a \mvir{} proxy.
+            Given the likely case that the outskirts of massive galaxies are completely dominated 
+            by \exsitu{} stars, this result could confirm that the \exsitu{} component can 
+            predicts \mvir{} and trace the halo assembly better than the \insitu{} component. 
+            Considering that \menve{50}{100} is included in \maper{100}, this may even suggest 
+            that the \exsitu{} component or the outskirt \mstar{} are more useful than the 
+            ``total'' \mstar{} when studying the galaxy-halo connection of massive galaxies.
+
+        \item In this work, we only explore outskirt defined by two fixed physical radius.
+            Such definition has the advantage of being unambiguous and straightforward. 
+            Given unambiguous imaging data quality, it can be consistently apply to different 
+            surveys too.
+            The choices of these boundaries are subjective at best. 
+            But we tested different definitions of outskirt \mstar{}, and the result is robust
+            as long as the inner boundary is larger than 50 kpc.
+        
+        \item Meanwhile, ``outskirt'' definition with an inner boundary of 50 kpc makes it 
+            difficult to extend this proxy to lower-\mstar{} or higher-redshift galaxies.
+            And the \exsitu{} fraction within \menve{50}{100} at different \mstar{} is still 
+            unknown. It is worth exploring alternative definitions of outskirt (e.g., relative
+            to $R_{\rm e}$ or $R_{80}$) or ``calibrating'' the definition using the
+            state-of-the-art hydro-simulation to reflect the underlying \exsitu{} \mstar{} better.
 
     \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Comparisons of scatters: different tracers and aperture masses
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure*}
+      \centering 
+      \includegraphics[width=0.85\textwidth]{figure/topn_sigma_trend_sum}
+      \caption{
+          \todo{Comparisons of scatters: different tracers and aperture masses.}
+          }
+      \label{fig:scatter1}
+  \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% General trends of scatters
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Scatter of \mvir{} at Fixed Observables}
+\subsubsection{Scatter of \mvir{} at Fixed Observables}
     \label{sec:trend}
 
 \plan{Remind people that the scatter here is scatter of halo mass, is for each bin, and is 
@@ -1084,21 +1158,6 @@ shown in \ref{fig:best_mock}.
 %  \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
        
-%Figure \ref{fig:scatter1} and \ref{fig:scatter2} show the scatter in halo mass at fixed observable.
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Comparisons of scatters: different tracers and aperture masses
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure*}
-      \centering 
-      \includegraphics[width=0.85\textwidth]{figure/topn_sigma_trend_sum}
-      \caption{
-          \todo{Comparisons of scatters: different tracers and aperture masses. \alexie{Can you make the colors more bold here? These colors are kinnda pale. We want something bold and flashy.}}
-          }
-      \label{fig:scatter1}
-  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
-
 %% ---------------------------------------------------------------------------------------------- %%
 %% Comparison with richness selected galaxies
 %% ---------------------------------------------------------------------------------------------- %%
