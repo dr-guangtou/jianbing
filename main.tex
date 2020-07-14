@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/13 5500 words
+% 07/13 6055 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -848,6 +848,19 @@ shown in \ref{fig:best_mock}.
     when using them as \mvir{} proxy.
 
 %% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Impact of satellites on the M100kpc selected DSigma profiles
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure}
+      \centering 
+      \includegraphics[width=0.49\textwidth]{figure/dsigma_sat_ratio}
+      \caption{
+          \todo{Impact of satellites on the M100kpc selected \dsigma{} profiles}
+          }
+      \label{fig:satellite}
+  \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
+
+%% ---------------------------------------------------------------------------------------------- %%
 %% Impact of satellite galaxies 
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Impact of Satellites}
@@ -925,25 +938,14 @@ shown in \ref{fig:best_mock}.
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Impact of satellites on the M100kpc selected DSigma profiles
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure}
-      \centering 
-      \includegraphics[width=0.49\textwidth]{figure/dsigma_sat_ratio}
-      \caption{
-          \todo{Impact of satellites on the M100kpc selected \dsigma{} profiles}
-          }
-      \label{fig:satellite}
-  \end{figure}
-%% ---------------------------------------------------------------------------------------------- %%
-
-%% ---------------------------------------------------------------------------------------------- %%
 %% Trends with scatter
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{\sighalo{} from the ``Top N'' Tests}
     \label{sec:topn_results}
 
     \plan{A detailed outline}
+
+    Here 
 
     Using the scheme of the ``Top N'' tests, we 
 
@@ -1129,7 +1131,7 @@ shown in \ref{fig:best_mock}.
       \caption{
           \todo{Comparisons of scatters: different tracers and aperture masses.}
           }
-      \label{fig:scatter1}
+      \label{fig:scatter_trend}
   \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
 
@@ -1140,33 +1142,61 @@ shown in \ref{fig:best_mock}.
 \subsubsection{Scatter of \mvir{} at Fixed Observables}
     \label{sec:trend}
 
-\plan{Remind people that the scatter here is scatter of halo mass, is for each bin, and is 
-    only useful for relative comparison.}
+    As a summary of the ``Top N'' test results, we highlight the relationships between 
+    \sighalo{} and the number density for three groups of different \mvir{} proxies explored in 
+    this work in Figure \ref{fig:scatter_trend}.
+    We also record the ranges of observables in each bin and their \sighalo{} values in 
+    Table \ref{tab:summary}.
 
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Summary of HSC DSigma profiles and the distributions over the aperture stellar 
-%%         mass plane.
-%% ---------------------------------------------------------------------------------------------- %%
-%  \begin{figure*}
-%      \centering 
-%      \includegraphics[width=15.5cm]{fig/small/topn_dsigma_summary}
-%      \caption{
-%          \todo{Summary of the \dsigma{} profiles from HSC using different tracers.
-%          		Also highlight their distributions over the \mmax{}-\minn{} plane. \alexie{replace the left hand side with histograms of halo mass. }}
-%          }
-%      \label{fig:hsc}
-%  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
-       
+    \plan{An outline}
+
+    \begin{itemize}
+
+        \item In the upper panel, we compare the results of a few representitive \mvir{} proxies 
+            based on different principles.
+            This includes \mcmodel{}, \maper{100}, \menve{50}{100}, $M_{\rm vir,\ ASAP}$, and the 
+            HSC \redm{} richness.
+            \plan{Outer envelope \mstar{} is better than large aperture \mstar{}, is much better 
+            than \cmodel{}. Replacing \maper{100} with \maper{150} or \mmax{} does not change anything.}
+        
+        \item \plan{\sighalo{} seems to decrease with number density thresholds, suggesting a
+            non-constant scatter along the SHMR at high-mass end.}
+        
+        \item \plan{\asap{} model: the prediction is pretty good, but not as good as we hoped. 
+            Explain why, and how to improve}
+        
+        \item \plan{Middle panel: we compare different aperture \mstar{}; The inner 30-50 kpc of 
+            massive galaxies really do not care about \mvir{} as the outskirt does.}
+        
+        \item \plan{Bottom panel: we compare a few different definitions of outskirt \mstar{}.
+            Reinforce the conclusion that outskirt really care about \mvir{}.
+            And that, given the current data quality of HSC, extending beyond 100 kpc does not 
+            further improve the result. This is worth further exploration using even better data.}
+        
+        \item \plan{Richness selected clusters have very good performance in Bin 1-2, but become 
+            comparable to the \mstar{}-based proxies at higher number density bins.
+            SDSS \redm{} and HSC \camira{} also support this conclusion.
+            Need to compare with a few previous calibrations of \mvir{}-richness relation while
+            making it clear that here the \sighalo{} is the scatter within the entire bin.}
+        
+        \item \plan{Summary: Be careful with \cmodel{}; Outskirt \mstar{} is really promising
+            (with a few caveats)}.
+
+    \end{itemize}
+    
 %% ---------------------------------------------------------------------------------------------- %%
 %% Comparison with richness selected galaxies
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Analysis of the Shape of $\Delta\Sigma$}
     \label{sec:mstar_vs_richness}
 
-Here we consider specifically the shape of $\Delta\Sigma$. 
+    \plan{An outline}
 
-%The main figures are \ref{fig:m100} and \ref{fig:mout}. Discuss the best fits and the presence of the bump.
+    \begin{itemize}
+
+        \item Although the \sighalo{} values for HSC \redm{} richness are very low, we... 
+
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
