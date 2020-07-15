@@ -84,7 +84,7 @@
 
 \begin{abstract}
           
-    \plan{Placeholder:
+    \plan{
         The abundance and the galaxy-galaxy lensing signal of massive dark matter halos contain 
         crucial cosmological information.
         We compare the stacked galaxy-galaxy lensing signals around massive halos traced by 
@@ -171,7 +171,8 @@
 %% Structure of the paper 
 %% ---------------------------------------------------------------------------------------------- %%
     
-    \todo{Placeholder: Need to be updated}
+    \todo{Homogenize \sigmh{} and \sighalo{}. Pick a favorite one.}
+    \todo{Placeholder: Need to be updated.}
 
     This paper is organized as follows. 
     We briefly go through the sample selection and data reduction processes in 
@@ -1171,7 +1172,6 @@ shown in \ref{fig:best_mock}.
     end, we see no impact on the \dsigma{} profiles for Bin 1 \& 2 and visible but small ($<20$\%)
     effect at $R>2$-3 Mpc in Bin 3 \& 4.
     
-
     \plan{A detailed outline}
 
     \begin{itemize}
@@ -1186,10 +1186,33 @@ shown in \ref{fig:best_mock}.
             the observable with lower \sighalo{} value in the same density bin a better massive halo 
             tracer (or ``cluster finder'').
         
-        \item Using ``Top N'' tests, we confirm that the richness of red-sequence galaxie is indeed 
+        \item Using the ``Top N'' tests, we confirm that the richness of red-sequence galaxie is indeed 
             an excellent \mvir{} proxy in the \mvir{} regime for galaxy clusters ($>10^{14} M_{\odot}$).
             All the three red-sequence cluster finders show lower \sigmh{} values in Bin 1 \& 2 
             than the \mstar{}-based \mvir{} proxies.
+            In Figure \ref{fig:scatter_trend}, we only show the results for the HSC \texttt{S16A}
+            \redm{} clusters, which have \sigmh{}$=$[\todo{XX, XX}] for Bin [1, 2]. 
+            For the HSC \camira{} clusters (SDSS \redm{} \texttt{v6.3} clusters), the \sigmh{} values are 
+            [\todo{XX, XX}] (\todo{XX, XX}) for Bin [1, 2].
+            In the lower \mvir{} end, we find evidence that the performance of richness as massive halo 
+            finder becomes similar or even slightly worse than certain \mstar{}-based \mvir{} proxy that 
+            will be discussed later.
+            The HSC \redm{} clusters have \sigmh{}$=$[\todo{XX, XX}] in Bin [3, 4], while the \camira{}
+            clusters have \sigmh{}$=$\todo{XX} in Bin 3.
+            We should note that the HSC \redm{} catalog attempts to reach down to extremely low richness 
+            that is challenging for any ``cluster'' finder and it has not been thoroughl vetted.
+            But the increasing trend of \sigmh{} with decreasing richness is qualitatively consistent 
+            with recent calibrations of \mvir{}-richness relations for both \redm{} 
+            (e.g., \citealt{Murata2018}; Figure 11) and \camira{} (e.g., \citealt{Murata2019}; Figure 12)
+            catalogs using a more sophisticated forward-modeling scheme.
+            \song{We could compare the scatter values too. Our scatter values in the Bin 1 \& 2
+            are consistent with Murata et al. 2018 for \redm{} but are slightly higher than 
+            Murata et al. 2020 for \camira{}. We just need to convert the $\sigma_{\ln M_{\rm vir}}$ into
+            our $\log$ one, and also try to account for the binning effect (or just use the mean richness
+            value)}.
+            Notwithstanding such low \sigmh{} values in the galaxy cluster regime, we also notice interesting
+            and systematic differences in the \dsigma{} profiles between \mstar{}- and richness-selected 
+            halos. We will discuss this later in Section \ref{sec:mstar_vs_richness}.
 
         \item As already highlighted in Section \ref{sec:cmodel}, \maper{100} is clearly a much better 
             \mvir{} proxy in all four bins. Meanwhile, the outskirt stellar mass \menve{50}{100}
