@@ -27,10 +27,10 @@
             urlcolor=cyan}
 \urlstyle{same}
 
-% Figure extention
+% Figure extension
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
-% User definitons
+% User definitions
 \input{define.tex}
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -132,7 +132,7 @@
         \item \plan{The number counts of clusters is a sensitive probe of the dark matter halo mass 
             function and the growth of structure (Albrecht, Weinberg). 
             For this reason, and with the advent of large optical surveys (SDSS, CFHTenS, HSC, DES), 
-            much effort has been focussed on the development of optical cluster finders. 
+            much effort has been focused on the development of optical cluster finders. 
             Methods that have enjoyed the most success have been based on the identification of 
             the red sequence of cluster members (\redm{}, \camira{}).}
     	
@@ -154,7 +154,7 @@
             stellar mass. Traditionally, it has always been assumed that central galaxy mass is 
             a less desirable tracer of halo mass than richness because it has a larger scatter with 
             respect to halo mass (numbers go here). However, some of this scatter has been due 
-            to poor measurements of the luminosities of super massive galaxies. Refs}
+            to poor measurements of the luminosity of super massive galaxies. Refs}
   
         \item \plan{Using deep high quality imaging from the HSC survey, 
             Huang et al showed that careful extractions of galaxy luminosity lead to lower 
@@ -206,7 +206,7 @@
     \label{sec:data}
 
 %% ---------------------------------------------------------------------------------------------- %%
-%% S16A dataset
+%% S16A data set
 %% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
@@ -257,7 +257,7 @@
 			Here we will provide a summary of the sample selection and data analysis 
 			process, please see aforementioned papers for more details.
 			
-		\item \plan{Initial selection}: We first select all HSC galaxies with CModel magnitude 
+		\item \plan{Initial selection}: We first select all HSC galaxies with \cmodel{} magnitude 
 			brighter than $i_{\rm CMod} \leq 21.5$ mag. Based on previous analysis of massive 
 			galaxies at similar redshift range, this generous flux cut ensures all massive
 			galaxies with \mstar{}$>11.5$ are included (\addref{}).
@@ -270,15 +270,15 @@
 			photometric redshift estimates for the central galaxy and other members of the
 			clusters.
 			For the rest galaxies, we adopt photometric redshifts based on the five-band
-			HSC CModel photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
+			HSC \cmodel{} photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
 			of what is frankenz, and the precision}. Using photo-$z$ for the entire sample 
 			does not change key results.
 		
-		\item \plan{SED fitting}: Based on the best-available redshift and CModel photometry, 
-			we perform SED fitting using the IDL code \ised{}. 
+		\item \plan{SED fitting}: Based on the best-available redshift and \cmodel{} photometry, 
+			we perform SED fitting using the \texttt{IDL} code \ised{}. 
 			\plan{A little more details}.
 			We compare the \mcmodel{} stellar mass function with the ones from similar 
-			photometry including the CS82 and PRIMUS surveys. 
+			photometry including the \texttt{CS82} and \texttt{PRIMUS} surveys. 
 			We find good consistency at the high-mass end and confirm that the HSC 
 			sample is complete at \mcmodel{}$>11.4$.
 					
@@ -295,7 +295,7 @@
 	
 		\item Although the \cmod{} photometry provides a baseline stellar mass measurement,
 			it is not an ideal stellar mass measurement to explore galaxy--halo connection.
-			\plan{briefly mention the problem with CModel}.
+			\plan{briefly mention the problem with \cmodel{}}.
 			
 		\item Therefore we perform our own 1-D surface brightness analysis to provide
 			more accurate stellar mass estimates and to map the stellar mass 
@@ -313,7 +313,7 @@
 			The central region suffers from smearing effect from seeing. 
 			And the outer part often has $i$-band surface brightness level lower than 
 			$\sim 28$ \sb{}, becoming much more vulnerable to background subtraction 
-			and residual contaminations from nearby objects.
+			and residual contamination from nearby objects.
 		
 		\item Using the $i$-band \mlratio{} derived from SED fitting, we convert the 
 			1-D surface brightness profile into surface stellar mass density profile.
@@ -321,14 +321,14 @@
             can robustly estimate the \mstar{} stored within different apertures or 
             different parts of the galaxy.
             We should mention that all these \mstar{} are measured within elliptical 
-            apertures that follow the shpe of the flux-weighted isophotal of the galaxy.
+            apertures that follow the shape of the flux-weighted isophotal of the galaxy.
             Massive galaxies do have intrinsic \mlratio{} gradient, hence the assumption of 
             a constant \mlratio{} tends to slightly bias the \mstar{} measurements within 
             different radial ranges.
             In \citet{Huang2018b}, we show that massive galaxies in our sample show
             color gradients that can be roughly translated into a shallow but negative 
             \mlratio{} gradient. 
-            We also do not see evidence that suggests a \mstar{} or environment-depedence 
+            We also do not see evidence that suggests a \mstar{} or environment-dependence 
             of the color gradients.
             Although the \mlratio{} will not change any key result, it suggests that we
             could slightly under-estimate the stellar mass in the central region while
@@ -365,8 +365,8 @@
     The stellar mass of the a galaxy has a well established physical relation with its halo mass.
     And more massive galaxies tend to live in more massive dark matter halos.
     Therefore it is natural to use \mstar{} of a galaxy as a first-order proxy of \mvir{}.
-    In fact, the calibration of SHMR remains one of the focues in the study of galaxy-halo connection.
-    However, the slope and scatter of SHMR at the high-\mstar{} still show discrepencies among 
+    In fact, the calibration of SHMR remains one of the focus in the study of galaxy-halo connection.
+    However, the slope and scatter of SHMR at the high-\mstar{} still show discrepancies among 
     different constraints (\addref{}). 
     And the \mstar{} of a single galaxy is often considered a less accurate \mvir{} tracer 
     than many others, including the number of sub-halos (optical richness, \addref{}), 
@@ -374,8 +374,8 @@
     in the halo (\addref{}), and X-ray luminosity of a group or cluster (\addref{}). 
     
     But, we want to point out that 
-    1) \mstar{} measurement of one galaxy is a more straightforward approach and has seveal 
-    appealing features. Observationly, it is more ``cost effective''. And it also suffers less
+    1) \mstar{} measurement of one galaxy is a more straightforward approach and has several 
+    appealing features. Observationaly, it is more ``cost effective''. And it also suffers less
     from systematic issues such as the projection effect (\addref{}).
     2) In recent years, increasingly deep imaging surveys make us aware of the importance of the 
     faint stellar outskirt of massive galaxies (\addref{}). 
@@ -411,8 +411,8 @@
             the \cmodel{} photometry \footnote{
             For instance, in {\tt S18A} data release, \hscpipe{} significantly improves the 
             background subtraction around bright object. But the well preserved low surface 
-            brightness enevelopes around massive galaxies makes object deblending more challenging.
-            In the end, we do not see improvement in the performace of \cmodel{} photometry. 
+            brightness envelopes around massive galaxies makes object deblending more challenging.
+            In the end, we do not see improvement in the performance of \cmodel{} photometry. 
             }.
         
         \item In \citet{Huang2018b}, we show that the \cmodel{} photometry on average leads to 
@@ -607,7 +607,7 @@
      while it becomes large at high masses where the steeper mass function leads to a large
      Eddington bias. \textbf{Right}: Observables with the same ratio $\alpha /
      \scatterObsSymMhalo$ have the same \scatterMhaloObsSym{} (see
-     \ref{eq:ratio_is_what_matters}) and therefore the same DS profile.
+     \ref{eq:ratio_is_what_matters}) and therefore the same \dsigma{} profile.
 	}
     \label{fig:theory}
 \end{figure*}
@@ -619,10 +619,11 @@
 \begin{figure*}
   \centering
   \includegraphics[width=\textwidth]{figure/mock_placeholder}
-  \caption{\song{Placeholder} The best-fit mock matches both the SMF from HSC and PRIMUS (left)
-    as well as the clustering from HSC. The mass bins for the clustering are [$11.5$, $11.55$,
-    $11.7$, inf] and so e.g. "11" denotes the autocorrelation in the lowest mass bin and "13" the
-    cross correlation between objects in the lowest and highest mass bins.}
+  \caption{\song{Placeholder} The best-fit mock matches both the SMF from HSC and \texttt{PRIMUS} 
+    (left) as well as the clustering from HSC. The mass bins for the clustering are 
+    [$11.5$, $11.55$, $11.7$, inf] and so e.g. ``11'' denotes the auto-correlation in the lowest 
+    mass bin and ``13'' the cross correlation between objects in the lowest and highest mass bins.
+    }
   \label{fig:best_mock}
 \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
@@ -634,125 +635,125 @@
 \subsection{Simple Scaling Relation Model}
     \label{sec:scaling}
 
-We can model the effect on the DS profile of various amounts of scatter between a generic
-observable, the log of which we denote as \obsSym{}, and the log of $\Mhalo$, denoted as $\mu$.
-We assume that the relationship between halo mass and the observable is modeled by a power law
-for the mean relation with lognormal scatter. This has been used for various observables, {\it
-e.g.,\/} X-ray temperature \citet{Lieu2016}, K-band luminosity \citet{Ziparo2016}, and the
-details of the statistics of this relation are described in, amongst others, \citet{Evrard2014,
-Farahi2018}.
+    We can model the effect on the \dsigma{} profile of various amounts of scatter between a generic
+    observable, the log of which we denote as \obsSym{}, and the log of \mvir{}, denoted as $\mu$.
+    We assume that the relationship between halo mass and the observable is modeled by a power law
+    for the mean relation with log-normal scatter. This has been used for various observables, {\it
+    e.g.,\addref{}} X-ray temperature \citet{Lieu2016}, K-band luminosity \citet{Ziparo2016}, and the
+    details of the statistics of this relation are described in, amongst others, \citet{Evrard2014,
+    Farahi2018}.
 
-The relationship between \obsSym{} and $\mu$ will depend on the distribution of $\mu$ - this is
-the halo mass function (HMF). To express the HMF over the full mass range, a functional form that
-follows a power law at low masses with an exponential decline at high masses is generally used
-\citep[\eg{}][]{Tinker2008}. However, as we are only interested in a narrow range at the high
-mass end, we can approximate it as an exponential decline with some curvature.
+    The relationship between \obsSym{} and $\mu$ will depend on the distribution of $\mu$ - this is
+    the halo mass function (HMF). To express the HMF over the full mass range, a functional form that
+    follows a power law at low masses with an exponential decline at high masses is generally used
+    \citep[\eg{}][]{Tinker2008}. However, as we are only interested in a narrow range at the high
+    mass end, we can approximate it as an exponential decline with some curvature.
 
-\begin{equation}
-    \hmf{} \equiv \frac{dn(\mu)}{d\mu{}}  = \exp \left(\beta_0 - \beta_1 \mu - \frac{\beta_2}{2} \mu^2 \right)
-    \label{eq:quadratic_hmf}
-\end{equation}
+    \begin{equation}
+        \hmf{} \equiv \frac{dn(\mu)}{d\mu{}}  = \exp \left(\beta_0 - \beta_1 \mu - \frac{\beta_2}{2} \mu^2 \right)
+        \label{eq:quadratic_hmf}
+    \end{equation}
+    
+    \noindent In practice, at the high mass end the mass function is decreasing ($\beta_1 > 0$) and
+    steepening ($\beta_2 > 0$).
+    
+    We populate our simulation's halos with this generic observable,
+    
+    \begin{equation}
+        \obsSym = \mathcal{N}(\slope \mu + \intercept,\ \scatterObsSymMhalo)
+        \label{eq:lognormal_obs_given_mhalo}
+    \end{equation}
+    
+    However, while \scatterObsSymMhalo{} is physically meaningful and the number most often quoted
+    (\eg{} it is well known that $\scatterMstarx{cen} \sim 0.2$ dex) when comparing observables used
+    to select halos, it is the scatter in \Mhalo{} at a fixed value for the observable,
+    \scatterMhaloObsSym{}, that is important. We can compute the moments of $\mu | \obsSym$ as
+    follows.
+    
+    We first note that the number of objects in a thin range of $\obsSym \in [\obsSym_1, \obsSym_2]$
+    is given by,
+    
+    \begin{equation}
+        N(\obsSym{}_1, \obsSym{}_2) \equiv \int_{\obsSym{}_1}^{\obsSym{}_2} \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) d\mu d\obsSym{}
+    \end{equation}
+    
+    At fixed \obsSym{} we can therefore compute the expected $\mu$, and the scatter around it,
 
-\noindent In practice, at the high mass end the mass function is decreasing ($\beta_1 > 0$) and
-steepening ($\beta_2 > 0$).
+    \begin{equation}
+    \begin{aligned}
+        \langle \mu | \obsSym \rangle 
+        &= \frac{1}{N(s_1, s_2)}
+            \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) \mu d\mu \\
+        &= \frac{\left( \frac{\obsSym- \intercept}{\slope} - \beta_1 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2 \right)}{ 1 + \beta_2 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2}
+        \label{eq:mean_of_mu}
+    \end{aligned}
+    \end{equation}
+    
+    \noindent The three components of $\langle \mu | \obsSym \rangle$ are: 
+    
+    \begin{enumerate}
+    	
+        \item The relation between the observable and halo mass, $(\obsSym- \intercept) / \slope$.
+    
+        \item A shift due to the Eddington bias caused by the linear slope of the HMF, $-\beta_1
+            (\scatterObsSymMhalo / \slope)^2$. In the case of $\beta_1 > 0$, this shift is to lower $\mu$ as
+            there are more low $\mu$ objects that can be up-scattered into the selection than can be
+            down-scattered.
+    
+        \item A second shift due to excess Eddington bias caused by the curvature of the HMF, $(1 +
+            \beta_2 (\frac{\scatterObsSymMhalo}{\slope})^2)^{-1}$. Again, $\beta_2 > 0$ results in more low
+            $\mu$ objects and thus a shift to lower $\mu$.
+    	
+    \end{enumerate}
+    
+    Similarly, the scatter in $\mu$ at fixed $\obsSym$,
 
-We populate our simulation's halos with this generic observable,
+    \begin{equation}
+    \begin{aligned}
+        \scatterMhaloObsSym{} 
+        &= \frac{1}{N(s_1, s_2)}
+            \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) ( \mu  - \langle \mu \rangle )^2 d\mu \\
+    	&= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
+        \label{eq:scatter_of_mu}
+    \end{aligned}
+    \end{equation}
+    
+    \noindent which, in the case of a power law mass function, reduces to the commonly seen
+    $\scatterObsSymMhalo / \slope$. The positive $\beta_2$ of the HMF decreases this scatter.
+    Finally, higher moments show that $P(\mu | s)$ is Gaussian, as there is no skew or excess
+    kurtosis.
+    
+    These results are summarized in the left panel of Figure \ref{fig:theory} where we simulate the
+    HMF and the theoretical observable \obsSym{}. We show that the resulting distributions are
+    consistent with the results shown here.
+    
+    This theoretical understanding of the moments on $\mu | \obsSym$ shows us what range of slope and
+    scatter we need to generate \dsigma{} profiles for. While naively this is a 2 dimensional
+    problem, \ref{eq:scatter_of_mu} shows that it can be reduced to a single dimension where
+    \scatterMhaloObsSym{} is a function of the ratio between slope and scatter. This is obvious in
+    the case where $\beta_2 = 0$ but still true in the curved case,
 
-\begin{equation}
-    \obsSym = \mathcal{N}(\slope \mu + \intercept,\ \scatterObsSymMhalo)
-    \label{eq:lognormal_obs_given_mhalo}
-\end{equation}
-
-However, while \scatterObsSymMhalo{} is physically meaningful and the number most often quoted
-(\eg{} it is well known that $\scatterMstarx{cen} \sim 0.2$ dex) when comparing observables used
-to select halos, it is the scatter in \Mhalo{} at a fixed value for the observable,
-\scatterMhaloObsSym{}, that is important. We can compute the moments of $\mu | \obsSym$ as
-follows.
-
-We first note that the number of objects in a thin range of $\obsSym \in [\obsSym_1, \obsSym_2]$
-is given by,
-
-\begin{equation}
-    N(\obsSym{}_1, \obsSym{}_2) \equiv \int_{\obsSym{}_1}^{\obsSym{}_2} \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) d\mu d\obsSym{}
-\end{equation}
-
-
-At fixed \obsSym{} we can therefore compute the expected $\mu$, and the scatter around it,
-
-\begin{equation}
-\begin{aligned}
-    \langle \mu | \obsSym \rangle 
-    &= \frac{1}{N(s_1, s_2)}
-        \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) \mu d\mu \\
-    &= \frac{\left( \frac{\obsSym- \intercept}{\slope} - \beta_1 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2 \right)}{ 1 + \beta_2 \left(\frac{\scatterObsSymMhalo}{\slope}\right)^2}
-    \label{eq:mean_of_mu}
-\end{aligned}
-\end{equation}
-
-\noindent The three components of $\langle \mu | \obsSym \rangle$ are: 
-\begin{enumerate}
-	
-    \item The relation between the observable and halo mass, $(\obsSym- \intercept) / \slope$.
-
-    \item A shift due to the Eddington bias caused by the linear slope of the HMF, $-\beta_1
-        (\scatterObsSymMhalo / \slope)^2$. In the case of $\beta_1 > 0$, this shift is to lower $\mu$ as
-        there are more low $\mu$ objects that can be up-scattered into the selection than can be
-        down-scattered.
-
-    \item A second shift due to excess Eddington bias caused by the curvature of the HMF, $(1 +
-        \beta_2 (\frac{\scatterObsSymMhalo}{\slope})^2)^{-1}$. Again, $\beta_2 > 0$ results in more low
-        $\mu$ objects and thus a shift to lower $\mu$.
-	
-\end{enumerate}
-
-Similarly, the scatter in $\mu$ at fixed $\obsSym$,
-
-\begin{equation}
-\begin{aligned}
-    \scatterMhaloObsSym{} 
-    &= \frac{1}{N(s_1, s_2)}
-        \int_{-\infty}^{\infty} \hmf{} P(\obsSym{} | \mu) ( \mu  - \langle \mu \rangle )^2 d\mu \\
-	&= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
-    \label{eq:scatter_of_mu}
-\end{aligned}
-\end{equation}
-
-\noindent which, in the case of a power law mass function, reduces to the commonly seen
-$\scatterObsSymMhalo / \slope$. The positive $\beta_2$ of the HMF decreases this scatter.
-Finally, higher moments show that $P(\mu | s)$ is Gaussian, as there is no skew or excess
-kurtosis.
-
-These results are summarized in the left panel of Figure \ref{fig:theory} where we simulate the
-HMF and the theoretical observable \obsSym{}. We show that the resulting distributions are
-consistent with the results shown here.
-
-This theoretical understanding of the moments on $\mu | \obsSym$ shows us what range of slope and
-scatter we need to generate \dsigma{} profiles for. While naively this is a 2 dimensional
-problem, \ref{eq:scatter_of_mu} shows that it can be reduced to a single dimension where
-\scatterMhaloObsSym{} is a function of the ratio between slope and scatter. This is obvious in
-the case where $\beta_2 = 0$ but still true in the curved case,
-
-\begin{equation}
-    \scatterMhaloObsSym{} 
-    	= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
-        = \left(\beta_2 + (\frac{\slope}{\scatterObsSymMhalo})^2\right)^{-1/2}
-    \label{eq:ratio_is_what_matters}
-\end{equation}
-
-This is shown in the right panel of Figure \ref{fig:theory}. For a variety of observables with a
-range of $\alpha$ and \scatterObsSymMhalo{}, but with the same ratio $\alpha /
-\scatterObsSymMhalo$, and therefore the same \scatterMhaloObsSym{}, the DS is identical.
-Therefore, in order to compare the DS from a range of observables with different slope/scatter
-compared to have mass, we can fix one parameter ($\alpha = 1$) and vary the other
-($\scatterObsSymMhalo$) to achieve the goal \scatterMhaloObsSym{} in the number density bins
-discussed in \ref{sec:topn_intro}. In practice, rather than predict the \scatterMhaloObsSym{}
-using \ref{eq:scatter_of_mu} (which requires fitting for $\beta_2$ at that point in the HMF), we
-instead binary search for the desired \scatterMhaloObsSym{} by iteratively choosing a
-\scatterObsSymMhalo{} to populate the halos with, and then fitting a linear $\mu | \obsSym$ to
-the relation in the given halo mass bin. The results of this process are shown in \ref{fig:mdpl2}
-where we predict DS profiles as a function of \scatterMhaloObsSym{} for each of the number
-density bins. We will compare these theoretical predicts to the observables to estimate their
-\scatterMhaloObsSym{}.
+    \begin{equation}
+        \scatterMhaloObsSym{} 
+        	= \frac{\scatterObsSymMhalo}{\sqrt{\beta_2 \scatterObsSymMhalo^2 + \slope^2}}
+            = \left(\beta_2 + (\frac{\slope}{\scatterObsSymMhalo})^2\right)^{-1/2}
+        \label{eq:ratio_is_what_matters}
+    \end{equation}
+    
+    This is shown in the right panel of Figure \ref{fig:theory}. For a variety of observables with a
+    range of $\alpha$ and \scatterObsSymMhalo{}, but with the same ratio $\alpha /
+    \scatterObsSymMhalo$, and therefore the same \scatterMhaloObsSym{}, the \dsigma{} is identical.
+    Therefore, in order to compare the \dsigma{} from a range of observables with different slope/scatter
+    compared to have mass, we can fix one parameter ($\alpha = 1$) and vary the other
+    ($\scatterObsSymMhalo$) to achieve the goal \scatterMhaloObsSym{} in the number density bins
+    discussed in \ref{sec:topn_intro}. In practice, rather than predict the \scatterMhaloObsSym{}
+    using \ref{eq:scatter_of_mu} (which requires fitting for $\beta_2$ at that point in the HMF), we
+    instead binary search for the desired \scatterMhaloObsSym{} by iteratively choosing a
+    \scatterObsSymMhalo{} to populate the halos with, and then fitting a linear $\mu | \obsSym$ to
+    the relation in the given halo mass bin. The results of this process are shown in \ref{fig:mdpl2}
+    where we predict \dsigma{} profiles as a function of \scatterMhaloObsSym{} for each of the number
+    density bins. We will compare these theoretical predicts to the observables to estimate their
+    \scatterMhaloObsSym{}.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Model used in comparison
@@ -760,26 +761,26 @@ density bins. We will compare these theoretical predicts to the observables to e
 \subsection{Model Calibrated to Match HSC}
     \label{sec:halo_model}
 
-\todo{Placeholder: Need to be updated}
-\textcolor{blue}{Chris to write this up and compute}
-
-While the simple scaling relation model presented above is useful to predict the effects of
-scatter between an observable and halo mass on the lensing signal, a more detailed model of the
-galaxy halo connection is needed to compare with specific model of M100. To make comparisons the
-HSC observations and theory, we need to populate the simulation with realistic galaxies. This
-process will be described in more detail in (Bradshaw et. al. 2020 (in prep.)) but we summarize
-it here.
-
-To do this, we use the 1Gpc MultiDark-Planck simulation. We populate galaxies using an abundance
-matching model based on the \citet{Lehmann2017} $\alpha$ model. This model marginalizes over the
-choice of the halo property to abundance match on. In this analysis, we use the mock that best
-fits the HSC high mass clustering, the auto- and cross-correlation of $\omega_p$ in bins of
-stellar mass [$11.5$, $11.55$, $11.7$, inf], and the combination of the SMF from HSC and PRIMUS.
-We use the HSC SMF in the mass regime that is complete ($> 11.5$) and PRIMUS for lower masses
-($10.5 - 11.5$).
-
-The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as
-shown in \ref{fig:best_mock}.
+    \todo{Placeholder: Updates needed}
+    
+    While the simple scaling relation model presented above is useful to predict the effects of
+    scatter between an observable and halo mass on the lensing signal, a more detailed model of the
+    galaxy halo connection is needed to compare with specific model of M100. To make comparisons the
+    HSC observations and theory, we need to populate the simulation with realistic galaxies. This
+    process will be described in more detail in (Bradshaw et. al. in prep.)) but we summarize
+    it here.
+    
+    To do this, we use the 1 Gpc MultiDark-Planck simulation. We populate galaxies using an abundance
+    matching model based on the \citet{Lehmann2017} $\alpha$ model. This model marginalizes over the
+    choice of the halo property to abundance match on. In this analysis, we use the mock that best
+    fits the HSC high mass clustering, the auto- and cross-correlation of $\omega_p$ in bins of
+    stellar mass [$11.5$, $11.55$, $11.7$, inf], and the combination of the SMF from HSC and 
+    \texttt{PRIMUS}.
+    We use the HSC SMF in the mass regime that is complete ($> 11.5$) and \texttt{PRIMUS} for 
+    lower masses ($10.5 - 11.5$).
+    
+    The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as
+    shown in \ref{fig:best_mock}.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Definition of richness and number density bins.
@@ -906,7 +907,7 @@ shown in \ref{fig:best_mock}.
             We perform this comparison for model with \sigmh{}$=0.0$ and 0.4.
         
         \item For our HSC sample, we adopt a very simple strategy to identify potential 
-            satellite galaxiess. 
+            satellite galaxies. 
             Starting from the most massive galaxies defined by \mmax{} in our sample, 
             we iteratively find nearby massive galaxies in a cylinder-like region with 
             a 2.0 physical Mpc radius in projection and a 30 comoving Mpc length in the 
@@ -947,10 +948,10 @@ shown in \ref{fig:best_mock}.
             For other results shown in this work, we will remain to use the samples including 
             massive satellites.
         
-        \item We want to emphais that satellite fraction at high-mass end and their lensing 
-            signals contain ample informatino about galaxy formatin process and galax-halo 
+        \item We want to emphases that satellite fraction at high-mass end and their lensing 
+            signals contain ample information about galaxy formation process and galaxy-halo 
             connection. 
-            \plan{We aim to constrian satellite fraction better with more complete spec-$z$ and
+            \plan{We aim to constrain satellite fraction better with more complete spec-$z$ and
             the help from X-ray data. We want to include these information in our models.}
         
     \end{itemize}
@@ -1004,7 +1005,7 @@ shown in \ref{fig:best_mock}.
         
         \item In the left panels of Figure \ref{fig:m100_cmod}, we compare the \rdsigma{} profiles
             of the \mcmodel{}- and \maper{100}-selected samples. 
-            Using the best-fit profils as reference (grey shaded region), we can see that the 
+            Using the best-fit profiles as reference (gray shaded region), we can see that the 
             \dsigma{} profile of the \maper{100} samples are well-described by our simple model 
             within 1-$\sigma$ uncertainty. 
             The reduced \chisq{} values for the \maper{} samples are \todo{[XX, XX, XX, XX]}.
@@ -1066,7 +1067,7 @@ shown in \ref{fig:best_mock}.
 %% ---------------------------------------------------------------------------------------------- %%
 %% Performance of outer envelope mass
 %% ---------------------------------------------------------------------------------------------- %%
-\subsubsection{Performance of the \mstar{} of outer enevelope}
+\subsubsection{Performance of the \mstar{} of outer envelope}
     \label{sec:moutskirt}
 
     \todo{Fix the fitting results and the figure. In Bin 3 and 4, the \mvir{} distributions are 
@@ -1176,7 +1177,7 @@ shown in \ref{fig:best_mock}.
 
     \begin{itemize}
 
-        \item In the upper panel, we compare the representitive \mvir{} proxies from several different 
+        \item In the upper panel, we compare the representative \mvir{} proxies from several different 
             disciplines including the \mstar{} based on default survey photometry (\mcmodel{}), 
             the \mstar{} within large elliptical aperture (\maper{100}), the \mstar{} in the outskirt of 
             massive galaxies (\menve{50}{100}), the \mvir{} predicted by simple empirical 
@@ -1186,7 +1187,7 @@ shown in \ref{fig:best_mock}.
             the observable with lower \sighalo{} value in the same density bin a better massive halo 
             tracer (or ``cluster finder'').
         
-        \item Using the ``Top N'' tests, we confirm that the richness of red-sequence galaxie is indeed 
+        \item Using the ``Top N'' tests, we confirm that the richness of red-sequence galaxies is indeed 
             an excellent \mvir{} proxy in the \mvir{} regime for galaxy clusters ($>10^{14} M_{\odot}$).
             All the three red-sequence cluster finders show lower \sigmh{} values in Bin 1 \& 2 
             than the \mstar{}-based \mvir{} proxies.
@@ -1200,7 +1201,7 @@ shown in \ref{fig:best_mock}.
             The HSC \redm{} clusters have \sigmh{}$=$[\todo{XX, XX}] in Bin [3, 4], while the \camira{}
             clusters have \sigmh{}$=$\todo{XX} in Bin 3.
             We should note that the HSC \redm{} catalog attempts to reach down to extremely low richness 
-            that is challenging for any ``cluster'' finder and it has not been thoroughl vetted.
+            that is challenging for any ``cluster'' finder and it has not been thoroughly vetted.
             But the increasing trend of \sigmh{} with decreasing richness is qualitatively consistent 
             with recent calibrations of \mvir{}-richness relations for both \redm{} 
             (e.g., \citealt{Murata2018}; Figure 11) and \camira{} (e.g., \citealt{Murata2019}; Figure 12)
@@ -1269,7 +1270,7 @@ shown in \ref{fig:best_mock}.
             In \citet{Huang2020}, we essentially utilize the outskirt \mstar{} with a 10 kpc inner 
             boundary. 
             Given the results of this work, there should be rooms to further improve
-            phenomelogical model like \asap{} by focusing on outer stellar halo such as between
+            phenomenological model like \asap{} by focusing on outer stellar halo such as between
             50 to 100 kpc.
             Meanwhile, several systematic issues in the \um{} model adopted by \citet{Huang2020},
             and the current sample size at the highest-\mstar{} end could also be the limiting 
@@ -1325,12 +1326,12 @@ shown in \ref{fig:best_mock}.
 \section{Discussion}
     \label{sec:discussion}
 
-\begin{itemize}
-    \item How does this change how we think about optical cluster finding?
-    \item Importance of measuring total luminosity. Crappiness of Cmodel. What are the current limitations.
-    \item Chris paper: but selection by $M*$ could be more subject to assembly bias
-    \item Baryonic effects can be discussed here
-\end{itemize}
+    \begin{itemize}
+        \item How does this change how we think about optical cluster finding?
+        \item Importance of measuring total luminosity. Crappiness of Cmodel. What are the current limitations.
+        \item Chris paper: but selection by $M*$ could be more subject to assembly bias
+        \item Baryonic effects can be discussed here
+    \end{itemize}
 
 
 %% ---------------------------------------------------------------------------------------------- %%
