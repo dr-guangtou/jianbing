@@ -1180,12 +1180,17 @@ shown in \ref{fig:best_mock}.
             disciplines including the \mstar{} based on default survey photometry (\mcmodel{}), 
             the \mstar{} within large elliptical aperture (\maper{100}), the \mstar{} in the outskirt of 
             massive galaxies (\menve{50}{100}), the \mvir{} predicted by simple empirical 
-            model ($M_{\rm vir,\ ASAP}$), and the richness of red-sequence galaxies 
+            model (\masap{}), and the richness of red-sequence galaxies 
             ($\lambda_{\rm redM,\ HSC}$).
             Ignoring the subtle differences in the \dsigma{} profiles for now, we consider 
             the observable with lower \sighalo{} value in the same density bin a better massive halo 
             tracer (or ``cluster finder'').
         
+        \item Using ``Top N'' tests, we confirm that the richness of red-sequence galaxie is indeed 
+            an excellent \mvir{} proxy in the \mvir{} regime for galaxy clusters ($>10^{14} M_{\odot}$).
+            All the three red-sequence cluster finders show lower \sigmh{} values in Bin 1 \& 2 
+            than the \mstar{}-based \mvir{} proxies.
+
         \item As already highlighted in Section \ref{sec:cmodel}, \maper{100} is clearly a much better 
             \mvir{} proxy in all four bins. Meanwhile, the outskirt stellar mass \menve{50}{100}
             out-performs \maper{100} especially in Bin 2, 3, \& 4, which is also consistent with the 
@@ -1197,25 +1202,25 @@ shown in \ref{fig:best_mock}.
             and simulation. Also, technically, we do not know whether the slope of the SHMR varies too.}
         
         \item From these comparisons, we reinforce two important conclusions.
-            Firstly, when the imaging quality allows, \mstar{} out to large physical aperture or just 
-            in the very outskirt of massive galaxies can serve as a better \mvir{} proxy to study 
-            galaxy-halo connection than \mstar{} based on default photometry. 
+            Firstly, when the imaging quality allows, \mstar{} out to large physical aperture or
+            just in the very outskirt of massive galaxies can serve as a better \mvir{} proxy to
+            study galaxy-halo connection than \mstar{} based on default photometry.
             This finding has implications in many on-going and future imaging surveys and can apply 
             to photometric methods other than \cmodel{}. 
             Small matched aperture photometry, default photometry from \texttt{SExtractor}, or even 
-            single-\ser{} model can still have systematic issues at different levels for massive galaxies.
-            We will investigate into these issues in future works.
+            single-\ser{} model can still have systematic issues at different levels for massive
+            galaxies. We will investigate into these issues in future works.
             Secondly, the ``Top N'' tests consistently show that the \mstar{} in different parts of 
             low-$z$ massive galaxies follow different SHMR. 
             The \exsitu{} star dominated outskirt shows a closer relation to its dark matter halo.
         
-        \item To further demonstrate the second point, we compare the results for different aperture \mstar{}
-            and different outskirt \mstar{} in the middle and bottom panels of Figure \ref{fig:}.
-            For aperture \mstar{}, the \sighalo{} at fixed number density significantly decreases with 
-            increasingly large aperture value, especially in Bin 1 & 2.
-            For Bin 1, \sighalo{} decreases from \todo{XX} for \maper{10 kpc}, and \todo{XX} for 
-            \maper{30}, to \todo{XX} for \maper{100} (green dashed line as reference).
-            The \sighalo{} values for \maper{10} and \maper{30} do not decrease with volume number 
+        \item To further demonstrate the second point, we compare the results for different
+            aperture \mstar{} and different outskirt \mstar{} in the middle and bottom panels of
+            Figure \ref{fig:scatter_trend}. For aperture \mstar{}, the \sighalo{} at fixed number
+            density significantly decreases with increasingly large aperture value, especially in Bin
+            1 \& 2. For Bin 1, \sighalo{} decreases from \todo{XX} for \maper{10 kpc}, and \todo{XX}
+            for \maper{30}, to \todo{XX} for \maper{100} (green dashed line as reference). The
+            \sighalo{} values for \maper{10} and \maper{30} do not decrease with volume number
             density as well.
             In the current data, aperture \mstar{} defined by $R>100$ kpc, including the one based on 
             extrapolation to 300 kpc with a single-\ser{} model fit to the outskirt (\maper{300}), 
@@ -1228,23 +1233,25 @@ shown in \ref{fig:best_mock}.
             All together, these comparisons show that the outer stellar halos of nearby massive 
             halos ``care'' about their dark matter halos much more than their central region. 
         
-        \item In the top panel of Figure \ref{fig:fig:scatter_trend}, we can also see that the 
-            \mvir{} prediceted by the \asap{} model that is based on two aperture \mstar{}
-            (\maper{10} and \mmax{} in this version).
-            Its performance 
+        \item In the top panel of Figure \ref{fig:scatter_trend}, we show that the \asap{} model 
+            also provides a reasonably good \mvir{} proxy whose \sighalo{} values
+            are better than \maper{100} and on a par with the \menve{50}{100}. 
+            Though not displayed here, our ``scatter-only'' \mvir{}-observable model can fit 
+            the \dsigma{} profiles of \masap{}-selected samples very well \todo{Put relevant figures 
+            in Github and provide a link}.
+            This is not a surprise given the 2-D scaling relation derived from the \asap{} model is 
+            also based on two aperture \mstar{}.
+            The improvement compared to single aperture \mstar{} confirms the result of 
+            \citet{Huang2020}.
+            In \citet{Huang2020}, we essentially utilize the outskirt \mstar{} with a 10 kpc inner 
+            boundary. 
+            Given the results of this work, there should be rooms to further improve
+            phenomelogical model like \asap{} by focusing on outer stellar halo such as between
+            50 to 100 kpc.
+            Meanwhile, several systematic issues in the \um{} model adopted by \citet{Huang2020},
+            and the current sample size at the highest-\mstar{} end could also be the limiting 
+            factors for using \asap{} model as a ``cluster finder''.
         
-        \item \plan{\asap{} model: the prediction is pretty good, but not as good as we hoped. 
-            Explain why, and how to improve
-        
-        \item \plan{Richness selected clusters have very good performance in Bin 1-2, but become 
-            comparable to the \mstar{}-based proxies at higher number density bins.
-            SDSS \redm{} and HSC \camira{} also support this conclusion.
-            Need to compare with a few previous calibrations of \mvir{}-richness relation while
-            making it clear that here the \sighalo{} is the scatter within the entire bin.}
-        
-        \item \plan{Summary: Be careful with \cmodel{}; Outskirt \mstar{} is really promising
-            (with a few caveats)}.
-
     \end{itemize}
     
 %% ---------------------------------------------------------------------------------------------- %%
