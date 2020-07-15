@@ -1304,6 +1304,20 @@
         
     \end{itemize}
 
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{figure/topn_dsigma_mout6_redm_compare}
+      \caption{
+          \todo{Compare 50-100 kpc outer envelope mass and richness selected clusters}
+          }
+      \label{fig:mout_richness}
+  \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
+
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare the DSigma profiles of richness selection clusters with their 
 %%		   best-fit model.
@@ -1326,38 +1340,38 @@
     \label{sec:mstar_vs_richness}
     
     In this section, we will take a closer look into the \dsigma{} profiles of the
-    richness-selected massive halos.
+    richness-selected massive halos with two key questions in mind:
+
+    \todo{Update Figure \ref{fig:richness_residual}: don't need to show the \mvir{}
+        distribution again.}
+
+    \todo{Update Figure \ref{fig:richness_residual} and Figure \ref{fig:mout_richness}:
+        remove the \camira{} points in Bin 4.}
+
+    \begin{enumerate}
+
+        \item What is the difference between the \dsigma{} profiles of massive halos selected 
+            by richness and \mstar{} in the same number density bins?
+
+        \item Can we use a simple $\log$-linear \mvir{}-richness relation with Gaussian 
+            scatter to explain the \dsigma{} profiles of richness-selected clusters?
+
+    \end{enumerate}
+
+    \plan{Rough outline}
 
     \begin{itemize}
 
-        \item Although the \sighalo{} values for HSC \redm{} richness are very low, we... 
+        \item In the left panels of Figure \ref{fig:mout_richness}, we compare the \dsigma{}
+            profiles of HSC \redm{} clusters and \menve{50}{100}-selected massive halos in the four
+            density bins.
+        
+        \item We further compare the \dsigma{} profiles of richness-selected clusters
+            with their best-fit profiles from our model.
+            Left panels of Figure \ref{fig:richness_residual} compares the \dsigma{}
+            profiles of HSC \redm{} and \camira{} clusters in each bin. 
 
     \end{itemize}
-    
-
-    Different from these above works, we do not attempt to re-calibrate \mvir{}-richness relations.
-    In stead, we focus on two questions:
-
-    \begin{enumerate}
-        \item What is the difference between the \dsigma{} profiles of massive halos selected 
-            by richness and \mstar{} within the same volume number density range
-    \end{enumerate}
-
-
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure*}
-      \centering
-      \includegraphics[width=\textwidth]{figure/topn_dsigma_mout6_redm_compare}
-      \caption{
-          \todo{Compare 50-100 kpc outer envelope mass and richness selected clusters}
-          }
-      \label{fig:mout_richness}
-  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
-
     
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discussion 
