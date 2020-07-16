@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/13 7813 words
+% 07/15 8428 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -1433,14 +1433,56 @@
             between the halos identified by the \mstar{} of their central galaxy and the ones 
             by the richness of galaxies in them \emph{at similr average \mvir{}}.
 
-            
-        \item We further compare the \dsigma{} profiles of richness-selected clusters
+        \item To address question two, we compare the \dsigma{} profiles of richness-selected clusters
             with their best-fit profiles from our model.
-            Left panels of Figure \ref{fig:richness_residual} compares the \dsigma{}
-            profiles of HSC \redm{} and \camira{} clusters in each bin. 
+            The left panels of Figure \ref{fig:richness_residual} compares the \dsigma{}
+            profiles of HSC \redm{} and \camira{} clusters in each bin.
+            It is clear that the simple ``$\log$-linear \mvir{}-observable with Gaussian scatter''
+            model can not fit the observed \dsigma{} profiles well.
+            The reduced \chisq{} values for the \redm{} (\camira{}) clusters in the four bins are 
+            \todo{[XX, XX, XX, XX]} (\todo{[XX, XX, XX, XX]}).
+            The deviations from the ``best-fit'' profiles are not only very significant, but also
+            clearly resemble the differences with \mstar{}-based samples described above.
+            And as the model profile is much less noisier, we can see the systematic trends in
+            these deviations clearly using the relative ``residual'' profiles in the middle panels 
+            of Figure \ref{fig:richness_residual}:
+            1) In the highest-\mvir{} Bin 1, we see the \dsigma{} profiles are supressed inside 
+            1 Mpc by up to $\sim 50$\% compared to the ``scatter''--only model profile. The $R > 1$
+            Mpc parts, on the other hand, are well-fit by the model.
+            2) In Bin 2 \& 3, the most prominent feature is the ``bump'' around 1-2 Mpc.
+            The richness-selected clusters here show suppressed \dsigma{} profiles at both inner and 
+            outer regions.
+            3) In Bin 4, the \redm{} clusters show statistically consistent \dsigma{} profile with 
+            the model. Although there could be weak evidence of supressed \dsigma{} signals at 
+            $R < 200$ kpc and $2 < R < 4$ Mpc.
+
+        \item The \redm{} and \camira{} \dsigma{} profiles are consistent within 1-$\sigma$ 
+            uncertainties in Bin 1 \& 2 (\camira{} tends to show slightly lower amplitudes).
+            In Bin 3, the \camira{} profile is significantly lower than the \redm{} one by
+            $\sim 20-30$\% at $R < 1$ Mpc. 
+            However, regardless of these differences, their ``residuals'' compared to our 
+            ``scatter''--only model are remarkably similar. 
+            This reinforce our conclusion: compared to the \mstar{}-based \mvir{} proxies whose 
+            \dsigma{} profiles are adequately depicted by our simple model, the richness-based 
+            cluster finders show systematic difference in their \dsigma{} profiles, suggesting 
+            a $\log$--normal \mvir{}-richness relation with Gaussian scatter does not fully capture 
+            the \mvir{} distribution.
+            This result is in line with previous models for cluster lensing signals 
+            (e.g., \citealt{Murata2019}, \addref{}), but to our best knowledge, this is the first 
+            time it has been illustrated without assuming the contributions from different 
+            ``components'' in the \dsigma{} profile.
 
     \end{itemize}
-    
+   
+    We should mention that the statistical uncertainties of the model \dsigma{} profile 
+    using \mdpl2{} and \smdpl{} simulations have been increased to match the volume of 
+    HSC \texttt{S16A} sample.
+    With increasingly larger sky coverage of HSC survey (e.g. $>600$ deg$^2$ of FDFC region 
+    in \texttt{S19A} compared to $\sim 137$ deg$^2$ in \texttt{S16A}), future sample can 
+    exame these systematic differences more precisely. 
+    We will briefly discuss the potential causes of such differences and their implications
+    in \S \ref{sec:cause_of_difference} and \S \ref{sec:perfect_finder}.
+
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discussion 
 %% ---------------------------------------------------------------------------------------------- %%
