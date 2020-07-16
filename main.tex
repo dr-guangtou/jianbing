@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/13 7397 words
+% 07/13 7813 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -541,6 +541,8 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Richness-based proxies for Halo Mass}
 	\label{sec:proxy_richness}
+
+    \todo{Should discuss the completeness of richness-clusters in each bin and the implications.}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% redMaPPer
@@ -1338,15 +1340,12 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{The $\Delta\Sigma$ Profiles of \mstar{} and Richness Selected Samples}
     \label{sec:mstar_vs_richness}
-    
-    In this section, we will take a closer look into the \dsigma{} profiles of the
-    richness-selected massive halos with two key questions in mind:
-
-    \todo{Update Figure \ref{fig:richness_residual}: don't need to show the \mvir{}
-        distribution again.}
 
     \todo{Update Figure \ref{fig:richness_residual} and Figure \ref{fig:mout_richness}:
         remove the \camira{} points in Bin 4.}
+
+    In this section, we will take a closer look at the \dsigma{} profiles of the
+    richness-selected massive halos with two key questions in mind:
 
     \begin{enumerate}
 
@@ -1362,10 +1361,79 @@
 
     \begin{itemize}
 
+        \item In Section \ref{sec:trend} and Figure \ref{fig:scatter_trend}, we show that
+            \redm{} (both the HSC and SDSS one) and \camira{} red-sequence cluster finders 
+            have better performance at the very high-\mvir{} end of HMF than any \mstar{}-based
+            massive halo tracer.
+            In this case, we expect the \dsigma{} profiles of richness-selected clusters to 
+            have higher overall amplitudes than the \mstar{} selected ones in the same bin 
+            due to the higher average \mvir{}.
+            At lower-\mvir{} regime, the \mstar{}-based \mvir{} proxies, especially the outskirt
+            \mstar{} such as \menve{50}{100}, start to demonstrate comparable (Bin 2 \& 3) 
+            \sigmh{} performance to the richness-based ones. 
+            Therefore, we expect to see similar \dsigma{} profiles.
+        
         \item In the left panels of Figure \ref{fig:mout_richness}, we compare the \dsigma{}
             profiles of HSC \redm{} clusters and \menve{50}{100}-selected massive halos in the four
             density bins.
+            To highlight the differences better, we show the ratios between the \dsigma{} profiles 
+            of the richness-selected samples and the \menve{50}{100} ones using both 
+            HSC \redm{} and \camira{} (only for Bin 1--3) clusters.
+            SDSS \redm{} clusters are also consistent with these results in the first two bins.
+            \todo{Make figures available in Github and provide the links}.
+            Interestingly, we see similar and systematic differences in their \dsigma{} 
+            profiles in Bin 1-3: although the average amplitudes are similar within 
+            $R < 5$ Mpc, the richness-selected clusters have $\sim 20$-40\% lower \dsigma{} amplitudes than 
+            the \menve{50}{100}-selected galaxies in the $R < 1$ Mpc inner region.
+            The \camira{} \dsigma{} profiles show slightly stronger ``dipping'' in this region 
+            than the \redm{} ones (especially in Bin 1 \& 3).
+            Meanwhile, both \redm{} and \camira{} profiles show enhanced \dsigma{} profiles in the 
+            $1 < R < 3$ Mpc regime in Bin 1 \& 2 at about 20-30\% level.
+            The sample sizes are still quite limited for both Bin 1 \& 2, but the consistent features 
+            found in different red-sequence finders suggest that this is a robust result.
+            The similarity between the \redm{} and \camira{} profiles in Bin 2 is remarkable.
+            For Bin 3, the \redm{} and \camira{} \dsigma{} profiles have amplitudes similar 
+            to the \menve{} one at $1 < R < 3$ Mpc.
         
+        \item At $R > 5$ Mpc, we are still limited by the \snratio{} of the \dsigma{} profiles 
+            from both observations and simulations, so the result is still a little uncertain.
+            In Bin 1 with only 49 systems, the outer \dsigma{} profiles of richness- and 
+            \menve{50}{100}-selected samples are statistically consistent with each other.
+            Meanwhile, we find marginal evidence that the \dsigma{} profiles of the \redm{} and 
+            \camira{} clusters become lower than the \menve{50}{100} galaxies at $R > 5$ Mpc 
+            in Bin 2 \& 3. 
+            The fact that we see this similar, albeit noisy, trend using different cluster finders
+            makes it worth investigating further.
+
+        \item The \dsigma{} profile of \redm{} samples in Bin 4 starts to globally fall below the 
+            \menve{50}{100}-selected halos as indicated by the \sigmh{} measurements shown in 
+            Figure \ref{fig:scatter_trend}.
+            Halos in Bin 4 have average \logmh{}$<13.8$ for all our \mvir{} proxies. 
+            In this ``massive group'' regime, it is not surprising to see richness-based cluster
+            finder start to face intrinsic limitation caused by low and noisy richness level 
+            and become more vulnerable to systematic issues (e.g. photo-$z$ uncertainty, 
+            projection effect).
+        
+        \item We should note that the seemingly diffrent behavior between Bin 2 and 3 is partly
+            due to the usage of \menve{50}{100} for comparison in stead of large aperture \mstar{}.
+            We already demonstrated that \menve{50}{100} is a better \mvir{} tracer than \maper{100},
+            \maper{150}, or \mmax{} in Section \ref{sec:moutskirt} and Section \ref{sec:trend}.
+            In Figure \ref{fig:m100_mout}, the \dsigma{} profiles of \menve{50}{100} samples are 
+            consistently $\sim 10$--30\% higher than the \maper{100} ones.
+            When replacing \menve{50}{100} with \maper{100} in Figure \ref{fig:mout_richness}, 
+            we can see that, compared to the \dsigma{} profiles of \mstar{}-selected samples, 
+            the ones for richness-selected clusters always show ``suppressed'' signal at 
+            $R < 1$ Mpc and ``enhanced'' \dsigma{} at $1 < R < 3$ Mpc.
+            \todo{Provide the link to this figure}
+            For Bin 2 \& 3, we can see a ``bump''-like feature right outside 1 Mpc, which happens
+            to correspond to the rough boundary between the 1-halo and 2-halo term for cluster-mass
+            halos. 
+            Regardless the cause of this trend (see discussion in Section 
+            \ref{sec:cause_of_difference}), this result reveals potentially important difference 
+            between the halos identified by the \mstar{} of their central galaxy and the ones 
+            by the richness of galaxies in them \emph{at similr average \mvir{}}.
+
+            
         \item We further compare the \dsigma{} profiles of richness-selected clusters
             with their best-fit profiles from our model.
             Left panels of Figure \ref{fig:richness_residual} compares the \dsigma{}
@@ -1378,6 +1446,38 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \section{Discussion}
     \label{sec:discussion}
+
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discussion about the outer envelope mass
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Outer Galaxy Mass}
+    \label{sec:outer_mstar}
+
+    Discuss here why we think the outer mass may work the best. Is this because of the
+    \textbf{slope} of the $Mexsitu$ verus Mhalo plane being steeper than for insitu mass (see
+    plot in Chris paper). Can discuss how UM and TNG predictions are different in this regard.
+
+    \todo{Figure: show a figure of the ASAP model but using the outer mass. Is the boundary more 
+        clear? Is this what ASAP was telling us all along?}
+
+    \plan{Rough outline}
+
+    \begin{itemize}
+
+        \item Relation with \exsitu{} stellar mass and the problem. 
+
+        \item Relation with ``ICL'' \mstar{}.
+
+    \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discuss the difference between richness and stellar mass selections 
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Outer Galaxy Mass}
+    \label{sec:cause_of_difference}
+
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% A ``perfect'' cluster finder?
@@ -1411,29 +1511,6 @@
 
         \item Could take a look of the common and different ones in each bin. Using their 
             lensing signal as guidance: in \redm{}; not in \mstar{} v.s. in \mstar{}; not in \redm{}
-
-    \end{itemize}
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Discussion about the outer envelope mass
-%% ---------------------------------------------------------------------------------------------- %%
-\subsection{Outer Galaxy Mass}
-    \label{sec:outer_mstar}
-
-    Discuss here why we think the outer mass may work the best. Is this because of the
-    \textbf{slope} of the $Mexsitu$ verus Mhalo plane being steeper than for insitu mass (see
-    plot in Chris paper). Can discuss how UM and TNG predictions are different in this regard.
-
-    \todo{Figure: show a figure of the ASAP model but using the outer mass. Is the boundary more 
-        clear? Is this what ASAP was telling us all along?}
-
-    \plan{Rough outline}
-
-    \begin{itemize}
-
-        \item Relation with \exsitu{} stellar mass and the problem. 
-
-        \item Relation with ``ICL'' \mstar{}.
 
     \end{itemize}
 
