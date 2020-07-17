@@ -1574,19 +1574,116 @@
     % Main conclusion    
     \plan{A detailed outline}    
 
-    In this work, 
+    Using the deep imaging data and sensitive galaxy-galaxy lensing capability of the HSC SSP 
+    survey, we exam a series of observables's capabilities as \mvir{} proxies for massive 
+    galaxies with \logms{}$>11.5$ at $0.2 < z < 0.5$.
+    Such ability is critical for identifying massive halos, studying their halo assembly and 
+    galaxy-halo connection, and using these unique targets as cosmological probes.
+    Here we focus on the richness of red-sequence galaxies and different measurements of \mstar{} 
+    of the central galaxy.
+    Optical richness is the most widely adopted cluster finder in imaging surveys and is often 
+    considered the best option as well (\addref{}). 
+    We include the two popular red-sequence cluster finders \redm{} (e.g., \addref{}) and 
+    \camira{} (e.g., \addref{}).
+    Meanwhile, the SHMR of central galaxy is the most fundamental scaling relation for 
+    galaxy-halo connection \citep[e.g.,][]{Wechsler2018}.
+    And SHMR has been used to statistically predict \mvir{} of galaxies in much broader
+    context than galaxy clusters (\addref{}).
+    In this work, we expplored a series of \mstar{} measurements including the \mstar{} 
+    based on default \cmodel{} photometry (\mcmodel{}), \mstar{} enclosed in different 
+    elliptical apertures (e.g., \maper{10}, \maper{100}), and \mstar{} in the outskirt of a 
+    massive galaxy such as the \mstar{} between 50 and 100 kpc apertures.
+    We also include the \mvir{} predicted by the phenomenological model \asap{} 
+    (\citealt{Huang2020}) that is based on two aperture \mstar{}: \maper{10} and \mmax{}.
 
-    In these tests, we directly compare he \dsigma{} profiles of massive halos identified 
-    by different \mvir{} proxies in the same number density bins. 
-    The overall amplitudes of the \dsigma{} profiles reflect both the average \mvir{} and the 
-    \sighalo{} of the underlying samples, therefore can help us exam the capabilities of 
-    different observables as \mvir{} proxies.
-    We also develop a simple toy-model based on dark matter N-body simulations to predict 
-    \dsigma{} profile\todo{...|}
+    To empirically compare these observables, we group massive halos identified by different 
+    proxies within the same volume into four number density bins.
+    We then directly compare the stacked \dsigma{} profiles for different observables within 
+    each bin. 
+    These stacked \dsigma{} profiles are determined by the underlying \mvir{} distributions,
+    therefore allowing us to evaluate these different observables. 
+    Generally speaking, in this ``Top N'' test, a better \mvir{} proxy would be the one result 
+    in \dsigma{} profile with higher amplitude than others \emph{in the same number density bin}.
+    Using the simple model described in \S \ref{sec:model} and \S \ref{sec:topn_intro}, we
+    predict stacked \dsigma{} profiles for different \mvir{} distributions using halos from 
+    the \mdpl2{} and \smdpl{} simulations.
+    Through these comparisons, we are able to answer 
+    1) What is the \scatterMhaloObsSym{} level for each observable in the four bins.
+    2) For a given \mvir{} proxy, is a simple $\log$-linear \mvir{}-observable relation with
+    Gaussian scatters sufficient to explain the observed \dsigma{} profile? 
+    
+    The main results from these ``Top N'' tests are: 
+
+    \song{Link back to each figure}
+    
+    \begin{itemize}
+
+        \item \plan{Be careful with CModel, it could be worse than you thought.}
+
+        \item \plan{
+            Large aperture \mstar{} is better \mvir{} proxy, whose \dsigma{} profiles 
+            match the simulation prediction very well. 
+            And \mstar{} in larger aperture tends to be better \mvir{} proxy up until 
+            $\sim 100$ kpc.
+        }
+        
+        \item \plan{
+            Interestingly, the \mstar{} in the outskirt such as the \menve{50}{100}
+            is an even better \mvir{} tracer than aperture \mstar{}.
+            It is possible that this is because the outskirt is dominated by the \exsitu{}
+            component. And the \exsitu{} component has a much closer relationship to the 
+            current \mvir{} than the \insitu{} component dominating the inner region.
+        }
+        
+        \item \plan{
+            Richness cluster finder such as \redm{} and \camira{} indeed show great performance
+            in the cluster mass regime. But the outskirt \mstar{} is also very competitive.
+            Once below \mvir{}$< 10^{14} M_{\odot}$, \menve{50}{100} is on a par with 
+            richness finder and can even become the better one at very low richness regime.
+            Compared to richness, \mstar{} of a single galaxy has several advantages that 
+            make it worth exploring more.
+        }
+
+        \item \plan{
+            Although the richness cluster finders show great \scatterObsSymMhalo{} values, 
+            their \dsigma{} profiles can not be well-fit by our ``scatter''-only model, 
+            suggesting other systematic issues are at play here.
+        }
+
+        \item \plan{
+            Comparing the richness \dsigma{} profiles and the \menve{50}{100} or other \mstar{}-based 
+            ones, we see systematic differences in their \dsigma{} profiles. [Describing the 
+            differences briefly].
+            Such difference could arise from a series of issues such as projection effect, 
+            off-center effect, or assembly bias.
+        }
+
+        \item \plan{
+            To apply \mstar{}-based proxies in the future, one needs to solve the satellite 
+            problem. [Explain what we find.]
+        }
+
+    \end{itemize}
+
 
     % Future direction   
     \todo{Briefly mention a few future directions. Also name as many as I can think of, 
           need to pick a few.}
+
+
+
+
+    \todo{Move to the TopN intro section}
+    To empirically interpret the difference found in the \dsigma{} profiles, we also develop 
+    a simple model based on N-body simulations \mdpl2{} and \smdpl{}. 
+    This toy model assumes a $\log$-linear \mvir{}-observable relation with constant Gaussian 
+    scatter of observable value at fixed \mvir{} (\scatterObsSymMhalo{}).
+    The fiducial model can fit the SMF of HSC massive galaxies and their auto- and cross-correlation
+    properties among three \mstar{} bins.
+    Then we fix the slope of the default \mvir{}-observable relation and vary the 
+    \scatterObsSymMhalo{} to result
+    to find the best match  
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Acknowledgements 
