@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/15 8811 words
+% 07/15 9401 words
 
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
@@ -840,6 +840,20 @@
         These models often include different components such as the so-called 1-halo and 2-halo
         terms along with the contribution of off-center clusters.}
 
+    \plan{
+        To empirically interpret the difference found in the \dsigma{} profiles, we also develop 
+        a simple model based on N-body simulations \mdpl2{} and \smdpl{}. 
+        This toy model assumes a $\log$-linear \mvir{}-observable relation with constant Gaussian 
+        scatter of observable value at fixed \mvir{} (\scatterObsSymMhalo{}).
+        The fiducial model can fit the SMF of HSC massive galaxies and their auto- and cross-correlation
+        properties among three \mstar{} bins.
+        Then we fix the slope of the default \mvir{}-observable relation and vary the 
+        \scatterObsSymMhalo{} to result
+        to find the best match...
+    } 
+
+
+
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and 
 %%         halo mass distribution
@@ -1572,8 +1586,6 @@
     \label{sec:summary}
     
     % Main conclusion    
-    \plan{A detailed outline}    
-
     Using the deep imaging data and sensitive galaxy-galaxy lensing capability of the HSC SSP 
     survey, we exam a series of observables's capabilities as \mvir{} proxies for massive 
     galaxies with \logms{}$>11.5$ at $0.2 < z < 0.5$.
@@ -1608,18 +1620,27 @@
     predict stacked \dsigma{} profiles for different \mvir{} distributions using halos from 
     the \mdpl2{} and \smdpl{} simulations.
     Through these comparisons, we are able to answer 
-    1) What is the \scatterMhaloObsSym{} level for each observable in the four bins.
+    1) What is the \sigmh{} level for each observable in the four bins.
     2) For a given \mvir{} proxy, is a simple $\log$-linear \mvir{}-observable relation with
     Gaussian scatters sufficient to explain the observed \dsigma{} profile? 
     
     The main results from these ``Top N'' tests are: 
 
     \song{Link back to each figure}
-    
+
     \begin{itemize}
 
-        \item \plan{Be careful with CModel, it could be worse than you thought.}
-
+        \item \mstar{} based on \cmodel{} photometry is not a promising \mvir{} proxy with 
+            \sigmh{}$\sim 0.6$-0.7 dex in each of the density bin (see Figure \ref{fig:m100_cmod}
+            and Figure \ref{fig:scatter_trend}).
+            Due to the intrinsic limitation of model flexibility and systematic issues in 
+            image reduction, \cmodel{} photometry cannot account for the extedend stellar 
+            enevelope of massive galaxies (e.g., \citealt{Bernardi2013, Huang2018b}.
+            Not only it underestimates the \mstar{}, it also misses the component that is 
+            more closely related to \mvir{}.
+            We caution the usage of \cmodel{}-based \mstar{} when studying galaxy-halo 
+            connection of massive galaxies in the future.
+            
         \item \plan{
             Large aperture \mstar{} is better \mvir{} proxy, whose \dsigma{} profiles 
             match the simulation prediction very well. 
@@ -1669,21 +1690,6 @@
     % Future direction   
     \todo{Briefly mention a few future directions. Also name as many as I can think of, 
           need to pick a few.}
-
-
-
-
-    \todo{Move to the TopN intro section}
-    To empirically interpret the difference found in the \dsigma{} profiles, we also develop 
-    a simple model based on N-body simulations \mdpl2{} and \smdpl{}. 
-    This toy model assumes a $\log$-linear \mvir{}-observable relation with constant Gaussian 
-    scatter of observable value at fixed \mvir{} (\scatterObsSymMhalo{}).
-    The fiducial model can fit the SMF of HSC massive galaxies and their auto- and cross-correlation
-    properties among three \mstar{} bins.
-    Then we fix the slope of the default \mvir{}-observable relation and vary the 
-    \scatterObsSymMhalo{} to result
-    to find the best match  
-
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Acknowledgements 
