@@ -199,143 +199,7 @@
     And we use $M_{\rm vir}$ for dark matter halo mass (\mhalo{}) as
     defined in \citealt{BryanNorman1998}.
 
-%% ---------------------------------------------------------------------------------------------- %%
-%% Section: Data and Sample Selection
-%% ---------------------------------------------------------------------------------------------- %%
-\section{Data}
-    \label{sec:data}
 
-%% ---------------------------------------------------------------------------------------------- %%
-%% S16A data set
-%% ---------------------------------------------------------------------------------------------- %%
-
-\subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
-    \label{sec:hsc}
-
-	\todo{Placeholder: copy from Paper I}
-
-	%% General information
-
-	In this work, we use the \texttt{WIDE} layer of the internal data release
-	\texttt{S16A} of the HSC SSP, an ambitious imaging survey using the new prime focus
-	camera on the 8.2--m Subaru telescope.
-	These data are reduced by \texttt{hscPipe 4.0.2}, a specially tailored version of
-	the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015};
-	\citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}},
-	modified for HSC (\citealt{HSC-PIPE}).
-	The coadd images are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey;
-	e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}), with pixel scale of 0\asec{}$.168$
-	and mean $i$-band seeing has FWHM of 0\asec{}$.58$.
-	Please refer to \citet{HSC-SSP, HSC-DR1} for more details about the survey design
-	and the data products.
-	The general performance of \texttt{hscPipe} can be found in \citet{SynPipe}.
-	In addition to the full--color and full--depth constrain, the effective survey
-	area also takes into account masks for bright stars described in
-	\citet{HSC-STAR}.
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Massive Galaxy Sample
-%% ---------------------------------------------------------------------------------------------- %%
-
-\subsection{S16A Massive Galaxy Sample}
-    \label{sec:sample}
-
-	\begin{itemize}
-
-		\item From \texttt{S16A} dataset, we select a large sample of massive galaxies
-			within the redshift range of $0.2 < z < 0.5$ and estimate their surface
-			stellar mass density profiles out to $>100$ kpc individually.
-			This redshift range ensures the inner structure of a massive galaxy can be
-			well resolved while its outer stellar halo is still visible above the $i$-band
-			surface brightness limit.
-			The cosmic volume it contains also ensures a statistically significant sample
-			of the most massive galaxies in nearby universe.
-			Using the high-quality data from this sample, we revealed a remarkable structural
-			diversity in the stellar halo of these massive galaxies and its connection to
-			the underlying \mhalo{} (\addref{}).
-			Please see aforementioned papers for details about the data analysis processes.
-			Here we will provide a summary of the sample selection and data analysis
-			process, please see aforementioned papers for more details.
-
-		\item \plan{Initial selection}: We first select all HSC galaxies with \cmodel{} magnitude
-			brighter than $i_{\rm CMod} \leq 21.5$ mag. Based on previous analysis of massive
-			galaxies at similar redshift range, this generous flux cut ensures all massive
-			galaxies with \mstar{}$>11.5$ are included (\addref{}).
-			We then collect available spectroscopic redshift for this sample from a complied
-			list of spec-$z$ catalogs matched to HSC survey.
-			Most spec-$z$ are from SDSS/BOSS and GAMA surveys.
-			We also cross-match the sample with the SDSS \redm{} and HSC S16A \camira{}
-			galaxy cluster catalogs.
-			These catalogs are based on the red-sequence method and can provide very accurate
-			photometric redshift estimates for the central galaxy and other members of the
-			clusters.
-			For the rest galaxies, we adopt photometric redshifts based on the five-band
-			HSC \cmodel{} photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
-			of what is frankenz, and the precision}. Using photo-$z$ for the entire sample
-			does not change key results.
-
-		\item \plan{SED fitting}: Based on the best-available redshift and \cmodel{} photometry,
-			we perform SED fitting using the \texttt{IDL} code \ised{}.
-			\plan{A little more details}.
-			We compare the \mcmodel{} stellar mass function with the ones from similar
-			photometry including the \texttt{CS82} and \texttt{PRIMUS} surveys.
-			We find good consistency at the high-mass end and confirm that the HSC
-			sample is complete at \mcmodel{}$>11.4$.
-
-	\end{itemize}
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% 1-D Surface Mass Density Profiles
-%% ---------------------------------------------------------------------------------------------- %%
-
-\subsection{1-D Surface Mass Density Profiles}
-    \label{sec:1d_prof}
-
-	\begin{itemize}
-
-		\item Although the \cmod{} photometry provides a baseline stellar mass measurement,
-			it is not an ideal stellar mass measurement to explore galaxy--halo connection.
-			\plan{briefly mention the problem with \cmodel{}}.
-
-		\item Therefore we perform our own 1-D surface brightness analysis to provide
-			more accurate stellar mass estimates and to map the stellar mass
-			distribution in massive galaxies.
-			Using the \ellipse{} isophotal analysis function from \iraf{}, we carefully
-			extract 1-D $i$-band surface brightness profiles along the major axis of the
-            mean isophote of the galaxy.
-            HSC survey uses $i$-band as the reference filter for weak lensing measurements.
-            Therefore, the $i$-band images have the best seeing condition, in favour of
-            detailed structural analysis.
-			Before the extraction, we aggressively mask out all neighboring objects,
-			empirically correct the local background when over-subtraction occurs, and
-			also test the method against a series of systematics.
-			On average, the 1-D surface brightness profile is robust from 5-6 kpc to 100 kpc.
-			The central region suffers from smearing effect from seeing.
-			And the outer part often has $i$-band surface brightness level lower than
-			$\sim 28$ \sb{}, becoming much more vulnerable to background subtraction
-			and residual contamination from nearby objects.
-
-		\item Using the $i$-band \mlratio{} derived from SED fitting, we convert the
-			1-D surface brightness profile into surface stellar mass density profile.
-            Through integrating these 1-D profiles within different radial ranges, we
-            can robustly estimate the \mstar{} stored within different apertures or
-            different parts of the galaxy.
-            We should mention that all these \mstar{} are measured within elliptical
-            apertures that follow the shape of the flux-weighted isophotal of the galaxy.
-            Massive galaxies do have intrinsic \mlratio{} gradient, hence the assumption of
-            a constant \mlratio{} tends to slightly bias the \mstar{} measurements within
-            different radial ranges.
-            In \citet{Huang2018b}, we show that massive galaxies in our sample show
-            color gradients that can be roughly translated into a shallow but negative
-            \mlratio{} gradient.
-            We also do not see evidence that suggests a \mstar{} or environment-dependence
-            of the color gradients.
-            Although the \mlratio{} will not change any key result, it suggests that we
-            could slightly under-estimate the stellar mass in the central region while
-            over-estimating the \mstar{} in the outskirt when using the average \mlratio{}
-            of the galaxy.
-
-	\end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Key Methods used in this work
@@ -357,20 +221,21 @@
 
 \subsection{Philosophy of Top-N test}
 
+\alexie{Add simple explantion figure here}
+
     \begin{itemize}
 
         \item \plan{Basic philosophy}: Comparison of \dsigma{} profiles of massive halos
             identified by different methods within the same volume number density threshold.
 
-        \item \plan{Binning}: four bins based on the richness values of HSC \redm{} cluster
-            catalog. Bin 1 \& 2 correponds to the \mvir{} range of galaxy clusters;
-            Bin 3 \& 4 reach into the massive galaxy group regime.
+        
 
         \item \plan{Comparison with model \dsigma{} profiles and the estimate of \sigmh{}.}
 
     \end{itemize}
 
     \todo{Points worth mentioning, randomly organized.}
+
     \plan{Mention that the \mstar{} sample misses $\sim 10$\% of galaxies due to failed 1-D
         profile extraction. Visual examination of the failed ones and their \mcmodel{}
         suggest that the \mstar{} distribution of those cases should not be that different
@@ -642,7 +507,143 @@
   \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Section: Data and Sample Selection
+%% ---------------------------------------------------------------------------------------------- %%
+\section{Data}
+    \label{sec:data}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% S16A data set
+%% ---------------------------------------------------------------------------------------------- %%
+
+\subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
+    \label{sec:hsc}
+
+	\todo{Placeholder: copy from Paper I}
+
+	%% General information
+
+	In this work, we use the \texttt{WIDE} layer of the internal data release
+	\texttt{S16A} of the HSC SSP, an ambitious imaging survey using the new prime focus
+	camera on the 8.2--m Subaru telescope.
+	These data are reduced by \texttt{hscPipe 4.0.2}, a specially tailored version of
+	the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015};
+	\citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}},
+	modified for HSC (\citealt{HSC-PIPE}).
+	The coadd images are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey;
+	e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}), with pixel scale of 0\asec{}$.168$
+	and mean $i$-band seeing has FWHM of 0\asec{}$.58$.
+	Please refer to \citet{HSC-SSP, HSC-DR1} for more details about the survey design
+	and the data products.
+	The general performance of \texttt{hscPipe} can be found in \citet{SynPipe}.
+	In addition to the full--color and full--depth constrain, the effective survey
+	area also takes into account masks for bright stars described in
+	\citet{HSC-STAR}.
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Massive Galaxy Sample
+%% ---------------------------------------------------------------------------------------------- %%
+
+\subsection{S16A Massive Galaxy Sample}
+    \label{sec:sample}
+
+	\begin{itemize}
+
+		\item From \texttt{S16A} dataset, we select a large sample of massive galaxies
+			within the redshift range of $0.2 < z < 0.5$ and estimate their surface
+			stellar mass density profiles out to $>100$ kpc individually.
+			This redshift range ensures the inner structure of a massive galaxy can be
+			well resolved while its outer stellar halo is still visible above the $i$-band
+			surface brightness limit.
+			The cosmic volume it contains also ensures a statistically significant sample
+			of the most massive galaxies in nearby universe.
+			Using the high-quality data from this sample, we revealed a remarkable structural
+			diversity in the stellar halo of these massive galaxies and its connection to
+			the underlying \mhalo{} (\addref{}).
+			Please see aforementioned papers for details about the data analysis processes.
+			Here we will provide a summary of the sample selection and data analysis
+			process, please see aforementioned papers for more details.
+
+		\item \plan{Initial selection}: We first select all HSC galaxies with \cmodel{} magnitude
+			brighter than $i_{\rm CMod} \leq 21.5$ mag. Based on previous analysis of massive
+			galaxies at similar redshift range, this generous flux cut ensures all massive
+			galaxies with \mstar{}$>11.5$ are included (\addref{}).
+			We then collect available spectroscopic redshift for this sample from a complied
+			list of spec-$z$ catalogs matched to HSC survey.
+			Most spec-$z$ are from SDSS/BOSS and GAMA surveys.
+			We also cross-match the sample with the SDSS \redm{} and HSC S16A \camira{}
+			galaxy cluster catalogs.
+			These catalogs are based on the red-sequence method and can provide very accurate
+			photometric redshift estimates for the central galaxy and other members of the
+			clusters.
+			For the rest galaxies, we adopt photometric redshifts based on the five-band
+			HSC \cmodel{} photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
+			of what is frankenz, and the precision}. Using photo-$z$ for the entire sample
+			does not change key results.
+
+		\item \plan{SED fitting}: Based on the best-available redshift and \cmodel{} photometry,
+			we perform SED fitting using the \texttt{IDL} code \ised{}.
+			\plan{A little more details}.
+			We compare the \mcmodel{} stellar mass function with the ones from similar
+			photometry including the \texttt{CS82} and \texttt{PRIMUS} surveys.
+			We find good consistency at the high-mass end and confirm that the HSC
+			sample is complete at \mcmodel{}$>11.4$.
+
+	\end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% 1-D Surface Mass Density Profiles
+%% ---------------------------------------------------------------------------------------------- %%
+
+\subsection{1-D Surface Mass Density Profiles}
+    \label{sec:1d_prof}
+
+	\begin{itemize}
+
+		\item Although the \cmod{} photometry provides a baseline stellar mass measurement,
+			it is not an ideal stellar mass measurement to explore galaxy--halo connection.
+			\plan{briefly mention the problem with \cmodel{}}.
+
+		\item Therefore we perform our own 1-D surface brightness analysis to provide
+			more accurate stellar mass estimates and to map the stellar mass
+			distribution in massive galaxies.
+			Using the \ellipse{} isophotal analysis function from \iraf{}, we carefully
+			extract 1-D $i$-band surface brightness profiles along the major axis of the
+            mean isophote of the galaxy.
+            HSC survey uses $i$-band as the reference filter for weak lensing measurements.
+            Therefore, the $i$-band images have the best seeing condition, in favour of
+            detailed structural analysis.
+			Before the extraction, we aggressively mask out all neighboring objects,
+			empirically correct the local background when over-subtraction occurs, and
+			also test the method against a series of systematics.
+			On average, the 1-D surface brightness profile is robust from 5-6 kpc to 100 kpc.
+			The central region suffers from smearing effect from seeing.
+			And the outer part often has $i$-band surface brightness level lower than
+			$\sim 28$ \sb{}, becoming much more vulnerable to background subtraction
+			and residual contamination from nearby objects.
+
+		\item Using the $i$-band \mlratio{} derived from SED fitting, we convert the
+			1-D surface brightness profile into surface stellar mass density profile.
+            Through integrating these 1-D profiles within different radial ranges, we
+            can robustly estimate the \mstar{} stored within different apertures or
+            different parts of the galaxy.
+            We should mention that all these \mstar{} are measured within elliptical
+            apertures that follow the shape of the flux-weighted isophotal of the galaxy.
+            Massive galaxies do have intrinsic \mlratio{} gradient, hence the assumption of
+            a constant \mlratio{} tends to slightly bias the \mstar{} measurements within
+            different radial ranges.
+            In \citet{Huang2018b}, we show that massive galaxies in our sample show
+            color gradients that can be roughly translated into a shallow but negative
+            \mlratio{} gradient.
+            We also do not see evidence that suggests a \mstar{} or environment-dependence
+            of the color gradients.
+            Although the \mlratio{} will not change any key result, it suggests that we
+            could slightly under-estimate the stellar mass in the central region while
+            over-estimating the \mstar{} in the outskirt when using the average \mlratio{}
+            of the galaxy.
+
+	\end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Halo mass proxies based on stellar mass
@@ -810,7 +811,7 @@
             can take advantage of the full structural information of a massive galaxy to predict
             its \mvir{} is a promising and important upgrade.
 
-        \item In Huang et al. (2020, \addref{}), we build a simple phenomelogical model (\asap{})
+        \item In Huang et al. (2020, \addref{}), we build a simple phenomenological model (\asap{})
             on top of the \um{} semi-empirical model that can connect the \minn{} and \mmax{} of a
             massive galaxy with its \mvir{}.
             In this first step, we simply assume that \maper{10} represents the \insitu{} \mstar{}
@@ -870,6 +871,13 @@
 	\end{itemize}
 
 
+\subsection{Bining}
+
+Binning:  four bins based on the richness values of HSC \redm{} cluster
+            catalog. Bin 1 \& 2 correponds to the \mvir{} range of galaxy clusters;
+            Bin 3 \& 4 reach into the massive galaxy group regime.
+            
+            
 
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -878,8 +886,7 @@
 \section{Results}
     \label{sec:result}
 
-    Now we summarize the main results of this work.
-    We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
+    We now present our main results. We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
     galaxies as promising \mvir{} proxy (Sec \ref{sec:satellite}).
     Then we show the key findings from the from the ``Top N'' tests and compare the performance
     of different \mvir{} tracers (Sec \ref{sec:topn_results}).
@@ -911,7 +918,7 @@
       \centering
       \includegraphics[width=0.49\textwidth]{figure/dsigma_sat_ratio}
       \caption{
-          \todo{Impact of satellites on the M100kpc selected \dsigma{} profiles}
+          \todo{Impact of satellites on M100kpc selected \dsigma{} profiles. }
           }
       \label{fig:satellite}
   \end{figure}
@@ -923,28 +930,20 @@
 \subsection{Impact of Satellites}
     \label{sec:satellite}
 
-    \plan{A detailed outline}
-
-    \begin{itemize}
-
-        \item To fully realize the potential of using \mstar{} of a massive galaxy as \mhalo{}
-            proxy, we must first deal with one crucial systematic issue which is the impact
-            from satellite galaxies.
+Before using massive galaxies in our top-N tests, we must first understand the impact of  satellite galaxies.        Satellite galaxies impart a "bump" feature in \dsigma{} profiles on scales of $R\sim$ 1 Mpc (e.g. Mandelbaum et al. 2006, Leauthaud et al. 2012).
             Many previous works suggest a low satellite fraction at \logms{}$>$11.5, but
             massive satellite galaxies still make up $\sim 5$-10\% of our sample.
             Moreover, satellite fraction significantly increases with decreasing \mstar{},
             presenting further challenges to apply \mstar{} as halo mass proxy.
 
-        \item \plan{Briefly explain the impact of satellite galaxies on the \dsigma{} profile.}
-            Their \dsigma{} profiles will show significant contribution from the host halo
-            in the second-halo term regime (e.g. \addref{}, Li et a. 2014).
+ 
 
-        \item Here, we qualitatively investigate the impact of satellite galaxies.
+       Here, we qualitatively investigate the impact of satellite galaxies.
             On the simulation side, we directly compare the \dsigma{} profiles of just central
             mock galaxies with the ones using all galaxies in each bin.
             We perform this comparison for model with \sigmh{}$=0.0$ and 0.4.
 
-        \item For our HSC sample, we adopt a very simple strategy to identify potential
+        For our HSC sample, we adopt a very simple strategy to identify potential
             satellite galaxies.
             Starting from the most massive galaxies defined by \mmax{} in our sample,
             we iteratively find nearby massive galaxies in a cylinder-like region with
@@ -954,7 +953,7 @@
             its uncertainty.
             \plan{The satellite fraction in each bin is [XX, XX, XX, XX]}.
 
-        \item Such approach is certainly over-simplified as 1) the more massive galaxy
+       Such approach is certainly over-simplified as 1) the more massive galaxy
             measured in our analysis is not necessarily the true central galaxy.
             2) The choice of cylinder size and the photo-$z$ uncertainty could mistakenly
             remove central galaxy from the sample or leave satellites in.
@@ -964,7 +963,7 @@
             Replacing \mmax{} with other larger aperture \mstar{} when identifying satellites
             will also not change the result.
 
-        \item Figure \ref{fig:satellite} summarizes the result of the test using the ratio
+      Figure \ref{fig:satellite} summarizes the result of the test using the ratio
             of \dsigma{} profiles between the all galaxies sample and the central-only one.
             Firstly, the impact of massive satellite galaxies on \dsigma{} profiles is very limited.
             In the first 2 bins, due to the very low satellite fraction, there is virtually no
@@ -979,20 +978,20 @@
             The ratio from HSC sample in this bin is still reasonably consistent with the model,
             albeit with a slightly different shape and higher enhancement at $>3$ Mpc.
 
-        \item This result confirms that the effect of massive satellite galaxies is insignificant
+        This result confirms that the effect of massive satellite galaxies is insignificant
             at \logmmax{}$>11.8$, but starts to become visible at lower \mmax{}.
             Despite the naive satellite-removing method, we find good agreement between HSC and
             model.
             For other results shown in this work, we will remain to use the samples including
             massive satellites.
 
-        \item We want to emphases that satellite fraction at high-mass end and their lensing
+        We want to emphases that satellite fraction at high-mass end and their lensing
             signals contain ample information about galaxy formation process and galaxy-halo
             connection.
             \plan{We aim to constrain satellite fraction better with more complete spec-$z$ and
             the help from X-ray data. We want to include these information in our models.}
 
-    \end{itemize}
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Trends with scatter
@@ -1498,17 +1497,18 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \section{Discussion}
     \label{sec:discussion}
-
-
+    
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discussion about the outer envelope mass
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Outer Galaxy Mass}
     \label{sec:outer_mstar}
 
-    Discuss here why we think the outer mass may work the best. Is this because of the
-    \textbf{slope} of the $Mexsitu$ verus Mhalo plane being steeper than for insitu mass (see
-    plot in Chris paper). Can discuss how UM and TNG predictions are different in this regard.
+    \plan{
+        Discuss here why we think the outer mass may work the best. Is this because of the
+        \textbf{slope} of the $Mexsitu$ verus Mhalo plane being steeper than for insitu mass (see
+        plot in Chris paper). Can discuss how UM and TNG predictions are different in this regard.
+    }
 
     \todo{Figure: show a figure of the ASAP model but using the outer mass. Is the boundary more
         clear? Is this what ASAP was telling us all along?}
@@ -1519,17 +1519,35 @@
 
         \item Relation with \exsitu{} stellar mass and the problem.
 
-        \item Relation with ``ICL'' \mstar{}.
+        \item Relation with ``ICL'' \mstar{} and recent stacking result from DES.
+        
+        \item Recent works that show the 2-D shape of ICL reflects the orientation of DM halo.
+        
+        \item A few practical matters: \mlratio{} in the outskirt; contribution from satellite 
+            galaxies; practical challenges that stop us from exploring more.
 
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discuss the difference between richness and stellar mass selections
 %% ---------------------------------------------------------------------------------------------- %%
-\subsection{Outer Galaxy Mass}
+\subsection{Richness v.s. Central Galaxy Selected ``Clusters''}
     \label{sec:cause_of_difference}
-
-
+    
+    \plan{
+        Discuss the differences in the \dsigma{} profiles of richness and \mstar{}-selected 
+        massive galaxies: What are the physical causes? What can we learn from them?
+    }
+    
+    \plan{Rough outline}
+    
+    \begin{itemize}
+    
+        \item Briefly compare the samples selected by the two different methods: How many in 
+            common? Although scatters can account for the differences in which systems are selected,
+            it maybe interesting to include 
+        
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% A ``perfect'' cluster finder?
@@ -1583,7 +1601,7 @@
 
     % Main conclusion
     Using the deep imaging data and sensitive galaxy-galaxy lensing capability of the HSC SSP
-    survey, we exam a series of observables's capabilities as \mvir{} proxies for massive
+    survey, we exam a series of observables' capabilities as \mvir{} proxies for massive
     galaxies with \logms{}$>11.5$ at $0.2 < z < 0.5$.
     Such ability is critical for identifying massive halos, studying their halo assembly and
     galaxy-halo connection, and using these unique targets as cosmological probes.
@@ -1597,7 +1615,7 @@
     galaxy-halo connection \citep[e.g.,][]{Wechsler2018}.
     And SHMR has been used to statistically predict \mvir{} of galaxies in much broader
     context than galaxy clusters (\addref{}).
-    In this work, we expplored a series of \mstar{} measurements including the \mstar{}
+    In this work, we explored a series of \mstar{} measurements including the \mstar{}
     based on default \cmodel{} photometry (\mcmodel{}), \mstar{} enclosed in different
     elliptical apertures (e.g., \maper{10}, \maper{100}), and \mstar{} in the outskirt of a
     massive galaxy such as the \mstar{} between 50 and 100 kpc apertures.
@@ -1628,8 +1646,8 @@
             \sigmh{}$\sim 0.6$-0.7 dex in each of the density bin (see Figure \ref{fig:m100_cmod}
             and Figure \ref{fig:scatter_trend}).
             Due to the intrinsic limitation of model flexibility and systematic issues in
-            image reduction, \cmodel{} photometry cannot account for the extedend stellar
-            enevelope of massive galaxies (e.g., \citealt{Bernardi2013, Huang2018b}.
+            image reduction, \cmodel{} photometry cannot account for the extended stellar
+            envelope of massive galaxies (e.g., \citealt{Bernardi2013, Huang2018b}.
             Not only it underestimates the \mstar{}, it also misses the component that is
             more closely related to \mvir{}.
             We caution the usage of \cmodel{}-based \mstar{} when studying galaxy-halo
@@ -1682,7 +1700,7 @@
             (see Figure \ref{fig:mout_richness},
             2) cannot be fully explained by the ``scatter''--only model
             (see Figure \ref{fig:richness_residual}.
-            In the highest-\mvir{} Bin 1, the observed \dsigma{} profile of richness-selcted 
+            In the highest-\mvir{} Bin 1, the observed \dsigma{} profile of richness-selected 
             clusters is $\sim 30$-50\% lower than both its best-fit model and the profile for 
             \menve{50}{100}-selected galaxies at $R < 1$ Mpc.
             In Bin 2 \& 3, the richness-based \dsigma{} profiles are suppressed at both 
@@ -1697,13 +1715,44 @@
 
     \end{itemize}
 
-
-
     % Future direction
-    \todo{Briefly mention a few future directions. Also name as many as I can think of,
-          need to pick a few.}
-
-    Based on these results, we would like to
+    Based on these results, we would like to further pursue the idea of utilizing an improved 
+    measurements of \mstar{} of massive galaxies for cluster cosmology and galaxy-halo connection 
+    studies.
+    
+    \plan{Some bullet points to choose from}
+    
+    \begin{itemize}
+    
+        \item The most recent HSC SSP data release \texttt{S20A} will cover $\sim 600$ deg$^2$, 
+            four times larger than the one used in this work, providing better sample of the 
+            most massive dark matter halos.
+            It should also provide coadd images with better local background subtraction, helping
+            us probing the very outskirt of massive galaxies better.
+            We are also working on more sophisticated modeling technique to handle massive 
+            galaxies in major mergers better to include them in future analysis.
+        
+        \item Outlined in \citet{Bradshaw2020}, we will also explore the idea to further improve 
+            the ``cluster finder'' using the combined \mstar{} of the central galaxy and a few 
+            (e.g., 2-3) massive satellites (so-called ``Cen$+N$'' method).
+            This approach potentially can has even lower \sigmh{} performance while dealing with 
+            low level projection effect.
+        
+        \item Both our central galaxy-based and the ``Cen$+N$'' methods require accurate identifications
+            of massive satellite galaxies, which is quite challenging now given the photo-$z$
+            accuracy. 
+            In the near future, spectroscopic surveys such as DESI (\addref{}) will greatly improve 
+            the situation.
+            We are working on measuring the large aperture and outskirt \mstar{} of low-$z$ massive 
+            galaxies from the DECaLS (\addref{}) images that are used for DESI sample selection.
+            Through careful comparisons, we can confirm that DECaLS $r$-band images with improved
+            background subtraction using a specifically tailored pipeline (\addref{}) can provide 
+            consistent 1-D profile out to 100 kpc with deeper HSC images (Li et al. in prep.).
+            When combined with DESI spec-$z$ measurements in the next few years, the much larger 
+            sky coverage of DECaLS (\todo{Add number}) can provides us am ideal benchmark sample
+            of massive galaxies and halos.
+        
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Acknowledgements
