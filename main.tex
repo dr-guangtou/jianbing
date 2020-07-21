@@ -541,25 +541,52 @@
 
 	\todo{Placeholder: copy from Paper I}
 
-	%% General information
+    %% General information
+    Hyper Suprime-Cam Subaru Strategic Program (HSC-SSP, or HSC survey; e.g. 
+    \citealt{HSC-SSP, HSC-DR1, HSC-DR2})
+    \footnote{\url{https://hsc.mtk.nao.ac.jp/ssp/}} is an ambitious cosmological imaging survey 
+    using the 8.2m Subaru Telescope.
+    When finished, the \texttt{WIDE} layer of the HSC survey will provide five-band ($grizY$)
+    images that are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey;
+    e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}) for $\sim 1000$ \sqdeg{} of sky, making 
+    it an ideal dataset to study low surface brightness galaxy structure and perform 
+    galaxy-galaxy lensing measurement. 
 
-	In this work, we use the \texttt{WIDE} layer of the internal data release
-	\texttt{S16A} of the HSC SSP, an ambitious imaging survey using the new prime focus
-	camera on the 8.2--m Subaru telescope.
-	These data are reduced by \texttt{hscPipe 4.0.2}, a specially tailored version of
-	the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015};
-	\citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}},
-	modified for HSC (\citealt{HSC-PIPE}).
-	The coadd images are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey;
-	e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}), with pixel scale of 0\asec{}$.168$
-	and mean $i$-band seeing has FWHM of 0\asec{}$.58$.
-	Please refer to \citet{HSC-SSP, HSC-DR1} for more details about the survey design
-	and the data products.
-	The general performance of \texttt{hscPipe} can be found in \citet{SynPipe}.
-	In addition to the full--color and full--depth constrain, the effective survey
-	area also takes into account masks for bright stars described in
-	\citet{HSC-STAR}.
+    Here we use the \texttt{S16A} internal data release of HSC SSP.
+    The HSC survey collaboration reduced these data using \texttt{hscPipe 4.0.2}, a special
+    version of the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015};
+    \citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}} that are specifically
+    modified for HSC\footnote{Most recent version can be found here:
+    \url{https://hsc.mtk.nao.ac.jp/pipedoc_e/}}.
+    Please see \citet{HSC-PIPE} for a detailed description of \texttt{hscPipe} and 
+    \citet{SynPipe} for the evaluation of its general photometric performance.
 
+    We use the fully-calibrated coadd images from the \texttt{WIDE} layer in this work.
+    These images have a pixel resolution of 0.168 arcsec. 
+    Our analysis of the stellar mass distribution in low-$z$ massive galaxies is mainly based on 
+    the $i$-band image whose mean seeing Full-Width Half-Maximum (FWHM) is 0.58 arcsec.
+    We only make use of coadd images within the Full-Depth Full-Color (FDFC) regions, which 
+    are the regions that achieve designed imaging depth in all five-band, and outside the masks
+    designed for saturated bright stars (see \citealt{HSC-STAR} for details). 
+    Such selection secures a uniform and reliable imaging quality that are necessary for 
+    our 1-D profile analysis and galaxy-galaxy lensing measurements.
+    The effective sky coverage of this data is $\sim 137$ \sqdeg{}.
+
+    We also make use of the spectroscopic redshift (spec-$z$) catalog compiled by the collaboration 
+    and the photometric redshift (photo-$z$) measurements of HSC galaxies based on the  
+    \href{https://github.com/joshspeagle/frankenz}{Flexible Regression over Associated Neighbors
+    with Kernel dEnsity estimatioN for Redshifts} (\texttt{Franken-Z}; Speagle\etal{} in prep.)
+    algorithm.
+    \citet{HSC-PHOTOZ} describes details about the spec-$z$ and photo-$z$ catalogs for \texttt{S16A}
+    in greater details.
+
+    We should note that the most recent public data release (\texttt{PDR2}) of HSC survey, which 
+    corresponds to the internal data release \texttt{S18A}, has a larger ($\sim 300$ \sqdeg{}) FDFC 
+    sky coverage and shows improved local background subtraction compared to \texttt{S16A} used here
+    (see \citealt{HSC-DR2} for details).
+    However, due to the on-going development of weak lensing shape catalog for \texttt{S18A} and 
+    later release, we will keep using \texttt{S16A} data in this work.
+    To our best knowledge, new data release will not change any of the main conclusions.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Massive Galaxy Sample
