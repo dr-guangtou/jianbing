@@ -1,7 +1,7 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
 % 07/15 9401 words
 
-\documentclass[a4paper,fleqn,usenatbib]{mnras}
+\documentclass[fleqn,usenatbib,useAMS,english]{mnras}
 
 % Packages
 \usepackage{float}
@@ -710,8 +710,8 @@
     catalog and the \texttt{frankenz} photo-$z$. 
     Currently, \hscpipe{} measures the shape of a galaxy on $i$-band coadd image using the 
     re-Gaussianization algorithm (\citealt{HirataSeljak2003}). 
-    Please see \citet{HSC-WLCAT} and \citet{HSC-WLCALIB} for details about the shape measurements
-    and calibration.
+    Please see \citet{HSC-PIPE}, \citet{HSC-WLCAT}, and \citet{HSC-WLCALIB} for details about 
+    the shape measurements and calibration.
     This catalog supports all the HSC Y1 cosmology analysis (e.g., \citealt{Hikage2019, Hamana2020})
     and cluster lensing works (e.g., \citealt{Umetsu2020}). 
     It has been made public along with HSC \texttt{PDR2}
@@ -725,36 +725,124 @@
     massive galaxies or clusters.
     This method emphasizes the importance of subtracting lensing signals around large number of 
     random positions from the signals for real lenses to achieve unbiased measurement.
-    The \dsigma{} measurement in this work is defined as:
-
+    The \dsigma{} signal at a physical radius $R$ is:
+    
     \begin{equation}
-        {\Delta\Sigma}_{\rm LR}(r) = \frac{\Sigma_{\rm Ls} w_{\rm Ls} \gamma_{t}^{(\rm ls)} \Sigma_{\rm crit}^{(\rm Ls)}}{\Sigma_{\rm Ls} w_{\rm Ls}} - \frac{\Sigma_{\rm Rs} w_{\rm Rs} \gamma_{t}^{(\rm Rs)} \Sigma_{\rm crit}^{(\rm Rs)}}{\Sigma_{\rm Rs} w_{\rm Rs}}
+        {\Delta\Sigma}_{\rm LR}(R) = 
+        f_{\rm bias}({\Delta\Sigma}_{\mathrm{L}}(R) - {\Delta\Sigma}_{\mathrm{R}}(R))
+        \label{eq:ds1}
     \end{equation}
     
-    \noindent where $L$ indicates the lens system, $R$ is for a random object, and $s$ is for 
-    background source galaxy.
-    Here $\gamma$ is the tangential shear provided in the shape catalog, $w$ is the weight, and 
-    $\Sigma_{\rm crit}$ is the critical surface density.
-
-    \noindent The critical surface density is defined as:
+    Here, $L$ indicates measurements for the lens galaxies while $R$ is for random positions.
+    For each \dsigma{} profile, we use a set of $2 \times 10^5$ random points with matched redshift
+    distribution with the lens sample. 
+    The number of random points is at least 100 time larger than the largest sample in this work.
+    In difference with \citet{Singh2017}, we do not rely on the boost factor to correct for 
+    the photo-$z$ dilution effect.
+    In stead, in \citet{Speagle2019}, we develop a correction factor,  $f_{\rm bias}$, based
+    on the photo-$z$ calibration sample in the COSMOS field for such purpose
+    (e.g., \citealt{Mandelbaum2008, Nakajima2012, Leauthaud2017}).
+    The \dsigma{} profile around lenses is:
+    
+    \begin{equation}
+        {\Delta\Sigma}_{\rm L}(R) = \frac{1}{2 \mathcal{R}(R) [1+\mathcal{K}(R)]}
+            \frac{\Sigma_{\rm Ls} w_{\rm Ls} \gamma_{t}^{(\rm Ls)} 
+            \Sigma_{\rm crit}^{(\rm Ls)}}{\Sigma_{\rm Ls} w_{\rm Ls}}
+        \label{eq:ds2}
+    \end{equation} 
+    
+    \noindent where $\gamma_{t}$ is the tangential shear component, $\Sigma_{\rm crit}$ is the 
+    critical surface density, $w_{\rm Ls}$ is the weight used for each lens-source pair.
+    Following the calibration strategy outlined in \citet{HSC-WLCALIB}, we also include 
+    the shear responsivity factor $\mathcal{R}(R)$ and the correction for the multiplicative 
+    shear bias $[1+\mathcal{K}(R)]$.
+    Here $\Sigma{\rm Ls}$ represents the summation over all lens-source pairs.
+    We perform the same measurements for random points, so replacing L with R in 
+    Equation \ref{eq:ds2} will form the estimator for randoms.
+    
+    The critical surface density is:
     
     \begin{equation}
         \Sigma_{\rm crit}=\frac{c^2}{4\pi G} \frac{D_A(z_s)}{D_A(z_l) D_A(z_l, z_s) (1+z_l)^2}
+        \label{eq:sigcrit}
     \end{equation}
     
-    \noindent 
+    \noindent where $D_A(z_L)$, $D_A(z_s)$, and $D_A{z_L, z_s}$ represent the angular diameter
+    distances to the lens, source, and the distance between the lens-source pair.
     
-    where $D_A(z_L)$, $D_A(z_s)$, and $D_A{z_L, z_s}$ are the angular 
-    diameter distances to lens (random), source, and between them, respectively.  
-    We use 11 radial bins uniformly spaced in log-space from 200 kpc to 10 Mpc 
-    (physical units are assumed). 
-    The redshift distribution of random points is matched to the lens sample.
+    The weight applied to each lens-source pair is described by:
+    
+    \begin{equation}
+        w_{\rm Ls} = \frac{\Sigma_{\rm crit}^{-2}}{\sigma^2_{e, {\rm Ls}} + \sigma^2_{\rm rms}}
+            \equiv \frac{\Sigma_{\rm crit}^{-2}}{\sigma^2_{{\rm Ls}}}
+        \label{eq:weight}
+    \end{equation}
+    
+    \noindent where $\sigma_{\rm rms}$ represents the intrinsic shape dispersion while 
+    $\sigma_{e, \rm Ls}$ is the per-component shape measurement error.
+    
+    Meanwhile, the shear responsivity factor is defined by:
+    
+    \begin{equation}
+        \mathcal{R}(R) = 1 - \frac{\Sigma_{\rm Ls} w_{\rm Ls} \sigma^2_{e, {\rm Ls}}}{\Sigma_{\rm Ls} w_{\rm Ls}}
+        \label{eq:rfactor}
+    \end{equation}
+    
+    \noindent And the multiplicative shear bias correction is defined as:
+   
+    \begin{equation}
+        \mathcal{K}(R) = \frac{\Sigma_{\rm Ls} w_{\rm Ls} m_{\rm s}}{\Sigma_{\rm Ls} w_{\rm Ls}}
+        \label{eq:kfactor}
+    \end{equation}
+    
+    \noindent where $m_{\rm s}$ is multiplicative shear bias value for each source.
+    The shape catalog provides estimates of $\sigma_{\rm rms}$, $\sigma_{e, \rm Ls}$, and $m_{\rm s}$, 
+    while \citet{HSC-WLCALIB} provides in-depth discussion of these calibration related
+    issues.
+    
+    As for the $f_{\rm bias}$, we define it as the ratio between the \dsigma{} profile calculated using 
+    the real redshift and the one using photo-$z$. 
+    In practice, it is estimated based on:
+    
+    \begin{equation}
+        f_{\rm bias} = \frac{\sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} 
+            \left(\Sigma_{{\rm crit, T}} / \Sigma_{{\rm crit, P}} \right)}{
+            \sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} \Sigma^{-2}_{\rm crit, P}}
+        \label{eq:fbias}
+    \end{equation}
+    
+    /noindent where $\Sigma_{{\rm crit, T}}$ is the critical surface density estimated using the 
+    ``true'' redshift in the calibration catalog (can be spec-$z$ or COSMOS 30-band photo-$z$), 
+    while $\Sigma_{{\rm crit, P}}$ is the one using \texttt{frankenz} photo-$z$. 
+    $w_{\rm sys}$ is the systematic photo-$z$ weight in the calibration catalog that describes
+    the \todo{Explain the photo-$z$ weight}.
+    Note that the estimator shown here is different from the ones in \citet{Leauthaud2017} and 
+    \citet{Speagle2019} and can account for the photo-$z$ dilution effect more accurately.
+    The $f_{\rm bias}$ level for galaxies in our sample is general very low ($\sim 1$-2\%).
+    
+    In this work, we measure \dsigma{} profiles in 11 physical radial bins that span from 200 kpc 
+    to 10 Mpc uniformly in $\log R$ space.
+    We apply the \texttt{basic} photo-$z$ quality cut to the source galaxies as described in 
+    \citet{Speagle2019}, and apply lens-source separation criteria defined by
+    $z_{\rm s} - z_{\rm L} \ge 0.1$ and 
+    $z_{\rm s} > z_{\rm L} + \sigma_{s,68}$, where $\sigma_{s,68}$ is the 
+    1$\sigma$ uncertainty of the source photo-$z$.
+    Uncertainties of the stacked \dsigma{} profile are estimated using jackknife resampling method.
+    We assign lens and randoms into the same 40 jackknife regions with similar area around
+    2.5 \sqdeg{} and regular shapes.
+    Jackknife resampling provides the covariance matrix of the \dsigma{} profile and a fiducial 
+    uncertainty used in analysis and visualization:
 
-    \begin{itemize}
-
-		\item \plan{Copy something from Speagle et al. 2019 here.}
-
-	\end{itemize}
+    \begin{equation}
+        \mathrm{Var}_{\rm Jk}(\widehat{\Delta\Sigma}) = \frac{N_{\rm Jk} - 1}{N_{\rm Jk}} \sum\limits_{i=1}^{N_{\rm Jk}} (\Delta\Sigma_{i} - \overline{\Delta\Sigma})^2
+    \end{equation}    
+    
+    \noindent here $N_{\rm Jk}=40$, $\Delta\Sigma_{i}$ represents the \dsigma{} profile from each 
+    Jackknife region, and $\overline{\Delta\Sigma}$ is the mean profile of all regions.
+    We perform these measurement using an upgraded version of the Python g-g lensing code 
+    \texttt{dsigma v2.0}
+    \footnote{Code is publicly available here: \url{https://github.com/johannesulf/dsigma}}
+    that has significantly improved efficiency.
 
 
 %% ---------------------------------------------------------------------------------------------- %%
