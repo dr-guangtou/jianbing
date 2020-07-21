@@ -192,21 +192,20 @@
 %% Structure of the paper
 %% ---------------------------------------------------------------------------------------------- %%
 
-    \todo{Placeholder: Need to be updated.}
-
-    This paper is organized as follows.
-    We briefly go through the sample selection and data reduction processes in
-    \S \ref{sec:data}.
-    Please refer to \citetalias{Huang2018b} for more technical details.
-    \S \ref{sec:dsigma} describes the weak lensing methodology, and the
-    measurements of aperture \mstar{} and \mden{} profiles are mentioned in
-    \S \ref{sec:method}.
-    In \S \ref{sec:model}, we introduce an empirical model to describe the relation
-    between stellar mass distribution and dark matter halo properties at
-    high-\mstar{} end.
-    Main results from the best--fit model are presented in \S \ref{sec:result} and
-    discussed in \S \ref{sec:discussion}.
-    Our summary and conclusions are presented in \S \ref{sec:summary}.
+    We first introduce the methodology used in this work in \S \ref{sec:method}, especially the 
+    philosophy behind the \topn{} test designed to evaluate different \mvir{} proxies at the 
+    same number density (\S \ref{sec:topn_intro}).
+    In \S \ref{sec:data}, we provide general information about the HSC imaging data 
+    (\S \ref{sec:hsc}) and the massive galaxy sample (\S \ref{sec:sample}) along with the 
+    procedures to measure 1-D surface mass density profile (\S \ref{sec:1d_prof}) and the
+    \dsigma{} profile (\S \ref{sec:dsigma}). 
+    We then briefly introduce all the \mvir{} proxies used in this work in \S \ref{sec:proxies},
+    including both \mstar{}- (\S \ref{sec:proxy_mstar}) and richness-based ones 
+    (\S \ref{sec:proxy_richness}).
+    We present the main results in \S \ref{sec:result} and
+    discuss their implications in \S \ref{sec:discussion}.
+    In \S \ref{sec:summary}, we summarize the lessons learned in this work and mention a few 
+    future directions to explore.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Important assumptions and definitions
@@ -226,18 +225,15 @@
 \section{Methodology and Modeling Framework}
     \label{sec:method}
 
-    \todo{Need some updates}
-
-    In this section, we will outline the methodology adopted in this work to evaluate different
-    possible \mvir{} ``proxies'' using high-fidelity galaxy-galaxy lensing data and via
-    comparison with empirical model of \mvir{}-observable scaling relation based on cosmological
-    N-body simulation.
-    We will first introduce a series of \mstar{}- (\ref{sec:proxy_mstar}) and richness-based
-    (\ref{sec:proxy_richness}) \mvir{} tracers.
-    Then we describe the measurement of the galaxy-galaxy lensing \dsigma{} (or excess surface
-    density, ESD) profiles using HSC \texttt{S16A} shape catalog (\ref{sec:dsigma}).
-    In section \ref{sec:topn_intro}, we explain the philosophy of the ``Top N'' tests and the
-    choices of volume number density bins. 
+    In this section, we will outline the methodology to evaluate different possible \mvir{}
+    ``proxies'' using high-fidelity galaxy-galaxy lensing data and via comparison with empirical
+    model of \mvir{}-observable scaling relation based on cosmological N-body simulation.
+    We first outline the basic ideal behind the so-called \topn{} tests in \S \ref{sec:topn_intro}.
+    In \S \ref{sec:scaling}, we further demonstrate the connection between the \sigmh{} at 
+    fixed observable value and the amplitude of the \dsigma{} profile.
+    The we present our fiducial model based on \mdpl2{} and \smdpl{} simulations that are 
+    tuned to match the SMF and correlation properties of HSC massive galaxies 
+    (\S \ref{sec:halo_model}).
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Philosophy of the Top N test
@@ -302,15 +298,6 @@
         histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$).} \label{fig:mdpl2}
   \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Table.1
-%% ---------------------------------------------------------------------------------------------- %%
-%\clearpage
-\include{table1}
-%\clearpage
-%% ---------------------------------------------------------------------------------------------- %%
-
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Theoretical exploration of the relations among scatters and its impact on
@@ -489,7 +476,9 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% Model used in comparison
 %% ---------------------------------------------------------------------------------------------- %%
+
 \subsection{Model Calibrated to Match HSC}
+
     \label{sec:halo_model}
 
     \todo{Placeholder: Updates needed}
@@ -532,14 +521,22 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% Section: Data and Sample Selection
 %% ---------------------------------------------------------------------------------------------- %%
-\section{Data}
+\section{Sample and Data Analysis}
     \label{sec:data}
+
+    In this section, we first introduce the imaging data from the HSC SSP survey
+    (\S \ref{sec:hsc}) and the selection of the massive galaxy sample used in this work 
+    (\S \ref{sec:sample}).
+    The we briefly describe the methods to measure the 1-D surface mass density profiles 
+    out to very large radius (\S \ref{sec:1d_prof}) and the the galaxy-galaxy lensing \dsigma{} 
+    profiles (\ref{sec:dsigma}).
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% S16A data set
 %% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
+
     \label{sec:hsc}
 
 	\todo{Placeholder: copy from Paper I}
@@ -562,6 +559,7 @@
 	In addition to the full--color and full--depth constrain, the effective survey
 	area also takes into account masks for bright stars described in
 	\citet{HSC-STAR}.
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Massive Galaxy Sample
@@ -668,11 +666,49 @@
 	\end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
-%% Halo mass proxies based on stellar mass
+%% Weak lensing measurements
+%% ---------------------------------------------------------------------------------------------- %%
+
+\subsection{\dsigma{} Profiles}
+    \label{sec:dsigma}
+
+    \todo{Placeholder}
+
+    \begin{itemize}
+
+        \item \plan{Motivation, why we want to use g-g lensing:
+            Lensing is the most direct detection of total mass distribution (hence DM)
+            around galaxy. Explain what's a \dsigma{} profile. What information can be extracted
+            from \dsigma{} profiles: \mvir{}, halo assembly history, accretion rate, or even
+            cosmology (lensing is low).}
+
+		\item \plan{Copy something from the \asap{} paper.}
+
+		\item \plan{Copy something from Speagle et al. 2019 here.}
+
+	\end{itemize}
+
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Introduction of different halo mass proxies
 %% ---------------------------------------------------------------------------------------------- %%
 
 \section{Various Proxies for Halo Mass}
+    \label{sec:proxies}
 
+    To study cosmology or galaxy-halo connection using massive dark matter halos, we first 
+    need to be able to 1) correctly identify massive halos, and 2) estimate their \mvir{}
+    (or at least the ranking of their \mvir{}).
+    As illustrated in \S \ref{sec:scaling}, we achieve these goals by adopting certain observable 
+    as \mvir{} proxy and establishing a \mvir{}-observable scaling relation.
+    For optical-NIR imaging surveys, we normally rely on \mvir{} proxies that are based on
+    either the \mstar{} of galaxies within the halo (\ref{sec:proxy_mstar}) or the richness of 
+    galaxies in the halo (\ref{sec:proxy_richness}).
+    Here we briefly introduce the \mvir{} proxies to be evaluated in this work. 
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Halo mass proxies based on stellar mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{\mstar{}-based Halo Mass Proxies}
     \label{sec:proxy_mstar}
 
@@ -869,29 +905,6 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\camira{} richness}
 	\label{sec:camira}
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Weak lensing measurements
-%% ---------------------------------------------------------------------------------------------- %%
-\subsection{\dsigma{} Profiles}
-    \label{sec:dsigma}
-
-    \todo{Placeholder}
-
-    \begin{itemize}
-
-        \item \plan{Motivation, why we want to use g-g lensing:
-            Lensing is the most direct detection of total mass distribution (hence DM)
-            around galaxy. Explain what's a \dsigma{} profile. What information can be extracted
-            from \dsigma{} profiles: \mvir{}, halo assembly history, accretion rate, or even
-            cosmology (lensing is low).}
-
-		\item \plan{Copy something from the \asap{} paper.}
-
-		\item \plan{Copy something from Speagle et al. 2019 here.}
-
-	\end{itemize}
-
 
 \subsection{Bining}
 
@@ -1743,6 +1756,15 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             of massive galaxies and halos.
         
     \end{itemize}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Table.1
+%% ---------------------------------------------------------------------------------------------- %%
+%\clearpage
+\include{table1}
+%\clearpage
+%% ---------------------------------------------------------------------------------------------- %%
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Acknowledgements
