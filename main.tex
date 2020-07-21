@@ -4,12 +4,10 @@
 \documentclass[a4paper,fleqn,usenatbib]{mnras}
 
 % Packages
-\usepackage{url}
 \usepackage{float}
 \usepackage{natbib}
 \usepackage{hhline}
 \usepackage{multirow}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{ae,aecompl}
 \usepackage[T1]{fontenc}
@@ -18,6 +16,9 @@
 \usepackage{newtxtext,newtxmath}
 \usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{xcolor,colortbl}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}  
+%\usepackage[nobiblatex]{xurl}
 
 % Package Settings
 \hypersetup{colorlinks=true,
@@ -553,7 +554,7 @@
     The HSC survey collaboration reduced these data using \texttt{hscPipe 4.0.2}, a special
     version of the Large Synoptic Survey Telescope (LSST) pipeline (e.g.\ \citealt{Juric2015};
     \citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}} that are specifically
-    modified for HSC\footnote{Most recent version can be found here:
+    modified for HSC\footnote{The most recent version of \texttt{hscPipe} can be found here:
     \url{https://hsc.mtk.nao.ac.jp/pipedoc_e/}}.
     Please see \citet{HSC-PIPE} for a detailed description of \texttt{hscPipe} and 
     \citet{SynPipe} for the evaluation of its general photometric performance.
@@ -695,20 +696,61 @@
 %% Weak lensing measurements
 %% ---------------------------------------------------------------------------------------------- %%
 
-\subsection{\dsigma{} Profiles}
+\subsection{Galaxy-Galaxy Lensing Measurements}
     \label{sec:dsigma}
 
-    \todo{Placeholder}
+    Through the measurement of coherent shape distortion of the background galaxies by the
+    gravitational lensing effect of foreground mass, galaxy-galaxy weak lensing (g-g lensing
+    hereafter) technique provides a direct probe of total mass distribution around galaxies and
+    help us establish reliable SHMR
+    (e.g., \citealt{Coupon2015}; \addref{} Hudson et al. 2015; van Uitert et al. 2015; 
+    Mandelbaum et al. 2016).
+
+    In this work, we use the shape measurements from the HSC \texttt{S16A} weak lensing shape 
+    catalog and the \texttt{frankenz} photo-$z$. 
+    Currently, \hscpipe{} measures the shape of a galaxy on $i$-band coadd image using the 
+    re-Gaussianization algorithm (\citealt{HirataSeljak2003}). 
+    Please see \citet{HSC-WLCAT} and \citet{HSC-WLCALIB} for details about the shape measurements
+    and calibration.
+    This catalog supports all the HSC Y1 cosmology analysis (e.g., \citealt{Hikage2019, Hamana2020})
+    and cluster lensing works (e.g., \citealt{Umetsu2020}). 
+    It has been made public along with HSC \texttt{PDR2}
+    \footnote{The shape catalog and other weak lensing data product can be found here: 
+    \href{here}{https://hsc-release.mtk.nao.ac.jp/doc/index.php/s16a-shape-catalog-pdr2}}.
+    
+    The strategy of g-g lensing measurement is exactly the same with \citet{Speagle2019} and 
+    \citet{Huang2020}, where the readers can find more details.
+    In short, we adopt a slightly modified version of the methodology proposed by 
+    \citet{Singh2017} to measure the excess surface mass density (ESD or \dsigma{}) profiles of 
+    massive galaxies or clusters.
+    This method emphasizes the importance of subtracting lensing signals around large number of 
+    random positions from the signals for real lenses to achieve unbiased measurement.
+    The \dsigma{} measurement in this work is defined as:
+
+    \begin{equation}
+        {\Delta\Sigma}_{\rm LR}(r) = \frac{\Sigma_{\rm Ls} w_{\rm Ls} \gamma_{t}^{(\rm ls)} \Sigma_{\rm crit}^{(\rm Ls)}}{\Sigma_{\rm Ls} w_{\rm Ls}} - \frac{\Sigma_{\rm Rs} w_{\rm Rs} \gamma_{t}^{(\rm Rs)} \Sigma_{\rm crit}^{(\rm Rs)}}{\Sigma_{\rm Rs} w_{\rm Rs}}
+    \end{equation}
+    
+    \noindent where $L$ indicates the lens system, $R$ is for a random object, and $s$ is for 
+    background source galaxy.
+    Here $\gamma$ is the tangential shear provided in the shape catalog, $w$ is the weight, and 
+    $\Sigma_{\rm crit}$ is the critical surface density.
+
+    \noindent The critical surface density is defined as:
+    
+    \begin{equation}
+        \Sigma_{\rm crit}=\frac{c^2}{4\pi G} \frac{D_A(z_s)}{D_A(z_l) D_A(z_l, z_s) (1+z_l)^2}
+    \end{equation}
+    
+    \noindent 
+    
+    where $D_A(z_L)$, $D_A(z_s)$, and $D_A{z_L, z_s}$ are the angular 
+    diameter distances to lens (random), source, and between them, respectively.  
+    We use 11 radial bins uniformly spaced in log-space from 200 kpc to 10 Mpc 
+    (physical units are assumed). 
+    The redshift distribution of random points is matched to the lens sample.
 
     \begin{itemize}
-
-        \item \plan{Motivation, why we want to use g-g lensing:
-            Lensing is the most direct detection of total mass distribution (hence DM)
-            around galaxy. Explain what's a \dsigma{} profile. What information can be extracted
-            from \dsigma{} profiles: \mvir{}, halo assembly history, accretion rate, or even
-            cosmology (lensing is low).}
-
-		\item \plan{Copy something from the \asap{} paper.}
 
 		\item \plan{Copy something from Speagle et al. 2019 here.}
 

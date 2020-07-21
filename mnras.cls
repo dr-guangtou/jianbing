@@ -119,8 +119,9 @@
 \usepackage{fixltx2e}
 
 % Include hyperref, so we can have clickable links
-\usepackage{hyperref}	% Hyperlinks
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
+% Modified by Song Huang
+%\usepackage{hyperref}	% Hyperlinks
+%\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=blue}
 
 %
 %  ****************************************
