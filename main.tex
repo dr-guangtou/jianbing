@@ -898,20 +898,29 @@
 %% redMaPPer
 %% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\redm{} richness}
-	\label{sec:redmapper}
+    \label{sec:redmapper}
+
+    \todo{Placeholder}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% CAMIRA
 %% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\camira{} richness}
-	\label{sec:camira}
+    \label{sec:camira}
 
-\subsection{Bining}
+    \todo{Placeholder}
 
-Binning:  four bins based on the richness values of HSC \redm{} cluster
-            catalog. Bin 1 \& 2 correponds to the \mvir{} range of galaxy clusters;
-            Bin 3 \& 4 reach into the massive galaxy group regime.
-            
+%% ---------------------------------------------------------------------------------------------- %%
+%% CAMIRA
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Choice of Number Density Bins}
+    \label{sec:binning}
+
+    \todo{Placeholder}
+
+    Binning: four bins based on the richness values of HSC \redm{} cluster catalog. Bin 1 \& 2
+    correponds to the \mvir{} range of galaxy clusters; Bin 3 \& 4 reach into the massive galaxy
+    group regime.
             
 
 
@@ -921,7 +930,8 @@ Binning:  four bins based on the richness values of HSC \redm{} cluster
 \section{Results}
     \label{sec:result}
 
-    We now present our main results. We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
+    We now present our main results. 
+    We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
     galaxies as promising \mvir{} proxy (Sec \ref{sec:satellite}).
     Then we show the key findings from the from the ``Top N'' tests and compare the performance
     of different \mvir{} tracers (Sec \ref{sec:topn_results}).
@@ -952,7 +962,16 @@ Binning:  four bins based on the richness values of HSC \redm{} cluster
   \begin{figure}
       \centering
       \includegraphics[width=0.49\textwidth]{figure/dsigma_sat_ratio}
-      \caption{Ratio of \dsigma{} for number density based selections of galaxies including centrals and satellites and selections including only centrals. Data points show results from HSC data where satellites have been removed using a simple cylinder based technique and galaxies have been selected based on their \mmax{} values. Shaded regions show results from our fiducial mock catalogs with both \sigmh{}$=0.0$ and 0.4. Satellites have a negligible impact on \dsigma{} at $M*>xx$, a maximum of 15\% effect at $r=xx$ at $M*=xx$, and a a maximum of 20\% effect at $r=xx$ at $M*=xx$. }
+      \caption{
+          Ratio of \dsigma{} for number density based selections of galaxies including centrals
+          and satellites and selections including only centrals. Data points show results from
+          HSC data where satellites have been removed using a simple cylinder based technique and
+          galaxies have been selected based on their \mmax{} values. Shaded regions show results
+          from our fiducial mock catalogs with both \sigmh{}$=0.0$ and 0.4. Satellites have a
+          negligible impact on \dsigma{} at \mstar{}$> 10^{11.8} M_{\odot}$, a maximum of 15\%
+          effect at $R=$\todo{XX} Mpc at $M*=xx$, and a a maximum of 20\% effect at $R=$\todo{XX}
+          Mpc at $M*=xx$.
+          }
       \label{fig:satellite}
   \end{figure}
 %% ---------------------------------------------------------------------------------------------- %%
@@ -963,53 +982,59 @@ Binning:  four bins based on the richness values of HSC \redm{} cluster
 \subsection{Impact of Satellites}
     \label{sec:satellite}
 
-Before using massive galaxies in our top-N tests, we must first understand the impact of  satellite galaxies.        Satellite galaxies impart a "bump" feature in \dsigma{} profiles on scales of $R\sim$ 1 Mpc (e.g. Mandelbaum et al. 2006, Leauthaud et al. 2012).
-            Many previous works suggest a low satellite fraction at \logms{}$>$11.5, but
-            massive satellite galaxies still make up $\sim 5$-10\% of our sample.
-            Moreover, satellite fraction significantly increases with decreasing \mstar{},
-            presenting further challenges to apply \mstar{} as halo mass proxy. Here, we qualitatively investigate the impact of satellite galaxies using our fiducial mock catalog, as well as using HSC data. 
-       
-       Using the fiducial mock catalog described in xxx, we compare the \dsigma{} profiles of central galaxies and the \dsigma{} of all galaxies in bins of \alexie{fixed number density? check here}. We perform this comparison for models with both \sigmh{}$=0.0$ and 0.4.
+    \todo{Update the XX numbers using the final model}
 
-        Using the HSC data, we then also implement a  simple strategy to identify and remove potential
-            satellite galaxies.
-            Starting from the most massive galaxies defined by \mmax{},
-            we iteratively find nearby massive galaxies in a cylinder-like region with
-            a 2.0 physical Mpc radius in projection and a 30 comoving Mpc length in the
-            line-of-sight (LOS) direction.
-            To calculate the LOS distance, we use the best available redshift and ignore
-            its uncertainty. We have explored  different choices of the cylinder size to make sure
-            our result is robust. Furthermore, replacing \mmax{} with other larger aperture \mstar{} when identifying satellites
-            does not change our result.
+    Before using massive galaxies in our top-N tests, we must first understand the impact of
+    satellite galaxies. Satellite galaxies impart a "bump" feature in \dsigma{} profiles on
+    scales of $R\sim$ 1 Mpc (e.g. \citealt{Mandelbaum2006a, Leauthaud2012}).
+    Many previous works suggest a low satellite fraction at \logms{}$>$11.5 (\addref{}), but
+    massive satellite galaxies still make up $\sim 5$-10\% of our sample. 
+    Moreover, satellite fraction significantly increases with decreasing \mstar{}, presenting
+    further challenges to apply \mstar{} as halo mass proxy. 
+    Here, we qualitatively investigate the impact of satellite galaxies using our fiducial mock
+    catalog, as well as using HSC data.
+       
+    Using the fiducial mock catalog described in \S \ref{sec:halo_model}, we compare the
+    \dsigma{} profiles of central galaxies and the \dsigma{} of all galaxies in the four number
+    density bins used in our \topn{} tests. We perform this comparison for models with both
+    \sigmh{}$=0.0$ and 0.4.
+
+    Using the HSC data, we also implement a simple strategy to identify and remove potential
+    satellite galaxies.
+    Starting from the most massive galaxies defined by \mmax{}, we iteratively find nearby
+    massive galaxies in a cylinder-like region with a 2.0 physical Mpc radius in projection and a
+    30 comoving Mpc length in the line-of-sight (LOS) direction.
+    To calculate the LOS distance, we use the best available redshift and ignore its uncertainty.
+    We have explored different choices of the cylinder size to make sure our result is robust.
+    Furthermore, replacing \mmax{} with other larger aperture \mstar{} when identifying
+    satellites does not change our result.
         
 
-       %Such approach is certainly over-simplified as 1) the more massive galaxy
-        %    measured in our analysis is not necessarily the true central galaxy.
-        %    2) The choice of cylinder size and the photo-$z$ uncertainty could mistakenly
-        %    remove central galaxy from the sample or leave satellites in.
-        %    But it is sufficient to demonstrate the effect of satellite galaxies.
+    %Such approach is certainly over-simplified as 1) the more massive galaxy
+    %    measured in our analysis is not necessarily the true central galaxy.
+    %    2) The choice of cylinder size and the photo-$z$ uncertainty could mistakenly
+    %    remove central galaxy from the sample or leave satellites in.
+    %    But it is sufficient to demonstrate the effect of satellite galaxies.
 
-
-      Figure \ref{fig:satellite} displays the ratio of \dsigma{} profiles a selection including all galaxies versus a selection based only on central galaxies using the mock catalog and in real HSC data. In all mass bins, the  ratios from HSC and from the mock catalogs are in excellent agreement. We find that satellites have almost no impact on \dsigma{} in our first two mass bins ($M*>11$). This is because the satellite fraction at these mass scales is very low. Using HSC data we estimate the satellite fraction to be xxxx while using he mock catalog we find the satellite fraction to be xxx. In the mass bins ($x<M*<x$) satellites lead to a small enhancement of \dsigma{} profile outside 500 kpc with a maximum impact of  \plan{15\%}. In this mass range, we we estimate the satellite fraction to be xxxx while using he mock catalog we find the satellite fraction to be xxx. In the forth mass bin, the \mdpl2{} model predicts a more significant enhancement peaking at 20\% level around 2--3 Mpc.
-            The ratio from HSC sample in this bin is still reasonably consistent with the model,
-            albeit with a slightly different shape and higher enhancement at $>3$ Mpc.
+    Figure \ref{fig:satellite} displays the ratio of \dsigma{} profiles from a selection
+    including all galaxies versus the one based only on central galaxies using the mock catalog
+    and in real HSC data. In all \mmax{} bins, the ratios from HSC and from the mock catalogs are
+    in excellent agreement. We find that satellites have almost no impact on \dsigma{} in our
+    first two mass bins (\logmmax{}$>11.8$). This is because the satellite fraction at these mass
+    scales is very low. Using HSC data we estimate the satellite fraction to be \todo{XX}\% while
+    using he mock catalog we find the satellite fraction to be \todo{XX}\%. Within $11.7
+    <$\logmmax{}$<11.8$, massive satellites lead to a small enhancement of \dsigma{} profile
+    outside 500 kpc with a maximum impact of $\sim 15$\%. In this \mmax{} range, we estimate the
+    satellite fraction to be \todo{XX} in HSC data and \todo{XX} in the mock catalog. In the
+    forth \mmax{} bin, the \mdpl2{} model predicts a more significant enhancement peaking at 20\%
+    level around 2--3 Mpc. The ratio from HSC sample in this bin is still reasonably consistent
+    with the model, albeit with a slightly different shape and higher enhancement at $>3$ Mpc.
             
-            
- Figure \ref{fig:satellite} shows that  the effect of massive satellite galaxies is insignificant
-            at \logmmax{}$>11.8$, but starts to become visible at lower \mmax{}.
-            Despite the naive satellite-removing method, we find good agreement between HSC and
-            model. For the remainder of this work, we will use  samples including
-            massive satellites \alexie{and will include the impact of satellites in the forward model?? Need to say here.}.
-
-  
-
-%        We want to emphases that satellite fraction at high-mass end and their lensing
-%            signals contain ample information about galaxy formation process and galaxy-halo
-%            connection.
-%            \plan{We aim to constrain satellite fraction better with more complete spec-$z$ and
-%            the help from X-ray data. We want to include these information in our models.}
-
-
+    Figure \ref{fig:satellite} shows that the effect of massive satellite galaxies is insignificant
+    at \logmmax{}$>11.8$, but starts to become visible at lower \mmax{}.
+    Despite the naive satellite-removing method, we find good agreement between HSC and
+    model. For the remainder of this work, we will include massive satellite galaxies in the 
+    samples selected from HSC data and from the mock catalog.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Trends with scatter
@@ -1017,12 +1042,11 @@ Before using massive galaxies in our top-N tests, we must first understand the i
 \subsection{Results from the ``Top N'' Tests}
     \label{sec:topn_results}
 
-We now compare the performance of various proxies using the  ``Top N'' described in xxx using the model described in  \S \ref{sec:model}. We described in most detail the cases of two proxies which yielded interesting results: \mcmodel{} and \mstar{} of outer envelope. In \S \ref{sec:trend} we then present the inferred scatter values for all of the proxies under consideratoin. 
-
-
-%    The best-fit \dsigma{} profile from our simple model can also qualitatively exam whether
-%    a $\log$-linear \mvir{}-observable relation with Gaussian scatter alone can explain the
-%    \mvir{} distribution of the selected sample.
+    We now compare the performance of various proxies using the \topn{} tests described in \S
+    \ref{sec:topn_intro} using the model described in \S \ref{sec:halo_model}. We describe in
+    most detail the cases of two proxies which yields interesting results: \mcmodel{} and
+    \mstar{} of outer envelope. In \S \ref{sec:trend} we then present the inferred scatter values
+    for all of the proxies under consideration.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare M100kpc mass and CModel mass
@@ -1030,7 +1054,26 @@ We now compare the performance of various proxies using the  ``Top N'' described
   \begin{figure*}
       \centering
       \includegraphics[width=15cm]{figure/topn_dsigma_m100_cmod_compare}
-      \caption{Comparison of the top-N test for M100kpc and CModel. Rows correspond to bins in number density (see xxx). The first column displays the lensing profile \dsigma{} in bins of number density. It is clearly apparent that the lensing amplitude for M100 is significanlty higher than for \mcmodel{} in all mass bins. Without any model fitting, this figure already demonstrates that M100 is a much better tracer of halo mass than \mcmodel{}. The second column is the ratio of xxx to xx. \mcmodel{} based selections have lensing amplitudes that are $\sim$20-50\% lower than M100 based selections. The third row shows the inferred halo mass distirbutions for the two samples using the model described in xx. Grey shaded regions indicate the distirbutions that would be obtained for an ideal tracer with $\sigma=0$. The difference in the mean halo masses of \mcmodel{} abd M100 based selection are xxx dex at xx and xx dex at xx. \alexie{the amplitudes are still quite different in the forth bin but the histograms on the right are the same? This doesn't look right.}
+      \caption{
+          \todo{Update the figure with correct \mvir{} distributions for the 3rd and 4th bins.}
+          Comparison of the \topn{} test for \maper{100} and \mcmodel{}. 
+          Rows correspond to bins in number density (see \S \ref{sec:binning}).
+          The first column displays the lensing profile \dsigma{} in bins of number density. It
+          is clear that the lensing amplitude for \maper{100} is significantly higher than for
+          \mcmodel{} in all four bins.
+          Without any model fitting, this figure already demonstrates that \maper{100} is a much
+          better tracer of \mvir{} than \mcmodel{}.
+          The second column is the ratio of the \dsigma{} profiles of \mcmodel{} and \maper{100}
+          selected galaxies. 
+          \mcmodel{} based selections
+          have lensing amplitudes that are $\sim$20-50\% lower than the \maper{100} based samples. 
+          The
+          third row shows the inferred \mvir{} distributions for the two samples using the
+          model described in \S \ref{sec:halo_model}. 
+          Grey shaded regions indicate the distributions that would be
+          obtained for an ideal tracer with \sigmh{}$=0$. 
+          The difference in the mean \mvir{} of
+          \mcmodel{} and \maper{} based selections are [\todo{}] dex in the four bins.
           }
       \label{fig:m100_cmod}
   \end{figure*}
@@ -1044,52 +1087,69 @@ We now compare the performance of various proxies using the  ``Top N'' described
 
     \todo{Fix the fitting results and the figure. In Bin 3 and 4, the \mvir{} distributions are
         cut-off due to the \mdpl2{} limitation.}
+    \todo{Update the XX numbers using the fianl model}
 
-We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Figure \ref{fig:m100_cmod} compares the lensing signal for samples selected by \mcmodel{} and using our  benchmark aperture stellar mass \maper{100}. The left panels of  Figure \ref{fig:m100_cmod} show the \rdsigma{} profiles
-            of the \mcmodel{}- and \maper{100}-selected samples. \alexie{say here immedialty what we learn from this comparison. See caption, We see immedialty that the lensing amplitudes are different}. The \mcmodel{}-based samples clearly have
-            much lower amplitudes in their \dsigma{} profiles compared to the \maper{100} ones.
-            We highlight this using the middle panel of \ref{fig:m100_cmod}.            
-            In all the four bins and at almost all radius, the \dsigma{} value of a \mcmodel{}-sample
-            is $\sim$20-50\% lower than the \maper{100} one.
+    We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. 
+    Figure \ref{fig:m100_cmod} compares the lensing signal for samples selected by \mcmodel{} and
+    using our benchmark aperture stellar mass \maper{100}.
+    The left panels of Figure \ref{fig:m100_cmod} show the \rdsigma{} profiles of the \mcmodel{}-
+    and \maper{100}-selected samples.
             
-            We then fit the \dsigma{} with our fiducial model.  Using the best-fit profiles as reference (gray shaded region), we can see that the
-            \dsigma{} profile of the \maper{100} samples are well-described by our simple model
-            within 1-$\sigma$ uncertainty. The reduced \chisq{} values for the \maper{} samples are \todo{[XX, XX, XX, XX]}.
-            This is an important point. It suggests that \emph{only} a Gaussian scatter around
-            the \mvir{}-observable relation can already explain the lensing signals at
-            the current \snratio{}.
+    The \mcmodel{}-based samples clearly have much lower amplitudes in their \dsigma{} profiles
+    compared to the \maper{100} ones in all four bins.
+    Without the need of any modeling, we can immediately conclude that \maper{100} is a much
+    better \mvir{} proxy than \mcmodel{}.
+    We highlight this using the middle panel of \ref{fig:m100_cmod}.            
+    In all the four bins and at almost all radius, the \dsigma{} value of a \mcmodel{}-sample
+    is $\sim$20-50\% lower than the \maper{100} one.
             
-            Such property makes it much easier to model and apply an observable as a \mvir{} proxy.
-            In our tests, we see that most aperture-based \mstar{} fits this description.
-            In fact, \cmodel{}-selected galaxies also have \dsigma{} profiles well-fit by the model.
-            Although it is hard to visualize in the figure, the reduced \chisq{} values for the
-            \mcmodel{} samples are \todo{[XX, XX, XX, XX]}.
+    We then fit the \dsigma{} with our fiducial model.  
+    Using the best-fit profiles for the \maper{100} selected samples as reference (gray shaded
+    region), we can see that the \dsigma{} profile of the \maper{100} samples are well-described
+    by our simple model within 1-$\sigma$ uncertainty. The reduced \chisq{} values for the
+    \maper{} samples are \todo{[XX, XX, XX, XX]}.
+    This is an important point. It suggests that \emph{only} a Gaussian scatter around the
+    $\log$-normal \mvir{}-observable relation can already explain the lensing signals at the
+    current \snratio{}.
+    Such property makes it much easier to model and apply an observable as a \mvir{} proxy.
+    In our tests, we see that most aperture-based \mstar{} fits this description.
+    In fact, \cmodel{}-selected galaxies also have \dsigma{} profiles well-fit by the model.
+    Although it is hard to visualize in the figure, the reduced \chisq{} values for the
+    \mcmodel{} samples are \todo{[XX, XX, XX, XX]}.
 
-            The halo mass histograms for all galaxy selections are shown in the right panels of Figure \ref{fig:m100_cmod}.  \mcmodel{}-selected samples lower mean \mvir{} values and higher \sigmh{}
-            than the \maper{100}-selected ones. \alexie{quantofy here}
-            We visualize this in the right panels of \ref{fig:m100_cmod}.
+    The \mvir{} histograms for all galaxy selections are shown in the right panels of 
+    Figure \ref{fig:m100_cmod}.  
+    \mcmodel{}-selected samples have lower mean \mvir{} values and higher \sigmh{}
+    than the \maper{100}-selected ones.
+    In the four number density bins, the mean \mvir{} of the \mcmodel{}-selected samples are 
+    \todo{[XX, XX, XX, XX]} dex lower than the \maper{100}-selected ones.
+    The best-fit \sigmh{} values are also much higher for the \mcmodel{} samples 
+    (\todo{[0.6, 0.6, 0.6, 0.7]} dex in the four bins) than the \maper{100} ones 
+    (\todo{[0.4, 0.4, 0.4, 0.4]}).
 
-       Limited by the sample size and the much lower \snratio{} of the \dsigma{} profiles
-            for the \mcmodel{} samples, we do not see any clear number density dependence or radial
-            trend of the difference. Among all tracers studied in this paper, we find \mcmodel{} to have the worst perfomace. 
+    Limited by the sample size and the much lower \snratio{} of the \dsigma{} profiles
+    for the \mcmodel{} samples, we do not see any clear number density dependence or radial
+    trend of the difference. 
+    But, among all tracers studied in this paper, it is clear that \mcmodel{} has the worst
+    performance.
             
+    The \sigmh{} values here apply only to the \cmodel{} photometry of HSC SSP \texttt{S16A}.
+    With a different imaging dataset, or a different treatment of background subtraction and
+    deblending, we could get different \sigmh{} values in a similar test. 
+    Moreover, the credibility of \mcmodel{} as \mvir{} proxy should depend on the \mstar{},
+    morphology, and redshift of the sample. 
+    For instance, it could be appropriate to use \cmodel{} photometry for lower-\mstar{} or
+    higher redshift samples. 
+    However, we do think the result here is consistent with the \emph{intrinsic} limitation of
+    \cmodel{} when fitting massive galaxies (e.g., \addref{}). 
+    It is well known that \cmodel{} photometry under-estimates the luminosity of a low-$z$
+    massive galaxies (e.g., \addref{}). 
+    We hope to draw more attention to its impact in many aspects of galaxy-halo connection
+    studies. 
+    We often see models calibrate their low-$z$ SHMR using \cmodel{} SMF of SDSS galaxies, or a
+    cluster-finder relies on \cmodel{} magnitude to assign central galaxy. These choices could
+    have unintended consequence.
 
-        The \sigmh{} values here apply only to the \cmodel{} photometry of HSC SSP
-            \texttt{S16A}. With a different imaging dataset, or a different treatment of background
-            subtraction and deblending, we could get different \sigmh{} values in a similar test.
-            Moreover, the credibility of \mcmodel{} as \mvir{} proxy should depend on the \mstar{},
-            morphology, and redshift of the sample. For instance, it is potentially appropriate
-            to use \cmodel{} photometry for lower-\mstar{} or higher redshift samples.
-            However, we do think the result here is consistent with the \emph{intrinsic}
-            limitation of \cmodel{} when fitting massive galaxies (e.g., \addref{}).
-            It is well known that \cmodel{} photometry under-estimates the luminosity of a low-$z$
-            massive galaxies (e.g., \addref{}).
-            We hope to draw more attention to its impact in many aspects of galaxy-halo connection
-            studies. We often see models calibrate their low-$z$ SHMR using \cmodel{} SMF of SDSS
-            galaxies, or a cluster-finder relies on \cmodel{} magnitude to assign central galaxy.
-            These choices could have unintended consequence.
-
-  
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
@@ -1115,19 +1175,19 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
 
     \song{Should we try a similar one but based on Re, e.g. 2-4 Re instead of fixed aperture?
         or maybe R50 to R80?}
+    
+    \song{Update the XX numbers using the final model}
 
     In addition to the \mstar{} within large elliptical apertures, we also explore the possibility
     of using \mstar{} within the \exsitu{}-star dominated outskirt as \mvir{} proxy.
     Here we use \menve{50}{100}, which is the \mstar{} between 50 and 100 kpc, as an example to
     highlight the behaviour of outskirt \mstar{} (see Figure \ref{fig:m100_mout}).
 
-    \plan{A detailed outline}
-
     \begin{itemize}
 
         \item Similar to \maper{100} and other aperture-based \mstar{}, \menve{50}{100} and other
             outskirt \mstar{} can also select samples of massive galaxies whose \dsigma{} profiles
-            are well-fit by our simple ``scatter-onky'' model (left panels of
+            are well-fit by our simple ``scatter-only'' model (left panels of
             Figure \ref{fig:m100_mout}).
 
         \item A little to our surprise, the overall amplitudes of the \dsigma{} profiles for the
@@ -1142,10 +1202,14 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             The average ratios \dsigma{}$_{100\ \rm kpc}/$\dsigma{}$_[50,100]$ for Bin [1, 2, 3, 4]
             are \todo{XX, XX, XX, XX}.
 
-        \item Based on our model, this result suggests that, compared to \maper{100} and
-            aperture \mstar{} in general, outskirt \mstar{} like \menve{50}{100} can select
-            massive galaxies living in the halos with higher average \mvir{} and lower
-            \sigmh{} (as shown in the right panels of Figure \ref{fig:m100_mout}).
+        \item According to our best-fit model, the \menve{50}{100}-selected samples have slightly 
+            higher mean \mvir{} (\logmvir{}=[\todo{XX, XX, XX, XX}]) in all four bins than the 
+            \maper{100}-selected samples (\logmvir{}=[\todo{XX, XX, XX, XX}]), while also 
+            displaying lower \sigmh{} values 
+            (\sigmh{}=[\todo{XX, XX, XX, XX}] for \menve{50}{100}; and
+             \sigmh{}=[\todo{XX, XX, XX, XX}] for \maper{100}). 
+            The improvements are especially clear in Bin 3 \& 4.
+        
 
         \item We rely on the low-\sb{} part of the surface brightness profile to estimate
             the \mstar{} in the outskirt, which is more vulnerable to the relative large
