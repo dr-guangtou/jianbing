@@ -536,10 +536,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
-
     \label{sec:hsc}
-
-	\todo{Placeholder: copy from Paper I}
 
     %% General information
     Hyper Suprime-Cam Subaru Strategic Program (HSC-SSP, or HSC survey; e.g. 
@@ -575,8 +572,11 @@
     We also make use of the spectroscopic redshift (spec-$z$) catalog compiled by the collaboration 
     and the photometric redshift (photo-$z$) measurements of HSC galaxies based on the  
     \href{https://github.com/joshspeagle/frankenz}{Flexible Regression over Associated Neighbors
-    with Kernel dEnsity estimatioN for Redshifts} (\texttt{Franken-Z}; Speagle\etal{} in prep.)
+    with Kernel dEnsity estimatioN for Redshifts} (\texttt{frankenz}; \citealt{Speagle2019})
     algorithm.
+    In short, \texttt{Franken-Z} is a Bayesian-oriented nearest-neighbors (NN)- based photo-$z$
+    algorithm that properly account for measurement errors within both training and testing sets.
+    The readers can find more technical details about \texttt{frankenz} in \citet{Speagle2019}.
     \citet{HSC-PHOTOZ} describes details about the spec-$z$ and photo-$z$ catalogs for \texttt{S16A}
     in greater details.
 
@@ -624,10 +624,9 @@
 			These catalogs are based on the red-sequence method and can provide very accurate
 			photometric redshift estimates for the central galaxy and other members of the
 			clusters.
-			For the rest galaxies, we adopt photometric redshifts based on the five-band
-			HSC \cmodel{} photometry and the \texttt{FrankenZ} algorithm. \todo{Very brief mention
-			of what is frankenz, and the precision}. Using photo-$z$ for the entire sample
-			does not change key results.
+            For the rest galaxies, we adopt \texttt{frankenz} photo-$z$ based on the five-band
+            PSF-matched 1.1 arcsec aperture photometry.
+            Using photo-$z$ for the entire sample does not change key results.
 
 		\item \plan{SED fitting}: Based on the best-available redshift and \cmodel{} photometry,
 			we perform SED fitting using the \texttt{IDL} code \ised{}.
