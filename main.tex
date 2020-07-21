@@ -97,7 +97,7 @@
         Using a simple galaxy-halo connection model calibrated with stellar mass function and
         clustering of massive galaxies, we show that a $\log$-linear \mvir{}-observable
         relation can fully explain the \dsigma{} profiles of \menve{50}{100}-selected massive
-        halos with a \sighalo{} level comparable to the red-sequence cluster finders.
+        halos with a \sigmh{} level comparable to the red-sequence cluster finders.
         Meanwhile, the \dsigma{} profiles of richness-selected clusters show systematic
         deviations from the scatter-only model due to systematics such as the projection effect.
         }
@@ -168,10 +168,30 @@
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
+%% Brief mention of key results
+%% ---------------------------------------------------------------------------------------------- %%
+
+    In this work, we use deep imaging data and high-quality galaxy-galaxy lensing measurements 
+    to demonstrate the importance of using an appropriate \mstar{} definition to study the 
+    galaxy-halo connection of massive galaxies.
+    While \mstar{} based on default photometry from imaging survey pipeline such as the 
+    well-known \cmodel{} photometry often fail to serve as useful \mvir{} proxy, \mstar{}
+    within very large aperture (e.g., within 100 kpc) is a much better choice.
+    Moreover, \mstar{} within the outskirt of a massive galaxy (e.g., \mstar{} within 50 to 100 kpc)
+    is a potentially competitive \mvir{} tracer when compared to the well-adopted richness of 
+    red-sequence galaxies cluster finders.
+    We also find that the galaxy-galaxy lensing \dsigma{} profiles of massive halos selected 
+    using \mstar{}-based proxies can be well-described using a simple model based on $\log$-linear
+    \mvir{}-observable relation with Gaussian scatter.
+    Meanwhile, with the same number density threshold, the \dsigma{} profiles of richness-selected 
+    clusters show systematic deviations from such model predictions and the \mstar{}-based profiles 
+    that could be caused by additional systematic issues such as the projection effect or 
+    halo assembly bias.
+
+%% ---------------------------------------------------------------------------------------------- %%
 %% Structure of the paper
 %% ---------------------------------------------------------------------------------------------- %%
 
-    \todo{Homogenize \sigmh{} and \sighalo{}. Pick a favorite one.}
     \todo{Placeholder: Need to be updated.}
 
     This paper is organized as follows.
@@ -206,6 +226,8 @@
 \section{Methodology and Modeling Framework}
     \label{sec:method}
 
+    \todo{Need some updates}
+
     In this section, we will outline the methodology adopted in this work to evaluate different
     possible \mvir{} ``proxies'' using high-fidelity galaxy-galaxy lensing data and via
     comparison with empirical model of \mvir{}-observable scaling relation based on cosmological
@@ -217,16 +239,19 @@
     In section \ref{sec:topn_intro}, we explain the philosophy of the ``Top N'' tests and the
     choices of volume number density bins. 
 
-\subsection{Philosophy of Top-N test}
+%% ---------------------------------------------------------------------------------------------- %%
+%% Philosophy of the Top N test
+%% ---------------------------------------------------------------------------------------------- %%
 
-\alexie{Add simple explanation figure here}
+\subsection{Philosophy of Top-N test}
+    \label{sec:topn_intro}
+
+    \todo{Add simple explanation figure here}
 
     \begin{itemize}
 
         \item \plan{Basic philosophy}: Comparison of \dsigma{} profiles of massive halos
             identified by different methods within the same volume number density threshold.
-
-        
 
         \item \plan{Comparison with model \dsigma{} profiles and the estimate of \sigmh{}.}
 
@@ -237,9 +262,9 @@
     \plan{Mention that the \mstar{} sample misses $\sim 10$\% of galaxies due to failed 1-D
         profile extraction. Visual examination of the failed ones and their \mcmodel{}
         suggest that the \mstar{} distribution of those cases should not be that different
-        from the overal SMF. Some of these cases are on-going mergers or double-core
+        from the overall SMF. Some of these cases are on-going mergers or double-core
         BCGs. We do not correct for the difference in the effective volume caused by this.
-        Verying the number density threshold by $\sim 10$\% accordingly does not change any
+        Varying the number density threshold by $\sim 10$\% accordingly does not change any
         key result.}
 
     \plan{We should note that there are plenty of previous works that carefully model the \dsigma{}
@@ -262,7 +287,6 @@
         \scatterObsSymMhalo{} to result
         to find the best match...
     }
-
 
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -461,6 +485,7 @@
     \scatterMhaloObsSym{} for each of the number density bins. We will compare these theoretical
     predicts to the observables to estimate their \scatterMhaloObsSym{}.
 
+
 %% ---------------------------------------------------------------------------------------------- %%
 %% Model used in comparison
 %% ---------------------------------------------------------------------------------------------- %%
@@ -468,8 +493,6 @@
     \label{sec:halo_model}
 
     \todo{Placeholder: Updates needed}
-
-\alexie{The explanation of the philosophy of the top N test should go under methodology, and the creation of the bins can go at the first section in Results or could also go under Methods.}
 
     While the simple scaling relation model presented above is useful to predict the effects of
     scatter between an observable and halo mass on the lensing signal, a more detailed model of
@@ -488,6 +511,7 @@
 
     The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as
     shown in \ref{fig:best_mock}.
+
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Definition of richness and number density bins.
@@ -890,22 +914,22 @@ Binning:  four bins based on the richness values of HSC \redm{} cluster
     of different \mvir{} tracers (Sec \ref{sec:topn_results}).
     We will highlight the behaviors of \mcmodel{} (Sec \ref{sec:cmodel}) and \mstar{}
     of the outskirt of massive galaxies such as \menve{50}{100} (Sec \ref{sec:moutskirt})
-    before we summarize the overall trends of \sighalo{} with volume number density for different
+    before we summarize the overall trends of \sigmh{} with volume number density for different
     \mvir{} proxies (Sec \ref{sec:trend}).
     Finally, we will compare the \dsigma{} profiles of the \mstar{}- and richness-selected
     massive halos and explore their differences at the same number density bins
     (Sec \ref{sec:mstar_vs_richness}).
 
     Before we dive in, we want to remind the readers that
-    1) All the \sighalo{} values mentioned in this work are the scatter of \mvir{} \emph{within each
+    1) All the \sigmh{} values mentioned in this work are the scatter of \mvir{} \emph{within each
     number density bin}. We do not attempt to calibrate or forward-model the \mvir{}-observable
     relation, therefore we can not predict the scatter of \mvir{} \emph{at any given value of
     the observable}.
-    2) All the \sighalo{} values should be treated in a relative sense. We adopt strong
+    2) All the \sigmh{} values should be treated in a relative sense. We adopt strong
     assumptions when we ``model'' the \dsigma{} profile such as $\log$-linear relation with
     constant and symmetric scatter, no consideration of mis-centering effect or projection effect.
-    It is possible that the \sighalo{} value deviates from the ``true'' answer.
-    However, the \sighalo{} values for different observables in the same bin should provide
+    It is possible that the \sigmh{} value deviates from the ``true'' answer.
+    However, the \sigmh{} values for different observables in the same bin should provide
     insights about the underlying \mvir{} distributions, and help us evaluate their pros and cons
     when using them as \mvir{} proxy.
 
@@ -1028,7 +1052,7 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             Although it is hard to visualize in the figure, the reduced \chisq{} values for the
             \mcmodel{} samples are \todo{[XX, XX, XX, XX]}.
 
-            The halo mass histograms for all galaxy selections are shown in the right panels of Figure \ref{fig:m100_cmod}.  \mcmodel{}-selected samples lower mean \mvir{} values and higher \sighalo{}
+            The halo mass histograms for all galaxy selections are shown in the right panels of Figure \ref{fig:m100_cmod}.  \mcmodel{}-selected samples lower mean \mvir{} values and higher \sigmh{}
             than the \maper{100}-selected ones. \alexie{quantofy here}
             We visualize this in the right panels of \ref{fig:m100_cmod}.
 
@@ -1037,9 +1061,9 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             trend of the difference. Among all tracers studied in this paper, we find \mcmodel{} to have the worst perfomace. 
             
 
-        The \sighalo{} values here apply only to the \cmodel{} photometry of HSC SSP
+        The \sigmh{} values here apply only to the \cmodel{} photometry of HSC SSP
             \texttt{S16A}. With a different imaging dataset, or a different treatment of background
-            subtraction and deblending, we could get different \sighalo{} values in a similar test.
+            subtraction and deblending, we could get different \sigmh{} values in a similar test.
             Moreover, the credibility of \mcmodel{} as \mvir{} proxy should depend on the \mstar{},
             morphology, and redshift of the sample. For instance, it is potentially appropriate
             to use \cmodel{} photometry for lower-\mstar{} or higher redshift samples.
@@ -1108,7 +1132,7 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
         \item Based on our model, this result suggests that, compared to \maper{100} and
             aperture \mstar{} in general, outskirt \mstar{} like \menve{50}{100} can select
             massive galaxies living in the halos with higher average \mvir{} and lower
-            \sighalo{} (as shown in the right panels of Figure \ref{fig:m100_mout}).
+            \sigmh{} (as shown in the right panels of Figure \ref{fig:m100_mout}).
 
         \item We rely on the low-\sb{} part of the surface brightness profile to estimate
             the \mstar{} in the outskirt, which is more vulnerable to the relative large
@@ -1163,9 +1187,9 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
     \label{sec:trend}
 
     As a summary of the ``Top N'' test results, we highlight the relationships between
-    \sighalo{} and the number density for three groups of different \mvir{} proxies explored in
+    \sigmh{} and the number density for three groups of different \mvir{} proxies explored in
     this work in Figure \ref{fig:scatter_trend}.
-    We also record the ranges of observables in each bin and their \sighalo{} values in
+    We also record the ranges of observables in each bin and their \sigmh{} values in
     Table \ref{tab:summary}.
 
     \todo{Figure needs to be updated with the new models}
@@ -1187,7 +1211,7 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             model (\masap{}), and the richness of red-sequence galaxies
             ($\lambda_{\rm redM,\ HSC}$).
             Ignoring the subtle differences in the \dsigma{} profiles for now, we consider
-            the observable with lower \sighalo{} value in the same density bin a better massive halo
+            the observable with lower \sigmh{} value in the same density bin a better massive halo
             tracer (or ``cluster finder'').
 
         \item Using the ``Top N'' tests, we confirm that the richness of red-sequence galaxies is indeed
@@ -1222,7 +1246,7 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             \mvir{} proxy in all four bins. Meanwhile, the outskirt stellar mass \menve{50}{100}
             out-performs \maper{100} especially in Bin 2, 3, \& 4, which is also consistent with the
             qualitative conclusion from comparing their \dsigma{} profiles in \S \ref{sec:moutskirt}.
-            In addition, for all the \mstar{}-based \mvir{} proxies shown in this panel, their \sighalo{}
+            In addition, for all the \mstar{}-based \mvir{} proxies shown in this panel, their \sigmh{}
             values become lower with decreasing number density thresholds (or from Bin 4 to 1).
             This suggests that the (intrinsic) scatter of SHMR decrease with \mvir{} at the high-mass end,
             which is consistent with the \todo{...comparison with a few recent works, both observations
@@ -1243,15 +1267,15 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
 
         \item To further demonstrate the second point, we compare the results for different
             aperture \mstar{} and different outskirt \mstar{} in the middle and bottom panels of
-            Figure \ref{fig:scatter_trend}. For aperture \mstar{}, the \sighalo{} at fixed number
+            Figure \ref{fig:scatter_trend}. For aperture \mstar{}, the \sigmh{} at fixed number
             density significantly decreases with increasingly large aperture value, especially in Bin
-            1 \& 2. For Bin 1, \sighalo{} decreases from \todo{XX} for \maper{10 kpc}, and \todo{XX}
+            1 \& 2. For Bin 1, \sigmh{} decreases from \todo{XX} for \maper{10 kpc}, and \todo{XX}
             for \maper{30}, to \todo{XX} for \maper{100} (green dashed line as reference). The
-            \sighalo{} values for \maper{10} and \maper{30} do not decrease with volume number
+            \sigmh{} values for \maper{10} and \maper{30} do not decrease with volume number
             density as well.
             In the current data, aperture \mstar{} defined by $R>100$ kpc, including the one based on
             extrapolation to 300 kpc with a single-\ser{} model fit to the outskirt (\maper{300}),
-            does not lead to unambiguous improvement of \sighalo{} value.
+            does not lead to unambiguous improvement of \sigmh{} value.
             It is unclear whether this reflects the intrinsic properties of stellar halo in massive
             galaxies or it is simply due to systematic limitation related to imaging quality or
             data reduction \song{Using the \mstar{} between 100 and 150, or 300 kpc can test this}.
@@ -1261,7 +1285,7 @@ We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. Fi
             halos ``care'' about their dark matter halos much more than their central region.
 
         \item In the top panel of Figure \ref{fig:scatter_trend}, we show that the \asap{} model
-            also provides a reasonably good \mvir{} proxy whose \sighalo{} values
+            also provides a reasonably good \mvir{} proxy whose \sigmh{} values
             are better than \maper{100} and on a par with the \menve{50}{100}.
             Though not displayed here, our ``scatter-only'' \mvir{}-observable model can fit
             the \dsigma{} profiles of \masap{}-selected samples very well \todo{Put relevant figures
