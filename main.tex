@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/15 9401 words
+% 07/27 11776 words
 
 \documentclass[fleqn,usenatbib,useAMS,english]{mnras}
 
@@ -17,7 +17,7 @@
 \usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{xcolor,colortbl}
 \PassOptionsToPackage{hyphens}{url}
-\usepackage{hyperref}  
+\usepackage{hyperref}
 %\usepackage[nobiblatex]{xurl}
 
 % Package Settings
@@ -172,40 +172,40 @@
 %% Brief mention of key results
 %% ---------------------------------------------------------------------------------------------- %%
 
-    In this work, we use deep imaging data and high-quality galaxy-galaxy lensing measurements 
-    to demonstrate the importance of using an appropriate \mstar{} definition to study the 
+    In this work, we use deep imaging data and high-quality galaxy-galaxy lensing measurements
+    to demonstrate the importance of using an appropriate \mstar{} definition to study the
     galaxy-halo connection of massive galaxies.
-    While \mstar{} based on default photometry from imaging survey pipeline such as the 
+    While \mstar{} based on default photometry from imaging survey pipeline such as the
     well-known \cmodel{} photometry often fail to serve as useful \mvir{} proxy, \mstar{}
     within very large aperture (e.g., within 100 kpc) is a much better choice.
     Moreover, \mstar{} within the outskirt of a massive galaxy (e.g., \mstar{} within 50 to 100 kpc)
-    is a potentially competitive \mvir{} tracer when compared to the well-adopted richness of 
+    is a potentially competitive \mvir{} tracer when compared to the well-adopted richness of
     red-sequence galaxies cluster finders.
-    We also find that the galaxy-galaxy lensing \dsigma{} profiles of massive halos selected 
+    We also find that the galaxy-galaxy lensing \dsigma{} profiles of massive halos selected
     using \mstar{}-based proxies can be well-described using a simple model based on $\log$-linear
     \mvir{}-observable relation with Gaussian scatter.
-    Meanwhile, with the same number density threshold, the \dsigma{} profiles of richness-selected 
-    clusters show systematic deviations from such model predictions and the \mstar{}-based profiles 
-    that could be caused by additional systematic issues such as the projection effect or 
+    Meanwhile, with the same number density threshold, the \dsigma{} profiles of richness-selected
+    clusters show systematic deviations from such model predictions and the \mstar{}-based profiles
+    that could be caused by additional systematic issues such as the projection effect or
     halo assembly bias.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Structure of the paper
 %% ---------------------------------------------------------------------------------------------- %%
 
-    We first introduce the methodology used in this work in \S \ref{sec:method}, especially the 
-    philosophy behind the \topn{} test designed to evaluate different \mvir{} proxies at the 
+    We first introduce the methodology used in this work in \S \ref{sec:method}, especially the
+    philosophy behind the \topn{} test designed to evaluate different \mvir{} proxies at the
     same number density (\S \ref{sec:topn_intro}).
-    In \S \ref{sec:data}, we provide general information about the HSC imaging data 
-    (\S \ref{sec:hsc}) and the massive galaxy sample (\S \ref{sec:sample}) along with the 
+    In \S \ref{sec:data}, we provide general information about the HSC imaging data
+    (\S \ref{sec:hsc}) and the massive galaxy sample (\S \ref{sec:sample}) along with the
     procedures to measure 1-D surface mass density profile (\S \ref{sec:1d_prof}) and the
-    \dsigma{} profile (\S \ref{sec:dsigma}). 
+    \dsigma{} profile (\S \ref{sec:dsigma}).
     We then briefly introduce all the \mvir{} proxies used in this work in \S \ref{sec:proxies},
-    including both \mstar{}- (\S \ref{sec:proxy_mstar}) and richness-based ones 
+    including both \mstar{}- (\S \ref{sec:proxy_mstar}) and richness-based ones
     (\S \ref{sec:proxy_richness}).
     We present the main results in \S \ref{sec:result} and
     discuss their implications in \S \ref{sec:discussion}.
-    In \S \ref{sec:summary}, we summarize the lessons learned in this work and mention a few 
+    In \S \ref{sec:summary}, we summarize the lessons learned in this work and mention a few
     future directions to explore.
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -230,10 +230,10 @@
     ``proxies'' using high-fidelity galaxy-galaxy lensing data and via comparison with empirical
     model of \mvir{}-observable scaling relation based on cosmological N-body simulation.
     We first outline the basic ideal behind the so-called \topn{} tests in \S \ref{sec:topn_intro}.
-    In \S \ref{sec:scaling}, we further demonstrate the connection between the \sigmh{} at 
+    In \S \ref{sec:scaling}, we further demonstrate the connection between the \sigmh{} at
     fixed observable value and the amplitude of the \dsigma{} profile.
-    The we present our fiducial model based on \mdpl2{} and \smdpl{} simulations that are 
-    tuned to match the SMF and correlation properties of HSC massive galaxies 
+    The we present our fiducial model based on \mdpl2{} and \smdpl{} simulations that are
+    tuned to match the SMF and correlation properties of HSC massive galaxies
     (\S \ref{sec:halo_model}).
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -526,10 +526,10 @@
     \label{sec:data}
 
     In this section, we first introduce the imaging data from the HSC SSP survey
-    (\S \ref{sec:hsc}) and the selection of the massive galaxy sample used in this work 
+    (\S \ref{sec:hsc}) and the selection of the massive galaxy sample used in this work
     (\S \ref{sec:sample}).
-    The we briefly describe the methods to measure the 1-D surface mass density profiles 
-    out to very large radius (\S \ref{sec:1d_prof}) and the the galaxy-galaxy lensing \dsigma{} 
+    The we briefly describe the methods to measure the 1-D surface mass density profiles
+    out to very large radius (\S \ref{sec:1d_prof}) and the the galaxy-galaxy lensing \dsigma{}
     profiles (\ref{sec:dsigma}).
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -540,15 +540,15 @@
     \label{sec:hsc}
 
     %% General information
-    Hyper Suprime-Cam Subaru Strategic Program (HSC-SSP, or HSC survey; e.g. 
+    Hyper Suprime-Cam Subaru Strategic Program (HSC-SSP, or HSC survey; e.g.
     \citealt{HSC-SSP, HSC-DR1, HSC-DR2})
-    \footnote{\url{https://hsc.mtk.nao.ac.jp/ssp/}} is an ambitious cosmological imaging survey 
+    \footnote{\url{https://hsc.mtk.nao.ac.jp/ssp/}} is an ambitious cosmological imaging survey
     using the 8.2m Subaru Telescope.
     When finished, the \texttt{WIDE} layer of the HSC survey will provide five-band ($grizY$)
     images that are $\sim$3--4 mag deeper than SDSS (Sloan Digital Sky Survey;
-    e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}) for $\sim 1000$ \sqdeg{} of sky, making 
-    it an ideal dataset to study low surface brightness galaxy structure and perform 
-    galaxy-galaxy lensing measurement. 
+    e.g., \citealt{SDSS-DR7, SDSS-DR8, SDSS-DR12}) for $\sim 1000$ \sqdeg{} of sky, making
+    it an ideal dataset to study low surface brightness galaxy structure and perform
+    galaxy-galaxy lensing measurement.
 
     Here we use the \texttt{S16A} internal data release of HSC SSP.
     The HSC survey collaboration reduced these data using \texttt{hscPipe 4.0.2}, a special
@@ -556,22 +556,22 @@
     \citealt{Axelrod2010})\footnote{\url{https://pipelines.lsst.io}} that are specifically
     modified for HSC\footnote{The most recent version of \texttt{hscPipe} can be found here:
     \url{https://hsc.mtk.nao.ac.jp/pipedoc_e/}}.
-    Please see \citet{HSC-PIPE} for a detailed description of \texttt{hscPipe} and 
+    Please see \citet{HSC-PIPE} for a detailed description of \texttt{hscPipe} and
     \citet{SynPipe} for the evaluation of its general photometric performance.
 
     We use the fully-calibrated coadd images from the \texttt{WIDE} layer in this work.
-    These images have a pixel resolution of 0.168 arcsec. 
-    Our analysis of the stellar mass distribution in low-$z$ massive galaxies is mainly based on 
+    These images have a pixel resolution of 0.168 arcsec.
+    Our analysis of the stellar mass distribution in low-$z$ massive galaxies is mainly based on
     the $i$-band image whose mean seeing Full-Width Half-Maximum (FWHM) is 0.58 arcsec.
-    We only make use of coadd images within the Full-Depth Full-Color (FDFC) regions, which 
+    We only make use of coadd images within the Full-Depth Full-Color (FDFC) regions, which
     are the regions that achieve designed imaging depth in all five-band, and outside the masks
-    designed for saturated bright stars (see \citealt{HSC-STAR} for details). 
-    Such selection secures a uniform and reliable imaging quality that are necessary for 
+    designed for saturated bright stars (see \citealt{HSC-STAR} for details).
+    Such selection secures a uniform and reliable imaging quality that are necessary for
     our 1-D profile analysis and galaxy-galaxy lensing measurements.
     The effective sky coverage of this data is $\sim 137$ \sqdeg{}.
 
-    We also make use of the spectroscopic redshift (spec-$z$) catalog compiled by the collaboration 
-    and the photometric redshift (photo-$z$) measurements of HSC galaxies based on the  
+    We also make use of the spectroscopic redshift (spec-$z$) catalog compiled by the collaboration
+    and the photometric redshift (photo-$z$) measurements of HSC galaxies based on the
     \href{https://github.com/joshspeagle/frankenz}{Flexible Regression over Associated Neighbors
     with Kernel dEnsity estimatioN for Redshifts} (\texttt{frankenz}; \citealt{Speagle2019})
     algorithm.
@@ -581,11 +581,11 @@
     \citet{HSC-PHOTOZ} describes details about the spec-$z$ and photo-$z$ catalogs for \texttt{S16A}
     in greater details.
 
-    We should note that the most recent public data release (\texttt{PDR2}) of HSC survey, which 
-    corresponds to the internal data release \texttt{S18A}, has a larger ($\sim 300$ \sqdeg{}) FDFC 
+    We should note that the most recent public data release (\texttt{PDR2}) of HSC survey, which
+    corresponds to the internal data release \texttt{S18A}, has a larger ($\sim 300$ \sqdeg{}) FDFC
     sky coverage and shows improved local background subtraction compared to \texttt{S16A} used here
     (see \citealt{HSC-DR2} for details).
-    However, due to the on-going development of weak lensing shape catalog for \texttt{S18A} and 
+    However, due to the on-going development of weak lensing shape catalog for \texttt{S18A} and
     later release, we will keep using \texttt{S16A} data in this work.
     To our best knowledge, new data release will not change any of the main conclusions.
 
@@ -703,143 +703,143 @@
     gravitational lensing effect of foreground mass, galaxy-galaxy weak lensing (g-g lensing
     hereafter) technique provides a direct probe of total mass distribution around galaxies and
     help us establish reliable SHMR
-    (e.g., \citealt{Coupon2015}; \addref{} Hudson et al. 2015; van Uitert et al. 2015; 
+    (e.g., \citealt{Coupon2015}; \addref{} Hudson et al. 2015; van Uitert et al. 2015;
     Mandelbaum et al. 2016).
 
-    In this work, we use the shape measurements from the HSC \texttt{S16A} weak lensing shape 
-    catalog and the \texttt{frankenz} photo-$z$. 
-    Currently, \hscpipe{} measures the shape of a galaxy on $i$-band coadd image using the 
-    re-Gaussianization algorithm (\citealt{HirataSeljak2003}). 
-    Please see \citet{HSC-PIPE}, \citet{HSC-WLCAT}, and \citet{HSC-WLCALIB} for details about 
+    In this work, we use the shape measurements from the HSC \texttt{S16A} weak lensing shape
+    catalog and the \texttt{frankenz} photo-$z$.
+    Currently, \hscpipe{} measures the shape of a galaxy on $i$-band coadd image using the
+    re-Gaussianization algorithm (\citealt{HirataSeljak2003}).
+    Please see \citet{HSC-PIPE}, \citet{HSC-WLCAT}, and \citet{HSC-WLCALIB} for details about
     the shape measurements and calibration.
     This catalog supports all the HSC Y1 cosmology analysis (e.g., \citealt{Hikage2019, Hamana2020})
-    and cluster lensing works (e.g., \citealt{Umetsu2020}). 
+    and cluster lensing works (e.g., \citealt{Umetsu2020}).
     It has been made public along with HSC \texttt{PDR2}
-    \footnote{The shape catalog and other weak lensing data product can be found here: 
+    \footnote{The shape catalog and other weak lensing data product can be found here:
     \href{here}{https://hsc-release.mtk.nao.ac.jp/doc/index.php/s16a-shape-catalog-pdr2}}.
-    
-    The strategy of g-g lensing measurement is exactly the same with \citet{Speagle2019} and 
+
+    The strategy of g-g lensing measurement is exactly the same with \citet{Speagle2019} and
     \citet{Huang2020}, where the readers can find more details.
-    In short, we adopt a slightly modified version of the methodology proposed by 
-    \citet{Singh2017} to measure the excess surface mass density (ESD or \dsigma{}) profiles of 
+    In short, we adopt a slightly modified version of the methodology proposed by
+    \citet{Singh2017} to measure the excess surface mass density (ESD or \dsigma{}) profiles of
     massive galaxies or clusters.
-    This method emphasizes the importance of subtracting lensing signals around large number of 
+    This method emphasizes the importance of subtracting lensing signals around large number of
     random positions from the signals for real lenses to achieve unbiased measurement.
     The \dsigma{} signal at a physical radius $R$ is:
-    
+
     \begin{equation}
-        {\Delta\Sigma}_{\rm LR}(R) = 
+        {\Delta\Sigma}_{\rm LR}(R) =
         f_{\rm bias}({\Delta\Sigma}_{\mathrm{L}}(R) - {\Delta\Sigma}_{\mathrm{R}}(R))
         \label{eq:ds1}
     \end{equation}
-    
+
     Here, $L$ indicates measurements for the lens galaxies while $R$ is for random positions.
     For each \dsigma{} profile, we use a set of $2 \times 10^5$ random points with matched redshift
-    distribution with the lens sample. 
+    distribution with the lens sample.
     The number of random points is at least 100 time larger than the largest sample in this work.
-    In difference with \citet{Singh2017}, we do not rely on the boost factor to correct for 
+    In difference with \citet{Singh2017}, we do not rely on the boost factor to correct for
     the photo-$z$ dilution effect.
     In stead, in \citet{Speagle2019}, we develop a correction factor,  $f_{\rm bias}$, based
     on the photo-$z$ calibration sample in the COSMOS field for such purpose
     (e.g., \citealt{Mandelbaum2008, Nakajima2012, Leauthaud2017}).
     The \dsigma{} profile around lenses is:
-    
+
     \begin{equation}
         {\Delta\Sigma}_{\rm L}(R) = \frac{1}{2 \mathcal{R}(R) [1+\mathcal{K}(R)]}
-            \frac{\Sigma_{\rm Ls} w_{\rm Ls} \gamma_{t}^{(\rm Ls)} 
+            \frac{\Sigma_{\rm Ls} w_{\rm Ls} \gamma_{t}^{(\rm Ls)}
             \Sigma_{\rm crit}^{(\rm Ls)}}{\Sigma_{\rm Ls} w_{\rm Ls}}
         \label{eq:ds2}
-    \end{equation} 
-    
-    \noindent where $\gamma_{t}$ is the tangential shear component, $\Sigma_{\rm crit}$ is the 
+    \end{equation}
+
+    \noindent where $\gamma_{t}$ is the tangential shear component, $\Sigma_{\rm crit}$ is the
     critical surface density, $w_{\rm Ls}$ is the weight used for each lens-source pair.
-    Following the calibration strategy outlined in \citet{HSC-WLCALIB}, we also include 
-    the shear responsivity factor $\mathcal{R}(R)$ and the correction for the multiplicative 
+    Following the calibration strategy outlined in \citet{HSC-WLCALIB}, we also include
+    the shear responsivity factor $\mathcal{R}(R)$ and the correction for the multiplicative
     shear bias $[1+\mathcal{K}(R)]$.
     Here $\Sigma{\rm Ls}$ represents the summation over all lens-source pairs.
-    We perform the same measurements for random points, so replacing L with R in 
+    We perform the same measurements for random points, so replacing L with R in
     Equation \ref{eq:ds2} will form the estimator for randoms.
-    
+
     The critical surface density is:
-    
+
     \begin{equation}
         \Sigma_{\rm crit}=\frac{c^2}{4\pi G} \frac{D_A(z_s)}{D_A(z_l) D_A(z_l, z_s) (1+z_l)^2}
         \label{eq:sigcrit}
     \end{equation}
-    
+
     \noindent where $D_A(z_L)$, $D_A(z_s)$, and $D_A{z_L, z_s}$ represent the angular diameter
     distances to the lens, source, and the distance between the lens-source pair.
-    
+
     The weight applied to each lens-source pair is described by:
-    
+
     \begin{equation}
         w_{\rm Ls} = \frac{\Sigma_{\rm crit}^{-2}}{\sigma^2_{e, {\rm Ls}} + \sigma^2_{\rm rms}}
             \equiv \frac{\Sigma_{\rm crit}^{-2}}{\sigma^2_{{\rm Ls}}}
         \label{eq:weight}
     \end{equation}
-    
-    \noindent where $\sigma_{\rm rms}$ represents the intrinsic shape dispersion while 
+
+    \noindent where $\sigma_{\rm rms}$ represents the intrinsic shape dispersion while
     $\sigma_{e, \rm Ls}$ is the per-component shape measurement error.
-    
+
     Meanwhile, the shear responsivity factor is defined by:
-    
+
     \begin{equation}
         \mathcal{R}(R) = 1 - \frac{\Sigma_{\rm Ls} w_{\rm Ls} \sigma^2_{e, {\rm Ls}}}{\Sigma_{\rm Ls} w_{\rm Ls}}
         \label{eq:rfactor}
     \end{equation}
-    
+
     \noindent And the multiplicative shear bias correction is defined as:
-   
+
     \begin{equation}
         \mathcal{K}(R) = \frac{\Sigma_{\rm Ls} w_{\rm Ls} m_{\rm s}}{\Sigma_{\rm Ls} w_{\rm Ls}}
         \label{eq:kfactor}
     \end{equation}
-    
+
     \noindent where $m_{\rm s}$ is multiplicative shear bias value for each source.
-    The shape catalog provides estimates of $\sigma_{\rm rms}$, $\sigma_{e, \rm Ls}$, and $m_{\rm s}$, 
+    The shape catalog provides estimates of $\sigma_{\rm rms}$, $\sigma_{e, \rm Ls}$, and $m_{\rm s}$,
     while \citet{HSC-WLCALIB} provides in-depth discussion of these calibration related
     issues.
-    
-    As for the $f_{\rm bias}$, we define it as the ratio between the \dsigma{} profile calculated using 
-    the real redshift and the one using photo-$z$. 
+
+    As for the $f_{\rm bias}$, we define it as the ratio between the \dsigma{} profile calculated using
+    the real redshift and the one using photo-$z$.
     In practice, it is estimated based on:
-    
+
     \begin{equation}
-        f_{\rm bias} = \frac{\sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} 
+        f_{\rm bias} = \frac{\sum_{\rm Ls} w_{\rm Ls} w_{\rm sys}
             \left(\Sigma_{{\rm crit, T}} / \Sigma_{{\rm crit, P}} \right)}{
             \sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} \Sigma^{-2}_{\rm crit, P}}
         \label{eq:fbias}
     \end{equation}
-    
-    /noindent where $\Sigma_{{\rm crit, T}}$ is the critical surface density estimated using the 
-    ``true'' redshift in the calibration catalog (can be spec-$z$ or COSMOS 30-band photo-$z$), 
-    while $\Sigma_{{\rm crit, P}}$ is the one using \texttt{frankenz} photo-$z$. 
+
+    /noindent where $\Sigma_{{\rm crit, T}}$ is the critical surface density estimated using the
+    ``true'' redshift in the calibration catalog (can be spec-$z$ or COSMOS 30-band photo-$z$),
+    while $\Sigma_{{\rm crit, P}}$ is the one using \texttt{frankenz} photo-$z$.
     $w_{\rm sys}$ is the systematic photo-$z$ weight in the calibration catalog that describes
     the \todo{Explain the photo-$z$ weight}.
-    Note that the estimator shown here is different from the ones in \citet{Leauthaud2017} and 
+    Note that the estimator shown here is different from the ones in \citet{Leauthaud2017} and
     \citet{Speagle2019} and can account for the photo-$z$ dilution effect more accurately.
     The $f_{\rm bias}$ level for galaxies in our sample is general very low ($\sim 1$-2\%).
-    
-    In this work, we measure \dsigma{} profiles in 11 physical radial bins that span from 200 kpc 
+
+    In this work, we measure \dsigma{} profiles in 11 physical radial bins that span from 200 kpc
     to 10 Mpc uniformly in $\log R$ space.
-    We apply the \texttt{basic} photo-$z$ quality cut to the source galaxies as described in 
+    We apply the \texttt{basic} photo-$z$ quality cut to the source galaxies as described in
     \citet{Speagle2019}, and apply lens-source separation criteria defined by
-    $z_{\rm s} - z_{\rm L} \ge 0.1$ and 
-    $z_{\rm s} > z_{\rm L} + \sigma_{s,68}$, where $\sigma_{s,68}$ is the 
+    $z_{\rm s} - z_{\rm L} \ge 0.1$ and
+    $z_{\rm s} > z_{\rm L} + \sigma_{s,68}$, where $\sigma_{s,68}$ is the
     1$\sigma$ uncertainty of the source photo-$z$.
     Uncertainties of the stacked \dsigma{} profile are estimated using jackknife resampling method.
     We assign lens and randoms into the same 40 jackknife regions with similar area around
     2.5 \sqdeg{} and regular shapes.
-    Jackknife resampling provides the covariance matrix of the \dsigma{} profile and a fiducial 
+    Jackknife resampling provides the covariance matrix of the \dsigma{} profile and a fiducial
     uncertainty used in analysis and visualization:
 
     \begin{equation}
         \mathrm{Var}_{\rm Jk}(\widehat{\Delta\Sigma}) = \frac{N_{\rm Jk} - 1}{N_{\rm Jk}} \sum\limits_{i=1}^{N_{\rm Jk}} (\Delta\Sigma_{i} - \overline{\Delta\Sigma})^2
-    \end{equation}    
-    
-    \noindent here $N_{\rm Jk}=40$, $\Delta\Sigma_{i}$ represents the \dsigma{} profile from each 
+    \end{equation}
+
+    \noindent here $N_{\rm Jk}=40$, $\Delta\Sigma_{i}$ represents the \dsigma{} profile from each
     Jackknife region, and $\overline{\Delta\Sigma}$ is the mean profile of all regions.
-    We perform these measurement using an upgraded version of the Python g-g lensing code 
+    We perform these measurement using an upgraded version of the Python g-g lensing code
     \texttt{dsigma v2.0}
     \footnote{Code is publicly available here: \url{https://github.com/johannesulf/dsigma}}
     that has significantly improved efficiency.
@@ -852,15 +852,15 @@
 \section{Various Proxies for Halo Mass}
     \label{sec:proxies}
 
-    To study cosmology or galaxy-halo connection using massive dark matter halos, we first 
+    To study cosmology or galaxy-halo connection using massive dark matter halos, we first
     need to be able to 1) correctly identify massive halos, and 2) estimate their \mvir{}
     (or at least the ranking of their \mvir{}).
-    As illustrated in \S \ref{sec:scaling}, we achieve these goals by adopting certain observable 
+    As illustrated in \S \ref{sec:scaling}, we achieve these goals by adopting certain observable
     as \mvir{} proxy and establishing a \mvir{}-observable scaling relation.
     For optical-NIR imaging surveys, we normally rely on \mvir{} proxies that are based on
-    either the \mstar{} of galaxies within the halo (\ref{sec:proxy_mstar}) or the richness of 
+    either the \mstar{} of galaxies within the halo (\ref{sec:proxy_mstar}) or the richness of
     galaxies in the halo (\ref{sec:proxy_richness}).
-    Here we briefly introduce the \mvir{} proxies to be evaluated in this work. 
+    Here we briefly introduce the \mvir{} proxies to be evaluated in this work.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Halo mass proxies based on stellar mass
@@ -1050,17 +1050,17 @@
 
     An over-density of galaxies is the most recognizable characteristic of a galaxy cluster on
     optical-NIR image.
-    And given the well-established scaling relation between \mvir{} and number of subhalos, 
-    the richness of galaxies has become the cornerstone of optical cluster finders 
+    And given the well-established scaling relation between \mvir{} and number of subhalos,
+    the richness of galaxies has become the cornerstone of optical cluster finders
     (e.g., \addref{}, MaxBCG, Wen \& Han).
     In particular, the richness of the ``red-sequence'' galaxies - the quiescent, early-type
-    galaxies in the cluster that follows a tight luminosity-color sequence - is shown to have 
-    lower scatter in their \mvir{}-richness relation 
+    galaxies in the cluster that follows a tight luminosity-color sequence - is shown to have
+    lower scatter in their \mvir{}-richness relation
     (e.g., \addref{} Rozo et al. 2009, Rykoff et al. 2012).
-    The prominent 4000 \AA break in the spectra of these red-sequence galaxies also provide a 
+    The prominent 4000 \AA break in the spectra of these red-sequence galaxies also provide a
     way to estimate the redshift of the cluster.
-    
-    In this work, we make use of the two popular ``red-sequence'' cluster finders that have been 
+
+    In this work, we make use of the two popular ``red-sequence'' cluster finders that have been
     applied to HSC \texttt{S16A} images: \redm{} (\S \ref{sec:redmapper}) and \camira{}
     (\S \ref{sec:camira}).
 
@@ -1074,65 +1074,65 @@
 
     \begin{itemize}
 
-        \item \redm{} (red-sequence Matched-filter Probabilistic Percolation; 
+        \item \redm{} (red-sequence Matched-filter Probabilistic Percolation;
             \citealt{Rykoff2014, Rozo2014, Rozo2015a, Rozo2015b}, \addref{Rykoff2016})
-            \footnote{\url{http://risa.stanford.edu/redmapper/}} is an efficient and 
-            flexible cluster finder designed for searching galaxy clusters in a wide 
+            \footnote{\url{http://risa.stanford.edu/redmapper/}} is an efficient and
+            flexible cluster finder designed for searching galaxy clusters in a wide
             range of redshift using different imaging surveys.
-            Using red-sequence galaxies, \redm{} estimates the richness of a cluster 
-            ($\lambda_{\rm redM}$) by summing up the membership probability 
-            ($p_{\rm mem}$) of all potential members after correcting for the 
-            impact of survey mask or variation of imaging depth. 
-            The algorithm also provides a number of candidates of central galaxy 
+            Using red-sequence galaxies, \redm{} estimates the richness of a cluster
+            ($\lambda_{\rm redM}$) by summing up the membership probability
+            ($p_{\rm mem}$) of all potential members after correcting for the
+            impact of survey mask or variation of imaging depth.
+            The algorithm also provides a number of candidates of central galaxy
             (or Brightest Cluster Galaxy, BCG) with different probabilities ($p_{\rm cen}$)
             and an accurate photo-$z$ measurement for the cluster.
-        
+
         \item Past works have examined \redm{} clusters selected using SDSS (\addref{}) and DES
             (\addref{}) images carefully in term of their multi-wavelength properties
             (\addref{}), mis-centering effect (\addref{}), and the projection effect (\addref{}).
-            And there have been a series of calibration of \mvir{}-richness relations 
+            And there have been a series of calibration of \mvir{}-richness relations
             for \redm{} clusters (e.g., \addref{}).
             \redm{} clusters from DES Y1 data have been used to constrain cosmology model
-            as well (e.g., \addref{}). 
-        
-        \item In this work, we use an internal version of \redm{} cluster catalog using 
+            as well (e.g., \addref{}).
+
+        \item In this work, we use an internal version of \redm{} cluster catalog using
             HSC \texttt{S16A} catalog (\todo{XXX} private communication).
-            The clusters are selected using the updated \texttt{Python} version of the 
+            The clusters are selected using the updated \texttt{Python} version of the
             \redm{} algorithm\footnote{\url{https://github.com/erykoff/redmapper}}.
             \todo{Ask Eli Rykoff to say a few words about recent upgrades}.
             The catalog includes \todo{XXX} clusters between $0.1 < z <$\todo{XX}.
-            Thanks to the HSC images with much higher quality, the HSC \redm{} catalog 
+            Thanks to the HSC images with much higher quality, the HSC \redm{} catalog
             managed to reach to much lower richness ($\lambda_{\rm redM, HSC} > 5$)
-            than the SDSS \redm{} catalog in the same area while showing much improved 
-            cluster photo-$z$ performance with a median value of 
+            than the SDSS \redm{} catalog in the same area while showing much improved
+            cluster photo-$z$ performance with a median value of
             $\sigma_{z}/(1 + z) \sim$\todo{XXX} for HSC.
-            At $0.2 < z < 0.5$, we have \todo{XXX} clusters with 
+            At $0.2 < z < 0.5$, we have \todo{XXX} clusters with
             $\lambda_{\rm redM, HSC} > 6$ after applying the bright star mask.
-        
+
         \item \plan{There needs to be some discussion about the richness completeness
             within $0.2 < z < 0.5$.
             Figure 2 from McClintock et al. 2017}.
-        
+
+        \item \song{Do we want to mention this?}
+            \plan{We also compare with the \dsigma{} profiles of $\lambda > 20$ clusters
+            between DES and HSC...}
+
         \item We use the central candidate with the highest $P_{\rm cen}$ value as the
             ``true'' center of the cluster.
-            The comparison with the X-ray peaks suggests the average mis-centering 
+            The comparison with the X-ray peaks suggests the average mis-centering
             fraction and off-center distance are \todo{XXX} (e.g., \addref{}).
             We have \todo{XXX} clusters (\todo{XXX\%}) with $P_{\rm cen} > 0.7$.
-            We also cross-match the central galaxies with the HSC spec-$z$ catalog and 
+            We also cross-match the central galaxies with the HSC spec-$z$ catalog and
             update the redshift when spec-$z$ is available.
             Meanwhile, only using \redm{} photo-$z$ will not alter any key results.
-        
-        \item In the same area, we also have \todo{XXX} clusters at $0.2 < z < 0.5$ from 
-            the SDSS \redm{} cluster catalog \texttt{v6.3}. 
-            The catalog is only complete at $\lambda_{\rm redM, SDSS} > 20$ at 
-            $z \leq 0.33$. 
-            We use these SDSS \redm{} clusters to compare with the 
-            HSC results in the first two number density bins (for high-\mvir{} halos), 
+
+        \item In the same area, we also have \todo{XXX} clusters at $0.2 < z < 0.5$ from
+            the SDSS \redm{} cluster catalog \texttt{v6.3}.
+            The catalog is only complete at $\lambda_{\rm redM, SDSS} > 20$ at
+            $z \leq 0.33$.
+            We use these SDSS \redm{} clusters to compare with the
+            HSC results in the first two number density bins (for high-\mvir{} halos),
             and find the results are consistent.
-        
-        \item \song{Do we want to mention this?} 
-            \plan{We also compare with the \dsigma{} profiles of $\lambda > 20$ clusters 
-            between DES and HSC...}
 
     \end{itemize}
 
@@ -1143,10 +1143,61 @@
     \label{sec:camira}
 
     \todo{Placeholder}
-    
+
     \begin{itemize}
-        
-        \item \plan{CAMIRA\footnote{\url{https://www.slac.stanford.edu/~oguri/cluster/}}} 
+
+        \item \camira{} (Cluster finding Algorithm based on Multi-band Identification of
+            Red-sequence gAlaxies)\footnote{\url{https://www.slac.stanford.edu/~oguri/cluster/}}
+            is a red-sequence cluster finding algorithm developed by \citet{Oguri2014}.
+            Unlike \redm{}, \camira{} does not rely on a richness-dependent radius to
+            estimate the richness of the cluster, but only count red galaxies
+            with $L \geq 0.2L_{\star}$ within $R \leq 1 h^{-1}$ Mpc.
+            \camira{} also provides richness ($N_{\rm Cam}$) corrected for the survey masks
+            and accurate photo-$z$ for the clusters.
+            Both the photo-$z$ performance and the tightness of the relationship between
+            X-ray property and cluster richness of \camira{} clusters are comparable to
+            the \redm{} ones using the same imaging data (\citealt{Oguri2014}).
+
+        \item \camira{} has been applied to both SDSS (\citealt{Oguri2014}) and HSC
+            (\citealt{Oguri2018}) images.
+            The \mvir{}-richness relation of \camira{} clusters have been calibrated using
+            HSC weak lensing data (\citealt{Murata2019, Chiu2020a}) and galaxy
+            clustering method (\citealt{Chiu2020b}).
+            And the \camira{} clusters have been used to study the galaxy population in
+            clusters (e.g., \addref{}), the X-ray properties of clusters (e.g., \addref{}),
+            and the dark matter halo properties such as the splashback radius
+            of galaxy clusters (e.g., \addref{}).
+
+        \item \camira{} assign a central galaxy to each cluster but does not provide
+            a probability.
+            In \citet{Oguri2018}, the authors investigated the off-center distance ($R_{\rm
+            off}$) distribution of \camira{} clusters using matched X-ray clusters.
+            While the distribution centered at $R_{\rm off} \approx 0.0$ Mpc, $\sim 30$\%
+            of the clusters are offset from the X-ray peak with their $R_{\rm off}$ distribution
+            described by a $\sigma=0.26 \pm 0.04 h^{-1}$ Mpc Gaussian component.
+
+        \item In this work, we use the \camira{} catalog based on the \texttt{S16A} data
+            that are already publicly available.
+            The catalog includes 1921 clusters at $0.1 < z < 1.1$ with richness $N_{\rm Cam} > 15$.
+            After applying the bright star mask, we use \todo{XXX} clusters with
+            $0.2 < z < 0.5$ for our tests.
+            The photo-$z$ accuracy of these clusters are $\sigma_{z}=$\todo{XXX}.
+            Similar to the \redm{} clusters, we adopt the spec-$z$ values whenever possible
+            but also verify that only using photo-$z$ will not change any results.
+            And we also use the internal \camira{} catalogs based on HSC \texttt{S18A} and
+            \texttt{S19A} catalogs to check the results from our tests.
+            These releases were reduced with different versions of \hscpipe{} with
+            different treatments for background subtraction and image deblending,
+            leading to small differences in cluster identification and richness
+            measurements.
+            \plan{Do these tests, and summarize the results here.}
+
+        \item \plan{Discussion about the completeness of the cluster catalog.}
+            Given the excellent depth of the HSC images, this \camira{} catalog shows
+            uniformly high richness completeness when compared to X-ray clusters
+            ($\gtrapprox 0.8$; see \citealt{Oguri2018} \S 5.3) and using mock galaxy catalogs 
+            ($> 0.8$ for $M_{200c} > 5 \times 10^{13} h^{-1} M_{\odot}$ clusters at 
+            $0.3 < z < 0.6$; see \citealt{Oguri2018} \S 6).
 
     \end{itemize}
 
@@ -1161,7 +1212,7 @@
     Binning: four bins based on the richness values of HSC \redm{} cluster catalog. Bin 1 \& 2
     correponds to the \mvir{} range of galaxy clusters; Bin 3 \& 4 reach into the massive galaxy
     group regime.
-            
+
 
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -1170,7 +1221,7 @@
 \section{Results}
     \label{sec:result}
 
-    We now present our main results. 
+    We now present our main results.
     We first qualitatively evaluate the impact of satellite galaxies on using \mstar{} of massive
     galaxies as promising \mvir{} proxy (Sec \ref{sec:satellite}).
     Then we show the key findings from the from the ``Top N'' tests and compare the performance
@@ -1228,12 +1279,12 @@
     satellite galaxies. Satellite galaxies impart a "bump" feature in \dsigma{} profiles on
     scales of $R\sim$ 1 Mpc (e.g. \citealt{Mandelbaum2006a, Leauthaud2012}).
     Many previous works suggest a low satellite fraction at \logms{}$>$11.5 (\addref{}), but
-    massive satellite galaxies still make up $\sim 5$-10\% of our sample. 
+    massive satellite galaxies still make up $\sim 5$-10\% of our sample.
     Moreover, satellite fraction significantly increases with decreasing \mstar{}, presenting
-    further challenges to apply \mstar{} as halo mass proxy. 
+    further challenges to apply \mstar{} as halo mass proxy.
     Here, we qualitatively investigate the impact of satellite galaxies using our fiducial mock
     catalog, as well as using HSC data.
-       
+
     Using the fiducial mock catalog described in \S \ref{sec:halo_model}, we compare the
     \dsigma{} profiles of central galaxies and the \dsigma{} of all galaxies in the four number
     density bins used in our \topn{} tests. We perform this comparison for models with both
@@ -1268,11 +1319,11 @@
     forth \mmax{} bin, the \mdpl2{} model predicts a more significant enhancement peaking at 20\%
     level around 2--3 Mpc. The ratio from HSC sample in this bin is still reasonably consistent
     with the model, albeit with a slightly different shape and higher enhancement at $>3$ Mpc.
-            
+
     Figure \ref{fig:satellite} shows that the effect of massive satellite galaxies is insignificant
     at \logmmax{}$>11.8$, but starts to become visible at lower \mmax{}.
     Despite the naive satellite-removing method, we find good agreement between HSC and
-    model. For the remainder of this work, we will include massive satellite galaxies in the 
+    model. For the remainder of this work, we will include massive satellite galaxies in the
     samples selected from HSC data and from the mock catalog.
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -1295,7 +1346,7 @@
       \includegraphics[width=15cm]{figure/topn_dsigma_m100_cmod_compare}
       \caption{
           \todo{Update the figure with correct \mvir{} distributions for the 3rd and 4th bins.}
-          Comparison of the \topn{} test for \maper{100} and \mcmodel{}. 
+          Comparison of the \topn{} test for \maper{100} and \mcmodel{}.
           Rows correspond to bins in number density (see \S \ref{sec:binning}).
           The first column displays the lensing profile \dsigma{} in bins of number density. It
           is clear that the lensing amplitude for \maper{100} is significantly higher than for
@@ -1303,14 +1354,14 @@
           Without any model fitting, this figure already demonstrates that \maper{100} is a much
           better tracer of \mvir{} than \mcmodel{}.
           The second column is the ratio of the \dsigma{} profiles of \mcmodel{} and \maper{100}
-          selected galaxies. 
+          selected galaxies.
           \mcmodel{} based selections
-          have lensing amplitudes that are $\sim$20-50\% lower than the \maper{100} based samples. 
+          have lensing amplitudes that are $\sim$20-50\% lower than the \maper{100} based samples.
           The
           third row shows the inferred \mvir{} distributions for the two samples using the
-          model described in \S \ref{sec:halo_model}. 
+          model described in \S \ref{sec:halo_model}.
           Grey shaded regions indicate the distributions that would be
-          obtained for an ideal tracer with \sigmh{}$=0$. 
+          obtained for an ideal tracer with \sigmh{}$=0$.
           The difference in the mean \mvir{} of
           \mcmodel{} and \maper{} based selections are [\todo{}] dex in the four bins.
           }
@@ -1328,21 +1379,21 @@
         cut-off due to the \mdpl2{} limitation.}
     \todo{Update the XX numbers using the fianl model}
 
-    We begin by evaluating the performance of \cmodel{} as a proxy for halo mass. 
+    We begin by evaluating the performance of \cmodel{} as a proxy for halo mass.
     Figure \ref{fig:m100_cmod} compares the lensing signal for samples selected by \mcmodel{} and
     using our benchmark aperture stellar mass \maper{100}.
     The left panels of Figure \ref{fig:m100_cmod} show the \rdsigma{} profiles of the \mcmodel{}-
     and \maper{100}-selected samples.
-            
+
     The \mcmodel{}-based samples clearly have much lower amplitudes in their \dsigma{} profiles
     compared to the \maper{100} ones in all four bins.
     Without the need of any modeling, we can immediately conclude that \maper{100} is a much
     better \mvir{} proxy than \mcmodel{}.
-    We highlight this using the middle panel of \ref{fig:m100_cmod}.            
+    We highlight this using the middle panel of \ref{fig:m100_cmod}.
     In all the four bins and at almost all radius, the \dsigma{} value of a \mcmodel{}-sample
     is $\sim$20-50\% lower than the \maper{100} one.
-            
-    We then fit the \dsigma{} with our fiducial model.  
+
+    We then fit the \dsigma{} with our fiducial model.
     Using the best-fit profiles for the \maper{100} selected samples as reference (gray shaded
     region), we can see that the \dsigma{} profile of the \maper{100} samples are well-described
     by our simple model within 1-$\sigma$ uncertainty. The reduced \chisq{} values for the
@@ -1356,35 +1407,35 @@
     Although it is hard to visualize in the figure, the reduced \chisq{} values for the
     \mcmodel{} samples are \todo{[XX, XX, XX, XX]}.
 
-    The \mvir{} histograms for all galaxy selections are shown in the right panels of 
-    Figure \ref{fig:m100_cmod}.  
+    The \mvir{} histograms for all galaxy selections are shown in the right panels of
+    Figure \ref{fig:m100_cmod}.
     \mcmodel{}-selected samples have lower mean \mvir{} values and higher \sigmh{}
     than the \maper{100}-selected ones.
-    In the four number density bins, the mean \mvir{} of the \mcmodel{}-selected samples are 
+    In the four number density bins, the mean \mvir{} of the \mcmodel{}-selected samples are
     \todo{[XX, XX, XX, XX]} dex lower than the \maper{100}-selected ones.
-    The best-fit \sigmh{} values are also much higher for the \mcmodel{} samples 
-    (\todo{[0.6, 0.6, 0.6, 0.7]} dex in the four bins) than the \maper{100} ones 
+    The best-fit \sigmh{} values are also much higher for the \mcmodel{} samples
+    (\todo{[0.6, 0.6, 0.6, 0.7]} dex in the four bins) than the \maper{100} ones
     (\todo{[0.4, 0.4, 0.4, 0.4]}).
 
     Limited by the sample size and the much lower \snratio{} of the \dsigma{} profiles
     for the \mcmodel{} samples, we do not see any clear number density dependence or radial
-    trend of the difference. 
+    trend of the difference.
     But, among all tracers studied in this paper, it is clear that \mcmodel{} has the worst
     performance.
-            
+
     The \sigmh{} values here apply only to the \cmodel{} photometry of HSC SSP \texttt{S16A}.
     With a different imaging dataset, or a different treatment of background subtraction and
-    deblending, we could get different \sigmh{} values in a similar test. 
+    deblending, we could get different \sigmh{} values in a similar test.
     Moreover, the credibility of \mcmodel{} as \mvir{} proxy should depend on the \mstar{},
-    morphology, and redshift of the sample. 
+    morphology, and redshift of the sample.
     For instance, it could be appropriate to use \cmodel{} photometry for lower-\mstar{} or
-    higher redshift samples. 
+    higher redshift samples.
     However, we do think the result here is consistent with the \emph{intrinsic} limitation of
-    \cmodel{} when fitting massive galaxies (e.g., \addref{}). 
+    \cmodel{} when fitting massive galaxies (e.g., \addref{}).
     It is well known that \cmodel{} photometry under-estimates the luminosity of a low-$z$
-    massive galaxies (e.g., \addref{}). 
+    massive galaxies (e.g., \addref{}).
     We hope to draw more attention to its impact in many aspects of galaxy-halo connection
-    studies. 
+    studies.
     We often see models calibrate their low-$z$ SHMR using \cmodel{} SMF of SDSS galaxies, or a
     cluster-finder relies on \cmodel{} magnitude to assign central galaxy. These choices could
     have unintended consequence.
@@ -1414,7 +1465,7 @@
 
     \song{Should we try a similar one but based on Re, e.g. 2-4 Re instead of fixed aperture?
         or maybe R50 to R80?}
-    
+
     \song{Update the XX numbers using the final model}
 
     In addition to the \mstar{} within large elliptical apertures, we also explore the possibility
@@ -1441,14 +1492,14 @@
             The average ratios \dsigma{}$_{100\ \rm kpc}/$\dsigma{}$_[50,100]$ for Bin [1, 2, 3, 4]
             are \todo{XX, XX, XX, XX}.
 
-        \item According to our best-fit model, the \menve{50}{100}-selected samples have slightly 
-            higher mean \mvir{} (\logmvir{}=[\todo{XX, XX, XX, XX}]) in all four bins than the 
-            \maper{100}-selected samples (\logmvir{}=[\todo{XX, XX, XX, XX}]), while also 
-            displaying lower \sigmh{} values 
+        \item According to our best-fit model, the \menve{50}{100}-selected samples have slightly
+            higher mean \mvir{} (\logmvir{}=[\todo{XX, XX, XX, XX}]) in all four bins than the
+            \maper{100}-selected samples (\logmvir{}=[\todo{XX, XX, XX, XX}]), while also
+            displaying lower \sigmh{} values
             (\sigmh{}=[\todo{XX, XX, XX, XX}] for \menve{50}{100}; and
-             \sigmh{}=[\todo{XX, XX, XX, XX}] for \maper{100}). 
+             \sigmh{}=[\todo{XX, XX, XX, XX}] for \maper{100}).
             The improvements are especially clear in Bin 3 \& 4.
-        
+
 
         \item We rely on the low-\sb{} part of the surface brightness profile to estimate
             the \mstar{} in the outskirt, which is more vulnerable to the relative large
@@ -1803,7 +1854,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \section{Discussion}
     \label{sec:discussion}
-    
+
 %% ---------------------------------------------------------------------------------------------- %%
 %% Discussion about the outer envelope mass
 %% ---------------------------------------------------------------------------------------------- %%
@@ -1826,10 +1877,10 @@
         \item Relation with \exsitu{} stellar mass and the problem.
 
         \item Relation with ``ICL'' \mstar{} and recent stacking result from DES.
-        
+
         \item Recent works that show the 2-D shape of ICL reflects the orientation of DM halo.
-        
-        \item A few practical matters: \mlratio{} in the outskirt; contribution from satellite 
+
+        \item A few practical matters: \mlratio{} in the outskirt; contribution from satellite
             galaxies; practical challenges that stop us from exploring more.
 
     \end{itemize}
@@ -1839,20 +1890,20 @@
 %% ---------------------------------------------------------------------------------------------- %%
 \subsection{Richness v.s. Central Galaxy Selected ``Clusters''}
     \label{sec:cause_of_difference}
-    
+
     \plan{
-        Discuss the differences in the \dsigma{} profiles of richness and \mstar{}-selected 
+        Discuss the differences in the \dsigma{} profiles of richness and \mstar{}-selected
         massive galaxies: What are the physical causes? What can we learn from them?
     }
-    
+
     \plan{Rough outline}
-    
+
     \begin{itemize}
-    
-        \item Briefly compare the samples selected by the two different methods: How many in 
+
+        \item Briefly compare the samples selected by the two different methods: How many in
             common? Although scatters can account for the differences in which systems are selected,
-            it maybe interesting to include 
-        
+            it maybe interesting to include
+
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -1972,92 +2023,92 @@
             appropriate \sigmh{} value, suggesting that a $\log$-normal SHMR with Gaussian
             scatter can explain the observation (see Figure \ref{fig:m100_cmod}).
 
-        \item Interestingly, the \mstar{} within the outskirt defined by fixed physical 
-            boundaries such as the \menve{50}{100} shows even better performance as 
+        \item Interestingly, the \mstar{} within the outskirt defined by fixed physical
+            boundaries such as the \menve{50}{100} shows even better performance as
             \mvir{} proxy than large aperture \mstar{} (see Figure \ref{fig:m100_mout}),
             especially at lower-\mvir{} end (Bin 3 \& 4, see Figure \ref{fig:scatter_trend}).
             Different outskirt \mstar{} definitions with an inner boundary larger than 50 kpc
             show similar performance.
-            Although the outer \mstar{} measurement itself should be ``noisier'' than the 
-            total aperture \mstar{}, the outskirt of a massive galaxy is dominated by 
+            Although the outer \mstar{} measurement itself should be ``noisier'' than the
+            total aperture \mstar{}, the outskirt of a massive galaxy is dominated by
             the \exsitu{} stars with a closer relationship with \mvir{} or halo growth.
-            The \dsigma{} profiles of \menve{50}{100} selected galaxies are also consistent 
+            The \dsigma{} profiles of \menve{50}{100} selected galaxies are also consistent
             with the prediction of a ``scatter''--only model (see Figure \ref{fig:m100_mout}).
-        
-        \item Richness measurements from red-sequence cluster finders such as \redm{} and \camira{} 
-            are indeed outstanding \mvir{} proxies in galaxy cluster regime 
-            (\logmh{}$11.4$; or the Bin 1 \& 2 in our tests) as indicated by the lower 
+
+        \item Richness measurements from red-sequence cluster finders such as \redm{} and \camira{}
+            are indeed outstanding \mvir{} proxies in galaxy cluster regime
+            (\logmh{}$11.4$; or the Bin 1 \& 2 in our tests) as indicated by the lower
             \sigmh{} values than \mstar{}-based proxies (see Figure \ref{fig:scatter_trend}).
-            At the same time, outskirt \mstar{} (e.g., \menve{50}{100}) and \mvir{} predicted 
+            At the same time, outskirt \mstar{} (e.g., \menve{50}{100}) and \mvir{} predicted
             by an empirical model that takes advantages of the structural information (e.g.,
-            \masap{}) become competitive to richness except in the highest-\mvir{} bin that 
+            \masap{}) become competitive to richness except in the highest-\mvir{} bin that
             corresponds to the number density of $\lambda_{\rm redM} > 35$ clusters.
             Compared to richness of red-sequence galaxies, \mvir{} proxy based on the \mstar{}
             measurements of a single galaxy (central, or BCG) has the potential advantages of
             being ``free'' of projection effect and easier to model when generating mock catalogs.
-            Such advantages make these proxies interesting and complementary massive halo finder 
-            once the impact from massive satellite galaxies is accounted for 
+            Such advantages make these proxies interesting and complementary massive halo finder
+            once the impact from massive satellite galaxies is accounted for
             (see Figure \ref{fig:satellite}).
-        
-        \item Meanwhile, we see clear evidence that the stacked \dsigma{} profiles of 
-            richness-selected clusters 
-            1) show systematic differences with the profiles for 
+
+        \item Meanwhile, we see clear evidence that the stacked \dsigma{} profiles of
+            richness-selected clusters
+            1) show systematic differences with the profiles for
             galaxies selected by \mstar{} in the same number density bin
             (see Figure \ref{fig:mout_richness},
             2) cannot be fully explained by the ``scatter''--only model
             (see Figure \ref{fig:richness_residual}.
-            In the highest-\mvir{} Bin 1, the observed \dsigma{} profile of richness-selected 
-            clusters is $\sim 30$-50\% lower than both its best-fit model and the profile for 
+            In the highest-\mvir{} Bin 1, the observed \dsigma{} profile of richness-selected
+            clusters is $\sim 30$-50\% lower than both its best-fit model and the profile for
             \menve{50}{100}-selected galaxies at $R < 1$ Mpc.
-            In Bin 2 \& 3, the richness-based \dsigma{} profiles are suppressed at both 
-            $R < 1$ Mpc and $R > 3$ Mpc while enhanced in between by 20-30\% comparing to 
+            In Bin 2 \& 3, the richness-based \dsigma{} profiles are suppressed at both
+            $R < 1$ Mpc and $R > 3$ Mpc while enhanced in between by 20-30\% comparing to
             the \dsigma{} profile of their best-fit models.
             Both \redm{} and \camira{} finders show consistent differences
-            (see Figure \ref{fig:richness_residual}. 
-            Such differences can arise from a series of systematic issues of the red-sequence 
-            cluster finders such as the projection effect or mis-centering effect. 
-            They could also help us understand the assembly bias of massive halos with 
+            (see Figure \ref{fig:richness_residual}.
+            Such differences can arise from a series of systematic issues of the red-sequence
+            cluster finders such as the projection effect or mis-centering effect.
+            They could also help us understand the assembly bias of massive halos with
             similar \mvir{}.
 
     \end{itemize}
 
     % Future direction
-    Based on these results, we would like to further pursue the idea of utilizing an improved 
-    measurements of \mstar{} of massive galaxies for cluster cosmology and galaxy-halo connection 
+    Based on these results, we would like to further pursue the idea of utilizing an improved
+    measurements of \mstar{} of massive galaxies for cluster cosmology and galaxy-halo connection
     studies.
-    
+
     \plan{Some bullet points to choose from}
-    
+
     \begin{itemize}
-    
-        \item The most recent HSC SSP data release \texttt{S20A} will cover $\sim 600$ deg$^2$, 
-            four times larger than the one used in this work, providing better sample of the 
+
+        \item The most recent HSC SSP data release \texttt{S20A} will cover $\sim 600$ deg$^2$,
+            four times larger than the one used in this work, providing better sample of the
             most massive dark matter halos.
             It should also provide coadd images with better local background subtraction, helping
             us probing the very outskirt of massive galaxies better.
-            We are also working on more sophisticated modeling technique to handle massive 
+            We are also working on more sophisticated modeling technique to handle massive
             galaxies in major mergers better to include them in future analysis.
-        
-        \item Outlined in \citet{Bradshaw2020}, we will also explore the idea to further improve 
-            the ``cluster finder'' using the combined \mstar{} of the central galaxy and a few 
+
+        \item Outlined in \citet{Bradshaw2020}, we will also explore the idea to further improve
+            the ``cluster finder'' using the combined \mstar{} of the central galaxy and a few
             (e.g., 2-3) massive satellites (so-called ``Cen$+N$'' method).
-            This approach potentially can has even lower \sigmh{} performance while dealing with 
+            This approach potentially can has even lower \sigmh{} performance while dealing with
             low level projection effect.
-        
+
         \item Both our central galaxy-based and the ``Cen$+N$'' methods require accurate identifications
             of massive satellite galaxies, which is quite challenging now given the photo-$z$
-            accuracy. 
-            In the near future, spectroscopic surveys such as DESI (\addref{}) will greatly improve 
+            accuracy.
+            In the near future, spectroscopic surveys such as DESI (\addref{}) will greatly improve
             the situation.
-            We are working on measuring the large aperture and outskirt \mstar{} of low-$z$ massive 
+            We are working on measuring the large aperture and outskirt \mstar{} of low-$z$ massive
             galaxies from the DECaLS (\addref{}) images that are used for DESI sample selection.
             Through careful comparisons, we can confirm that DECaLS $r$-band images with improved
-            background subtraction using a specifically tailored pipeline (\addref{}) can provide 
+            background subtraction using a specifically tailored pipeline (\addref{}) can provide
             consistent 1-D profile out to 100 kpc with deeper HSC images (Li et al. in prep.).
-            When combined with DESI spec-$z$ measurements in the next few years, the much larger 
+            When combined with DESI spec-$z$ measurements in the next few years, the much larger
             sky coverage of DECaLS (\todo{Add number}) can provides us am ideal benchmark sample
             of massive galaxies and halos.
-        
+
     \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
