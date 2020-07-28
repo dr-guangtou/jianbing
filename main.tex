@@ -1048,7 +1048,21 @@
 \subsection{Richness-based proxies for Halo Mass}
 	\label{sec:proxy_richness}
 
-    \todo{Should discuss the completeness of richness-clusters in each bin and the implications.}
+    An over-density of galaxies is the most recognizable characteristic of a galaxy cluster on
+    optical-NIR image.
+    And given the well-established scaling relation between \mvir{} and number of subhalos, 
+    the richness of galaxies has become the cornerstone of optical cluster finders 
+    (e.g., \addref{}, MaxBCG, Wen \& Han).
+    In particular, the richness of the ``red-sequence'' galaxies - the quiescent, early-type
+    galaxies in the cluster that follows a tight luminosity-color sequence - is shown to have 
+    lower scatter in their \mvir{}-richness relation 
+    (e.g., \addref{} Rozo et al. 2009, Rykoff et al. 2012).
+    The prominent 4000 \AA break in the spectra of these red-sequence galaxies also provide a 
+    way to estimate the redshift of the cluster.
+    
+    In this work, we make use of the two popular ``red-sequence'' cluster finders that have been 
+    applied to HSC \texttt{S16A} images: \redm{} (\S \ref{sec:redmapper}) and \camira{}
+    (\S \ref{sec:camira}).
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% redMaPPer
@@ -1056,7 +1070,71 @@
 \subsubsection{\redm{} richness}
     \label{sec:redmapper}
 
-    \todo{Placeholder}
+    \plan{A rough outline}
+
+    \begin{itemize}
+
+        \item \redm{} (red-sequence Matched-filter Probabilistic Percolation; 
+            \citealt{Rykoff2014, Rozo2014, Rozo2015a, Rozo2015b}, \addref{Rykoff2016})
+            \footnote{\url{http://risa.stanford.edu/redmapper/}} is an efficient and 
+            flexible cluster finder designed for searching galaxy clusters in a wide 
+            range of redshift using different imaging surveys.
+            Using red-sequence galaxies, \redm{} estimates the richness of a cluster 
+            ($\lambda_{\rm redM}$) by summing up the membership probability 
+            ($p_{\rm mem}$) of all potential members after correcting for the 
+            impact of survey mask or variation of imaging depth. 
+            The algorithm also provides a number of candidates of central galaxy 
+            (or Brightest Cluster Galaxy, BCG) with different probabilities ($p_{\rm cen}$)
+            and an accurate photo-$z$ measurement for the cluster.
+        
+        \item Past works have examined \redm{} clusters selected using SDSS (\addref{}) and DES
+            (\addref{}) images carefully in term of their multi-wavelength properties
+            (\addref{}), mis-centering effect (\addref{}), and the projection effect (\addref{}).
+            And there have been a series of calibration of \mvir{}-richness relations 
+            for \redm{} clusters (e.g., \addref{}).
+            \redm{} clusters from DES Y1 data have been used to constrain cosmology model
+            as well (e.g., \addref{}). 
+        
+        \item In this work, we use an internal version of \redm{} cluster catalog using 
+            HSC \texttt{S16A} catalog (\todo{XXX} private communication).
+            The clusters are selected using the updated \texttt{Python} version of the 
+            \redm{} algorithm\footnote{\url{https://github.com/erykoff/redmapper}}.
+            \todo{Ask Eli Rykoff to say a few words about recent upgrades}.
+            The catalog includes \todo{XXX} clusters between $0.1 < z <$\todo{XX}.
+            Thanks to the HSC images with much higher quality, the HSC \redm{} catalog 
+            managed to reach to much lower richness ($\lambda_{\rm redM, HSC} > 5$)
+            than the SDSS \redm{} catalog in the same area while showing much improved 
+            cluster photo-$z$ performance with a median value of 
+            $\sigma_{z}/(1 + z) \sim$\todo{XXX} for HSC.
+            At $0.2 < z < 0.5$, we have \todo{XXX} clusters with 
+            $\lambda_{\rm redM, HSC} > 6$ after applying the bright star mask.
+        
+        \item \plan{There needs to be some discussion about the richness completeness
+            within $0.2 < z < 0.5$.
+            Figure 2 from McClintock et al. 2017}.
+        
+        \item We use the central candidate with the highest $P_{\rm cen}$ value as the
+            ``true'' center of the cluster.
+            The comparison with the X-ray peaks suggests the average mis-centering 
+            fraction and off-center distance are \todo{XXX} (e.g., \addref{}).
+            We have \todo{XXX} clusters (\todo{XXX\%}) with $P_{\rm cen} > 0.7$.
+            We also cross-match the central galaxies with the HSC spec-$z$ catalog and 
+            update the redshift when spec-$z$ is available.
+            Meanwhile, only using \redm{} photo-$z$ will not alter any key results.
+        
+        \item In the same area, we also have \todo{XXX} clusters at $0.2 < z < 0.5$ from 
+            the SDSS \redm{} cluster catalog \texttt{v6.3}. 
+            The catalog is only complete at $\lambda_{\rm redM, SDSS} > 20$ at 
+            $z \leq 0.33$. 
+            We use these SDSS \redm{} clusters to compare with the 
+            HSC results in the first two number density bins (for high-\mvir{} halos), 
+            and find the results are consistent.
+        
+        \item \song{Do we want to mention this?} 
+            \plan{We also compare with the \dsigma{} profiles of $\lambda > 20$ clusters 
+            between DES and HSC...}
+
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% CAMIRA
@@ -1065,6 +1143,12 @@
     \label{sec:camira}
 
     \todo{Placeholder}
+    
+    \begin{itemize}
+        
+        \item \plan{CAMIRA\footnote{\url{https://www.slac.stanford.edu/~oguri/cluster/}}} 
+
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% CAMIRA
@@ -1164,7 +1248,6 @@
     We have explored different choices of the cylinder size to make sure our result is robust.
     Furthermore, replacing \mmax{} with other larger aperture \mstar{} when identifying
     satellites does not change our result.
-        
 
     %Such approach is certainly over-simplified as 1) the more massive galaxy
     %    measured in our analysis is not necessarily the true central galaxy.
