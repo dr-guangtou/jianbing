@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/27 11776 words
+% 07/28 12136 words
 
 \documentclass[fleqn,usenatbib,useAMS,english]{mnras}
 
@@ -245,24 +245,84 @@
 
     \todo{Add simple explanation figure here}
 
+    \plan{A detailed outline}
+
     \begin{itemize}
 
-        \item \plan{Basic philosophy}: Comparison of \dsigma{} profiles of massive halos
-            identified by different methods within the same volume number density threshold.
-
-        \item \plan{Comparison with model \dsigma{} profiles and the estimate of \sigmh{}.}
-
+        \item In this work, we exam the ``performance'' of multiple \mvir{} proxies with 
+            different natures through a simple and straightforward test: the direct comparison 
+            of their average \dsigma{} profiles within the same volume number density 
+            threshold.
+        
+        \item In recent years, g-g lensing has become an increasingly popular and powerful 
+            probe for the galaxy-halo connection.
+            The coherent tangential shear distortion of the images of background galaxies 
+            induced by the gravitational lensing effect of foreground mass distribution relates
+            to the galaxy-matter cross-power spectrum (e.g., see \addref{}, Bartlemann et al.
+            2001).
+            When the distance to the lens galaxy and the distance (or redshift) distribution 
+            of background galaxies are available, such tangential shear signal can be related
+            to the excess surface mass density profile (\dsigma{}).
+            At a given radii $R$, \dsigma{} measures the difference between mean surface mass 
+            density with $R$ and the surface mass density at $R$.
+            Naturally, \dsigma{} profile directly map the matter distribution, which is
+            dominated by dark matter.
+            Within different ranges of radius, \dsigma{} profile can probe the mass 
+            of the dark matter halo in which the galaxy lives (e.g., at $\lessapprox 0.5$ Mpc)
+            and the local or large scale environment (e.g., at $\gtrapprox 1.0$ Mpc).
+            Therefore, \dsigma{} profile is a powerful tool to estimate halo mass and study 
+            halo assembly. 
+        
+        \item Unfortunately, except for a tiny fraction of extremely massive dark matter 
+            halos (e.g., \citealt{Sereno2018}, \addref{}), \dsigma{} profile of a single dark
+            matter halo is still too noisy to be useful.
+            To ensure sufficient \snratio{} of the \dsigma{} profile, the common practice is 
+            to stack the lensing signals around a sample of lenses and get the average \dsigma{}
+            profile that reflects the underlying halo properties of the sample.
+            For example, for luminosity- or stellar mass-matched samples of galaxies with 
+            different secondary properties, the direct comparison of their stacked \dsigma{}
+            profiles can help us understand the average differences of dark matter halos occupied 
+            by spiral \& early-type galaxies (e.g., \citealt{Mandelbaum2006a}, \addref{}), 
+            or by star-forming \& quiescent galaxies (e.g., \citealt{Mandelbaum2016}, \addref{}).
+            Physical interpretation of such differences can be complicated by the
+            contributions from both central and satellite galaxies in the lens sample.
+            But for massive galaxies explored in this work (\mstar{} $\gtrsim 10^{11.5} M_{\odot}$),
+            due to the expected low satellite fraction 
+            (e.g., \citealt{Mandelbaum2006a, vanUitert2016}; \addref{} Also see the discussion 
+            in \S \ref{sec:satellite}), the difference in the inner \dsigma{} directly 
+            reflects the difference in the \emph{halo mass distribution} of two samples.
+            Between two groups of lenses, the one with higher average \mvir{} will also show 
+            overall higher amplitude in its stacked \dsigma{} profile.
+        
+        \item With this in mind, we design a straightforward test to compare different \mvir{}
+            proxies that are based on different observables.
+            We name this approach \topn{} test since it can be easily understood with a simple
+            thought experiment: within a part of an ideal Universe where we know the true \mvir{}
+            of each halo, we can apply two different observables, $A$ \& $B$, as \mvir{} proxies 
+            to select their versions of the top 100 most massive halos and then compare their 
+            distributions of true \mvir{}.
+            If $A$-selected ``Top 100'' sample has higher average true \mvir{} than $B$-selected one,
+            we can conclude that 1) $A$ is a better \mvir{} proxy than $B$ \emph{in the number
+            density bin corresponding to top 100 halos}; 2) we can expect the stacked \dsigma{} 
+            profile of $A$-selected sample to have overall higher amplitudes than the $B$-based one.
+            And we can explore different number density bins 
+            (top 50, top 50-100, top 100-200, etc.) to further evaluate the performance of $A$ and $B$.
+        
+        \item In observation, we reverse 
+        
+        \item Using shallow imaging surveys such as SDSS, one has to stack a large number of 
+            massive galaxies (\todo{check the number}; e.g., \citealt{Mandelbaum2006a}) to achieve 
+            a reasonable \snratio{}. 
+            Now, the much deeper images with extraordinary seeing condition from the HSC survey 
+            allows us to reach the same \snratio{} with much smaller lens sample size.
+            For instance, the \dsigma{} profile of BOSS \texttt{LOWZ} galaxies at $0.31 < z < 0.43$
+            from the $\sim 137$ \sqdeg{} HSC \texttt{S16A} region has comparable \snratio{}
+            with the same sample from the \todo{XXX} \sqdeg{} SDSS survey (Leauthaud et al. in prep.).
+            Such unprecedented g--g lensing capability allows to carefully 
+        
     \end{itemize}
 
     \todo{Points worth mentioning, randomly organized.}
-
-    \plan{Mention that the \mstar{} sample misses $\sim 10$\% of galaxies due to failed 1-D
-        profile extraction. Visual examination of the failed ones and their \mcmodel{}
-        suggest that the \mstar{} distribution of those cases should not be that different
-        from the overall SMF. Some of these cases are on-going mergers or double-core
-        BCGs. We do not correct for the difference in the effective volume caused by this.
-        Varying the number density threshold by $\sim 10$\% accordingly does not change any
-        key result.}
 
     \plan{We should note that there are plenty of previous works that carefully model the \dsigma{}
         profiles of massive clusters to extract information including the average \mvir{} (e.g.,
@@ -1166,7 +1226,7 @@
             And the \camira{} clusters have been used to study the galaxy population in
             clusters (e.g., \addref{}), the X-ray properties of clusters (e.g., \addref{}),
             and the dark matter halo properties such as the splashback radius
-            of galaxy clusters (e.g., \addref{}).
+            of galaxy clusters (e.g., \citealt{Murata2020}).
 
         \item \camira{} assign a central galaxy to each cluster but does not provide
             a probability.
@@ -1213,7 +1273,26 @@
     correponds to the \mvir{} range of galaxy clusters; Bin 3 \& 4 reach into the massive galaxy
     group regime.
 
-
+    \plan{Mention that the \mstar{} sample misses $\sim 10$\% of galaxies due to failed 1-D
+        profile extraction. Visual examination of the failed ones and their \mcmodel{}
+        suggest that the \mstar{} distribution of those cases should not be that different
+        from the overall SMF. Some of these cases are on-going mergers or double-core
+        BCGs. We do not correct for the difference in the effective volume caused by this.
+        Varying the number density threshold by $\sim 10$\% accordingly does not change any
+        key result.}
+    
+    \plan{The completeness of the richness--selected clusters should be highly complete in our
+        redshift range for very massive clusters with \mvir{}$\gtrsim 10^{14} M_{\odot}$, but 
+        can also suffer from $\sim 10$-20\% incompleteness in the low richness bins.
+        We also do not attempt to correct for this effect.
+        HSC images are more than deep enough to detect massive quiescent galaxies in these 
+        clusters, so the incompleteness should not be caused by survey depth like in the 
+        SDSS \redm{} catalog.
+        These incompleteness can be caused by different photometric issues.
+        It is also possible that richness-based cluster finders fail to pick up massive 
+        halos with low richness of massive quiescent galaxies.
+        We will discuss these later.
+        }
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Main Results
