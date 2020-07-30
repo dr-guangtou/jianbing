@@ -1,5 +1,5 @@
 % Version 0; preprint format; Outline of paper I by Song Huang
-% 07/28 12136 words
+% 07/28 12839 words
 
 \documentclass[fleqn,usenatbib,useAMS,english]{mnras}
 
@@ -165,6 +165,26 @@
             Given these recent developments, it is timely to conduct a direct comparison of
             the new potentially quite simple tracers of halo mass with more traditional
             tracers such as richness.}
+        
+        \item \plan{Intro of g-g lensing}
+            The coherent tangential shear distortion of the images of background galaxies 
+            induced by the gravitational lensing effect of foreground mass distribution relates
+            to the galaxy-matter cross-power spectrum (e.g., see \addref{}, Bartlemann et al.
+            2001).
+            When the distance to the lens galaxy and the distance (or redshift) distribution 
+            of background galaxies are available, such tangential shear signal can be related
+            to the excess surface mass density profile (\dsigma{}).
+            At a given radii $R$, \dsigma{} measures the difference between mean surface mass 
+            density with $R$ and the surface mass density at $R$.
+            Naturally, \dsigma{} profile directly map the matter distribution, which is
+            dominated by dark matter.
+
+            %Unfortunately, except for a tiny fraction of extremely massive dark matter 
+            %halos (e.g., \citealt{Sereno2018}, \addref{}), \dsigma{} profile of a single dark
+            %matter halo is still too noisy to be useful.
+            %To ensure sufficient \snratio{} of the \dsigma{} profile, the common practice is 
+            %to stack the lensing signals around a sample of lenses and get the average \dsigma{}
+            %profile that reflects the underlying halo properties of the sample.
 
     \end{itemize}
 
@@ -240,7 +260,7 @@
 %% Philosophy of the Top N test
 %% ---------------------------------------------------------------------------------------------- %%
 
-\subsection{Philosophy of Top-N test}
+\subsection{The Philosophy of \topn{} Test}
     \label{sec:topn_intro}
 
     \todo{Add simple explanation figure here}
@@ -249,116 +269,113 @@
 
     \begin{itemize}
 
-        \item In this work, we exam the ``performance'' of multiple \mvir{} proxies with 
-            different natures through a simple and straightforward test: the direct comparison 
-            of their average \dsigma{} profiles within the same volume number density 
-            threshold.
+        \item When studying galaxy-halo connection, we can use certain observable as \mvir{} 
+            tracer as long as a physically motivated \mvir{}-observable relation exists.
+            In practice, we favour the \mvir{}-observable relation that follows a simple 
+            $\log$-linear form with Gaussian scatter.
+            Observables such as the richness of red-sequence galaxies, \mstar{} of the central 
+            galaxy, X-ray temperature (or luminosity), and many others do have relationship 
+            with \mvir{} that can be approximated by such assumptions within certain \mvir{}
+            range\footnote{For example, the global SHMR is clearly not a $\log$-linear 
+            relation. But we can still apply this assumption when we study massive halos 
+            with \mvir{}$\gtrsim 10^{13} M_{\odot}$}
+            And, from an observer's perspective, \emph{the \mvir{} distribution of halos selected
+            by certain \mvir{} proxy at fixed number density provides a quantitative measure of
+            its performance.}
+            In \S \ref{sec:scaling}, we will demonstrate that \mvir{}-observable relations with 
+            different combinations of slope and scatter of observable at
+            given \mvir{} ($\sigma({\rm Obs}| M_{\rm vir})$) can lead to the same \mvir{}
+            distribution in the same number density bin.
+            We consider such relations to have the same capability as \mvir{} proxies.
+            Meanwhile, when selecting massive halos within a number density bin, the steep slope
+            of HMF at high-\mvir{} end means there is always more less massive halos scattered
+            into this bin than from the more massive side.
+            Hence, the observable that leads to larger scatter of \mvir{} 
+            ($\sigma(M_{\rm vir} | {\rm Obs})$) in the \mvir{} distribution within certain 
+            number density bin is also the one that leads to lower average \mvir{}.
+            Here, we focus on the $\sigma(M_{\rm vir} | {\rm Obs})$ property as a metric to 
+            evaluate \mvir{} proxies.
         
-        \item In recent years, g-g lensing has become an increasingly popular and powerful 
-            probe for the galaxy-halo connection.
-            The coherent tangential shear distortion of the images of background galaxies 
-            induced by the gravitational lensing effect of foreground mass distribution relates
-            to the galaxy-matter cross-power spectrum (e.g., see \addref{}, Bartlemann et al.
-            2001).
-            When the distance to the lens galaxy and the distance (or redshift) distribution 
-            of background galaxies are available, such tangential shear signal can be related
-            to the excess surface mass density profile (\dsigma{}).
-            At a given radii $R$, \dsigma{} measures the difference between mean surface mass 
-            density with $R$ and the surface mass density at $R$.
-            Naturally, \dsigma{} profile directly map the matter distribution, which is
-            dominated by dark matter.
-            Within different ranges of radius, \dsigma{} profile can probe the mass 
-            of the dark matter halo in which the galaxy lives (e.g., at $\lessapprox 0.5$ Mpc)
-            and the local or large scale environment (e.g., at $\gtrapprox 1.0$ Mpc).
-            Therefore, \dsigma{} profile is a powerful tool to estimate halo mass and study 
-            halo assembly. 
-        
-        \item Unfortunately, except for a tiny fraction of extremely massive dark matter 
-            halos (e.g., \citealt{Sereno2018}, \addref{}), \dsigma{} profile of a single dark
-            matter halo is still too noisy to be useful.
-            To ensure sufficient \snratio{} of the \dsigma{} profile, the common practice is 
-            to stack the lensing signals around a sample of lenses and get the average \dsigma{}
-            profile that reflects the underlying halo properties of the sample.
-            For example, for luminosity- or stellar mass-matched samples of galaxies with 
-            different secondary properties, the direct comparison of their stacked \dsigma{}
-            profiles can help us understand the average differences of dark matter halos occupied 
-            by spiral \& early-type galaxies (e.g., \citealt{Mandelbaum2006a}, \addref{}), 
-            or by star-forming \& quiescent galaxies (e.g., \citealt{Mandelbaum2016}, \addref{}).
-            Physical interpretation of such differences can be complicated by the
-            contributions from both central and satellite galaxies in the lens sample.
+        \item To apply this method in real data, we make use of the \dsigma{} profile based on 
+            g-g lensing measurement to shed light on the \mvir{} distributions of massive 
+            halos from different selections.
+            For a single lens galaxy, \dsigma{} profile provides a direct probe of the 
+            matter distribution around it, including the halo mass of the dark matter halo 
+            in which the galaxy lives (e.g., at $\lessapprox 0.5$ Mpc)
+            and its local to large scale environment (e.g., at $\gtrapprox 1.0$ Mpc).
+            And for the stacked \dsigma{} profile for a sample of lenses, it reflects the 
+            underlying \mvir{} distribution of these galaxies.
+            For example, the stacked \dsigma{} profiles already help us understand the 
+            average \mvir{} differences between spiral \& early-type galaxies 
+            (e.g., \citealt{Mandelbaum2006a}, \addref{}) or star-forming \& quiescent galaxies 
+            (e.g., \citealt{Mandelbaum2016}, \addref{}) at the same luminosity or stellar mass.
+            Physical interpretations of such differences can be complicated by the
+            contributions from both central and satellite galaxies in the same lens sample.
             But for massive galaxies explored in this work (\mstar{} $\gtrsim 10^{11.5} M_{\odot}$),
             due to the expected low satellite fraction 
             (e.g., \citealt{Mandelbaum2006a, vanUitert2016}; \addref{} Also see the discussion 
-            in \S \ref{sec:satellite}), the difference in the inner \dsigma{} directly 
-            reflects the difference in the \emph{halo mass distribution} of two samples.
-            Between two groups of lenses, the one with higher average \mvir{} will also show 
-            overall higher amplitude in its stacked \dsigma{} profile.
-        
-        \item With this in mind, we design a straightforward test to compare different \mvir{}
-            proxies that are based on different observables.
-            We name this approach \topn{} test since it can be easily understood with a simple
-            thought experiment: within a part of an ideal Universe where we know the true \mvir{}
-            of each halo, we can apply two different observables, $A$ \& $B$, as \mvir{} proxies 
-            to select their versions of the top 100 most massive halos and then compare their 
-            distributions of true \mvir{}.
-            If $A$-selected ``Top 100'' sample has higher average true \mvir{} than $B$-selected one,
-            we can conclude that 1) $A$ is a better \mvir{} proxy than $B$ \emph{in the number
-            density bin corresponding to top 100 halos}; 2) we can expect the stacked \dsigma{} 
-            profile of $A$-selected sample to have overall higher amplitudes than the $B$-based one.
-            And we can explore different number density bins 
-            (top 50, top 50-100, top 100-200, etc.) to further evaluate the performance of $A$ and $B$.
-        
-        \item In observation, we reverse 
-        
-        \item Using shallow imaging surveys such as SDSS, one has to stack a large number of 
-            massive galaxies (\todo{check the number}; e.g., \citealt{Mandelbaum2006a}) to achieve 
-            a reasonable \snratio{}. 
+            in \S \ref{sec:satellite}), the difference of the \dsigma{} profiles should mostly 
+            reflect the difference of \mvir{} distributions.
+            Using shallow imaging surveys such as SDSS, one has to stack a large number of
+            massive galaxies (\todo{check the number}; e.g., \citealt{Mandelbaum2006a}) to
+            achieve a reasonable \snratio{}.
             Now, the much deeper images with extraordinary seeing condition from the HSC survey 
-            allows us to reach the same \snratio{} with much smaller lens sample size.
-            For instance, the \dsigma{} profile of BOSS \texttt{LOWZ} galaxies at $0.31 < z < 0.43$
-            from the $\sim 137$ \sqdeg{} HSC \texttt{S16A} region has comparable \snratio{}
-            with the same sample from the \todo{XXX} \sqdeg{} SDSS survey (Leauthaud et al. in prep.).
-            Such unprecedented g--g lensing capability allows to carefully 
+            allows us to reach the same \snratio{} with much smaller lens sample size\footnote{
+            For instance, the \dsigma{} profile of BOSS \texttt{LOWZ} galaxies at $0.31 < z <
+            0.43$ from the $\sim 137$ \sqdeg{} HSC \texttt{S16A} region has comparable \snratio{}
+            with the same sample from the \todo{XXX} \sqdeg{} SDSS survey (Leauthaud et al. in
+            prep.).}.
+
+        \item Such unprecedented g--g lensing capability allows to use the \dsigma{} profiles of
+            massive halos selected by different \mvir{} proxies in the same number density bin to
+            evaluate their performance in greater details.
+            In this work, we call this straightforward approach the \topn{} test.
+            For example, within the same observed volume, we can compare the stacked \dsigma{} 
+            profiles of the top 50 most massive galaxies and the top 50 richest clusters
+            (\topn{} with $N=50$).
+            Based on the previous discussion, we know the \dsigma{} profile with overall higher 
+            amplitude reflects a \mvir{} distribution with lower $\sigma(M_{\rm vir} | {\rm Obs})$
+            (and higher average \mvir{}) and corresponds to the better \mvir{} proxy.  
+            With different $N$ values, we essentially evaluate these \mvir{} proxies above 
+            different number density thresholds. 
+            In practice, we perform these tests in non-overlapping number density bins 
+            (see \S \ref{sec:binning}). 
+
+        \item To quantitatively interpret the differences of \dsigma{} profiles, we 
+            develop a toy model based on N-body simulations \mdpl2{} and \smdpl{} and assumes a
+            $\log$-linear \mvir{}-observable relation with constant Gaussian scatter.
+            Using such model, we can estimate the $\sigma(M_{\rm vir} | {\rm Obs})$ value 
+            of a given \dsigma{} profile and infer the underlying \mvir{} distribution under our 
+            assumptions and the cosmology model adopted by the simulation.
+            We explain the toy model and this process in details in \S \ref{sec:halo_model} and 
+            \S \ref{sec:dsigma_match}.
+            In addition to the best-fit scatter value, we also use the \dsigma{} profiles predicted 
+            by simulations to exam whether the ``Gaussian scatter only'' assumption applies to 
+            certain \mvir{}-observable relation or if there are more issues to be considered.
         
+        \item We should note that there are plenty of previous works that carefully model the 
+            \dsigma{} profiles of massive clusters to extract information including the average
+            \mvir{} (e.g., \addref{}).
+            Both \mvir{}-richness relation and the SHMR of central galaxies have been 
+            calibrated using \dsigma{} profiles and more sophisticated forward-modeling framework
+            (e.g., \citealt{Murata2018, Murata2019}, \addref{}).
+            Such works usually need to assume certain functional forms for different components 
+            of matter distribution (e.g., 1-Halo term, 2-Halo term, off-center clusters) and 
+            often rely on certain imperfect treatments of systematic effects such as the 
+            mis-centering and the projection effect (e.g., \addref{}). 
+            On our side, even though the inferred $\sigma(M_{\rm vir} | {\rm Obs})$ values are
+            based on specific simulations and some simple assumptions, the
+            qualitative results from the \topn{} tests remain intact since they only rely on
+            the direct comparisons of the observed \dsigma{} profiles.
+            We believe the straightforward \topn{} test is a valuable and complementary 
+            approach when studying galaxy-halo connection at the high-\mvir{} end.
+            Not only \topn{} test can help us identify competitive \mvir{} proxy for 
+            ``cluster finding'', it can also reveal subtle systematic differences between 
+            halos traced by different types of proxies (e.g. \mstar{} v.s. richness; see
+            \S \ref{sec:mstar_vs_richness}).
+
     \end{itemize}
 
-    \todo{Points worth mentioning, randomly organized.}
-
-    \plan{We should note that there are plenty of previous works that carefully model the \dsigma{}
-        profiles of massive clusters to extract information including the average \mvir{} (e.g.,
-        \addref{}).
-        Both \redm{} and \camira{} cluster finders have their \mvir{}-richness relations calibrated
-        using sophisticated forward-modeling of cluster \dsigma{} profiles (e.g.,
-        \citealt{Murata2018, Murata2019}, \addref{}).
-        These models often include different components such as the so-called 1-halo and 2-halo
-        terms along with the contribution of off-center clusters.}
-
-    \plan{
-        To empirically interpret the difference found in the \dsigma{} profiles, we also develop
-        a simple model based on N-body simulations \mdpl2{} and \smdpl{}.
-        This toy model assumes a $\log$-linear \mvir{}-observable relation with constant Gaussian
-        scatter of observable value at fixed \mvir{} (\scatterObsSymMhalo{}).
-        The fiducial model can fit the SMF of HSC massive galaxies and their auto- and cross-correlation
-        properties among three \mstar{} bins.
-        Then we fix the slope of the default \mvir{}-observable relation and vary the
-        \scatterObsSymMhalo{} to result
-        to find the best match...
-    }
-
-
-%% ---------------------------------------------------------------------------------------------- %%
-%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and
-%%         halo mass distribution
-%% ---------------------------------------------------------------------------------------------- %%
-  \begin{figure*}
-      \centering
-      \includegraphics[width=\textwidth]{figure/topn_mdpl2_dsigma}
-      \caption{Impact of scatter in the mass-observable relation on $\Delta\Sigma$. Left: the
-        $\Delta\Sigma$ profiles for $0<\sigma_{Mvir|obs}<2$. Middle: ratio of $\Delta\Sigma$ with
-        non zero scatter to $\Delta\Sigma$ when $0<\sigma_{Mvir|obs}=0$. Right: halo mass
-        histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$).} \label{fig:mdpl2}
-  \end{figure*}
-%% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Theoretical exploration of the relations among scatters and its impact on
@@ -539,7 +556,6 @@
 %% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Model Calibrated to Match HSC}
-
     \label{sec:halo_model}
 
     \todo{Placeholder: Updates needed}
@@ -562,6 +578,46 @@
     The best-fit mock is able to reproduce the mass function and clustering statistics of HSC as
     shown in \ref{fig:best_mock}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and
+%%         halo mass distribution
+%% ---------------------------------------------------------------------------------------------- %%
+  \begin{figure*}
+      \centering
+      \includegraphics[width=\textwidth]{figure/topn_mdpl2_dsigma}
+      \caption{Impact of scatter in the mass-observable relation on $\Delta\Sigma$. Left: the
+        $\Delta\Sigma$ profiles for $0<\sigma_{Mvir|obs}<2$. Middle: ratio of $\Delta\Sigma$ with
+        non zero scatter to $\Delta\Sigma$ when $0<\sigma_{Mvir|obs}=0$. Right: halo mass
+        histograms for bin 1 ($\overline(n)=x$) and bin 2 ($\overline(n)=x$).} 
+        \label{fig:mdpl2}
+  \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Model used in comparison
+%% ---------------------------------------------------------------------------------------------- %%
+\subsection{Estimate $\sigma(M_{\rm vir} | {\rm Obs})$ Values}
+    \label{sec:dsigma_match}
+
+    \todo{Placeholder: Under construction}
+
+    \song{Check with Chris to see whether the following statement is true.}
+    \plan{We then fix the slope of the best-fit model and only vary the \scatterObsSymMhalo{} value
+        to achieve different \scatterMhaloObsSym{}...}
+
+    \begin{itemize}
+        
+        \item \plan{How do we estimate \dsigma{} profile and its uncertainty in the simulation.
+            How do we deal with the stochastic nature of this process?}
+
+        \item \plan{If necessary, explain how do we combine the \mdpl2{} and \smdpl{} results.}
+
+        \item \plan{Explain Figure \ref{fig:mdpl2}}.
+
+        \item \plan{The matching process: how do we measure the \chisq{} values; how do we take
+            the covariance matrix of the observed \dsigma{} profile into account.}
+
+    \end{itemize}
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Definition of richness and number density bins.
