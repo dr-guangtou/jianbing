@@ -18,7 +18,7 @@
 \usepackage{xcolor,colortbl}
 \PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
-%\usepackage[nobiblatex]{xurl}
+\usepackage{xeCJK}
 \usepackage{CJKutf8}
 
 % Package Settings
@@ -43,16 +43,17 @@
     Comparable to Richness and Reduced Projection Effects}
 
 \author[S. Huang et al.]{
-        Song Huang$^{1,2}$\thanks{E-mail: sh19@princeton.edu (SH)},
+        Song Huang$^{1,2}$ (黄崧)\thanks{E-mail: sh19@astro.princeton.edu (SH)},
         Christopher Bradshaw$^{2}$,
         Alexie Leauthaud$^{2}$,
-        Andrew Hearin$^{3}$,
         \newauthor
+        Andrew Hearin$^{3}$,
         Peter Behroozi$^{4}$,
-        Joseph DeRose$^{2}$,
-        Johannes Lange$^{2}$,
+        Johannes Lange$^{2, 5}$,
         Jenny Greene$^{1}$,
-        Joshua S. Speagle (\begin{CJK*}{UTF8}{bsmi}沈佳士\ignorespacesafterend\end{CJK*})$^{5,6,7}$\\
+        \newauthor
+        Joseph DeRose$^{2, 6}$,
+        Joshua S. Speagle (沈佳士) $^{7, 8, 9}$\\
         $^{1}$Department of Astrophysical Sciences, Peyton Hall,
               Princeton University, Princeton, NJ 08540, USA \\
         $^{2}$Department of Astronomy and Astrophysics, University of California
@@ -60,9 +61,15 @@
         $^{3}$Argonne National Laboratory, Argonne, IL 60439, USA\\
         $^{4}$Department of Astronomy and Steward Observatory, University of Arizona,
               Tucson, AZ 85721, USA\\
-        $^{5}$Department of Statistical Sciences, University of Toronto, Toronto, M5S 3G3, Canada\\
-        $^{6}$David A. Dunlap Department of Astronomy \& Astrophysics, University of Toronto, Toronto, M5S 3H4, Canada\\
-        $^{7}$Dunlap Institute for Astronomy \& Astrophysics, University of Toronto, Toronto, M5S 3H4, Canada
+        $^{5}$Kavli Institute for Particle Astrophysics and Cosmology and Department of Physics, 
+            Stanford University, CA 94305, USA\\
+        $^{6}$Berkeley Center for Cosmological Physics, University of California, 
+            Berkeley, CA 94720, USA\\
+        $^{7}$Department of Statistical Sciences, University of Toronto, Toronto, M5S 3G3, Canada\\
+        $^{8}$David A. Dunlap Department of Astronomy \& Astrophysics, University of Toronto, 
+            Toronto, M5S 3H4, Canada\\
+        $^{9}$Dunlap Institute for Astronomy \& Astrophysics, University of Toronto, 
+            Toronto, M5S 3H4, Canada
         }
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -88,28 +95,29 @@
 \begin{abstract}
     
     Using weak gravitational lensing data from the Hyper Suprime-Cam Subaru Strategic Program
-    (HSC survey), we study the potential of different stellar mass measurements in tracing halo
+    (HSC survey), we study the potential of different stellar mass estimates in tracing halo
     mass.
-    We consider galaxies with \logms{}$>11.5$ at $0.2 < z < 0.5$ with carefully measured light profiles,
-    and clusters from the \redm{} and \camira{} richness-based algorithms.
+    We consider galaxies with \logms{}$>11.5$ at $0.2 < z < 0.5$ with carefully measured light 
+    profiles, and clusters from the \redm{} and \camira{} richness-based algorithms.
     We devise a method (the ``\topn{} test'') to evaluate the scatter in the halo mass-observable
-    relation for different tracers, and to inter-compare halo mass proxies in four number density bins using stacked
-    galaxy-galaxy lensing profiles.
-    This test reveals three key findings. Stellar masses based on \cmodel{} magnitudes and luminosity within
-    $R<$30 kpc are poor tracers of halo mass. In contrast, the stellar mass of the outer envelope is an excellent halo
-    mass proxy. The stellar mass within $R=[50,150]$ kpc,  \menve{50}{150}, has performance comparable to the
+    relation for different tracers, and to inter-compare halo mass proxies in four number density 
+    bins using stacked galaxy-galaxy lensing profiles.
+    This test reveals three key findings. Stellar masses based on \cmodel{} magnitudes and 
+    luminosity within $R<$30 kpc are poor tracers of halo mass. 
+    In contrast, the stellar mass of the outer envelope is an excellent halo mass proxy. 
+    The stellar mass within $R=[50,150]$ kpc, \menve{50}{150}, has performance comparable to the
     state-of-the-art richness-based cluster finders at \logmvir{}$\gtrsim 14.0$ and could be 
-    a better halo mass tracer at lower halo masses. Finally, using N-body simulations, we find that the lensing profiles of massive halos selected
-    by \menve{50}{150} are consistent with the
-    expectation for a sample without noticeable projection or mis-centering effects. Richness-selected clusters, on the other hand, display an excess at $R\sim 1$ Mpc in their 
+    a better halo mass tracer at lower halo masses. 
+    Finally, using N-body simulations, we find that the lensing profiles of massive halos selected
+    by \menve{50}{150} are consistent with the expectation for a sample without noticeable 
+    projection or mis-centering effects. 
+    Richness-selected clusters, on the other hand, display an excess at $R\sim 1$ Mpc in their 
     lensing profiles, which may suggest a more significant impact from selection biases.
     These results suggest that \mstar{}-based tracers have distinct advantages in
-    identifying massive halos, which could open up new avenues 
-    for cluster cosmology.
+    identifying massive halos, which could open up new avenues for cluster cosmology.
 
 \end{abstract}
 
-% TODO: Need updates!
 \begin{keywords}
     cosmology: observations --
     gravitational lensing: weak --
@@ -117,7 +125,6 @@
     galaxies: cluster: general --
     galaxies: haloes
 \end{keywords}
-
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% Main Text
@@ -129,6 +136,7 @@
 
 \section{Introduction}
     \label{sec:intro}
+    
     
     With the rapid developments of multi-wavelength sky surveys, galaxy clusters
     have become increasingly important for cosmology and galaxy-halo connection studies.
@@ -239,7 +247,7 @@
     bin by assuming a $\log$--linear halo mass-observable relation with constant Gaussian 
     scatter.
     The comparison of the lensing profiles from simulation and the ones in observation also help
-    inform us whether the underlying cluster sample satisfies this simple assumption.
+    inform us whether the underlying cluster sample satisfies this simple assumption. 
     
 %% ---------------------------------------------------------------------------------------------- %%
 %% Brief mention of key results
@@ -304,26 +312,50 @@
     \includegraphics[width=\textwidth]{figure/topn_fig_1}
     \caption{
         \textbf{Left}:
-            Demonstration of the \topn{} experiment: For the same set of halos sampled from the
-            \mdpl2{} halo mass function, we mock the distributions of two hypothetical observables
-            that follow \mhalo{}-observable relations with different slopes and scatters
-            (blue v.s. orange shaded regions).
-            We then select the top $N$ objects using the two observables and highlight them using
-            scatter plots with the corresponding color.
+            \update{
+            Demonstration of the \topn{} experiment: we simulate the distributions of three 
+            hypothetical observables that follow different \mvir{}--observable relations 
+            using the same samples of halos from the \mdpl2{} simulation.
+            The gray hexbins and solid line describe the observable \obsSym{} whose 
+            $\log$-linear \mvir{}--observable relation with slope $\alpha=1.2$ and a Gaussian 
+            scatter of \scatterObsSymMhalo{}$=0.2$.
+            Orange hexbins and dashed line are for \obsSym{} with $\alpha=0.8$ and 
+            \scatterObsSymMhalo{}$=0.4$, while light green hexbins and dot--dashed line
+            are for \obsSym{} with $\alpha=0.4$ and \scatterObsSymMhalo{}$=0.2$.
+            We then select the top $N$ objects (top 5000 for this figure) for each observable
+            and highlight them using hexbins with blue, red, and green colours.
             The $N$ value translates into a fixed volume number density threshold shown on the
-            right sub-panel using the number density distributions of the two observables.
-            On the bottom sub-panel, we can see that the same \topn{} selection results in
-            different \mhalo{} distributions with different mean values (labeled by the short
-            vertical bar) and scatters. 
-            In this case, the \mhalo{}-observable relation with shallower slope and larger scatter
-            (orange one) lead to lower average \mhalo{} and wider \mhalo{} distribution in the same
-            \topn{} bin.
+            right sub-panel using the number density distributions of these observables.
+            We use shaded regions with the corresponding colours to represent the \topn{} 
+            selections.
+            On the bottom sub-panel, we show the \mvir{} distributions in each \topn{} sample.
+            A short vertical bar labels the mean \mvir{} of each sample.
+            This demonstrates two things:
+            1. Under the same number density selection (\topn{} selection), the \mvir{} 
+            distribution of the sample reflects the properties of underlying \mvir{}-observable 
+            relation: a relation with shallower slope and larger scatter leads to 
+            lower mean \mvir{} and larger scatter of \mvir{} (e.g., orange v.s. gray).
+            2. There is a degeneracy among \mvir{}-observable relations with $\log$-linear form 
+            and Gaussian scatters: relations with the same $\alpha$/\scatterObsSymMhalo{} values
+            will result in very similar \mvir{} distributions using \topn{} selection
+            (e.g., orange v.s. green).
+            }
         \textbf{Right}:
+            In galaxy-galaxy lensing studies, we infer the average halo properties of a sample
+            selected based on specific observable using the \emph{stacked} lensing profile.
+            The properties of these \dsigma{} profiles are determined by 
+            
             We show the stacked lensing signals of these two \topn{}-selected samples.
             We use the \rdsigma{} profile to highlight the scale-dependent differences between them.
             We also highlight the ratio of these two profiles in the bottom sub-panel.
             Such comparison reflects the difference of the underlying distributions of \mhalo{}
             (and potentially other halo properties) of the \topn{}-selected samples.
+            Observables with the same ratio $\alpha / \scatterObsSymMhalo$ have the same
+            \scatterMhaloObsSym{} (see Figure \ref{eq:ratio_is_what_matters}) in the same volume
+            number density bin, resulting in very similar \dsigma{} profiles.
+            We highlight this degeneracy using the \rdsigma{} profiles of mock samples selected from
+            four different scaling relations with the same $\alpha / \scatterObsSymMhalo$ and number
+            density threshold.
         }
         \label{fig:theory_1}
     \end{figure*}
@@ -368,7 +400,7 @@
     of clusters.
     We should also point out that the ratio of \dsigma{} profiles often show scale dependent
     features which reveals subtle differences in other halo properties or large scale environment
-    (right panel of Fig \ref{fig:theory_2}).
+    (right panel of Fig \ref{fig:theory_1}).
     This is another important application of the \topn{} strategy.
 
     Compared to sophisticated modeling strategy (e.g., \citealt{Sonnenfeld2019}), \topn{} test
@@ -386,12 +418,15 @@
 \subsection{Modeling Methodology}
     \label{sec:model}
 
+    \update{
     To quantitatively interpret the differences of \dsigma{} profiles, we develop a simple
-    method based on N-body simulations
-    \mdpl2{}\footnote{\url{https://www.cosmosim.org/cms/simulations/mdpl2/}}
-    and \smdpl{}\footnote{\url{https://www.cosmosim.org/cms/simulations/smdpl/}} and assumes a
-    $\log$-linear \mvir{}-observable relation with constant Gaussian scatter.
-    We estimate the $\sigma(M_{\rm vir} | {\rm Obs})$ value of a given \dsigma{} profile and
+    method based on the data from the 
+    MultiDark Planck 2 (\mdpl2{}) \footnote{\url{https://www.cosmosim.org/cms/simulations/mdpl2/}}
+    and the Small MultiDark Planck (\smdpl{})\footnote{\url{https://www.cosmosim.org/cms/simulations/smdpl/}}
+    N-body simulations (e.g., \citealt{Klypin2016}).
+    }
+    Assuming a $\log$-linear \mvir{}-observable relation with constant Gaussian scatter,
+    we estimate the $\sigma(M_{\rm vir} | {\rm Obs})$ value of a given \dsigma{} profile and
     infer the underlying \mvir{} distribution using this model.
     We explain the theoretical background of this method in \S \ref{sec:comp_scatters}, and
     describe its implementation in \S \ref{sec:estimate_scatter}.
@@ -400,39 +435,39 @@
 %% Figure: Theoretical exploration of the relations among scatters and its impact on
 %%		   Delta Sigma profiles.
 %% ---------------------------------------------------------------------------------------------- %%
-    \begin{figure*}
-    \includegraphics[width=\textwidth]{figure/topn_fig_2}
-    \caption{
-        \textbf{Left}:
-            Using the \mhalo{} sampled from the \mdpl2{} halo mass function (HMF; green line in the
-            bottom sub-panel), we show the distribution of a hypothetical observable, \obsSym{}, that
-            relates to $\mu = \log(\Mhalo)$ by a linear relation with some scatter.
-            By construction, the distribution of observable within a thin \mhalo{} bin (the blue
-            rectangular region) $P(\obsSym | \mu)$ is a normal distribution around
-            $\langle \obsSym | \mu \rangle = \alpha \mu + \pi$ with a scatter of
-            $\sigma_{\obsSym | \mu}$(right panel, blue histogram).
-            $P(\mu | \obsSym)$ (bottom panel, yellow histogram) is the distribution of \mhalo{} in
-            a thin selection of \obsSym{} (yellow rectangular region), which can be well
-            described by a normal distribution (black dashed-line) centered at the value given by
-            Figure \ref{eq:mean_of_mu} with a scatter given by Figure \ref{eq:scatter_of_mu} that
-            depends on $\sigma_{\obsSym | \mu}$, the slope of the \obsSym - $\mu$ relation, $\alpha$,
-            and the curvature of the HMF, $\beta_2$.
-            The gap between $\langle \obsSym | \mu \rangle$ and $\langle \mu | \obsSym \rangle$
-            becomes smaller toward the lower \mhalo{} end as the slope of HMF becomes shallower.
-        \textbf{Right}:
-            In galaxy-galaxy lensing studies, we infer the average halo properties of a sample
-            selected based on specific observable using the \emph{stacked} lensing profile.
-            Observables with the same ratio $\alpha / \scatterObsSymMhalo$ have the same
-            \scatterMhaloObsSym{} (see Figure \ref{eq:ratio_is_what_matters}) in the same volume
-            number density bin, resulting in very similar \dsigma{} profiles.
-            We highlight this degeneracy using the \rdsigma{} profiles of mock samples selected from
-            four different scaling relations with the same $\alpha / \scatterObsSymMhalo$ and number
-            density threshold.
-            Using the first sample as the reference, we also show the ratios of \rdsigma{} profiles
-            in the bottom sub-panel.
-        }
-        \label{fig:theory_2}
-    \end{figure*}
+%    \begin{figure*}
+%    \includegraphics[width=\textwidth]{figure/topn_fig_2}
+%    \caption{
+%        \textbf{Left}:
+%            Using the \mhalo{} sampled from the \mdpl2{} halo mass function (HMF; green line in the
+%            bottom sub-panel), we show the distribution of a hypothetical observable, \obsSym{}, that
+%            relates to $\mu = \log(\Mhalo)$ by a linear relation with some scatter.
+%            By construction, the distribution of observable within a thin \mhalo{} bin (the blue
+%            rectangular region) $P(\obsSym | \mu)$ is a normal distribution around
+%            $\langle \obsSym | \mu \rangle = \alpha \mu + \pi$ with a scatter of
+%            $\sigma_{\obsSym | \mu}$(right panel, blue histogram).
+%            $P(\mu | \obsSym)$ (bottom panel, yellow histogram) is the distribution of \mhalo{} in
+%            a thin selection of \obsSym{} (yellow rectangular region), which can be well
+%            described by a normal distribution (black dashed-line) centered at the value given by
+%            Figure \ref{eq:mean_of_mu} with a scatter given by Figure \ref{eq:scatter_of_mu} that
+%            depends on $\sigma_{\obsSym | \mu}$, the slope of the \obsSym - $\mu$ relation, $\alpha$,
+%            and the curvature of the HMF, $\beta_2$.
+%            The gap between $\langle \obsSym | \mu \rangle$ and $\langle \mu | \obsSym \rangle$
+%            becomes smaller toward the lower \mhalo{} end as the slope of HMF becomes shallower.
+%        \textbf{Right}:
+%            In galaxy-galaxy lensing studies, we infer the average halo properties of a sample
+%            selected based on specific observable using the \emph{stacked} lensing profile.
+%            Observables with the same ratio $\alpha / \scatterObsSymMhalo$ have the same
+%            \scatterMhaloObsSym{} (see Figure \ref{eq:ratio_is_what_matters}) in the same volume
+%            number density bin, resulting in very similar \dsigma{} profiles.
+%            We highlight this degeneracy using the \rdsigma{} profiles of mock samples selected from
+%            four different scaling relations with the same $\alpha / \scatterObsSymMhalo$ and number
+%            density threshold.
+%            Using the first sample as the reference, we also show the ratios of \rdsigma{} profiles
+%            in the bottom sub-panel.
+%        }
+%        \label{fig:theory_2}
+%    \end{figure*}
 %% ---------------------------------------------------------------------------------------------- %%
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -458,9 +493,9 @@
             We highlight the ratio for the $\sigma_{\langle s \mid \mu\rangle}=0.4$ and $=0.6$
             ones too.
         \textbf{Right}:
-            We show the \mhalo{} distributions of the ``perfect'' \topn{} sample and the
+            We show the $\log M_{\rm vir}$ distributions of the ``perfect'' \topn{} sample and the
             $\sigma_{\langle s \mid \mu\rangle}=0.4$ and $=0.6$ samples.
-            We also label the mean \mhalo{} for each distribution.
+            We also label the mean $\log M_{\rm vir}$ for each distribution.
         }
         \label{fig:mdpl2}
     \end{figure*}
@@ -472,7 +507,7 @@
 \subsubsection{The relationship between \scatterMhaloObsSym{} and \scatterObsSymMhalo{}}
     \label{sec:comp_scatters}
 
-    Assuming a generic observable that shows a $\log$-linear relation with the \mvir{} that shows
+    Assuming a generic observable that shows a $\log$-linear relation with the \mvir{} and
     a $\log$-normal scatter (e.g.,
     X-ray temperature \citealt{Lieu2016}, K-band luminosity \citealt{Ziparo2016}, and many others
     \citealt{Evrard2014, Farahi2018}), we explore the connection between the \sigmh{} of a sample
@@ -512,7 +547,7 @@
         P(\obsSym{}) \equiv \int_{0}^{\infty} \hmf{} P(\obsSym{} | \mu) d\mu
     \end{equation}
 
-    At fixed \obsSym{} the scatter around the expected $\mu$,
+    At fixed \obsSym{} the mean value of $\mu$ is,
 
     \begin{equation}
     \begin{aligned}
@@ -557,10 +592,11 @@
     \noindent which, in the case of a power law mass function ($\beta_2 = 0$), reduces to the
     commonly seen $\scatterObsSymMhalo / \slope$. The positive $\beta_2$ of the HMF decreases
     this scatter. Finally, higher moments such as the skewness or excess kurtosis confirm that
-    $P(\mu | s)$ follows a Gaussian distribution.
-    We summarize the above finding in the left panel of Figure \ref{fig:theory_2} where we
-    simulate the HMF and the theoretical observable \obsSym{}.
-    We show that the resulting distributions are consistent with the above discussion.
+    $P(\mu | s)$ follows a Gaussian distribution for the approximated HMF in
+    Equation \ref{eq:quadratic_hmf}.
+    %We summarize the above finding in the left panel of Figure \ref{fig:theory_2} where we
+    %simulate the HMF and the theoretical observable \obsSym{}.
+    %We show that the resulting distributions are consistent with the above discussion.
 
     Now, we rewrite Equation \ref{eq:scatter_of_mu} in a more practical form that makes it clear
     the dependence of \scatterMhaloObsSym{} is not on {\em both} \scatterObsSymMhalo{} and
@@ -575,7 +611,8 @@
         \label{eq:ratio_is_what_matters}
     \end{equation}
 
-    We demonstrate this in the right panel of Figure \ref{fig:theory_2}:
+    We demonstrate this in the right panel of Figure \ref{fig:theory_1}:
+    \song{Need update}
     we populate a simulation with observables that show a range of $\alpha$ and
     \scatterObsSymMhalo{}, but with the same ratio $\alpha / \scatterObsSymMhalo$.
     Under the same \topn{} selection, they show identical \dsigma{} profiles since they share the
@@ -607,13 +644,23 @@
     As the process of populating the halos is stochastic, we repeat this process both to improve
     the robustness of the predicted \dsigma{} profile, also to estimate the statistical
     uncertainty of the profile.
+    \update{
+    Note that the uncertainties caused by cosmic variance and shot noises from particle sampling
+    are not included. We expect the theoretical uncertainties are much smaller than the 
+    uncertainties of observed \dsigma{} profiles, so it will not affect our results.
+    }
     After thoroughly searching through a large range of \scatterObsSymMhalo{} values, we can
     predict how does the stacked \dsigma{} profile vary with the scatter of \mhalo{} in each
     \topn{} bin on a densely sampled grid of \scatterMhaloObsSym{} values between 0.0 and 1.0
     dex.
+    \update{
     In the left columns of figure \ref{fig:mdpl2}, we show the predicted \dsigma{} profiles as a
-    function of \scatterMhaloObsSym{} for the four \topn{} bins used in this work (defined in
-    \S\ref{sec:binning}).
+    function of \scatterMhaloObsSym{} in two number density bins corresponding to HSC \redm{} 
+    clusters at $0.2 < z < 0.5$ with $35 < \lambda < 150$ (Bin 1, top panels) and $6 \leq \lambda < 10$
+    (Bin 4, bottom panels).
+    These two number density bins belong to the four used for the \topn{} tests here
+    (defined in \S\ref{sec:binning}).
+    }
     In addition to the expected decreasing \dsigma{} amplitudes with increasing
     \scatterMhaloObsSym{} values, we also see scale dependent differences in the ratios of
     predicted \dsigma{} profiles.
@@ -626,10 +673,12 @@
     considerably higher and in the $\sim 0.4$-0.6 dex range (e.g., Fig 5 \& 7 of
     \citealt{Wechsler2018}). Therefore it is essential to cover large \scatterMhaloObsSym{}
     values here.
-
-    To estimate the best-fit \scatterMhaloObsSym{} value and its uncertainty of an observed
-    \dsigma{} profile from certain \topn{} bin, we ``match'' it to the corresponding grid of
-    predicted \dsigma{} profiles.
+    
+    \update{
+    For each observed \dsigma{} profile from a certain \topn{} bin, we match it to the predicted
+    \dsigma{} profiles in the same number density bin to estimate the best-fit \scatterMhaloObsSym{} 
+    value and the uncertainty of the scatter. 
+    }    
     For an observed lensing profile ($\Delta\Sigma_{\rm O}$) and its covariance matrix
     ($\boldsymbol{C}$), we define a straightforward $\chi^2$ value to evaluate how well does a
     given model profile ($\Delta\Sigma_{\rm M}$) describe the observed one
@@ -639,17 +688,38 @@
         \label{eq:chi2}
     \end{equation}
 
-    \noindent After calculating the $\chi^2$ value of every model \dsigma{} profile in a given
+    \noindent
+    \update{
+    This ignores the uncertainties of the theoretical \dsigma{} profiles since they are much
+    smaller than the observed uncertainties.
+    }
+    After calculating the $\chi^2$ value of every model \dsigma{} profile in a given
     \topn{} bin, we derive a $\chi^2$ curve that can help us derive the least-$\chi^2$
     \scatterMhaloObsSym{} value and its 1-$\sigma$ uncertainty range.
     We provide more detailed discussion of this procedure and a visualization in Appendix
     \ref{app:fitting}.
 
-    We note that we combine the predictions from both \mdpl2{} and \smdpl{} simulations in the
-    above process.
-    Although \mdpl2{} has the large volume that helps us sample the very high-\mhalo{} end of
-    HMF, it does not have the resolution to recover all the low-\mhalo{} halos required to model
-    the \dsigma{} profile under high \scatterMhaloObsSym{} value.
+    \update{
+    We use the \texttt{mean\_delta\_sigma} function from \texttt{halotools} \citet{Hearin2017}\footnote{
+    \url{https://github.com/astropy/halotools}}
+    to calculation the stacked \dsigma{} profiles based on the algorithm described in the Appendix
+    B of \citet{Lange2019}.
+    We use 10 millions down-sampled particles for the calculation to increase efficiency and 
+    choose the \texttt{Z} direction as the line-of-sight.
+    }
+    \song{Chris should check this part}
+    \update{
+    The \mdpl2{} simulation has a large box size of 1 Gpc$/h$. 
+    Its large volume helps sample the very high-\mhalo{} end of HMF.
+    However, its particle mass resolution ($1.51 \times 10^{9} M_{\odot}/h$) is not great to resolve
+    relative low mass ($< 10^{12.5} M_{\odot}/h$) halos that will present when the 
+    \scatterMhaloObsSym{} value is high.
+    Meanwhile, the \smdpl{} simulation has a much better mass resolution 
+    ($9.63 \times 10^{7} M_{\odot}/h$) for calculating accurate \dsigma{} profiles of less
+    massive halos but does not have sufficient volume (box size $=0.4$ Gpc$/h$) to derive reliable 
+    statistics at high-\mvir{} end.
+    Therefore, we will combine the predictions from the \mdpl2{} and \smdpl{} simulations.
+    }
     We use the \mdpl2{} simulation to cover the $0.00 <$\scatterMhaloObsSym{}$<0.65$ dex range
     with a 0.01 dex grid, and use \smdpl{} to cover the $0.65 <$\scatterMhaloObsSym{}$<1.0$ dex
     with a 0.02 dex grid size.
@@ -678,7 +748,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
     \begin{figure*}
         \centering
-        \includegraphics[width=16cm]{figure/topn_fig_4}
+        \includegraphics[width=\textwidth]{figure/topn_fig_4}
         \caption{
             \textbf{Top left}:
             The grey cross and the grey shaded region show the richness function of the
@@ -747,6 +817,18 @@
     the \href{https://github.com/joshspeagle/frankenz}{\texttt{frankenz}}
     \citep{Speagle2019} algorithm. Please see \citet{HSC-PHOTOZ} for a summary of its
     performance.
+    \update{
+    For galaxy-galaxy lensing measurements, we use the public shape catalog for 
+    \texttt{S16A}\footnote{The \texttt{S16A} shape catalog and other weak
+    lensing data products can be found here:
+    https://hsc-release.mtk.nao.ac.jp/doc/index.php/s16a-shape-catalog-pdr2}
+    based on the $i$-band coadd images and the re-Gaussianization algorithm
+    (\citealt{HirataSeljak2003}).
+    This is the same catalog used for the HSC Y1 cosmology results (e.g., \citealt{Hikage2019,
+    Hamana2020}) and other cluster lensing analysis (e.g., \citealt{Umetsu2020}).
+    Please see \citet{HSC-PIPE}, \citet{HSC-WLCAT}, and \citet{HSC-WLCALIB} for details about
+    the shape measurements and lensing calibration.
+    }
     All galaxies and clusters used in this work are filtered through bright star masks
     (see \citealt{HSC-STAR} for details) to avoid contamination from saturated stars. Please
     refer to \citet{Huang2018b, Huang2018c, Huang2020} for a more thorough introduction to the
@@ -810,7 +892,12 @@
     richness-based cluster finders provide a promising way to identify massive halos in
     imaging data.
     % to explore cosmology and galaxy evolution.
-    In this work, we test two ``red-sequence'' cluster catalogs.
+    \update{
+    In this work, we also include two cluster catalogs based on red-sequence cluster finders
+    in the \topn{} test.
+    We will evaluate their \sigmvir{} values in each bin and, more importantly, we will 
+    compare their \dsigma{} profiles with the ones from \mstar{}-based proxies.
+    }
     Here we briefly introduce the cluster samples. Please refer to the original references
     for technical details of the cluster finding algorithms.
 
@@ -957,24 +1044,15 @@
     We put the equations to derive the \dsigma{} profile in Appendix \ref{app:dsigma_detail}.
     Compared to these earlier works, we provide a new recipe for the $f_{\rm bias}$ factor that
     accounts for the photo-$z$ dilution effect more accurately (see Equation
-    \ref{eq:fbias})\footnote{ The typical $f_{\rm bias}$ factor value is around $\sim 1$-2\%
+    \ref{eq:fbias})\footnote{The typical $f_{\rm bias}$ factor value is around $\sim 1$-2\%
     level, and has no impact on the results of this work.}.
 
     We measure \dsigma{} in 11 physical radial bins that span from 200 kpc to 10 Mpc uniformly
-    in $\log_{10}$ space.
-    We use the public shape catalog for \texttt{S16A}\footnote{The shape catalog and other weak
-    lensing data product can be found here:
-    \href{here}{https://hsc-release.mtk.nao.ac.jp/doc/index.php/s16a-shape-catalog-pdr2}}
-    based on the $i$-band coadd images and the re-Gaussianization algorithm
-    (\citealt{HirataSeljak2003}).
-    This is the same catalog used in the HSC Y1 cosmology results (e.g., \citealt{Hikage2019,
-    Hamana2020}) and other cluster lensing analysis (e.g., \citealt{Umetsu2020}).
-    Please see \citet{HSC-PIPE}, \citet{HSC-WLCAT}, and \citet{HSC-WLCALIB} for details about
-    the shape measurements and lensing calibration.
-
+    in $\log_{10}$ space using the \texttt{S16A} weak lensing shape catalog 
+    (\citealt{HSC-WLCAT, HSC-WLCALIB}).
     We adopt the \texttt{frankenz} photo-$z$ for source galaxies. 
-    For the photo-$z$ quality cut, we use the ``basic'' cut ($\chi^{2}_{5} < 6$) in \citet{Speagle2019} 
-    that removes about 5\% of source galaxies with unreliable photo-$z$.
+    For the photo-$z$ quality cut, we use the ``basic'' cut ($\chi^{2}_{5} < 6$) in 
+    \citet{Speagle2019} that removes about 5\% of source galaxies with unreliable photo-$z$.
     Most of them are at very low redshift so will not contribute to the lensing signals in this work.
     The lens-source separation criteria are: $z_{\rm s} - z_{\rm L} \ge 0.1$ and
     $z_{\rm s} > z_{\rm L} + \sigma_{s,68}$, where $\sigma_{s,68}$ is the 1$\sigma$ uncertainty
@@ -987,9 +1065,11 @@
     profiles.
     The two methods lead to fully consistent results.
 
-    We use \texttt{v2.0} of the \texttt{Python} g-g lensing code \texttt{dsigma}
+    We use \texttt{v0.2} of the \texttt{Python} g-g lensing code \texttt{dsigma}
     \footnote{Code is publicly available here: \url{https://github.com/johannesulf/dsigma}} to
-    calculate \dsigma{} profiles, and we release the \dsigma{} measurements of the massive
+    calculate \dsigma{} profiles\footnote{The most recent version is \texttt{v0.5}. There are a few 
+    updates that could slightly affect the exact values of \dsigma{} profiles, but will not affect 
+    any of the results presented here.}, and we release the \dsigma{} measurements of the massive
     galaxies and clusters \plan{here. ADD URL}
 
 %% ---------------------------------------------------------------------------------------------- %%
@@ -1004,14 +1084,21 @@
     objects (\S \ref{sec:mcmodel}), a series of \mstar{} measured from the 1-D $\mu_{\star}$
     profiles (\S \ref{sec:maper} \& \S \ref{sec:menvelope}), and a linear combination of
     different aperture \mstar{} (\S \ref{sec:masap}).
-    The richness-based proxies use clusters from the \redm{} and \camira{} red-sequence cluster finders.
+    \update{
+    We also include the richness measurements of both \redm{} and \camira{} red-sequence cluster
+    catalogs in our tests.
+    We should note here that the \mstar{}- and richness-based samples are independently selected 
+    from the same dataset.
+    Not all massive galaxies in our sample belong to identified galaxy clusters.
+    We will briefly discuss this later.
+    }
 
     Both \mstar{} and richness have a physical connection to the underlying \mvir{}.
     More massive dark matter halos on average host more sub-halos and hence have a higher richness of
     (red) satellite galaxies.
     Similarly, more massive halos tend to host more massive galaxies.
     Both SHMR and \mvir{}-richness relations are well-established scaling relations at
-    the high-\mvir{} end using both observations and hydro-simulations (e.g., \addref{}).
+    the high-\mvir{} end using both observations and hydro-simulations.
     Therefore it is natural to use both as first-order proxies of \mvir{}.
 
     Having introduced the proxies, we describe our number density bins and show the estimated
@@ -1022,15 +1109,6 @@
     \plan{here. Add URL}
 
 \subsection{Proxies}
-%= > these argument can go in the discussion section or in the introduction
- %   But, we want to point out that
- %   1) \mstar{} measurement of one galaxy is a more straightforward approach and has several
- %   appealing features. Observationaly, it is more ``cost effective''. And it also suffers less
- %   from systematic issues such as the projection effect (\addref{}).
- %   2) In recent years, increasingly deep imaging surveys make us aware of the importance of the
- %   faint stellar outskirt of massive galaxies (\addref{}).
- %   After accounting for the \mstar{} in these diffuse stellar component closely tied to the
- %   halo assembly, we could further improve the capability of using \mstar{} as a halo mass %proxy.
 
 %% ---------------------------------------------------------------------------------------------- %%
 %% CModel Stellar Mass
@@ -1092,13 +1170,17 @@
     Interpolation of the CoG provides the measurements of different aperture \mstar{}.
     We note that the $\mu_{\star}$ profile outside 100 kpc becomes less reliable due to background
     subtraction issues which affects the accuracy of aperture \mstar{} using larger radii.
-    However, there does not appear to be much mass beyond 100 kpc.
+    \update{
+    Under the imaging depth of HSC data, we do not recover substantial amount of \mstar{} beyond 
+    100 kpc.
+    }
     For our sample, the mean difference between \mstar{} within 150 and 100 kpc is only
     $\sim 0.02$ dex while the maximum difference is $\sim 0.15$ dex.
 
     The true $\mu_{\star}$ of massive galaxies certainly extends beyond the HSC surface
     brightness limit for individual galaxies (e.g., \citealt{Wang2019, Zhang2019, Montes2021,
-    Kluge2021}). As a result, even the largest aperture \mstar{} we can measure is not the true total \mstar{}.
+    Kluge2021}). 
+    As a result, even the largest aperture \mstar{} we can measure is not the true total \mstar{}.
     We attempt to account for the ``missing \mstar{}'' by fitting a 1-D \ser{} model to the
     $\mu_{\star}$ profile between 50 and 100 kpc. We use this model to predict the mass well beyond
     the regime in which it can be measured.
@@ -1137,7 +1219,7 @@
 
     While we cannot separate the \exsitu{} component from the \mstar{} distribution,
     recent simulations and observations suggest that the \exsitu{} stars dominate the
-    outskirts of massive galaxies (\addref{}).
+    outskirts of massive galaxies (e.g., \citealt{Lackner2012, RodriguezGomez2016, Pulsoni2021}).
     It is therefore interesting to test whether the outer envelope \mstar{} is a useful \mvir{}
     proxy using the \topn{} tests.
 
@@ -1222,13 +1304,24 @@
     red-sequence cluster finders: \redm{} and \camira{} (introduced in \S
     \ref{sec:cluster_redmapper} and \S \ref{sec:cluster_camira}).
     Calibrations of the \mvir{}--richness relations suggest that the richness of
-    red-sequence galaxies is a very promising \mvir{} proxy (e.g., \addref{}).
-
-    Theoretically speaking, richness should out-perform any \mstar{}-based \mvir{} proxy
-    as the \mvir{}--richness relation has much steeper slope than the \mvir{}-\mstar{} relation
-    (e.g., \addref{}).
-    Supporting this theory, \mvir{}--richness calibration works also often report very small
-    scatter values at the high \mvir{} end (e.g., \addref{}).
+    red-sequence galaxies is a very promising \mvir{} proxy (e.g.,
+    \citealt{Melchior2017, Murata2018, McClintock2019}).
+    
+    \update{
+    Theoretically speaking, richness measurements should outperform \mstar{}-based \mvir{}
+    proxies for massive halos with the majority of their satellites not merged into the central 
+    galaxies.
+    The $\log$-linear slopes of \mvir{}--richness relations are typically $> 1.0$
+    (e.g., \citealt{Saro2015, Mantz2016, Farahi2016, Simet2017, Baxter2018, Melchior2017, 
+    McClintock2019}),
+    while the slopes of \mvir{}--\mstar{} relations are usually around 0.3-0.5 at $z<0.5$
+    (e.g., \citealt{RodriguezPuebla2017, Tinker2017, Moster2018, Kravtsov2018, Huang2020}.
+    Recent calibrations of \mvir{}--richness relations also suggest modest intrinsic 
+    scatter values at high-\mvir{} end (at $\sim 25$\% level; e.g., 
+    \citealt{Rykoff2014, Saro2015, Simet2017}).
+    Both of these observations support the idea that richness should be a superior 
+    \mvir{} proxy than \mstar{} of the central galaxy.
+    }
     Therefore a \topn{} comparison between \mvir{}- and richness-based proxies can help us
     confirm this expectation, or reveal interesting complexities.
 
@@ -1319,7 +1412,7 @@
           We show the ratios of galaxies selected by their \mmax{} (solid symbols) and
           \menve{50}{100} (open symbols; slightly offset along the X--axis).
           Satellites show little impact in the first two bins (corresponding to
-          \mmax$> 10^{11.8} M_{\odot}$ and \menve{50}{150}$> 10^{11.1} M_{\odot}$).
+          \mmax$> 10^{11.8} M_{\odot}$ and \menve{50}{100}$> 10^{11.1} M_{\odot}$).
           In simulation, including satellites shows a maximum of $\sim 15$\% ($\sim 20$\%) effect
           in Bin 3 (4) at $R\sim 2$--4 Mpc.
           }
@@ -1337,7 +1430,7 @@
     (e.g., \citealt{More2015, vanUitert2016, Huang2020}), their inclusion could affect our evaluation
     of the performance of \mstar{}-based \mvir{} proxies.
     % Chris added the point about higher bias. Remove if wrong
-    Satellites tend to live in less massive halos, but higher bias regions, than centrals
+    Satellites tend to live in less massive sub-halos, but higher bias regions, than centrals
     with the same \mstar{}
     (e.g., \citealt{vanUitert2016, Niemiec2017, Niemiec2019, Dvornik2020, Engler2021}).
     As a result, the \dsigma{} profiles of satellite galaxies show unique "bump"-like features at around
@@ -1351,13 +1444,15 @@
     
     Using the fiducial mock catalog (Appendix \ref{app:hsc_model}), we compare the
     \dsigma{} profiles of central galaxies with that of all galaxies.
-    The satellite fraction values are [5.0\%, 6.9\%, 8.9\%, \& 10.0\%] in the four \topn{} bins,
-    consistent with the low satellite fraction expectation.
+    \update{
+    In the mock catalog, the satellite fractions are [5.0\%, 6.9\%, 8.9\%, \& 10.0\%] in the 
+    four \topn{} bins, consistent with the low satellite fraction expectation.
+    }
     To assign centrals and satellites in the HSC sample, we run a simple algorithm.
     We start from the most massive \mmax{} galaxy and assign as satellites all galaxies
     within a cylindrical region with a 1.0 physical Mpc radius in projection and a 20 
     comoving Mpc length in the line-of-sight (LOS) direction.
-    Using this simple strategy, the satellite fractions are [2.0\%, 3.5\%, 3.1\%, \& 8.2\%] 
+    Using this simple strategy, the observed satellite fractions are [2.0\%, 3.5\%, 3.1\%, \& 8.2\%] 
     in the four bins.
     Since the HSC volume here is much smaller than the \mdpl2{} simulation, and we also use 
     a rather over-simplified method, we do not think the lower satellite fraction values
@@ -1406,14 +1501,18 @@
     \label{sec:m_aper}
 
     We start by exploring the performance of the aperture stellar mass.
-    We show the inferred \sigmvir{} for various apertures in the bottom panel of Figure
-    \ref{fig:scatter_trend}. We see that, with increasing aperture size, the \sigmvir{} value decreases,
-    across all four bins.
+    We show the inferred \sigmvir{} for various apertures in the upper panel of Figure
+    \ref{fig:scatter_trend_3}. 
+    We see that, with increasing aperture size, the \sigmvir{} value decreases, across all four bins.
     This decrease is particularly obvious in Bins 1 \& 2 (the most massive halos).
     In Bin 1 (2), \sigmvir{} decreases from 0.63 (0.66) dex for \maper{10}, to 0.52 (0.58)
     dex for \maper{30}, to 0.37 (0.51) dex for \maper{100}.
-    This suggests that different parts of massive galaxies follow different SHMRs, and
-    the inner 10-30 kpc shows a weaker connection with \mvir{} than the outer envelope.
+    \update{
+    This result suggests that the SHMRs of massive galaxies vary systematically with the 
+    apertures used to estimate the \mstar{}. 
+    It also highlights the weak connection between the inner 10 to 30 kpc of these 
+    massive galaxies and their dark matter halos.
+    }
     Further enlarging aperture size to 150 kpc does not result in a significantly lower
     \sigmvir{} in any of the bins (see Table \ref{tab:summary}).
     It is unclear whether whether the lack of improvement with apertures larger than
@@ -1426,6 +1525,7 @@
 
     As the best of the aperture \mstar{} proxies, we will use \maper{100} as the benchmark
     against which we will compare other models in the next few sections.
+    
 %% ---------------------------------------------------------------------------------------------- %%
 %% Figure: Compare M100kpc mass and CModel mass
 %% --------------------------------------------------------------------------------------------- %%
@@ -1503,7 +1603,10 @@
     As shown in the right panel of figure \ref{fig:m100_cmod}, the mean \mvir{} of the
     \mcmodel{} \topn{} samples are $[0.52, 0.17, 0.79, 0.53]$ dex lower than that of
     the \maper{} samples.
-    Such a scatter renders the \mcmodel{} essentially useless as \mvir{} proxy.
+    \update{
+    Such large scatter values suggest that \mcmodel{} can not be used as \mvir{} proxy for 
+    massive dark matter halos.
+    }
     Among all the \mvir{} proxies we tested, it is clear that \mcmodel{} has the worst
     performance.
     We will discuss the implications of this in \S \plan{ADD REF}.
@@ -1820,9 +1923,18 @@
 \subsection{The $\Delta\Sigma$ Profile Shape of \mstar{} and Richness Selected Samples}
     \label{sec:mstar_vs_richness}
 
-    While in the previous section we focused on the on the \dsigma{} profile amplitude
-    to infer \sigmvir{}, in this section we will look at the profile {\em shape} of the
-    richness-selected massive halos with two important questions in mind:
+    In the previous section we focused on the on the \dsigma{} profile amplitude
+    to infer \sigmvir{}, now we will look at the profile {\em shape} of the
+    richness-selected massive halos.
+    \update{
+    We want to remind the readers that the \mstar{}-based samples and the two richness-based
+    cluster catalogs are independently selected from the HSC \texttt{S16A} dataset.
+    While there are considerable overlaps, not all the \mstar{}-selected massive galaxies 
+    in the \topn{} samples belong to identified clusters, and not all cluster centrals are 
+    included in the parent sample of massive galaxies.
+    We will briefly discuss this in Section \ref{sec:perfect_finder}.
+    }
+    Here, we focus on the following two questions:
 
     \begin{enumerate}
 
@@ -1956,17 +2068,21 @@
       \includegraphics[width=\textwidth]{figure/topn_fig_12}
       \caption{
           Using the \mvir{} predicted by the \asap{} model, we explore the reason why the outer
-          envelope stellar mass (e.g., \menve{50}{150}) out-perform the large aperture stellar mass
-          such as the \maper{100} or \mmax{} as \mvir{} proxy.
+          envelope stellar mass (e.g., \menve{50}{100}) out-perform the large aperture stellar mass
+          such as the \maper{100} as \mvir{} proxy.
           \textbf{Left}: relations between the \asap{}-predicted \mvir{} and two different stellar
-          masses. Blue shaded region and solid-line contours are for the maximum 1-D stellar
-          mass, \mmax{}. Red shaded region and dashed-line contours are for the outer envelope
-          mass, \menve{50}{150}. Here colours indicate the number density of galaxies on this 2-D plane.
+          masses. Blue shaded region and solid-line contours are for the 100 kpc aperture mass, 
+          \maper{100}. Red shaded region and dashed-line contours are for the outer envelope
+          mass, \menve{50}{100}. Here colours indicate the number density of galaxies on this 2-D plane.
+          \update{
+          To help visualize the differences of their scaling relations, we shift 
+          the \menve{50}{100} values up by 1.5 dex.
+          }
           \menve{} clearly displays tighter relation with the predicted \mvir{}.
           \textbf{Middle}: the 2-D plane of \mstar{} within 50 kpc (\maper{50}) v.s.
-          \maper{50}{150} color coded by the \asap{}-predicted \mvir{}.
+          \maper{50}{100} color coded by the \asap{}-predicted \mvir{}.
           Several iso-\mvir{} contours are used to highlight the relation between \mvir{} and
-          \menve{50}{150}.
+          \menve{50}{100}.
           \textbf{Right}: similar to the middle panel, here we show the \minn{} and \menve{10}{100}
           2-D plane color-coded by the \asap{}-predicted \mvir{}.
           Same set of iso-\mvir{} contours are used to compare with the middle panel.
@@ -1981,23 +2097,36 @@
 \subsection{Why does the Outer Stellar Halo Trace Halo Mass?}
     \label{sec:outskirt_discussion}
     
-    The key result of this work is that the outer envelope \mstar{} 
-    (e.g., \menve{50}{100} or \menve{50}{150}) of massive galaxies is a better halo mass proxy 
-    than the total \mstar{}.
-    We do not calibrate the \mvir{}-\menve{50}{150} relation in this work.
-    Instead, we demonstrate this using the \mvir{} predicted by the \asap{} model using \mstar{} 
-    within two apertures (\citealt{Huang2020}).
-    Although \masap{} is not a perfect \mvir{} proxy, it can faithfully represent the SHMR 
-    when using large aperture \mstar{}.
-    The left panel of Fig \ref{fig:outskirt_discussion} shows that the \masap{}--\menve{50}{150}
+    \update{
+    For low-redshift massive galaxies, our work clearly demonstrates that the \mstar{} in 
+    their outer envelope can tracer their dark matter halos better than the total \mstar{} within
+    a large aperture. 
+    Here, we briefly discuss the physical implications of this interesting result.
+    }
+    
+    \update{
+    In \citet{Huang2020}, we develop the \asap{} model that can predict the \mvir{} based on 
+    two aperture \mstar{} (e.g., \maper{10} and \maper{100}).
+    Although \masap{} is not a perfect \mvir{} proxy, it faithfully represents the SHMR of 
+    large aperture \mstar{}.
+    In Fig \ref{fig:outskirt_discussion}, we use the \mvir{} predicted by the \asap{} model 
+    to show that, although the outer envelope \mstar{} was not specifically used, the model
+    can already imply the better performance of \menve{50}{100} as a \mvir{} proxy.
+    }
+    The left panel of Fig \ref{fig:outskirt_discussion} shows that the \masap{}--\menve{50}{100}
     relation indeed has steeper slope and lower scatter at high \masap{} end than the 
     \masap{}-\mmax{} relation.
-    As demonstrated in \S \ref{sec:method} and Fig \ref{fig:theory_1}, this could explain the 
-    better performance of outskirt \mstar{} in the \topn{} test.
+    \update{
+    In \S \ref{sec:method} (see Fig \ref{fig:theory_1}), we explained that, using the same
+    number density selection, observable that follows a \mvir{}--observable relation with 
+    steeper slope and lower scatter can lead to higher mean \mvir{} and smaller \sigmvir{}.
+    Therefore, \menve{50}{100} is expected to perform better than \maper{100} in the \topn{}
+    tests based on this figure.
+    }
     In the middle panel, we also visualize the \masap{} distribution over the \maper{50}
-    and \menve{50}{150} 2-D plane.
+    and \menve{50}{100} 2-D plane.
     At \masap{}$>10^{13.6}$, the iso--\masap{} curve almost runs in parallel with the 
-    \menve{50}{150}.
+    \menve{50}{100}.
     When compared to the \maper{10}--\menve{10}{100} distributions in the right panel of 
     Fig \ref{fig:outskirt_discussion}, it reaffirms the finding that the outskirt
     \mstar{} at $R > 30$--50 kpc alone could be a great \mvir{} proxy, and adding \mstar{} 
@@ -2009,14 +2138,20 @@
     Under this picture, a massive galaxy consists of the stars formed within the halo of its main 
     progenitor at high redshift (\insitu{} component) and the accreted stars from repeated mergers 
     (\exsitu{} component).
-    In \citet{Bradshaw2020}, the authors show the \mstar{} of the \exsitu{} component
-    correlates with the halo mass much better than the \insitu{} component (see their Fig~9). 
+    \update{
+    In \citet{Bradshaw2020}, the authors explored the connections between different components 
+    of stellar contents and their dark matter halos based on the \texttt{UniverseMachine}
+    semi-empirical model (e.g., \citealt{Behroozi2018}). 
+    It shows that the \mstar{} of the \exsitu{} component displays a much better correlation with
+    the halo mass than the \insitu{} component (see their Fig~9) and the total \mstar{} of 
+    the central galaxies.
+    }
     Although based on just one model, it is not surprising since the \exsitu{} component
     naturally reflects the halo assembly much better than the \insitu{} component.
     Both observations and hydro-simulations suggest that, at low redshift, the \exsitu{} 
-    component dominate the outskirt of massive galaxies (e.g., \citealt{RodriguezGomez2016},
-    \addref{}) and its fraction increases with both stellar and halo mass 
-    (e.g., \addref{}).
+    component dominate the outskirt of massive galaxies and the \exsitu{} fraction increases 
+    with both stellar and halo mass 
+    (e.g., \citealt{Lackner2012, RodriguezGomez2016, Pulsoni2021, Pillepich2017b}).
     Therefore the outer envelope \mstar{} explored here could represent a substantial fraction
     of the \exsitu{} component and has the potential to be a promising \mvir{} proxy.
     
@@ -2120,14 +2255,14 @@
 
     Secondly, realistic mock catalogs of galaxies are essential for calibrating cluster 
     finders, understand their selection biases, and prepare them for cosmological applications.
-    However, despite the recent progress (e.g., \citealt{DeRose2019, Hearin2020}), the
-    red-sequence or the colour distributions of galaxies in general has been notoriously
-    difficult to model using either semi-analytic models or hydro-simulation (\addref{}).
-    %To have an realistic colour distribution essentially requests the correct star formation
-    %history, chemical evolution history, and stellar population model.
-    %None of these is a trivial task. 
-    It is also difficult to account for all the systematics that affect the colour measurements
-    into the mock catalog.
+    \update{
+    However, the red-sequence of cluster galaxies or the colour bimodality in general are 
+    still difficult to reproduce using simulations or models 
+    (e.g., \citealt{Trayford2015, Trayford2017, Nelson2018, DeRose2019}, but also see
+    \citealt{Hearin2020}).
+    And it is also difficult to take the systematics in colour measurements into account
+    when building the mock catalog.
+    }
     On the other hand, it is relatively easier to calibrate the \mstar{} measurements when the
     same definition is adopted in both observation and simulation/model (e.g.,
     \citet{Ardila2021}).
@@ -2421,7 +2556,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% Derive the DSigma profile
 %% ---------------------------------------------------------------------------------------------- %%
-\section{Derivation of $\Delta\Sigma$}
+\section{Derivation of the galaxy--galaxy lensing profiles}
     \label{app:dsigma_detail}
 
     Here we walk through the derivation of the final \dsigma{} profile used in the \topn{} test.
@@ -2512,9 +2647,9 @@
     In practice, it is estimated based on:
 
     \begin{equation}
-        f_{\rm bias} = \frac{\sum_{\rm Ls} w_{\rm Ls} w_{\rm sys}
-            \left(\Sigma_{{\rm crit, T}} / \Sigma_{{\rm crit, P}} \right)}{
-            \sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} \Sigma^{-2}_{\rm crit, P}}
+        f_{\rm bias} = \frac{
+            \sum_{\rm Ls} w_{\rm Ls} w_{\rm sys} \left(\Sigma_{{\rm crit, T}} / \Sigma_{{\rm crit, P}} \right)}
+            {\sum_{\rm Ls} w_{\rm Ls} w_{\rm sys}}
         \label{eq:fbias}
     \end{equation}
 
@@ -2589,7 +2724,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% More on the method of profile matching
 %% ---------------------------------------------------------------------------------------------- %%
-\section{Matching \dsigma{} profiles}
+\section{Matching the lensing profiles}
     \label{app:fitting}
 
     As described in \S \ref{sec:estimate_scatter}, we estimate the \sigmh{} value
@@ -2712,7 +2847,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% Satellite v.s. Central
 %% ---------------------------------------------------------------------------------------------- %%
-\section{\dsigma{} profiles of centrals and satellites}
+\section{\texorpdfstring{$\Delta\Sigma$} profiles of centrals and satellites}
 	\label{app:sat_cen}
 
     \todo{Placeholder}
@@ -2741,7 +2876,7 @@
 %% ---------------------------------------------------------------------------------------------- %%
 %% Galaxy size as potential halo mass indicator
 %% ---------------------------------------------------------------------------------------------- %%
-\section{Galaxy size as \mvir{} indicator}
+\section{Galaxy size as \texorpdfstring{\mvir{}} indicator}
 	\label{app:size}
 
     \todo{Placeholder}
