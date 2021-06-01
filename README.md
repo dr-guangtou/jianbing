@@ -12,4 +12,6 @@
 
 ---
 
+<img src="doc/jianbing.jpg" width="100%">
+
 
