@@ -1,0 +1,14 @@
+numpy
+scipy
+joblib
+healpy
+pandas
+astropy
+halotools
+matplotlib
+matplotlib_venn
+palettable
+scikit-learn
+fast_histogram
+dsigma
+#git+https://github.com/esheldon/cosmology
