@@ -50,7 +50,7 @@
 \def\snratio{{$\mathrm{S}/\mathrm{N}$}}
 \def\mden{{$\mu_{\star}$}}
 \def\sb{mag~arcsec$^{-2}$}
-\def\ser{{S\'{e}rsic\ }}
+\def\ser{{S\'{e}rsic}}
 \def\cmodel{\texttt{CModel}}
 \def\cmod{\texttt{CModel}}
 
@@ -90,7 +90,7 @@
 \def\mh200c{{$M_{\mathrm{200c}}$}}
 
 % ---- Aperture Stellar Mass ---- %
-\newcommand{\maper}[1]{{$M_{\star, {#1}\ \rm kpc}$}}
+\newcommand{\maper}[1]{\ensuremath{M_{\star, {#1}\ \rm kpc}}}
 \newcommand{\logmaper}[1]{{$\log (M_{\star, {#1}\ \rm kpc}/M_{\odot})$}}
 
 \newcommand{\menve}[2]{{$M_{\star, [#1, #2]}$}}
@@ -133,7 +133,8 @@
 % The maximum 1-D profile mass
 \def\mmax{{$M_{\star,\mathrm{max}}$}}
 % Stellar mass measured by CModel
-\def\mcmodel{{$M_{\star,\mathrm{cmod}}$}}
+\def\mcmodel{\ensuremath{M_{\star,\mathrm{cmod}}}}
+% \def\mcmodel{\ensuremath{M_{\star,\mathrm{cmod}}}}
 % ASAP predicted halo mass
 \def\masap{{$M_{\rm vir,\ ASAP}$}}
 
@@ -195,9 +196,10 @@
 \newcommand{\plan}[1]{\textcolor{Sepia}{#1}}
 \newcommand{\addref}{{\textcolor{red}{REF}}}
 \newcommand{\note}[2]{\textcolor{blue}{\textbf{[Comment (#1): #2]}}}
-\newcommand{\song}[1]{\textcolor{PineGreen}{Song: #1}}
 \newcommand{\alexie}[1]{\textcolor{blue}{\textbf{[Alexie: #1]}}}
 \newcommand{\chris}[1]{\textcolor{PineGreen}{\textbf{[Chris: #1]}}}
+\newcommand{\song}[1]{\textcolor{Cyan}{\textbf{[Song: #1]}}}
 \newcommand{\susan}[1]{\textcolor{Bittersweet}{\textbf{[Susan: #1]}}}
 \newcommand{\update}[1]{\textcolor{PineGreen}{#1}}
 \newcommand{\aph}[1]{\textcolor{hpurple}{[APH: #1]}}
+\newcommand{\jul}[1]{\textcolor{teal}{[JUL: #1]}}
