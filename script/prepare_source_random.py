@@ -8,7 +8,7 @@ import argparse
 
 from astropy.table import Table
 
-from topn import prepare
+from jianbing import prepare
 
 
 DATA_DIR = '/tigress/sh19/work/topn'

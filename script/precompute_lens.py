@@ -9,8 +9,8 @@ import argparse
 from astropy.table import Table
 from astropy.cosmology import FlatLambdaCDM
 
-from topn import prepare
-from topn import catalog
+from jianbing import prepare
+from jianbing import catalog
 
 DATA_DIR = '/tigress/sh19/work/topn'
 
