@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 
 __all__ = ['RSMA_COMMON', 'RKPC_COMMON', 'extrapolate_mass', 'get_extra_masses',
-           'test_mass_extrapolation', 'Sersic', 'b_n_exact']
+           'test_mass_extrapolation', 'Sersic', 'b_n_exact', 'estimate_average_ba']
 
 
 RSMA_COMMON = np.arange(0.4, 4.2, 0.01)
@@ -49,7 +49,7 @@ def b_n_exact(n):
 
 
 def extrapolate_mass(gal_test, rmin=30.0, rmax=90.0, q_outskirt=1.0, order=1,
-                     verbose=False, use_r50=False):
+                     verbose=False, use_r50=False, use_cog=True):
     """Extrapolate the surface mass density profile.
     """
     # Area within each radius
@@ -96,21 +96,24 @@ def extrapolate_mass(gal_test, rmin=30.0, rmax=90.0, q_outskirt=1.0, order=1,
         sbp_extra, logm_extra_use = None, None
 
     # Extrapolate the curve of growth profile
-    if cog_mask.sum() <= 5:
-        if verbose:
-            print("# CoG: Not enough data points for %d" % gal_test['object_id'])
+    if not use_cog:
         cog_extra = None
     else:
-        # Fit log-log linear relation to extrapolate the curve of growth
-        cog_extra = np.poly1d(
-            np.polyfit(
-                np.log10(RKPC_COMMON[cog_mask]), gal_test['cog'][cog_mask], order))(logr_extra)
+        if cog_mask.sum() <= 5:
+            if verbose:
+                print("# CoG: Not enough data points for %d" % gal_test['object_id'])
+            cog_extra = None
+        else:
+            # Fit log-log linear relation to extrapolate the curve of growth
+            cog_extra = np.poly1d(
+                np.polyfit(
+                    np.log10(RKPC_COMMON[cog_mask]), gal_test['cog'][cog_mask], order))(logr_extra)
 
     return rkpc_extra, sbp_extra, cog_extra, logm_extra_use, rad_mask
 
 
 def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=300.0, q_outskirt=0.8,
-                     verbose=False, use_r50=False, order=1):
+                     verbose=False, use_r50=False, order=1, use_cog=True):
     """
     Estimate extrapolated stellar mass using surface brightness profile and the
     curve of growth.
@@ -123,7 +126,7 @@ def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=300.0, q_outskirt=0.8,
 
     rkpc_extra, _, cog_extra, logm_extra_use, _ = extrapolate_mass(
         gal_test, rmin=rmin, rmax=rmax, q_outskirt=q_outskirt,
-        use_r50=use_r50, verbose=verbose, order=order)
+        use_r50=use_r50, verbose=verbose, order=order, use_cog=use_cog)
 
     rkpc_extra_use = rkpc_extra[rkpc_extra >= 100.0]
 
@@ -142,24 +145,38 @@ def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=300.0, q_outskirt=0.8,
     return logm_extra_cog, logm_extra_sbp
 
 
-def test_mass_extrapolation(gal_test, rmin=20, rmax=90, order=1,
-                            use_r50=False):
+def test_mass_extrapolation(gal_test, rmin=20, rmax=90, order=1, use_cog=False,
+                            use_r50=False, redshift='z_best', axis_ratio=None):
     """
     Test the extrapolation and visulize the extrapolated results.
     """
-    print("# Redshift : %5.2f" % gal_test['z_best'])
-    print("# R50 : %5.2f" % gal_test['r50_100'])
-    print("# logM100 : %5.2f" % gal_test['logm_100'])
-    print("# logMmax : %5.2f" % gal_test['logm_max'])
+    print("# Redshift : {:5.2f}".format(gal_test[redshift]))
+    print("# R50 : {:5.2f}".format(gal_test['r50_100']))
+    print("# logM100 : {:5.2f}".format(gal_test['logm_100']))
 
+    if axis_ratio is None:
+        q_outskirt = 0.9
+    else:
+        q_outskirt = gal_test[axis_ratio]
     rkpc_extra, sbp_extra, cog_extra, _, rad_mask = extrapolate_mass(
-        gal_test, rmin=rmin, rmax=rmax, q_outskirt=0.9, use_r50=use_r50, order=order,
-        verbose=True)
+        gal_test, rmin=rmin, rmax=rmax, q_outskirt=q_outskirt, use_r50=use_r50, order=order,
+        verbose=True, use_cog=use_cog)
 
-    print("\n# Extrapolated mass to 300 kpc:")
+    print("\n# Extrapolated mass to 120 kpc:")
+    print(get_extra_masses(gal_test, rmin=rmin, rmax=rmax, r_extra=120.0,
+                           order=order, use_r50=use_r50, verbose=True))
+    print("# logM120 : {:5.2f}".format(gal_test['logm_120']))
+
+    print("\n# Extrapolated mass to 150 kpc:")
+    print(get_extra_masses(gal_test, rmin=rmin, rmax=rmax, r_extra=150.0,
+                           order=order, use_r50=use_r50, verbose=True))
+    print("# logM150 : {:5.2f}".format(gal_test['logm_150']))
+
+    print("\n# Extrapolated mass to 200 kpc:")
     print(get_extra_masses(gal_test, rmin=rmin, rmax=rmax, r_extra=200.0,
                            order=order, use_r50=use_r50, verbose=True))
-    print("# Extrapolated mass to 500 kpc:")
+
+    print("\n# Extrapolated mass to 300 kpc:")
     print(get_extra_masses(gal_test, rmin=rmin, rmax=rmax, r_extra=300.0,
                            order=order, use_r50=use_r50, verbose=True))
 
@@ -197,7 +214,8 @@ def test_mass_extrapolation(gal_test, rmin=20, rmax=90, order=1,
     ax1.plot(np.log10(RKPC_COMMON[rad_mask]), gal_test['cog'][rad_mask],
              linewidth=4, alpha=0.9)
 
-    ax1.plot(np.log10(rkpc_extra), cog_extra, linewidth=3.0, linestyle='--', alpha=0.8)
+    if cog_extra is not None:
+        ax1.plot(np.log10(rkpc_extra), cog_extra, linewidth=3.0, linestyle='--', alpha=0.8)
 
     for tick in ax1.xaxis.get_major_ticks():
         tick.label.set_fontsize(25)
@@ -209,3 +227,26 @@ def test_mass_extrapolation(gal_test, rmin=20, rmax=90, order=1,
 
     _ = ax1.set_xlabel(r'$\log (R/[\mathrm{kpc}])$', size=30)
     _ = ax1.set_ylabel(r'$\log (M_{\star, \mathrm{enclosed}}/[M_{\odot}])$', size=30)
+
+
+def estimate_average_ba(gal, r_min=10, r_max=30, use_weight=True):
+    """Estimate the average b/a within a radial range."""
+
+    r_kpc = RKPC_COMMON
+    r_mask = (r_kpc >= r_min) & (r_kpc <= r_max)
+
+    ell = gal['ell'][r_mask]
+    sbp = (10.0 ** gal['sbp'][r_mask])
+
+    flag = (np.isfinite(ell) & np.isfinite(sbp) & (sbp >= 0))
+
+    if flag.sum() <= 1:
+        # Not enough data points
+        ba = np.nan
+    else:
+        if use_weight:
+            ba = 1.0 - np.average(ell[flag], weights=(sbp[flag]))
+        else:
+            ba = 1.0 - np.nanmean(ell[flag])
+
+    return ba

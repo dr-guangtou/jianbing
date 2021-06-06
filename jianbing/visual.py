@@ -97,7 +97,6 @@ def summary_plot_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=Non
     if sum_bin['sim_med_' + cov_type] == 'mdpl2':
         error_factor = 5.
     elif sum_bin['sim_med_' + cov_type] == 'smdpl':
-        # TODO: Need to check this
         error_factor = 2.
     else:
         raise ValueError('! Wrong Simulation: [mdpl2 | smdpl]')
@@ -318,14 +317,14 @@ def sum_plot_chi2_curve(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=N
     return ax
 
 
-def sample_over_mass_plane(catalog, mask=None, cmap='OrRd', xlim=None, ylim=None,
-                           mass_x='logm_max', mass_y='logm_10', mass_z='logmh_vir_plane',
+def sample_over_mass_plane(data, mask=None, cmap='OrRd', xlim=None, ylim=None,
+                           mass_x='logm_100', mass_y='logm_10', mass_z='logmh_vir_plane',
                            mvir_countour=False, count_contour=False,
                            bins=(35, 40), mask_list=None, hist=False, scatters=False,
                            c_levels=[5, 50, 100, 300], figsize=(7, 7),
                            z_levels=[13.2, 13.5, 13.8, 14.0, 14.2], fontsize=30,
                            label_list=None, marker_list=None, color_list=None,
-                           xlabel=r'$\log M_{\star,\ \mathrm{Max}}$',
+                           xlabel=r'$\log M_{\star,\ \mathrm{100,\ kpc}}$',
                            ylabel=r'$\log M_{\star,\ \mathrm{10,\ kpc}}$',
                            zlabel=r'$\log M_{\rm Vir}$', ax=None):
     """Making plot"""
@@ -336,22 +335,22 @@ def sample_over_mass_plane(catalog, mask=None, cmap='OrRd', xlim=None, ylim=None
         ax = fig.add_subplot(111)
 
     ax.grid(linestyle='--', linewidth=2, alpha=0.4, zorder=0)
-    ax.axvline(11.60, linestyle='-.', linewidth=4.0, c='grey', alpha=0.7)
+    ax.axvline(11.50, linestyle='-.', linewidth=4.0, c='grey', alpha=0.7)
 
     # Color density plot that indicates the change of Mvir
-    mask_finite = (np.isfinite(catalog[mass_x]) & np.isfinite(catalog[mass_y]) &
-                   np.isfinite(catalog[mass_z]))
+    mask_finite = (np.isfinite(data[mass_x]) & np.isfinite(data[mass_y]) &
+                   np.isfinite(data[mass_z]))
     if mask is not None:
         mask_use = mask_finite & mask
     else:
         mask_use = mask_finite
 
-    if mask_use.sum() != len(catalog):
-        print("# {:d}/{:d} objects are shown on the figure".format(mask_use.sum(), len(catalog)))
+    if mask_use.sum() != len(data):
+        print("# {:d}/{:d} objects are shown on the figure".format(mask_use.sum(), len(data)))
 
-    x_arr = catalog[mask_use][mass_x]
-    y_arr = catalog[mask_use][mass_y]
-    z_arr = catalog[mask_use][mass_z]
+    x_arr = data[mask_use][mass_x]
+    y_arr = data[mask_use][mass_y]
+    z_arr = data[mask_use][mass_z]
 
     z_stats, x_edges, y_edges, _ = binned_statistic_2d(
         x_arr, y_arr, z_arr, np.nanmean, bins=bins)
@@ -403,16 +402,21 @@ def sample_over_mass_plane(catalog, mask=None, cmap='OrRd', xlim=None, ylim=None
                     mask_bin.sum(), mask.sum(), j + 1))
 
             if scatters:
-                ax.scatter(catalog[mask_bin][mass_x], catalog[mask_bin][mass_y], marker=marker,
+                ax.scatter(data[mask_bin][mass_x], data[mask_bin][mass_y], marker=marker,
                            facecolor=color, edgecolor='none', alpha=0.6, s=30, label=lab)
 
             sub_counts, x_edges, y_edges, _ = binned_statistic_2d(
-                catalog[mask_bin][mass_x], catalog[mask_bin][mass_y], catalog[mask_bin][mass_z],
-                'count', bins=(12, 12))
+                data[mask_bin][mass_x], data[mask_bin][mass_y], data[mask_bin][mass_z],
+                'count', bins=(15, 15))
 
-            CT3 = ax.contour(x_edges[:-1], y_edges[:-1], gaussian_filter(sub_counts.T, 1.5),
-                             2, linewidths=4.0, colors=color, alpha=0.8,
-                             extend='neither')
+            if mask_bin.sum() < 100:
+                _ = ax.contour(x_edges[:-1], y_edges[:-1], gaussian_filter(sub_counts.T, 1.5),
+                               3, linewidths=4.0, colors=color, alpha=0.8,
+                               extend='neither')
+            else:
+                _ = ax.contour(x_edges[:-1], y_edges[:-1], gaussian_filter(sub_counts.T, 1.5),
+                               2, linewidths=4.0, colors=color, alpha=0.8,
+                               extend='neither')
 
         # Show contours in legend
         if label_list is not None:
