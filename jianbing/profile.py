@@ -112,17 +112,17 @@ def extrapolate_mass(gal_test, rmin=30.0, rmax=90.0, q_outskirt=1.0, order=1,
     return rkpc_extra, sbp_extra, cog_extra, logm_extra_use, rad_mask
 
 
-def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=300.0, q_outskirt=0.8,
+def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=[150.0], q_outskirt=0.8,
                      verbose=False, use_r50=False, order=1, use_cog=True):
     """
     Estimate extrapolated stellar mass using surface brightness profile and the
     curve of growth.
     """
     if rmin is None or rmax is None:
-        if gal_test['logm_100'] >= 11.4:
-            rmin, rmax = 20, 90
+        if gal_test['logm_100'] >= 11.5:
+            rmin, rmax = 40, 100
         else:
-            rmin, rmax = 20, 90
+            rmin, rmax = 25, 90
 
     rkpc_extra, _, cog_extra, logm_extra_use, _ = extrapolate_mass(
         gal_test, rmin=rmin, rmax=rmax, q_outskirt=q_outskirt,
@@ -131,16 +131,16 @@ def get_extra_masses(gal_test, rmin=20, rmax=90, r_extra=300.0, q_outskirt=0.8,
     rkpc_extra_use = rkpc_extra[rkpc_extra >= 100.0]
 
     if cog_extra is not None:
-        logm_extra_cog = float(interpolate.interp1d(
-            np.log10(rkpc_extra), cog_extra)(np.log10(r_extra)))
+        logm_extra_cog = interpolate.interp1d(
+            np.log10(rkpc_extra), cog_extra)(np.log10(r_extra))
     else:
-        logm_extra_cog = gal_test['logm_max']
+        logm_extra_cog = np.full(len(r_extra), gal_test['logm_max'])
 
     if logm_extra_use is not None:
-        logm_extra_sbp = float(interpolate.interp1d(
-            np.log10(rkpc_extra_use), logm_extra_use)(np.log10(r_extra)))
+        logm_extra_sbp = interpolate.interp1d(
+            np.log10(rkpc_extra_use), logm_extra_use)(np.log10(r_extra))
     else:
-        logm_extra_sbp = gal_test['logm_max']
+        logm_extra_sbp = np.full(len(r_extra), gal_test['logm_max'])
 
     return logm_extra_cog, logm_extra_sbp
 

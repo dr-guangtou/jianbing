@@ -3,7 +3,7 @@
 ---- 
 
 - Code, Jupyter Notebooks, and Data for reproducing the results for: "The Outer Stellar Mass of
-  Massive Galaxies: A Simple Tracer of HaloMass with Scatter Comparable to Richness and Reduced
+  Massive Galaxies: A Simple Tracer of Halo Mass with Scatter Comparable to Richness and Reduced
   ProjectionEffects" (Huang et al. in prep).
 
 - Raw data can be found on Zenodo: (link will be updated)
