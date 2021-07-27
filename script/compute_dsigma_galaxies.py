@@ -11,7 +11,7 @@ from astropy.table import Table
 from jianbing import scatter
 from jianbing import wlensing
 
-TOPN_DIR = '/tigress/sh19/work/topn'
+TOPN_DIR = '/tigress/sh19/work/topn/'
 
 # Lensing data using medium photo-z quality cut
 s16a_lensing = os.path.join(TOPN_DIR, 'prepare', 's16a_weak_lensing_medium.hdf5')

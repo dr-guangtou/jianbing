@@ -103,14 +103,14 @@ topn_clusters_sum['cam_s16a_photoz_logms'] = scatter.compare_model_dsigma(
 mask = redm_sdss['flag'] > 0
 
 topn_clusters['redm_sdss_lambda'] = wlensing.gather_topn_dsigma_profiles(
-    redm_sdss, s16a_rand, topn_bins, 'lambda_cluster_redm', mask=mask, n_rand=n_rand, n_boot=n_boot, 
+    redm_sdss, s16a_rand, topn_bins[0:2], 'lambda_cluster_redm', mask=mask, n_rand=n_rand, n_boot=n_boot, 
     verbose=True, n_jobs=n_jobs)
 
 topn_clusters_sum['redm_sdss_lambda'] = scatter.compare_model_dsigma(
     topn_clusters['redm_sdss_lambda'], sim_cat, model_err=False, poly=True, verbose=True)
 
 topn_clusters['redm_sdss_lambda_all'] = wlensing.gather_topn_dsigma_profiles(
-    redm_sdss, s16a_rand, topn_bins, 'lambda_cluster_redm', mask=None, n_rand=n_rand, n_boot=n_boot, 
+    redm_sdss, s16a_rand, topn_bins[0:2], 'lambda_cluster_redm', mask=None, n_rand=n_rand, n_boot=n_boot, 
     verbose=True, n_jobs=n_jobs)
 
 topn_clusters_sum['redm_sdss_lambda_all'] = scatter.compare_model_dsigma(
