@@ -33,7 +33,7 @@ topn_bins = Table.read(
 
 # Tablulated simulation results
 sim_cat = Table.read(
-    os.path.join(TOPN_DIR, 'precompute', 'sim_dsigma_scatter_merge.fits'))
+    os.path.join(TOPN_DIR, 'precompute', 'sim_merge_all_dsig.fits'))
 
 # HSC properties to use
 # Stellar or halo mass measurements for HSC galaxies

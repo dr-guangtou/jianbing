@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Compute the DSigma profiles for different lenses
+Compute the DSigma profiles for different clusters using just the central galaxies.
 """
 
 import os
@@ -40,7 +40,7 @@ topn_bins = Table.read(
 
 # Tablulated simulation results
 sim_cat = Table.read(
-    os.path.join(TOPN_DIR, 'precompute', 'sim_merge_all_dsig.fits'))
+    os.path.join(TOPN_DIR, 'precompute', 'sim_mdpl2_cen_dsig.fits'))
 
 n_rand = 200000
 n_boot = 1000
@@ -151,7 +151,7 @@ topn_clusters_sum['redm_hsc_photoz_lambda_all'] = scatter.compare_model_dsigma(
     topn_clusters['redm_hsc_photoz_lambda_all'], sim_cat, model_err=False, poly=True, verbose=True)
 
 pickle.dump(
-    topn_clusters, open(os.path.join(TOPN_DIR, 'topn_clusters.pkl'), "wb"))
+    topn_clusters, open(os.path.join(TOPN_DIR, 'topn_clusters_cen.pkl'), "wb"))
 
 pickle.dump(
-    topn_clusters_sum, open(os.path.join(TOPN_DIR, 'topn_clusters_sum.pkl'), "wb"))
+    topn_clusters_sum, open(os.path.join(TOPN_DIR, 'topn_clusters_cen_sum.pkl'), "wb"))
