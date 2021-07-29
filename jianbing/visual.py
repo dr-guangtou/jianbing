@@ -501,7 +501,7 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
     # Setup the figure
     n_col, n_bins = 3, len(dsig_ref)
     fig_y = int(4 * n_bins + 2)
-    left, right = 0.09, 0.99
+    left, right = 0.07, 0.98
     if n_bins == 4:
         bottom, top = 0.054, 0.96
     elif n_bins == 3:
@@ -648,7 +648,7 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
             ax1.legend(loc='best', fontsize=20)
         else:
             ax1.set_xticklabels([])
-        _ = ax1.set_ylabel(r'$R \times \Delta\Sigma\ [10^{6}\ M_{\odot}/\mathrm{pc}]$', fontsize=30)
+        _ = ax1.set_ylabel(r'$R \times \Delta\Sigma\ [10^{6}\ M_{\odot}/\mathrm{pc}]$', fontsize=31)
 
 
         # ----- Plot 2: Ratio of DSigma plot ----- #
@@ -686,7 +686,7 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
             _ = ax2.set_xlabel(r'$R\ [\mathrm{Mpc}]$', fontsize=30)
         else:
             ax2.set_xticklabels([])
-        _ = ax2.set_ylabel(r'$\Delta\Sigma/\Delta\Sigma_{\rm Reference}$', fontsize=30)
+        _ = ax2.set_ylabel(r'$\Delta\Sigma/\Delta\Sigma_{\rm Ref}$', fontsize=31)
 
         if show_stats:
             ax2.text(0.07, 0.90, r'$\sigma_{:s}={:4.2f}$'.format(sub_ref, sig_ref[bin_id - 1]),
@@ -704,7 +704,7 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
 
         # Histogram for sigma = 0.0
         ax3.fill_between(mvir_true, hist_true / hist_true.sum() / 1.7, color='grey',
-                         step="pre", alpha=0.3, label=r'$\sigma=0.0$', zorder=0)
+                         step="pre", alpha=0.3, label=r'$\sigma_{\mathcal{M}|\mathcal{O}}=0.0$', zorder=0)
         ax3.axvline(mvir_avg_true, color='k', alpha=0.7, linewidth=4.0, linestyle='--')
 
         # Halo mass distribution for the reference sample
