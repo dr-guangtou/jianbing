@@ -107,7 +107,8 @@ def summary_plot_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=Non
     ax.fill_between(
         r_mpc, sum_bin['dsigma_sig0_' + cov_type] - err_low * error_factor,
         sum_bin['dsigma_sig0_' + cov_type] + err_upp * error_factor,
-        alpha=0.3, edgecolor='none', linewidth=1.0, label=r'$\sigma=0.0$',
+        alpha=0.3, edgecolor='none', linewidth=1.0, 
+        label=r'$\sigma_{\mathcal{M}|\mathcal{O}}=0.00$',
         facecolor='teal', rasterized=True)
 
     # Best-fit profile
@@ -117,27 +118,28 @@ def summary_plot_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=Non
         r_mpc, sum_bin['dsigma_mod_' + cov_type] - err_low * error_factor,
         sum_bin['dsigma_mod_' + cov_type] + err_low * error_factor,
         alpha=0.3, edgecolor='none', linewidth=1.0,
-        label=r'$\sigma={:4.2f}$'.format(sum_bin['sig_med_' + cov_type]),
+        label=(r'$\sigma_{\mathcal{M}|\mathcal{O}}=$' + 
+               r'${:4.2f}$'.format(sum_bin['sig_med_' + cov_type])),
         facecolor='grey', linestyle='--', rasterized=True)
 
-    # HSC profile
+    # Data profile
     ax.errorbar(r_mpc, sum_bin['dsigma'], yerr=sum_bin['dsig_err_' + cov_type],
                 ecolor=color_bins[bin_num], color=color_bins[bin_num], alpha=0.7,
                 capsize=4, capthick=2.0, elinewidth=2.0, label='__no_label__',
                 fmt='o', zorder=0)
     ax.scatter(r_mpc, sum_bin['dsigma'],
-               s=140, alpha=0.8, facecolor=color_bins[bin_num], edgecolor='k',
+               s=180, alpha=0.8, facecolor=color_bins[bin_num], edgecolor='k',
                linewidth=2.0, label=label)
 
     # Reference profile
     if ref_dsigma is not None:
         assert len(ref_dsigma) == len(r_mpc)
         ax.scatter(
-            r_mpc, ref_dsigma, marker='X', s=150, linewidth=2.0,
+            r_mpc, ref_dsigma, marker='X', s=160, linewidth=2.0,
             facecolor='none', edgecolor='k', alpha=0.7, label=r'$\rm Reference$')
 
     if legend:
-        ax.legend(loc='lower left', fontsize=22)
+        ax.legend(loc='lower left', fontsize=25)
     ax.set_ylim(0.25, 415)
 
     if show_bin:
@@ -200,21 +202,21 @@ def summary_plot_r_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=N
         label=r'$\sigma={:4.2f}$'.format(sum_bin['sig_med_' + cov_type]),
         facecolor='grey', linestyle='--', rasterized=True)
 
-    # HSC profile
+    # Data profile
     ax.errorbar(r_mpc, r_mpc * sum_bin['dsigma'],
                 yerr=(r_mpc * sum_bin['dsig_err_' + cov_type]),
                 ecolor=color_bins[bin_num], color=color_bins[bin_num], alpha=0.7,
                 capsize=4, capthick=2.0, elinewidth=2.0, label='__no_label__',
                 fmt='o', zorder=0)
     ax.scatter(r_mpc, r_mpc * sum_bin['dsigma'],
-               s=140, alpha=0.8, facecolor=color_bins[bin_num], edgecolor='k',
+               s=180, alpha=0.8, facecolor=color_bins[bin_num], edgecolor='k',
                linewidth=2.0, label=label)
 
     # Reference profile
     if ref_dsigma is not None:
         assert len(ref_dsigma) == len(r_mpc)
         ax.scatter(
-            r_mpc, r_mpc * ref_dsigma, marker='X', s=150, linewidth=2.0,
+            r_mpc, r_mpc * ref_dsigma, marker='X', s=160, linewidth=2.0,
             facecolor='none', edgecolor='k', alpha=0.7, label=r'$\rm Reference$')
 
     if legend:
@@ -304,7 +306,7 @@ def sum_plot_chi2_curve(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=N
                     transform=ax.transAxes)
 
     if xlabel:
-        _ = ax.set_xlabel(r'$\sigma(M_{\rm vir})$', fontsize=30)
+        _ = ax.set_xlabel(r'$\sigma_{\mathcal{M} | \mathcal{O}}$', fontsize=30)
     else:
         _ = ax.set_xticklabels([])
     if ylabel:
