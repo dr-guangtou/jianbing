@@ -68,7 +68,7 @@ mask = (
 
 # General mask for HSC size measurements
 size_mask = (
-    mask & (hsc['logm_max'] >= 11.4) & (hsc['r80_100'] <= 60.0) & (hsc['r90_100'] <= 60.0)
+    mask & (hsc['logm_max'] >= 11.3) & (hsc['r80_100'] <= 60.0) & (hsc['r90_100'] <= 60.0)
 )
 
 # Mask to select "central" galaxies
@@ -96,7 +96,7 @@ for col in hsc_mass:
 
     # The whole sample, without applying any mask; no bootstrap error
     topn_galaxies[col + '_all'] = wlensing.gather_topn_dsigma_profiles(
-        hsc, s16a_rand, topn_bins, col, mask=mask, n_rand=n_rand,
+        hsc, s16a_rand, topn_bins, col, mask=None, n_rand=n_rand,
         verbose=False, n_jobs=n_jobs, n_boot=200)
 
     topn_galaxies_sum[col + '_all'] = scatter.compare_model_dsigma(
@@ -110,6 +110,7 @@ for col in hsc_mass:
     topn_galaxies_sum[col + '_cen1'] = scatter.compare_model_dsigma(
         topn_galaxies[col + '_cen1'], sim_cat, model_err=False, poly=True, verbose=False)
 
+    # Applying central mask 2; no bootstrap error
     topn_galaxies[col + '_cen2'] = wlensing.gather_topn_dsigma_profiles(
         hsc, s16a_rand, topn_bins, col, mask=(mask & cen_mask_2), n_rand=n_rand,
         verbose=False, n_jobs=n_jobs, n_boot=200)
@@ -117,6 +118,7 @@ for col in hsc_mass:
     topn_galaxies_sum[col + '_cen2'] = scatter.compare_model_dsigma(
         topn_galaxies[col + '_cen2'], sim_cat, model_err=False, poly=True, verbose=False)
 
+    # Applying central mask 3; no bootstrap error
     topn_galaxies[col + '_cen3'] = wlensing.gather_topn_dsigma_profiles(
         hsc, s16a_rand, topn_bins, col, mask=(mask & cen_mask_3), n_rand=n_rand,
         verbose=False, n_jobs=n_jobs, n_boot=200)
@@ -126,6 +128,8 @@ for col in hsc_mass:
 
 # Galaxy size related
 for col in hsc_size:
+
+    # Default test with both jackknife and bootstrap error
     topn_galaxies[col] = wlensing.gather_topn_dsigma_profiles(
         hsc, s16a_rand, topn_bins, col, mask=(mask & size_mask), n_rand=n_rand,
         n_boot=n_boot, verbose=True, n_jobs=n_jobs)
@@ -133,6 +137,15 @@ for col in hsc_size:
     topn_galaxies_sum[col] = scatter.compare_model_dsigma(
         topn_galaxies[col], sim_cat, model_err=False, poly=True, verbose=False)
 
+    # The whole sample, without applying any mask; no bootstrap error
+    topn_galaxies[col + '_all'] = wlensing.gather_topn_dsigma_profiles(
+        hsc, s16a_rand, topn_bins, col, mask=None, n_rand=n_rand,
+        verbose=False, n_jobs=n_jobs, n_boot=200)
+
+    topn_galaxies_sum[col + '_all'] = scatter.compare_model_dsigma(
+        topn_galaxies[col + '_all'], sim_cat, model_err=False, poly=True, verbose=False)
+
+    # Applying central mask 1; no bootstrap error
     topn_galaxies[col + '_cen1'] = wlensing.gather_topn_dsigma_profiles(
         hsc, s16a_rand, topn_bins, col, mask=(mask & size_mask & cen_mask_1), n_rand=n_rand,
         n_boot=n_boot, verbose=False, n_jobs=n_jobs)
@@ -140,12 +153,21 @@ for col in hsc_size:
     topn_galaxies_sum[col + '_cen1'] = scatter.compare_model_dsigma(
         topn_galaxies[col + '_cen1'], sim_cat, model_err=False, poly=True, verbose=False)
 
+    # Applying central mask 2; no bootstrap error
     topn_galaxies[col + '_cen2'] = wlensing.gather_topn_dsigma_profiles(
         hsc, s16a_rand, topn_bins, col, mask=(mask & size_mask & cen_mask_2), n_rand=n_rand,
         n_boot=n_boot, verbose=False)
 
     topn_galaxies_sum[col + '_cen2'] = scatter.compare_model_dsigma(
         topn_galaxies[col + '_cen2'], sim_cat, model_err=False, poly=True, verbose=False)
+
+    # Applying central mask 3; no bootstrap error
+    topn_galaxies[col + '_cen3'] = wlensing.gather_topn_dsigma_profiles(
+        hsc, s16a_rand, topn_bins, col, mask=(mask & size_mask & cen_mask_3), n_rand=n_rand,
+        n_boot=n_boot, verbose=False)
+
+    topn_galaxies_sum[col + '_cen3'] = scatter.compare_model_dsigma(
+        topn_galaxies[col + '_cen3'], sim_cat, model_err=False, poly=True, verbose=False)
 
 
 pickle.dump(
