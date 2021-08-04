@@ -452,13 +452,13 @@ def sample_over_mass_plane(data, mask=None, cmap='OrRd', xlim=None, ylim=None,
     return ax
 
 def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='bt',
-                            compare_to_model=True,
+                            compare_to_model=True, use_ref_range=False,
                             label_ref=r'$\rm Ref$', label_cmp=r'$\rm Test$',
                             sub_ref=r'{\rm Ref}', sub_cmp=r'{\rm Test}',
                             cmap_list=None, color_bins=None, show_stats=True,
                             marker_ref='o', msize_ref=150,
                             marker_cmp='P', msize_cmp=180, ratio_range=(0.01, 1.59),
-                            show_best_cmp=False, logmh_range=None):
+                            show_best_ref=False, show_best_cmp=True, logmh_range=None):
     """Compare the Dsigma profiles."""
 
     def get_dsig_ratio(obs, ref, mod=None):
@@ -594,15 +594,6 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
         ax1.set_xscale("log", nonpositive='clip')
 
         # MDPL: Best-fit
-        ax1.fill_between(
-            dsig_ref_best['r_mpc'],
-            dsig_ref_best['r_mpc'] * (
-                dsig_ref_best['dsig'] - dsig_ref_best['dsig_err'] * err_factor),
-            dsig_ref_best['r_mpc'] * (
-                dsig_ref_best['dsig'] + dsig_ref_best['dsig_err'] * err_factor),
-            alpha=0.2, edgecolor='grey', linewidth=2.0,
-            label=r'__no_label__', facecolor='grey', linestyle='-', rasterized=True)
-
         if show_best_cmp:
             ax1.fill_between(
                 dsig_cmp_best['r_mpc'],
@@ -610,6 +601,16 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
                     dsig_cmp_best['dsig'] - dsig_cmp_best['dsig_err'] * err_factor),
                 dsig_cmp_best['r_mpc'] * (
                     dsig_cmp_best['dsig'] + dsig_cmp_best['dsig_err'] * err_factor),
+                alpha=0.2, edgecolor='grey', linewidth=2.0,
+                label=r'__no_label__', facecolor='grey', linestyle='-', rasterized=True)
+
+        if show_best_ref:
+            ax1.fill_between(
+                dsig_ref_best['r_mpc'],
+                dsig_ref_best['r_mpc'] * (
+                    dsig_ref_best['dsig'] - dsig_ref_best['dsig_err'] * err_factor),
+                dsig_ref_best['r_mpc'] * (
+                    dsig_ref_best['dsig'] + dsig_ref_best['dsig_err'] * err_factor),
                 alpha=0.15, edgecolor='grey', linewidth=2.0,
                 label=r'__no_label__', facecolor='grey', linestyle='--', rasterized=True)
 
@@ -618,28 +619,31 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
             r_mpc_obs,
             r_mpc_obs * dsig_ref_bin['dsigma'][0],
             yerr=(r_mpc_obs * dsig_ref_bin['dsig_err_{:s}'.format(sig_type)][0]),
-            ecolor=color, color=color, alpha=0.9, capsize=4, capthick=2.5, elinewidth=2.5,
-            label='__no_label__', fmt='o', zorder=0)
+            ecolor=cmap.mpl_colormap(0.5), color=cmap.mpl_colormap(0.5), alpha=0.9, capsize=4,
+            capthick=2.5, elinewidth=2.5, label='__no_label__', fmt='o', zorder=0)
         ax1.scatter(
             r_mpc_obs,
             r_mpc_obs * dsig_ref_bin['dsigma'][0],
-            s=msize_ref, alpha=0.9, facecolor=color, edgecolor='w', marker=marker_ref,
-            linewidth=2.5, label=label_ref)
+            s=msize_ref, alpha=0.9, facecolor='w', edgecolor=cmap.mpl_colormap(0.5), 
+            marker=marker_ref, linewidth=2.5, label=label_ref)
 
         # DSigma profiles to compare with
         ax1.errorbar(
             r_mpc_obs * 1.01,
             r_mpc_obs * dsig_cmp_bin['dsigma'][0],
             yerr=(r_mpc_obs * dsig_cmp_bin['dsig_err_{:s}'.format(sig_type)][0]),
-            ecolor=cmap.mpl_colormap(0.5), color='w', alpha=0.9, capsize=4, capthick=2.5,
-            elinewidth=2.5, label='__no_label__', fmt='o', zorder=0)
+            ecolor=color, color='w', alpha=0.9, capsize=4, capthick=2.5, elinewidth=2.5,
+            label='__no_label__', fmt='o', zorder=0)
         ax1.scatter(
             r_mpc_obs * 1.01,
             r_mpc_obs * dsig_cmp_bin['dsigma'][0],
-            s=msize_cmp, alpha=0.9, facecolor='w', edgecolor=cmap.mpl_colormap(0.5),
-            marker=marker_cmp, linewidth=3.0, label=label_cmp)
+            s=msize_cmp, alpha=0.9, facecolor=color, edgecolor='w', marker=marker_cmp,
+            linewidth=3.0, label=label_cmp)
 
-        ax1.set_ylim(1.0, np.max(dsig_ref_best['r_mpc'] * dsig_ref_best['dsig']) * 1.45)
+        if not use_ref_range:
+            ax1.set_ylim(1.0, np.max(dsig_cmp_best['r_mpc'] * dsig_cmp_best['dsig']) * 1.45)
+        else:
+            ax1.set_ylim(1.0, np.max(dsig_ref_best['r_mpc'] * dsig_ref_best['dsig']) * 1.45)
 
         # Bin ID
         _ = ax1.text(
@@ -688,18 +692,30 @@ def compare_dsigma_profiles(dsig_ref, dsig_cmp, sim_dsig, sim_mhalo, sig_type='b
             _ = ax2.set_xlabel(r'$R\ [\mathrm{Mpc}]$', fontsize=30)
         else:
             ax2.set_xticklabels([])
-        _ = ax2.set_ylabel(r'$\Delta\Sigma/\Delta\Sigma_{\rm Ref}$', fontsize=31)
+        _ = ax2.set_ylabel(r'$\Delta\Sigma_{:s}/\Delta\Sigma_{:s}$'.format(sub_cmp, sub_ref), 
+                           fontsize=31)
 
         if show_stats:
-            ax2.text(0.07, 0.90, r'$\sigma_{:s}={:4.2f}$'.format(sub_ref, sig_ref[bin_id - 1]),
-                     fontsize=23, transform=ax2.transAxes)
-            ax2.text(0.07, 0.80, r'$\sigma_{:s}={:4.2f}$'.format(sub_cmp, sig_cmp[bin_id - 1]),
-                     fontsize=23, transform=ax2.transAxes)
+            if np.mean(ratio_cmp[0:-3]) <= 1:
+                ax2.text(0.07, 0.90, r'$\sigma_{:s}={:4.2f}$'.format(sub_ref, sig_ref[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+                ax2.text(0.07, 0.80, r'$\sigma_{:s}={:4.2f}$'.format(sub_cmp, sig_cmp[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
 
-            ax2.text(0.54, 0.90, r'$\chi^2={:4.2f}$'.format(chi2_ref[bin_id - 1]),
-                     fontsize=23, transform=ax2.transAxes)
-            ax2.text(0.54, 0.80, r'$\chi^2={:4.2f}$'.format(chi2_cmp[bin_id - 1]),
-                     fontsize=23, transform=ax2.transAxes)
+                ax2.text(0.54, 0.90, r'$\chi^2={:4.2f}$'.format(chi2_ref[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+                ax2.text(0.54, 0.80, r'$\chi^2={:4.2f}$'.format(chi2_cmp[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+            else:
+                ax2.text(0.07, 0.16, r'$\sigma_{:s}={:4.2f}$'.format(sub_ref, sig_ref[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+                ax2.text(0.07, 0.06, r'$\sigma_{:s}={:4.2f}$'.format(sub_cmp, sig_cmp[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+
+                ax2.text(0.54, 0.16, r'$\chi^2={:4.2f}$'.format(chi2_ref[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
+                ax2.text(0.54, 0.06, r'$\chi^2={:4.2f}$'.format(chi2_cmp[bin_id - 1]),
+                        fontsize=23, transform=ax2.transAxes)
 
 
         # ----- Plot 3: Halo mass distribution plot ----- #

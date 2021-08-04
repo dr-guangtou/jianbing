@@ -10,7 +10,7 @@ from astropy.table import Table, join
 from . import utils
 
 __all__ = ['compare_model_dsigma', 'get_scatter_summary', 'get_chi2_curve',
-           'get_dsig_chi2', 'sigm_to_sigo']
+           'get_dsig_chi2', 'sigm_to_sigo', 'sigo_to_sigm']
 
 
 def compare_model_dsigma(obs, sim, model_err=False, poly=False, poly_order=6,
@@ -171,6 +171,10 @@ def get_dsig_chi2(r_obs, dsig_obs, err_obs, r_mod, dsig_mod, err_mod,
         chi2 = np.dot(dsig_diff, np.dot(cov_inv, dsig_diff))
 
     return chi2
+
+def sigo_to_sigm(sigo, alpha=1.0, beta2=2.959):
+    """Convert the scatter of observable to the scatter of halo mass."""
+    return sigo / np.sqrt(beta2 * (sigo ** 2) + (alpha ** 2))
 
 def sigm_to_sigo(sigm, alpha=1.0, beta=2.959):
     """
