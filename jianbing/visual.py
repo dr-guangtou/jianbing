@@ -29,7 +29,7 @@ marker_bins = ['o', 's', 'h', '8', '+']
 msize_bins = [100, 100, 130, 110, 150]
 
 
-def sum_plot_topn(sum_tab, label, note=None, ref_tab=None, cov_type='jk'):
+def sum_plot_topn(sum_tab, label, note=None, ref_tab=None, cov_type='jk', show_bin=True):
     """Make a summary plot of the TopN result."""
     n_col, n_bins = 3, len(sum_tab)
     left, right = 0.06, 0.99
@@ -52,11 +52,11 @@ def sum_plot_topn(sum_tab, label, note=None, ref_tab=None, cov_type='jk'):
         if ref_tab is None:
             ref_dsigma, ref_sig = None, None
         else:
-            ref_dsigma = ref_tab[ii]['dsigma']
+            ref_dsigma = ref_tab[ii]
             ref_sig = ref_tab[ii]['sig_med_' + cov_type]
 
         # Subplot title
-        if bin_id == 1:
+        if ii == 0:
             ax1.set_title(label, fontsize=38, pad=18)
             if note is not None:
                 ax2.set_title(note, fontsize=38, pad=18)
@@ -64,17 +64,17 @@ def sum_plot_topn(sum_tab, label, note=None, ref_tab=None, cov_type='jk'):
 
         ax1 = summary_plot_dsig(
             ii, sum_bin, r_mpc, ax=ax1, cov_type=cov_type, label=None,
-            xlabel=(bin_id == len(sum_tab)), ylabel=True, legend=True, show_bin=True,
+            xlabel=(ii == len(sum_tab) - 1), ylabel=True, legend=True, show_bin=show_bin,
             ref_dsigma=ref_dsigma)
 
         ax2 = summary_plot_r_dsig(
             ii, sum_bin, r_mpc, ax=ax2, cov_type=cov_type, label=None,
-            xlabel=(bin_id == len(sum_tab)), ylabel=True, legend=False, show_bin=False,
+            xlabel=(ii == len(sum_tab) - 1), ylabel=True, legend=False, show_bin=False,
             ref_dsigma=ref_dsigma)
 
         ax3 = sum_plot_chi2_curve(
             ii, sum_bin, r_mpc, ax=ax3, cov_type=cov_type,
-            ref_sig=ref_sig, xlabel=(bin_id == len(sum_tab)), ylabel=False,
+            ref_sig=ref_sig, xlabel=(ii == len(sum_tab) - 1), ylabel=False,
             show_bin=False)
 
     return fig
@@ -118,7 +118,7 @@ def summary_plot_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=Non
         r_mpc, sum_bin['dsigma_mod_' + cov_type] - err_low * error_factor,
         sum_bin['dsigma_mod_' + cov_type] + err_low * error_factor,
         alpha=0.3, edgecolor='none', linewidth=1.0,
-        label=(r'$\sigma_{\mathcal{M}|\mathcal{O}}=$' + 
+        label=(r'$\sigma_{\mathcal{M}|\mathcal{O}}=\ $' + 
                r'${:4.2f}$'.format(sum_bin['sig_med_' + cov_type])),
         facecolor='grey', linestyle='--', rasterized=True)
 
@@ -133,14 +133,20 @@ def summary_plot_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=Non
 
     # Reference profile
     if ref_dsigma is not None:
-        assert len(ref_dsigma) == len(r_mpc)
+        ax.errorbar(ref_dsigma.meta['r_mpc'], ref_dsigma['dsigma'], yerr=ref_dsigma['dsig_err_' + cov_type],
+                    ecolor='grey', color='grey', alpha=0.5,
+                    capsize=4, capthick=2.0, elinewidth=2.0, label='__no_label__',
+                    fmt='o', zorder=0)
         ax.scatter(
-            r_mpc, ref_dsigma, marker='X', s=160, linewidth=2.0,
+            ref_dsigma.meta['r_mpc'], ref_dsigma['dsigma'], marker='X', s=160, linewidth=2.0,
             facecolor='none', edgecolor='k', alpha=0.7, label=r'$\rm Reference$')
 
     if legend:
-        ax.legend(loc='lower left', fontsize=25)
-    ax.set_ylim(0.25, 415)
+        ax.legend(loc='lower left', fontsize=24, handletextpad=0.2, borderpad=0.2)
+
+    y_min = np.min(sum_bin['dsigma_mod_' + cov_type] - err_low * error_factor) * 0.5
+    y_max = np.max(sum_bin['dsigma_sig0_' + cov_type] + err_low * error_factor) * 1.2
+    ax.set_ylim(y_min, y_max)
 
     if show_bin:
         _ = ax.text(0.74, 0.87, r'$\rm Bin\ {:1d}$'.format(bin_num + 1), fontsize=35,
@@ -214,16 +220,22 @@ def summary_plot_r_dsig(bin_num, sum_bin, r_mpc, ax=None, cov_type='bt', label=N
 
     # Reference profile
     if ref_dsigma is not None:
-        assert len(ref_dsigma) == len(r_mpc)
+        r_mpc_ref = ref_dsigma.meta['r_mpc']
+        ax.errorbar(r_mpc_ref, r_mpc_ref * ref_dsigma['dsigma'],
+                    yerr=(r_mpc_ref * ref_dsigma['dsig_err_' + cov_type]),
+                    ecolor='grey', color='grey', alpha=0.5,
+                    capsize=4, capthick=2.0, elinewidth=2.0, label='__no_label__',
+                    fmt='o', zorder=0)
         ax.scatter(
-            r_mpc, r_mpc * ref_dsigma, marker='X', s=160, linewidth=2.0,
+            r_mpc_ref, r_mpc_ref * ref_dsigma['dsigma'], marker='X', s=160, linewidth=2.0,
             facecolor='none', edgecolor='k', alpha=0.7, label=r'$\rm Reference$')
 
     if legend:
         ax.legend(loc='lower left', fontsize=22)
 
-    y_max = np.max(r_mpc * sum_bin['dsigma_sig0_upp_' + cov_type]) * 1.2
-    ax.set_ylim(1.45, y_max)
+    y_min = np.min(r_mpc * sum_bin['dsigma_mod_low_' + cov_type]) * 0.5
+    y_max = np.max(r_mpc * sum_bin['dsigma_sig0_upp_' + cov_type]) * 1.05
+    ax.set_ylim(y_min, y_max)
 
     if show_bin:
         _ = ax.text(0.74, 0.87, r'$\rm Bin\ {:1d}$'.format(bin_num + 1), fontsize=35,
