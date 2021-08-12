@@ -17,6 +17,7 @@ HLIST_USED_DEFAULT = {
     "pid": (5, "i8"), # least massive parent (direct parent) halo ID
     "upid": (6, "i8"), # least massive parent (direct parent) halo ID
     "Mvir": (10, "f8"), # Msun/h
+    "Mpeak": (10, "f8"), # Msun/h
     "Rvir": (11, "f8"), # kpc/h
     "rs": (12, "f8"), # scale radius kpc/h
     "halo_x": (17, "f8"), # halo position x Mpc/h
