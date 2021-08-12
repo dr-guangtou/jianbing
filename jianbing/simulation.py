@@ -33,7 +33,7 @@ HLIST_USED_DEFAULT = {
     "vmax_mpeak": (74, "f8"), # vmax at the scale where mpeak was reached
 }
 
-def reduce_hlist_size(hlist, col_used=HLIST_USED_DEFAULT, logmvir_lim=None):
+def reduce_hlist_size(hlist, col_used=HLIST_USED_DEFAULT, logmh_lim=None, mh_type="Mpeak"):
     '''Reduce the number of columns of the Rockstar catalog.
 
     Parameters
@@ -71,9 +71,9 @@ def reduce_hlist_size(hlist, col_used=HLIST_USED_DEFAULT, logmvir_lim=None):
     hlist_pre += '_reduced'
 
     # Halo mass cut
-    if logmvir_lim is not None:
-        reduced_catalog = reduced_catalog[reduced_catalog['Mvir'] > (10.0 ** logmvir_lim)]
-        hlist_pre += '_logmvir_{:4.1f}'.format(logmvir_lim)
+    if logmh_lim is not None:
+        reduced_catalog = reduced_catalog[reduced_catalog[mh_type] > (10.0 ** logmh_lim)]
+        hlist_pre += '_log{:s}_{:4.1f}'.format(mh_type.lower().strip(), logmh_lim)
 
     # Save a new file
     np.save(hlist_pre + '.npy', reduced_catalog)
