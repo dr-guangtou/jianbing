@@ -17,7 +17,6 @@ HLIST_USED_DEFAULT = {
     "pid": (5, "i8"), # least massive parent (direct parent) halo ID
     "upid": (6, "i8"), # least massive parent (direct parent) halo ID
     "Mvir": (10, "f8"), # Msun/h
-    "Mpeak": (10, "f8"), # Msun/h
     "Rvir": (11, "f8"), # kpc/h
     "rs": (12, "f8"), # scale radius kpc/h
     "halo_x": (17, "f8"), # halo position x Mpc/h
@@ -28,6 +27,7 @@ HLIST_USED_DEFAULT = {
     "vz": (22, "f8"), # halo position z Mpc/h
     "M200b": (39, "f8"), # Msun/h
     "M500c": (41, "f8"), # Msun/h
+    "Mpeak": (60, "f8"), # Msun/h
     "scale_half_mass": (63, "f8"), # scale factor at which we could to 0.5 * mpeak
     "scale_last_mm": (15, "f8"), # scale factor at last MM
     "vmax_mpeak": (74, "f8"), # vmax at the scale where mpeak was reached
