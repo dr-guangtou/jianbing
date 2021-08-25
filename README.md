@@ -1,10 +1,9 @@
-# TopN Test for Massive Halos Selected by Richness and Stellar Mass of the Central Galaxy
+# The Outer Stellar Mass of Massive Galaxies: A SimpleTracer of Halo Mass with Scatter Comparable to Richnessand Reduced Projection Effects
 
 ---- 
 
-- Code, Jupyter Notebooks, and Data for reproducing the results for: "The Outer Stellar Mass of
-  Massive Galaxies: A Simple Tracer of Halo Mass with Scatter Comparable to Richness and Reduced
-  ProjectionEffects" (Huang et al. in prep).
+- Code, Jupyter Notebooks, and Data for reproducing the results for: "The Outer Stellar Mass of Massive Galaxies: A Simple Tracer of Halo Mass with Scatter Comparable to Richness and Reduced Projection Effects" (Huang et al. in prep).
+  -  Huang, Song (黄崧); Leauthaud, Alexie; Bradshaw, Christopher; Hearin, Andrew; Behroozi, Peter; Lange, Johannes; Greene, Jenny; DeRose, Joseph; Speagle (沈佳士), Joshua; Xhakaj, Enia
 
 - The large data files that are necessary to reproduce our results can be found in [this Zenodo repo](https://zenodo.org/record/5259075#.YSaiKNNKjOQ)
 
