@@ -1,6 +1,5 @@
 # Hold the paper until submitted
-#paper/
-
+main.pdf
 keynote/
 build/
 .texpadtmp
