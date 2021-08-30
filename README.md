@@ -36,6 +36,8 @@
   - [`satellite`](https://github.com/dr-guangtou/jianbing/tree/master/data/satellite): `pickle` files for comparing the lensing profiles of central-only and central+satellite samples.
   - [`index`](https://github.com/dr-guangtou/jianbing/tree/master/data/index): index files used for cross-matching different samples.
 
+- [`paper`](https://github.com/dr-guangtou/jianbing/tree/master/data): LaTeX files of the manuscript.
+
 
 
 ---
