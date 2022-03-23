@@ -240,9 +240,12 @@ def prepare_lens_catalog(cat, src, rp_bins=None, calib=None, z_min=0.19, z_max=0
     if col_used is None:
         col_used = cat_pre.colnames
 
+    # Remove arguments explicitly passed to dsigma_table below from the col_kwargs collection
     for col in ['ra', 'dec', 'z', z, field, 'w_sys']:
-        if col in col_used:
-            col_used.remove(col)
+        if col.lower() in col_used:
+            col_used.remove(col.lower())
+        elif col.upper() in col_used:
+            col_used.remove(col.upper())
 
     col_kwargs = {}
     for col in col_used:
