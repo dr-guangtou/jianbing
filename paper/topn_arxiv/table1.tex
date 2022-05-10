@@ -1,0 +1,58 @@
+\begin{table*}
+\resizebox{0.7\textwidth}{!}{%
+\small
+\begin{tabular}{|c|cccc|}
+\hline
+\rowcolor[HTML]{d8dcd6} Property   & Bin 1   & Bin 2   & Bin 3  & Bin 4 \\ \hhline{|=====|}
+
+$N_{\rm Sample}$     &   50  &  197  &  662  &  1165  \\  
+
+$\log_{10} M_{\rm vir,\ \rm MDPL2}$  & [14.66, 15.55] & [14.38, 14.66) & [14.08, 14.38) & [13.86, 14.08) \\
+
+$n(>M_{\rm vir})$  & $5.11\times 10^{-7}$ & $2.52\times 10^{-6}$ & $9.29\times 10^{-6}$ & $2.12\times 10^{-5}$ \\ \hhline{|=====|}
+
+\multirow{2}{*}{$\lambda_{\rm redMaPPer}$}  &  [35, 120] &  [20, 35)  & [10, 20) &  [6, 10)  \\
+& \sigmvir{}$=0.27\pm0.02$ & $0.38\pm0.02$ & $0.39\pm0.02$ & $0.58\pm0.02$ \\ \hline
+                                            
+\multirow{2}{*}{$N_{\rm CAMIRA}$}  &  [35, 75) & [21, 35) & [12, 21) &  \\
+& \sigmvir{}$=0.30\pm0.03$ & $0.36\pm0.01$ & $0.50\pm0.02$ & {} \\ \hhline{|=====|}
+
+\multirow{2}{*}{$\log_{10} M_{\star, \rm CModel}$}   & [11.88, 12.19] & [11.77, 11.88) & [11.67, 11.77) & [11.60, 11.67) \\ 
+& \sigmvir{}$=0.60\pm0.04$ & $0.64\pm0.04$ & $0.87\pm0.06$ & $0.82\pm0.03$ \\ \hline
+
+\multirow{2}{*}{$\log_{10} M_{\star, 30\ \rm kpc}$} & [11.77, 12.00] & [11.69, 11.77) & [11.61, 11.70) & [11.53, 11.61) \\ 
+& \sigmvir{}$=0.52\pm0.04$ & $0.57\pm0.03$ & $0.61\pm0.03$ & $0.61\pm0.02$ \\ \hline
+
+\multirow{2}{*}{$\log_{10} M_{\star, 50\ \rm kpc}$} & [11.86, 12.10] & [11.76, 11.86) & [11.66, 11.76) & [11.58, 11.66) \\ 
+& \sigmvir{}$=0.46\pm0.04$ & $0.53\pm0.03$ & $0.59\pm0.02$ & $0.61\pm0.02$ \\ \hline
+
+\multirow{2}{*}{$\log_{10} M_{\star, 100\ \rm kpc}$} & [11.93, 12.18] & [11.83, 11.93) & [11.71, 11.83) & [11.63, 11.71) \\ 
+& \sigmvir{}$=0.38\pm0.02$ & $0.51\pm0.02$ & $0.56\pm0.02$ & $0.60\pm0.02$ \\ \hline
+
+\multirow{2}{*}{$\log_{10} M_{\star, 150\ \rm kpc}$} & [11.96, 12.21] & [11.85, 11.96) & [11.73, 11.85) & [11.64, 11.73)  \\ 
+& \sigmvir{}$=0.37\pm0.03$ & $0.47\pm0.03$ & $0.56\pm0.02$ & $0.57\pm0.03$ \\ \hhline{|=====|}
+
+\multirow{2}{*}{$\log_{10} M_{\star, [50, 100]}$} & [11.20, 11.60] & [11.00, 11.20) & [10.80, 11.00) & [10.63, 11.00)  \\ 
+& \sigmvir{}$=0.36\pm0.02$ & $0.43\pm0.02$ & $0.44\pm0.02$ & $0.48\pm0.02$ \\ \hline
+
+\multirow{2}{*}{$\log_{10} M_{\rm Vir,\ ASAP}$} & [14.45, 15.28] & [14.09, 14.45) & [13.80, 14.11) & [13.60, 13.80)  \\ 
+& \sigmvir{}$=0.38\pm0.03$ & $0.44\pm0.02$ & $0.48\pm0.02$ & $0.56\pm0.02$ \\ \hline
+
+\end{tabular}%
+}
+\caption{
+	Summary of results from the \topn{} test results in four number density bins. 
+	The first three rows summarize the basic properties of each bin.
+	$N_{\rm sample}$ is the number of HSC galaxies in each bin. 
+	$\log_{10}M_{\rm vir, MDPL2}$ shows the corresponding halo mass range in this number density bin
+	based on the \mdpl2{} simulation. 
+	This is the \mvir{} range for an ideal (zero scatter) \topn{} selection.
+	$n(>M_{\rm Vir})$ is the volume number density of halos above the lower-\mvir{} threshold.
+	Subsequent rows contain the key results for different halo mass proxies. 
+	The first row shows the range of the observed properties in the four bins.  The second row shows
+	the best--fit scatter of \mvir{} at fixed observable ($\sigma_{\mathcal{M}|\mathcal{O}}$) of
+	\mvir{} in each bin along with its uncertainty.
+	For a complete summary table of all the properties we tested, please see this \texttt{Jupyter} notebook \href{https://github.com/dr-guangtou/jianbing/blob/master/notebooks/topn_result_summary.ipynb}{\faGithub} 
+	}
+\label{tab:summary}
+\end{table*}

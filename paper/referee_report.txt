@@ -1,0 +1,206 @@
+Reviewer's Comments:
+Reviewer: 1
+
+Comments to the Author
+The paper contains new and interesting results so I anticipate recommending publication after the following points have been addressed.  In addition, the paper was somewhat repetitious -- I leave it to the authors to shorten the paper, e.g. some of the summaries are unnecessary.
+
+I have two main comments which the authors should address in a revised version. Both address the question of whether or not a simpler estimator of Mvir -- one based on extrapolating the light in shallow images - is useful.  
+
+1) The manuscript argues that the range of scales between 50 and 100 kpc is a good proxy for halo mass.  However, accessing these scales can require deep imaging, which is expensive. Therefore, it is interesting to ask how badly one does if only shallow imaging is available.  In this case, one might fit Sersic profiles to the inner regions which are accessible in the shallower imaging, and use the fitted profile to estimate the light (or mass) from the 50-100 kpc range of interest (in the shallower imaging, this may well require extrapolation of the Sersic fit). In their Appendix E (line 58 on page 31) the authors appear to be planning some sort of analysis along these lines, but because they already have all the data in hand to provide this very useful information, I believe the paper is incomplete without including it. In particular, the revision should show a plot that is like Fig.E1, but now using Sersic-fit determined values.  
+
+2) I appreciate the virtues of working with M* rather than L, especially when comparing halo finders which span a range of redshifts.  However, estimating M*/L (to convert from L to M*) may itself introduce both systematic biases and additional noise. Since L(z) is reasonably well known for massive galaxies, I wonder how badly one does if one simply works with the light profile (rather than an M* profile), with a simple L(z) relation?  Such a test could also go into an updated Fig.E1.  
+
+
+----------------
+Minor comments:
+----------------
+
+Page 2:
+
+line 15: The list of references to halo assembly bias should begin with Sheth & Tormen (2004).
+
+line 17:
+In addition the identification of clusters, it is ...
+->
+In addition TO identifying clusters, it is ...
+
+line 59:
+We adopt Mvir for dark matter halo mass as defined in Bryan & Norman 1998.
+->
+For dark matter halo mass, we adopt Mvir as defined in Bryan & Norman (1998).
+
+-----------
+page 3
+
+line 18:  As this is the first occurrence of the quantity ∆Σ, which plays an important role in the paper, it should be defined clearly here. 
+
+line 21:  ∆Σ profiles of samples of dark matter halos that have been stacked according to 'RANK ORDERED' number density
+
+line 31:  'RANK ORDERED' or 'CUMULATIVE' number density 
+
+Column 2:
+
+line 6:  This selection ... reflects the properties of ... .
+        ->
+	 This selection ... IS SENSITIVE TO/AFFECTED BY the properties of ... 
+
+line 8: THE top RIGHT PANEL of Figure 1 shows ...
+
+line 16: The right panel of Figure 1 ALSO illustrates ...
+     In general I found this entire paragraph confusing.
+     Perhaps reword to 
+     'The bottom right panel of Figure 1 also illustrates that the ratio
+     of ∆Σ profiles exhibits scale-dependent features.  We will show
+     that these can provide additional discriminating power when
+     assessing various halo mass proxies.'
+
+line 50: Define mu.
+
+line 54: Oto (add a space between O and to)
+
+-----
+page 4:
+
+line 32:  Define the acronym 'SHMR'.
+
+line 43:  Provide a reference for Eqs.3 and 4.  
+         (e.g. Evrard et al. 2014?)
+
+column 2:
+
+line 41:  ... the more general quadratic form (1)
+          -> the more general equation (1).
+
+Eq.(6): Add a full stop.
+
+---
+page 6:
+
+line 49: In this remainder of this paper
+        -> In the remainder of this paper
+
+column 2:
+
+line 10:  ... since they should BE present in the observed sample.
+
+line 30: Please specify the depth of HSC (in mags) before commenting on how they compare to SDSS.
+
+---
+page 7:
+
+line 58:  1-D stellar SURFACE mass density profiles
+
+---
+page 8
+
+line 8:  define lambda
+
+line 50: define NMem
+
+column 2:
+
+line 10: fix centred
+
+line 43:  We then convert the i-band surface brightness profile to the SURFACE MASS DENSITY (µ⋆) profile.
+
+You should comment on the fact that there are discrepancies between different SSP models and therefore the conversion from light to M* is not so straightforward.
+
+line 46: We ignore the M⋆/L gradient in this work.
+
+You could justify this by citing Bernardi et al. (2018), who show that gradients affect Mdyn estimates more than M*.
+
+----
+page 9:
+
+line 52:  I found it odd that the reference for CModel magnitudes is an unpublished preprint (Bosch+2017) given that the original motivation for CModel mags dates back to the first SDSS papers. Please provide an appropriate reference.  
+
+Please also specify if the Cmodel mags are integrated to infinity or to 7 or 8*re as in SDSS.  This should be small (~0.05 mags, and consistent with the numbers  reported on line 13 of page 10). 
+
+--
+page 10:
+
+column 2:
+
+line 16: Please define SMF.  
+
+line 22: In Eq. 8, define  M*^100 and M*^10.  If they are simply M*_100kpc and M*_10kpc in the text, then use the same notation.
+
+----
+page 11 :
+
+line 48: Please move Fig. 3 so it appears closer to where it is discussed.
+        Moreover, the right hand panel of this figure appears to only be discussed, cryptically, in the caption.  Please add more informative detail in the text itself.   
+
+---
+page 12:
+
+column 2 line 8: Please say more clearly what the `pure central' sample is, providing numbers etc.
+
+------
+page 13:
+
+Fig. 5:  This is arguably the main result of the paper, yet the number of typos in the caption is nearly the same as the number of co-authors who failed to notice them. Please fix!
+
+----
+page 14:
+
+column 2:
+
+line 6: columns of Figure 6 and Figure 6
+       Figure 6 -> Figure ?.
+
+line 21:  ... And we discuss 
+         -> ..., and we discuss
+
+---
+page 16:
+
+column 2:
+
+line 50: ... could be also true ...
+        -> .. could also be true ...
+        Regarding this final bullet: Your results show that circular aperture photometry which includes (and may be dominated by) the central light, correlates poorly with Mvir. Your bullet makes the point that such aperture photometry is what is typically output by default survey pipelines.  However, the same pipelines may well output sufficient information for the 'shell aperture' photometry which correlates better with Mvir to be estimated.  E.g., if the parameters of a Sersic fit are provided, it is a simple matter to determine the light from a shell.  As I noted in my major criticisms, including this check will is important, useful and necessary.
+
+line 55:  Remove one of the two 'the's in the subsection heading
+
+---
+page 20:
+
+line 60:  ... have values of ...
+         ... have chi^2 values of ...
+         Specify if chi^2 or chi^2/dof.
+
+column 2:
+
+line 47: Provide the corresponding numbers for M*[50,100] selected clusters.
+
+
+----
+page 21:
+
+line 52: remove one of the 'the's
+
+I found the material in Sections 7.1 and 7.2 a little technical, and so interrupted the flow of the paper.  Please move them to an Appendix to help readability.
+
+
+column 2:
+line 50:  in situ M* ... wide range of Mvir (∼ 10^10.9 M ⊙ ) ...
+         -> in situ M* (∼ 10^10.9 M ⊙ ) ... wide range of Mvir ...
+
+---
+page 22:
+
+line 29: these galaxies are predominantly quenched at lower redshift
+        Provide a reference.
+
+line 48: missing )      
+
+---
+page 23:
+column 2 line 22: cannot not fully -> cannot fully
+
+
+-----
+Fig. E1 top panel:  Aperutre -> Aperture
+
+-----

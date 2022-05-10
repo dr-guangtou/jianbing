@@ -1,6 +1,10 @@
-% 西风吹老洞庭波，一夜湘君白发多。 醉后不知天在水，满船清梦压星河
+% Version 1; preprint format
+% 08/17/2021 16399 words
+
+% !TEX encoding = UTF-8
 \documentclass[fleqn,usenatbib,useAMS]{mnras}
 
+% Packages
 \usepackage{float}
 \usepackage{natbib}
 \usepackage{hhline}
@@ -11,13 +15,18 @@
 \usepackage{amssymb, amsmath}
 \usepackage[usenames, dvipsnames]{xcolor}
 \usepackage{xcolor,colortbl}
-\usepackage{CJKutf8}
+\usepackage{xeCJK}
 \usepackage{fontawesome5}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{academicons}
 
+\setCJKmainfont[Scale=MatchUppercase]{FandolKai}
+
+\defaultfontfeatures{Ligatures=TeX}
 \definecolor{orcidlogocol}{HTML}{A6CE39}
 
+% Package Settings
 \hypersetup{colorlinks=true,
             citecolor=MidnightBlue,
             linkcolor=MidnightBlue,
@@ -25,26 +34,31 @@
             urlcolor=cyan}
 \urlstyle{same}
 
+% Figure extension
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
+% User definitions
 \input{define.tex}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Title and Affiliations
+%% ---------------------------------------------------------------------------------------------- %%
 \title[Outer Galaxy Mass as a Halo Mass Proxy]{
     The Outer Stellar Mass of Massive Galaxies: A Simple Tracer of Halo Mass with Scatter 
     Comparable to Richness and Reduced Projection Effects}
 
 \author[S. Huang et al.]{
-        Song Huang (黄崧)\ \href{https://orcid.org/0000-0003-1385-7591}{\textcolor{orcidlogocol}{\faOrcid}}$^{1,2}$\thanks{E-mail: sh19@astro.princeton.edu (SH)},
-        Alexie Leauthaud\ \href{https://orcid.org/0000-0002-3677-3617}{\textcolor{orcidlogocol}{\faOrcid}}$^{2}$,
-        Christopher Bradshaw\ \href{https://orcid.org/0000-0003-0833-573X}{\textcolor{orcidlogocol}{\faOrcid}}$^{2}$,
+        Song Huang (黄崧)\href{https://orcid.org/0000-0003-1385-7591}{\textcolor{orcidlogocol}{\aiOrcid}}$^{1,2}$\thanks{E-mail: sh19@astro.princeton.edu (SH)},
+        Alexie Leauthaud\href{https://orcid.org/0000-0002-3677-3617}{\textcolor{orcidlogocol}{\aiOrcid}}$^{2}$,
+        Christopher Bradshaw\href{https://orcid.org/0000-0003-0833-573X}{\textcolor{orcidlogocol}{\aiOrcid}}$^{2}$,
         \newauthor
-        Andrew Hearin\ \href{https://orcid.org/0000-0003-2219-6852}{\textcolor{orcidlogocol}{\faOrcid}}$^{3}$,
-        Peter Behroozi\ \href{https://orcid.org/0000-0002-2517-6446}{\textcolor{orcidlogocol}{\faOrcid}}$^{4}$,
-        Johannes Lange\ \href{https://orcid.org/0000-0002-2450-1366}{\textcolor{orcidlogocol}{\faOrcid}}$^{2, 5}$,
-        Jenny Greene\ \href{https://orcid.org/0000-0002-5612-3427}{\textcolor{orcidlogocol}{\faOrcid}}$^{1}$,
+        Andrew Hearin\href{https://orcid.org/0000-0003-2219-6852}{\textcolor{orcidlogocol}{\aiOrcid}}$^{3}$,
+        Peter Behroozi\href{https://orcid.org/0000-0002-2517-6446}{\textcolor{orcidlogocol}{\aiOrcid}}$^{4}$,
+        Johannes Lange\href{https://orcid.org/0000-0002-2450-1366}{\textcolor{orcidlogocol}{\aiOrcid}}$^{2, 5}$,
+        Jenny Greene\href{https://orcid.org/0000-0002-5612-3427}{\textcolor{orcidlogocol}{\aiOrcid}}$^{1}$,
         \newauthor
-        Joseph DeRose\ \href{https://orcid.org/0000-0002-0728-0960}{\textcolor{orcidlogocol}{\faOrcid}}$^{6}$,
-        Joshua S. Speagle (沈佳士)\ \href{https://orcid.org/0000-0002-5065-9896}{\textcolor{orcidlogocol}{\faOrcid}}$^{7, 8, 9}$,
+        Joseph DeRose\href{https://orcid.org/0000-0002-0728-0960}{\textcolor{orcidlogocol}{\aiOrcid}}$^{6}$,
+        Joshua S. Speagle (沈佳士)\href{https://orcid.org/0000-0002-5065-9896}{\textcolor{orcidlogocol}{\aiOrcid}}$^{7, 8, 9}$,
         Enia Xhakaj$^{2}$\\
         $^{1}$Department of Astrophysical Sciences, Peyton Hall,
               Princeton University, Princeton, NJ 08540, USA \\
@@ -63,16 +77,24 @@
             Toronto, M5S 3H4, Canada
         }
 
-\date{Accepted 2021. Received 2021; in original form 2021 Sep 1}
+%% ---------------------------------------------------------------------------------------------- %%
+\date{Accepted XXX. Received YYY; in original form 2021, Sep 1}
 \pubyear{2021}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Header and Version
+%% ---------------------------------------------------------------------------------------------- %%
 
 \begin{document}
 
-\begin{CJK*}{UTF8}{gbsn}
 \label{firstpage}
 \pagerange{\pageref{firstpage}--\pageref{lastpage}}
 
 \maketitle
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% Abstract and Keywords
+%% ---------------------------------------------------------------------------------------------- %%
 
 \begin{abstract}
     
@@ -111,7 +133,13 @@
     galaxies: haloes
 \end{keywords}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Main Text
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Introduction
+%% ---------------------------------------------------------------------------------------------- %%
 
 \section{Introduction}
     \label{sec:intro}
@@ -129,12 +157,15 @@
     Galaxy clusters are also promising laboratories for studying the boundaries of dark matter halos
     (e.g., \citealt{Diemer2014, More2015b, More2016, Chang2018, Shin2019, Zurcher2019, Tomooka2020,
     Xhakaj2020})\footnote{Please see
-    \href{http://www.benediktdiemer.com/research/splashback/}{Benedikt Diemer's webpage} for a more
-    complete list of reference on this topic.}, and for investigating halo assembly bias (e.g.,
-    \citealt{Tinker2012, Miyatake2016, Zu2017}).
-    To achieve these goals, a reliable ``cluster finder'' that can identify galaxy clusters 
-    is fundamental. 
-    In addition the identification of clusters, it is also critical to be able to measure the 
+    \href{http://www.benediktdiemer.com/research/splashback/}{Benedikt Diemer's website} for a more
+    complete list of reference on this topic.}.
+    \textcolor{red}{
+    And in recent years, halo assembly bias (e.g., \citealt{ShethTormen2004, Gao2005}) has become 
+    an increasingly important topic in galaxy--halo connection, where galaxy clusters can 
+    play a significant role (e.g., \citealt{Tinker2012, Miyatake2016, Zu2017}).
+    For all these investigations, a reliable ``cluster finder'' is fundamental. 
+    }
+    \textcolor{red}{In addition to the identification of clusters}, it is also critical to be able to measure the 
     halo masses of clusters, as well as to calibrate halo mass--observable scaling relations.
 
     Thanks to the advent of large optical surveys such as the Sloan Digital Sky Survey (SDSS,
@@ -209,18 +240,26 @@
     \ref{sec:discussion}. 
     Finally, we summarise and conclude in Section \ref{sec:summary}.
     
+    %% ---------------------------------------------------------------------------------------------- %%
+    %% Important assumptions and definitions
+    %% ---------------------------------------------------------------------------------------------- %%
 
     We assume $H_0$ = 70~km~s$^{-1}$ Mpc$^{-1}$, ${\Omega}_{\rm m}=0.3$, and ${\Omega}_{\rm
     \Lambda}=0.7$.
     Stellar mass (\mstar{}) is derived using a Chabrier Initial Mass Function (IMF;
     \citealt{Chabrier2003}).
-    We adopt $M_{\rm vir}$ for dark matter halo mass as defined in \citealt{BryanNorman1998}.
+    \textcolor{red}{
+    For dark matter halo mass, we adopt $M_{\rm vir}$ as defined in \citet{BryanNorman1998}.
+    }
     We use $\mathcal{M}\equiv \log_{10} (M_{\rm vir}/M_{\odot})$ and 
     $\mathcal{O}\equiv \log_{10} \rm Observable$ to indicate the ten-base logarithms of
     halo mass and observables.
     We also use \sigmvir{}$\equiv \sigma_{\log_{10} M_{\rm vir}}$ for the scatter of 
     halo mass and \sigms{}$\equiv \sigma_{\log_{10} M_{\star}}$ for the scatter of stellar mass. 
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: the philosophy of Top N tests
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
 \includegraphics[width=\textwidth]{figure/fig_1}
 \caption{
@@ -244,7 +283,11 @@
     }
     \label{fig:theory_1}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Key Methods used in this work
+%% ---------------------------------------------------------------------------------------------- %%
 
 \section{Methodology and Modelling Framework}
     \label{sec:method}
@@ -252,20 +295,32 @@
     This section explains the basic idea of the \topn{} test and presents our modelling framework 
     for estimating the scatter in \mvir{}-observable relations.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Philosophy of the Top N test
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Philosophy of the \texorpdfstring{\topn{}}{TopN} Test}
     \label{sec:topn_intro}
     
     Cosmological simulations permit a precise prediction for how \dsigma{} of dark matter halos
     scales with true halo mass, \mvir{}.
+    \textcolor{red}{Here \dsigma{} is the excess surface density profile, which is defined as:}
+    
+    \begin{equation}
+        \Delta \Sigma(r) \equiv \bar{\Sigma}(<r)-\bar{\Sigma}(r)=\Sigma_{\text {crit }} \times \gamma_{t}(r)
+    \end{equation}
+    
+    \noindent \textcolor{red}{\dsigma{} is an important galaxy-galaxy lensing observable.}
+
     Since simulated halos can easily be rank-ordered by their mass, it is a trivial matter to use a
     cosmological simulation to generate a prediction for the \dsigma{} profiles of samples of dark
-    matter halos that have been stacked according to number density.
+    matter halos that have been stacked according to \textcolor{red}{rank--ordered} number density.
     The philosophy behind the \topn{} test is to capitalise upon this predictive power.
     When analysing observational data, of course one does not have direct access to true halo mass, 
     and so one must instead rely upon an observational proxy. 
     In the analogous manner as can be done for simulated halos, observed galaxy clusters can be
     arranged into stacked samples according to any particular halo mass proxy, and so it is equally
-    straightforward to measure the \dsigma{} profile of clusters as a function of the number density
+    straightforward to measure the \dsigma{} profile of clusters as a function of the 
+    \textcolor{red}{cumulative} number density
     defined by the choice of proxy. 
     When the halo mass proxy presents a scaling relation with \mvir{} that has low scatter and a
     steep slope, then the associated stacked samples will exhibit a lensing amplitude that scales
@@ -316,6 +371,9 @@
     \scatterObsSymMhalo{} can produce identical \mvir{} distributions.
     We discuss this degeneracy in the next section (\S\ \ref{sec:comp_scatters}).
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Modelling Methodology
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Modelling Methodology}
     \label{sec:model}
 
@@ -327,6 +385,10 @@
     We use this model to estimate the scatter in the mass-proxy relation, and also to
     infer the underlying \mvir{} distribution of different samples.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: DSigma profiles from MDPL2 and the impacts of scatter on DSigma profile and
+%%         halo mass distribution
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_2}
@@ -352,7 +414,11 @@
     }
     \label{fig:mdpl2}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Scaling relation and scatters
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{The relationship between \scatterMhaloObsSym{}, \scatterObsSymMhalo{}, and $\alpha$}
     \label{sec:comp_scatters}
 
@@ -483,6 +549,9 @@
     \scatterObsSymMhalo{} will strictly depend upon the assumed values for the slope $\alpha,$ as
     this mathematical degeneracy cannot be evaded.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Estimating scatter of halo mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Estimating \scatterMhaloObsSym{}}
     \label{sec:estimate_scatter}
 
@@ -580,6 +649,9 @@
     always the case. 
     However, including satellites or not in our models does not have any impact on our results. 
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Definition of richness and number density bins.
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_3}
@@ -605,7 +677,11 @@
     }
     \label{fig:density_bins}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Section: Data and Sample Selection
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Data}
     \label{sec:data}
 
@@ -613,9 +689,13 @@
     galaxy sample (\S\ \ref{sec:galaxy_sample}), and the richness-selected galaxy cluster
     catalogues (\S\ \ref{sec:cluster_sample})
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% HSC S16A data set
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Hyper Suprime-Cam Survey Subaru Strategic Program}
     \label{sec:hsc}
 
+    %% General information
     In this work, we use $\sim 137$ \sqdeg{} of deep optical images from the \texttt{WIDE}
     layer of the \texttt{S16A} release of the Hyper Suprime-Cam Subaru Strategic Program
     (HSC-SSP, or HSC survey; e.g. \citealt{HSC-SSP, HSC-DR1, HSC-DR2})
@@ -654,6 +734,9 @@
     All imaging data, along with the photometric and the photo-$z$ catalogues, have been released to
     the public\footnote{\url{https://hsc.mtk.nao.ac.jp/ssp/data-release}}.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Massive Galaxy Sample
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{HSC Massive Galaxy Sample}
     \label{sec:galaxy_sample}
 
@@ -687,6 +770,9 @@
     We release the catalogue of this massive galaxy sample here:
     \href{https://zenodo.org/record/4902141}{\faDatabase}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Richness-based Galaxy Clusters
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Red Sequence Cluster catalogues}
     \label{sec:cluster_sample}
 
@@ -702,6 +788,9 @@
     For example, there are massive galaxies not contained in either cluster catalogues. 
     We will briefly discuss this in \S\ \ref{sec:discussion}.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% redMaPPer
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\redm{} Clusters}
     \label{sec:cluster_redmapper}
 
@@ -749,6 +838,9 @@
     \redm{} (\eg{} \citealt{Chang2018, McClintock2019}) clusters in the same redshift ($0.2 < z <
     0.5$) and richness ($20 \leq \lambda < 100$) bins and show they are consistent with each other.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% CAMIRA
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\camira{} Clusters}
     \label{sec:cluster_camira}
 
@@ -785,6 +877,9 @@
     cause subtle differences in the cluster detection and richness measurements.
     However, we verify that these updates do not change any conclusions.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Key Measurements
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Measurements}
     \label{sec:measure}
 
@@ -792,6 +887,9 @@
     tests: the 1-D surface stellar mass density profiles ($\mu_{\star}$, \S\ \ref{sec:1d_prof})
     and the galaxy-galaxy lensing \dsigma{} profiles ($\S$ \ref{sec:dsigma}).
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% 1-D Surface Mass Density Profiles
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{1-D Surface Mass Density Profiles}
     \label{sec:1d_prof}
 
@@ -822,6 +920,9 @@
     We release the massive galaxy catalogue along with the 1-D $\mu_{\star}$ profiles here: 
     \href{https://zenodo.org/record/5259075}{\faDatabase}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Weak lensing measurements
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Galaxy-Galaxy Lensing Measurements}
     \label{sec:dsigma}
 
@@ -860,6 +961,9 @@
     release the \dsigma{} measurements for our massive galaxies and clusters here:
     \href{https://zenodo.org/record/5259075}{\faDatabase}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Introduction of different halo mass proxies
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Halo Mass Proxies and Bins}
     \label{sec:proxies}
 
@@ -875,6 +979,9 @@
     
 \subsection{Proxies}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% CModel Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\cmodel{} stellar mass}
     \label{sec:mcmodel}
 
@@ -914,6 +1021,9 @@
     We find no systematic difference between these measurements, hence our results about \mcmodel{}
     should apply to all HSC data release.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Aperture Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Aperture \mstar{} From 1-D Profiles}
     \label{sec:maper}
 
@@ -958,6 +1068,9 @@
     etc. 
     We briefly explore the result of using these radii-based proxies in Appendix \ref{app:size}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Outer Envelope Stellar Mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Stellar Mass of the Outer Envelope}
     \label{sec:menvelope}
 
@@ -1004,6 +1117,9 @@
     We have performed \topn{} tests using the luminosity of the outskirts and this does not impact
     any of our main conclusions.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Halo mass based on ASAP model
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{\asap{} model}
     \label{sec:masap}
 
@@ -1032,8 +1148,15 @@
     Eq.~\ref{eq:asap}, and we will investigate the scatter exhibited by individual galaxies for this
     \asap{} prediction.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Table.1: Summary for a few important halo mass proxies
+%% ---------------------------------------------------------------------------------------------- %%
 \input{table1}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Halo mass proxies based on optical richness
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Richness}
     \label{sec:proxy_richness}
 
@@ -1061,6 +1184,9 @@
     For \redm{}, we denote its richness as $\lambda_{\rm redMaPPer}$. 
     For \camira{}, we use $N_{\rm CAMIRA}$ to represent its richness measurement.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Impact of satellites on the M100kpc selected DSigma profiles
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure}
     \centering
     \includegraphics[width=0.47\textwidth]{figure/fig_4}
@@ -1082,7 +1208,11 @@
     }
     \label{fig:satellite}
 \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Design TopN bins
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Number Density Bins}
     \label{sec:binning}
 
@@ -1121,6 +1251,9 @@
     results.
     We summarize the key properties of these four bins in Table \ref{tab:summary}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Main Results
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Results}
     \label{sec:result}
 
@@ -1147,6 +1280,9 @@
     results for all proxies are made publicly available here:
     \href{https://github.com/dr-guangtou/jianbing/tree/master/data/results}{\faGithub}
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Comparisons of scatters: different aperture and outer envelope masses
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=0.7\textwidth]{figure/fig_5}
@@ -1167,7 +1303,11 @@
     }
     \label{fig:scatter_trend}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Impact of satellite galaxies
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Impact of Satellite Contamination on \texorpdfstring{\dsigma{}}{DSigma}}
     \label{sec:satellite}
 
@@ -1231,6 +1371,9 @@
     0.01-0.02 dex variation in \scatterMhaloObsSym{} values.}.
     The impact of satellites is further discussed in Appendix \ref{app:sat_cen}.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Main TopN results
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Amplitude of \texorpdfstring{\dsigma{}}{DSigma} and Inferred \texorpdfstring{\sigmvir{}}{SigMvir} Values}
     \label{sec:topn_results}
 
@@ -1240,6 +1383,9 @@
     aperture \mstar{}, outskirt \mstar{}, and the \mcmodel{}. 
     Then we compare all the \mvir{} proxies and present the inferred \sigmvir{} values.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Aperture stellar mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Aperture Stellar Masses}
     \label{sec:m_aper}
 
@@ -1272,6 +1418,9 @@
     In the Appendix \ref{app:size}, we also explore definitions of aperture \mstar{} based on
     $R_{50}$ but do not find any that has better performance.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Performance of outer envelope mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Outer Envelope Mass}
     \label{sec:m100_outskirt}
 
@@ -1355,6 +1504,9 @@
     And we discuss the origin and the implications of this result in \S\
     \ref{sec:outskirt_discussion}.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare 50-100 kpc outer envelope mass and 100 kpc mass
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_6}
@@ -1382,7 +1534,11 @@
     }
     \label{fig:m100_mout}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Poor performance of CModel stellar mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{The Case of \mcmodel{}}
     \label{sec:m100_cmodel}
 
@@ -1412,6 +1568,9 @@
     \mvir{} proxy and the \sigmvir{} values associated with \mcmodel{} are much larger than other
     proxies.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Brief Discussion of ASAP model
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{The Case of \masap{}}
     \label{sec:asap_result}
 
@@ -1439,6 +1598,9 @@
     We should note that the \dsigma{} profiles of \masap{} samples are also well described
     by the simple ``pure scatter'' model.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare M100kpc mass and CModel mass
+%% --------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_7}
@@ -1465,7 +1627,11 @@
         }
     \label{fig:m100_cmod}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Comparisons of scatters: main results
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=0.85\textwidth]{figure/fig_8}
@@ -1482,7 +1648,11 @@
     }
     \label{fig:scatter_trend_2}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Sigma_Mvir for richness-based clusters
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Comparison with Richness-based Proxies}
     \label{sec:richness_results}
 
@@ -1537,6 +1707,9 @@
     underestimated. 
     We will return to this question in detail in \S\ \ref{sec:mstar_vs_richness}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% General trend
+%% ---------------------------------------------------------------------------------------------- %%
 \subsubsection{Summary of \sigmvir{} Trends for Different \mvir{} Proxies}
     \label{sec:trend}
 
@@ -1570,6 +1743,9 @@
             
     \end{itemize}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare 50-100 kpc outer envelope mass and richness selected clusters
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=0.95\textwidth]{figure/fig_9}
@@ -1603,7 +1779,12 @@
         }
     \label{fig:mout_richness}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Compare the DSigma profiles of richness selection clusters with their
+%%		   best-fit model.
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_10}
@@ -1630,31 +1811,9 @@
     }
     \label{fig:richness_residual}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
-\begin{figure*}
-    \centering
-    \includegraphics[width=16cm]{figure/fig_11}
-    \caption{
-        Summary statistic that quantifies the overall shape of a \dsigma{} profile in each \topn{}
-        bin. 
-        $S$ is the ratio of the integrated \dsigma{} profile at $0.8 < R \leq 3.0$ Mpc and $0.2 < R
-        \leq 0.8$ Mpc. 
-        Galaxies selected by \menve{50}{100} galaxies are shown with blue circles, \redm{} clusters
-        with red hexagons, and \camira{} clusters with open red pentagons. 
-        \textbf{Left} panel shows the $S$ statistics of the observed \dsigma{} profiles.
-        The richness-based clusters finders yield higher $S_{\rm obs}$ values than \menve{50}{100} 
-        in Bin 1-3.
-        \textbf{Right} panel shows the ratio between the observed and best-fit ``pure scatter''
-        model \dsigma{} profiles ($S_{\rm obs}/S_{\rm mod}$). 
-        Galaxies selected by \menve{50}{100} have \dsigma{} profiles that are well described by a
-        ``pure scatter" model whereas richness selected clusters have \dsigma{} profiles that have a
-        ``bump" like feature compared to a ``pure scatter" model.
-        The \texttt{Jupyter} notebook for reproducing this figure can be found here:
-        \href{https://github.com/dr-guangtou/jianbing/blob/master/notebooks/figure/fig11.ipynb}{\faGithub}.
-    }
-    \label{fig:dsigma_summary}
-\end{figure*}
-
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Information Contained in the the Shape of \texorpdfstring{$\Delta\Sigma$}{DSigma}}
     \label{sec:mstar_vs_richness}
 
@@ -1747,9 +1906,38 @@
     cluster selection function defined by \redm{} or \camira{} cannot be as well-described by such a
     simple model.
     
+    %To further quantify this systematic difference, we design a summary statistic to compare the
+    %\dsigma{} profiles of \menve{50}{100} and richness-selected samples. 
+    %We integrate  \dsigma{} within two radial ranges
+    %($0.2 < R \leq 0.8$ Mpc and $0.8 < R \leq 3.0$ Mpc) and calculate the ratio:
     
+    %\begin{equation}
+    %    S \equiv \frac{\int_{0.8\ \mathrm{Mpc}}^{3.0\ \rm Mpc} \Delta\Sigma(r) d r}{\int_{0.2\ \mathrm{Mpc}}^{0.8\ %\mathrm{Mpc}} \Delta\Sigma(r) d r}.
+    %    \label{eq:dsig_ratio}
+    %\end{equation}
     
+    %\noindent We then calculate the $S$ values of the observed \dsigma{} profile and its best--fit
+    %model \dsigma{} profile, and use their ratio $S_{\rm obs}/S_{\rm mod}$ to quantify differences
+    %in \dsigma{} profile \emph{shapes}.
+    %In Figure \ref{fig:dsigma_summary}, we compare the $S_{\rm obs}$ of \redm{} and \camira{}
+    %clusters to \menve{50}{100} sample in the left panel.
+    %Both cluster profiles show considerably higher $S_{\rm obs}$ values than \menve{50}{100} (and
+    %many other \mstar{}-based proxies) in Bin 1-2.
+    %In the right panel, we show their $S_{\rm obs}/S_{\rm mod}$ ratios.
+    %While the ratios are consistent with 1.0 in all four bins for \menve{50}{100}, both cluster 
+    %samples display $>1.0$ ratios in Bin 1-3.
+    %These results reinforce the conclusion that, unlike the \mstar{}-based \mvir{} proxies, 
+    %richness-based clusters are not consistent with the ``pure scatter'' model.
+    %Of course, any full-fledged analysis conducting posterior inference on cluster samples must
+    %consider a host of other systematics and potential biases (\eg{} \citealt{Sunayama2020,
+    %DES2020}), and as discussed further in \S\ \ref{sec:perfect_finder}, diagnostic summary
+    %statistics such as $S_{\rm obs}/S_{\rm mod}$ can be employed to help quantify the impact of such
+    %systematics as a complementary alternative to directly fitting for parameterization of the
+    %effects (\eg{} \citealt{Melchior2017, Murata2018, McClintock2019}). 
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discussion
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Discussion}
     \label{sec:discussion}
     
@@ -1761,6 +1949,9 @@
     \S\ \ref{sec:perfect_finder} discusses the possibility of using the techniques developed in this
     paper to search for even better \mvir{} proxies. 
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Discussion about the outskirt stellar mass
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
     \centering
     \includegraphics[width=\textwidth]{figure/fig_11}
@@ -1785,7 +1976,11 @@
     }
     \label{fig:outskirt_discussion}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discussion about the connection to the ASAP model.
+%% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Relationship with Previous Work and the \asap{} model}
     \label{sec:asap_discussion}
@@ -1841,6 +2036,9 @@
     A next key step will be understanding the different SHMRs of \insitu{} and \exsitu{} stars
     better in the near future.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discussion about the scatter of stellar mass at fixed halo mass
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Scatter in Stellar Mass at Fixed Halo mass}
     \label{sec:sigma_mstar}
     
@@ -1866,6 +2064,9 @@
     They should be only used for relative comparisons within the \topn{} results.
     We will look into the constraint of SHMRs for different \mvir{} proxies in future works.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Discussion about the outer envelope mass
+%% ---------------------------------------------------------------------------------------------- %%
 
 \subsection{Physical Insight: Why might the Outer Stellar Halo Trace Halo Mass Better than the Inner
     Mass or the Total Mass?}
@@ -1926,6 +2127,9 @@
     Our results support the idea that the ICL correlates with halo mass, but we also generalize this
     finding to all massive galaxies.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% On better halo mass proxies
+%% ---------------------------------------------------------------------------------------------- %%
     \subsection{On the Possibility of Building Even Better Halo Mass Proxies}
     \label{sec:better_halo_proxy}
     
@@ -1958,6 +2162,9 @@
     that take these additional effects into account is worthy of exploration in future work and are
     well-motivated by our results.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% A ``perfect'' cluster finder?
+%% ---------------------------------------------------------------------------------------------- %%
 \subsection{Implications for Optical Cluster Finding}
     \label{sec:perfect_finder}
     
@@ -2066,14 +2273,22 @@
     top 50 (500) \menve{50}{100} galaxies, only 9 (158) of them are also included in the top 50
     (500) richest clusters selected by \redm{}. This suggests that the richness--\mstar{} relation
     for central galaxies has considerable scatter that would be worth exploring in further detail.
-    The numerous advantages discussed above suggest that \mstar{}-based cluster finders could not
-    only help us to understand the systematics of richness-based cluster finders, but that they may
-    also yield competitive constraints on the growth of structure and on galaxy-halo connection
-    models.
+    \update{
+    In \citet{Zu2021a, Zu2021b}, the authors revealed a potentially interesting 
+    correlation between the \mstar{} of the BCG at a given richness and the concentration of the dark matter halo.
+    These results suggest that the \mstar{}-based cluster finders could also help
+    provide more details about the assembly of massive dark matter halos.
+    }
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Summary
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Summary and Conclusions}
     \label{sec:summary}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Background and review of the paper
+%% ---------------------------------------------------------------------------------------------- %%
     Taking advantage of the deep images and unprecedented lensing capabilities of the HSC survey
     (\S\ \ref{sec:hsc}), we show that the outer envelope of low-redshift massive galaxies is a
     promising \mvir{} proxy with scatter comparable to richness. 
@@ -2101,6 +2316,9 @@
     \camira{} cluster (\S\ \ref{sec:cluster_camira}) catalogues.
     The main results of this work are:
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Main conclusions
+%% ---------------------------------------------------------------------------------------------- %%
     \begin{itemize}
     
         \item Outer galaxy mass is an excellent tracer of halo mass (\S\ \ref{sec:m100_outskirt};
@@ -2162,6 +2380,9 @@
 
     \end{itemize}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Future directions
+%% ---------------------------------------------------------------------------------------------- %%
     Motivated by these results, we plan to further explore \mstar{}-based \mvir{} proxies for
     studies of the galaxy-halo connection and for cosmology.
     Recent HSC data releases (\texttt{S20A} or \texttt{PDR3} in 2021) have increased sky coverage to
@@ -2207,6 +2428,9 @@
     \citealt{Yang2020, Zou2021}), and apply our ``Cen$+N$'' method to define a sample of massive
     halos that are suitable for unbiased cosmological analysis.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Data Availability Statement
+%% ---------------------------------------------------------------------------------------------- %%
 \section*{Data Availability Statements}
 
     The data underlying this article are available in Zenodo at 
@@ -2217,25 +2441,34 @@
     The Hyper Suprime-Cam Subaru Strategi Program data used in this work are included in the 
     Public Data Release 2 at \url{https://hsc-release.mtk.nao.ac.jp/doc/}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Acknowledgements
+%% ---------------------------------------------------------------------------------------------- %%
 \section*{Acknowledgements}
 
+  % Personal
   The authors would like to thank Benedikt Diemer and Matthew Becker for useful discussions and 
   suggestions.
 
+  % NSF funding
   This material is based upon work supported by the National Science Foundation under
   Grant No. 1714610.
 
+  % KITP
   The authors acknowledge support from the Kavli Institute for Theoretical Physics.
   This research was also supported in part by National Science Foundation under Grant
   No. NSF PHY11-25915 and Grant No. NSF PHY17-48958
 
+  % AL's funding
   We acknowledge use of the lux supercomputer at UC Santa Cruz, funded by NSF MRI grant AST
   1828315. AL is supported by the U.D Department of Energy, Office of Science, Office of High
   Energy Physics under Award Number DE-SC0019301. AL acknowledges support from the David and
   Lucille Packard foundation, and from the Alfred .P Sloan foundation.
   
+  % JD's fellowship
   JD is supported by the Chamberlain Fellowship at Lawrence Berkeley National Laboratory.
   
+  % HSC part
   The Hyper Suprime-Cam (HSC) collaboration includes the astronomical communities of
   Japan and Taiwan, and Princeton University.  The HSC instrumentation and software were
   developed by National Astronomical Observatory of Japan (NAOJ), Kavli Institute
@@ -2247,6 +2480,7 @@
   the Promotion of Science (JSPS), Japan Science and Technology Agency (JST), Toray
   Science Foundation, NAOJ, Kavli IPMU, KEK, ASIAA, and Princeton University.
 
+  % SDSS part
   Funding for SDSS-III has been provided by Alfred P. Sloan Foundation, the
   Participating Institutions, National Science Foundation, and U.S. Department of
   Energy. The SDSS-III website is http://www.sdss3.org.  SDSS-III is managed by the
@@ -2261,6 +2495,7 @@
   Spanish Participation Group, University of Tokyo, University of Utah, Vanderbilt
   University, University of Virginia, University of Washington, and Yale University.
 
+  % Pan-STARRS1 part
   The Pan-STARRS1 surveys (PS1) have been made possible through contributions of
   Institute for Astronomy; University of Hawaii; the Pan-STARRS Project Office;
   the Max-Planck Society and its participating institutes: the Max Planck Institute
@@ -2274,21 +2509,19 @@
   Foundation under Grant No. AST-1238877; University of Maryland, and Eotvos
   Lorand University.
 
+  % LSST software
   This research makes use of software developed for the Large Synoptic Survey
   Telescope. We thank the LSST project for making their code available as free
   software at http://dm.lsstcorp.org.
 
+  % SMDPL simulation
   The CosmoSim database used in this research is a service by the Leibniz-Institute for
   Astrophysics Potsdam (AIP).
   The MultiDark database was developed in cooperation with the Spanish MultiDark
   Consolider Project CSD2009-00064.
 
+  % Software
   This research made use of:
-  \href{http://www.stsci.edu/institute/software_hardware/pyraf/stsci\_python}{\texttt{STSCI\_PYTHON}},
-      a general astronomical data analysis infrastructure in Python.
-      \texttt{STSCI\_PYTHON} is a product of the Space Telescope Science Institute,
-      which is operated by Association of Universities for Research
-      in Astronomy (AURA) for NASA;
   \href{http://www.scipy.org/}{\texttt{SciPy}},
       an open source scientific tool for Python (\citealt{SciPy});
   \href{http://www.numpy.org/}{\texttt{NumPy}},
@@ -2308,14 +2541,23 @@
   \href{http://dan.iel.fm/emcee/current/}{\texttt{emcee}},
       Seriously Kick-Ass MCMC in Python;
   \href{http://bdiemer.bitbucket.org/}{\texttt{Colossus}},
-      COsmology, haLO and large-Scale StrUcture toolS (\citealt{Colossus}).
+      COsmology, haLO and large-Scale StrUcture toolS (\citealt{COLOSSUS}).
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% References
+%% ---------------------------------------------------------------------------------------------- %%
 \bibliographystyle{mnras}
 \bibliography{topn}
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Appendix Section
+%% ---------------------------------------------------------------------------------------------- %%
 
 \appendix
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Derive the DSigma profile
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Derivation of the galaxy--galaxy lensing profiles}
     \label{app:dsigma_detail}
 
@@ -2453,6 +2695,9 @@
     \noindent The two methods provide consistent measurements of covariance matrix.
 
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Demonstrate the scatter matching process.
+%% ---------------------------------------------------------------------------------------------- %%
   \begin{figure*}
       \centering
       \includegraphics[width=\textwidth]{figure/fig_A1}
@@ -2478,7 +2723,11 @@
       }
       \label{fig:fitting}
   \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% More on the method of profile matching
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Matching the lensing profiles}
     \label{app:fitting}
 
@@ -2515,15 +2764,22 @@
     covariance matrix as additional diagonal term, and verify it has no impact on any
     conclusions.
 
+    % Move here from the results section
     In the figure, we inflate the error bars of the
     model profiles to reflect the volume difference between the HSC data and the simulation
     used. For \mdpl2{} simulation, the volume is about $\sim 25 \times$ larger than the HSC
     volume. We therefore increase the error bar by a factor of 5. However, we did not
     include the model uncertainty during the fitting process. 
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% HSC Model
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Scaling relation model calibrated to match HSC observations}
     \label{app:hsc_model}
 
+%% --------------------------------------------------------------------------------------------- %%
+%% Figure: Demonstration of the mock catalogue
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure*}
   \centering
   \includegraphics[width=0.9\textwidth]{figure/fig_B1}
@@ -2545,6 +2801,7 @@
     }
   \label{fig:best_mock}
 \end{figure*}
+%% ---------------------------------------------------------------------------------------------- %%
 
     In \S\ \ref{sec:estimate_scatter}, we describe the method to predict the stacked \dsigma{}
     profile of a sample of number density selected halos with certain \scatterMhaloObsSym{} value
@@ -2592,6 +2849,9 @@
     We also verify that the satellite fraction value is robust to small changes in abundance
     matching methodology.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Satellite v.s. Central
+%% ---------------------------------------------------------------------------------------------- %%
 \section{\texorpdfstring{$\Delta\Sigma$}{DSigma} profiles of massive satellite galaxies}
 	\label{app:sat_cen}
 
@@ -2634,6 +2894,9 @@
     We will aim to understand it more so that we can deal with satellites better when using 
     \mstar{}-based \mvir{} proxies.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: satellite v.s. central
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure}
     \centering
     \includegraphics[width=0.47\textwidth]{figure/fig_D1}
@@ -2651,7 +2914,11 @@
     }
     \label{fig:sat_cen}
 \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Galaxy size as potential halo mass indicator
+%% ---------------------------------------------------------------------------------------------- %%
 \section{Galaxy size as \texorpdfstring{\mvir{}}{Mvir} indicator}
 	\label{app:size}
 
@@ -2689,6 +2956,9 @@
     could lead to different results.
     We will explore more \mvir{} proxies related to galaxy size in future works.
     
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: Stellar mass defined by R50
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure/fig_E1}
@@ -2707,7 +2977,11 @@
     }
     \label{fig:scatter_trend_size}
 \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% HSC v.s. SDSS redMaPPer
+%% ---------------------------------------------------------------------------------------------- %%
 \section{The comparison of \texorpdfstring{\dsigma{}}{DSigma} profile between the HSC and SDSS \texorpdfstring{\redm{}}{redMaPPer} clusters}
 	\label{app:sdss_redm}
 
@@ -2733,6 +3007,9 @@
     This reinforces our conclusions in \S\ \ref{sec:mstar_vs_richness} and 
     \S\ \ref{sec:richness_results}.
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: redMaPPer HSC v.s. SDSS
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure/fig_F1}
@@ -2755,7 +3032,11 @@
     }
     \label{fig:sdss_redm}
 \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
+%% HSC v.s. DES redMaPPer
+%% ---------------------------------------------------------------------------------------------- %%
 \section{The comparison of \texorpdfstring{\dsigma{}}{DSigma} profile between the HSC and DES \texorpdfstring{\redm{}}{redMaPPer} cluster}
 	\label{app:des_redm}
 	
@@ -2782,6 +3063,9 @@
 	This again shows that our results about the shape of lensing profiles of \redm{} clusters 
 	should be robust against imaging dataset and lensing measurements.
 	
+%% ---------------------------------------------------------------------------------------------- %%
+%% Figure: redMaPPer HSC v.s. DES
+%% ---------------------------------------------------------------------------------------------- %%
 \begin{figure}
     \centering
     \includegraphics[width=\columnwidth]{figure/fig_G1}
@@ -2796,8 +3080,13 @@
     }
     \label{fig:des_redm}
 \end{figure}
+%% ---------------------------------------------------------------------------------------------- %%
 
+%% ---------------------------------------------------------------------------------------------- %%
 \bsp
 \label{lastpage}
-\clearpage\end{CJK*}
 \end{document}
+
+%% ---------------------------------------------------------------------------------------------- %%
+%% ------ End of the File ------
+%% ---------------------------------------------------------------------------------------------- %%
